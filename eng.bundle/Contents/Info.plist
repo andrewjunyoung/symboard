@@ -8,12 +8,12 @@
 	<string>eng</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>KLInfo_eng</key>
+	<key>KLInfo_英忞（永志键盘）</key>
 	<dict>
 		<key>TISInputSourceID</key>
-		<string>org.sil.ukelele.keyboardlayout.eng.eng</string>
+		<string>org.sil.ukelele.keyboardlayout.eng.英忞（永志键盘）</string>
 		<key>TISIntendedLanguage</key>
-		<string>zh-Hans-IS</string>
+		<string>en-001</string>
 	</dict>
 </dict>
 </plist>
