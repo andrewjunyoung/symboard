@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2017-05-18 at 12:01 (GMT+1)-->
-<keyboard group="126" id="-29201" name="英忞（永志键盘）" maxout="1">
+<!--Last edited by Ukelele version 3.2.4.172 on 2017-05-29 at 17:15 (GMT+1)-->
+<keyboard group="0" id="-29201" name="拉丁文（国际）" maxout="2">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
 	</layouts>
@@ -161,24 +161,24 @@
 			<key code="126" output="&#x001E;"/>
 		</keyMap>
 		<keyMap index="1">
-			<key code="0" output="A"/>
-			<key code="1" output="O"/>
-			<key code="2" output="E"/>
-			<key code="3" output="U"/>
-			<key code="4" output="D"/>
-			<key code="5" output="I"/>
+			<key code="0" action="A"/>
+			<key code="1" action="O"/>
+			<key code="2" action="E"/>
+			<key code="3" action="U"/>
+			<key code="4" action="D"/>
+			<key code="5" action="I"/>
 			<key code="6" output="&#x0022;"/>
-			<key code="7" output="Q"/>
-			<key code="8" output="J"/>
-			<key code="9" output="K"/>
+			<key code="7" action="Q"/>
+			<key code="8" action="J"/>
+			<key code="9" action="K"/>
 			<key code="10" output=""/>
-			<key code="11" output="X"/>
+			<key code="11" action="X"/>
 			<key code="12" output=":"/>
 			<key code="13" output="!"/>
 			<key code="14" output="?"/>
-			<key code="15" output="P"/>
-			<key code="16" output="F"/>
-			<key code="17" output="Y"/>
+			<key code="15" action="P"/>
+			<key code="16" action="F"/>
+			<key code="17" action="Y"/>
 			<key code="18" output="&#x0026;"/>
 			<key code="19" output="@"/>
 			<key code="20" output="#"/>
@@ -192,23 +192,23 @@
 			<key code="28" output="&#x003E;"/>
 			<key code="29" output=")"/>
 			<key code="30" output="+"/>
-			<key code="31" output="R"/>
-			<key code="32" output="G"/>
+			<key code="31" action="R"/>
+			<key code="32" action="G"/>
 			<key code="33" output="*"/>
-			<key code="34" output="C"/>
-			<key code="35" output="L"/>
+			<key code="34" action="C"/>
+			<key code="35" action="L"/>
 			<key code="36" output="&#x000D;"/>
-			<key code="37" output="N"/>
-			<key code="38" output="H"/>
+			<key code="37" action="N"/>
+			<key code="38" action="H"/>
 			<key code="39" output="_"/>
-			<key code="40" output="T"/>
-			<key code="41" output="S"/>
+			<key code="40" action="T"/>
+			<key code="41" action="S"/>
 			<key code="42" output="|"/>
-			<key code="43" output="W"/>
-			<key code="44" output="Z"/>
-			<key code="45" output="B"/>
-			<key code="46" output="M"/>
-			<key code="47" output="V"/>
+			<key code="43" action="W"/>
+			<key code="44" action="Z"/>
+			<key code="45" action="B"/>
+			<key code="46" action="M"/>
+			<key code="47" action="V"/>
 			<key code="48" output="&#x0009;"/>
 			<key code="49" output=" "/>
 			<key code="50" output="~"/>
@@ -524,12 +524,12 @@
 			<key code="3" action="u"/>
 			<key code="4" action="d"/>
 			<key code="5" action="i"/>
-			<key code="6" output="&#x0027;"/>
+			<key code="6" action="&#x0027;"/>
 			<key code="7" action="q"/>
 			<key code="8" action="j"/>
 			<key code="9" action="k"/>
 			<key code="10" output="§"/>
-			<key code="11" output="x"/>
+			<key code="11" action="x"/>
 			<key code="12" action=";"/>
 			<key code="13" action=","/>
 			<key code="14" action="."/>
@@ -551,24 +551,24 @@
 			<key code="30" output="="/>
 			<key code="31" action="r"/>
 			<key code="32" action="g"/>
-			<key code="33" output="/"/>
+			<key code="33" action="/"/>
 			<key code="34" action="c"/>
 			<key code="35" action="l"/>
 			<key code="36" output="&#x000D;"/>
 			<key code="37" action="n"/>
 			<key code="38" action="h"/>
-			<key code="39" action="-"/>
+			<key code="39" action="- 1"/>
 			<key code="40" action="t"/>
 			<key code="41" action="s"/>
 			<key code="42" output="\"/>
-			<key code="43" output="w"/>
-			<key code="44" output="z"/>
-			<key code="45" output="b"/>
-			<key code="46" output="m"/>
+			<key code="43" action="w"/>
+			<key code="44" action="z"/>
+			<key code="45" action="b"/>
+			<key code="46" action="m"/>
 			<key code="47" action="v"/>
 			<key code="48" output="&#x0009;"/>
 			<key code="49" output=" "/>
-			<key code="50" output="`"/>
+			<key code="50" action="`"/>
 			<key code="51" output="&#x0008;"/>
 			<key code="52" output="&#x0003;"/>
 			<key code="53" output="&#x001B;"/>
@@ -873,104 +873,399 @@
 		</keyMap>
 	</keyMapSet>
 	<actions>
+		<action id="&#x0009;">
+			<when state="none" next="hacek"/>
+		</action>
+		<action id="&#x0027;">
+			<when state="none" next="Dead Key State 0"/>
+			<when state="Dead Key State 0" output="&#x0027;"/>
+		</action>
 		<action id=",">
 			<when state="none" output=","/>
 			<when state="拼音" output="ō"/>
 		</action>
 		<action id="-">
-			<when state="none" output="-"/>
+			<when state="none" next="Macron"/>
+			<when state="Macron" output="-"/>
+		</action>
+		<action id="- 1">
+			<when state="none" next="Macron"/>
+			<when state="Macron" output="-"/>
 		</action>
 		<action id=".">
 			<when state="none" output="."/>
 			<when state="拼音" output="ē"/>
 		</action>
+		<action id="/">
+			<when state="none" next="hacek"/>
+			<when state="hacek" output="/"/>
+		</action>
 		<action id=";">
 			<when state="none" output=";"/>
 			<when state="拼音" output="ā"/>
 		</action>
+		<action id="A">
+			<when state="none" output="A"/>
+			<when state="Dead Key State 0" output="Á"/>
+			<when state="Dead Key State 1" output="À"/>
+			<when state="Macron" output="Ā"/>
+			<when state="hacek" output="Ǎ"/>
+		</action>
+		<action id="B">
+			<when state="none" output="B"/>
+			<when state="Dead Key State 0" output="B́"/>
+			<when state="Macron" output="B̄"/>
+			<when state="hacek" output="B̌"/>
+		</action>
+		<action id="C">
+			<when state="none" output="C"/>
+			<when state="Dead Key State 0" output="Ć"/>
+			<when state="Macron" output="C̄"/>
+			<when state="hacek" output="Č"/>
+		</action>
+		<action id="D">
+			<when state="none" output="D"/>
+			<when state="Dead Key State 0" output="D́"/>
+			<when state="Macron" output="D̄"/>
+			<when state="hacek" output="Ď"/>
+		</action>
+		<action id="E">
+			<when state="none" output="E"/>
+			<when state="Dead Key State 0" output="É"/>
+			<when state="Dead Key State 1" output="È"/>
+			<when state="Macron" output="Ē"/>
+			<when state="hacek" output="Ě"/>
+		</action>
+		<action id="F">
+			<when state="none" output="F"/>
+			<when state="Dead Key State 0" output="F́"/>
+			<when state="hacek" output="F̌"/>
+		</action>
+		<action id="G">
+			<when state="none" output="G"/>
+			<when state="Dead Key State 0" output="Ǵ"/>
+			<when state="Macron" output="Ḡ"/>
+			<when state="hacek" output="Ǧ"/>
+		</action>
+		<action id="H">
+			<when state="none" output="H"/>
+			<when state="Dead Key State 0" output="H́"/>
+			<when state="hacek" output="Ȟ"/>
+		</action>
+		<action id="I">
+			<when state="none" output="I"/>
+			<when state="Dead Key State 0" output="Í"/>
+			<when state="Dead Key State 1" output="Ì"/>
+			<when state="Macron" output="Ī"/>
+			<when state="hacek" output="Ǐ"/>
+		</action>
+		<action id="J">
+			<when state="none" output="J"/>
+			<when state="Dead Key State 0" output="J́"/>
+			<when state="Macron" output="J̄"/>
+			<when state="hacek" output="J̌"/>
+		</action>
+		<action id="K">
+			<when state="none" output="K"/>
+			<when state="Dead Key State 0" output="Ḱ"/>
+			<when state="Macron" output="K̄"/>
+			<when state="hacek" output="Ǩ"/>
+		</action>
+		<action id="L">
+			<when state="none" output="L"/>
+			<when state="Dead Key State 0" output="Ĺ"/>
+			<when state="hacek" output="Ľ"/>
+		</action>
+		<action id="M">
+			<when state="none" output="M"/>
+			<when state="Dead Key State 0" output="Ḿ"/>
+			<when state="Macron" output="M̄"/>
+			<when state="hacek" output="M̌"/>
+		</action>
+		<action id="N">
+			<when state="none" output="N"/>
+			<when state="Dead Key State 0" output="Ń"/>
+			<when state="Macron" output="N̄"/>
+			<when state="hacek" output="Ň"/>
+		</action>
+		<action id="O">
+			<when state="none" output="O"/>
+			<when state="Dead Key State 0" output="Ó"/>
+			<when state="Dead Key State 1" output="Ò"/>
+			<when state="Macron" output="Ō"/>
+			<when state="hacek" output="Ǒ"/>
+		</action>
+		<action id="P">
+			<when state="none" output="P"/>
+			<when state="Dead Key State 0" output="Ṕ"/>
+			<when state="Macron" output="P̄"/>
+			<when state="hacek" output="P̌"/>
+		</action>
+		<action id="Q">
+			<when state="none" output="Q"/>
+			<when state="Dead Key State 0" output="Q́"/>
+			<when state="Macron" output="Q̄"/>
+			<when state="hacek" output="Q̌"/>
+		</action>
+		<action id="R">
+			<when state="none" output="R"/>
+			<when state="Dead Key State 0" output="Ŕ"/>
+			<when state="Macron" output="R̄"/>
+			<when state="hacek" output="Ř"/>
+		</action>
+		<action id="S">
+			<when state="none" output="S"/>
+			<when state="Dead Key State 0" output="Ś"/>
+			<when state="Macron" output="S̄"/>
+			<when state="hacek" output="Š"/>
+		</action>
+		<action id="T">
+			<when state="none" output="T"/>
+			<when state="Dead Key State 0" output="T́"/>
+			<when state="Macron" output="T̄"/>
+			<when state="hacek" output="Ť"/>
+		</action>
+		<action id="U">
+			<when state="none" output="U"/>
+			<when state="Dead Key State 0" output="Ú"/>
+			<when state="Dead Key State 1" output="Ù"/>
+			<when state="Macron" output="Ū"/>
+			<when state="hacek" output="Ǔ"/>
+		</action>
+		<action id="V">
+			<when state="none" output="V"/>
+			<when state="Dead Key State 0" output="Ǘ"/>
+			<when state="Macron" output="V̄"/>
+			<when state="hacek" output="V̌"/>
+		</action>
+		<action id="W">
+			<when state="none" output="W"/>
+			<when state="Dead Key State 0" output="Ẃ"/>
+			<when state="Macron" output="W̄"/>
+			<when state="hacek" output="W̌"/>
+		</action>
+		<action id="X">
+			<when state="none" output="X"/>
+			<when state="Dead Key State 0" output="X́"/>
+			<when state="Macron" output="X̄"/>
+			<when state="hacek" output="X̌"/>
+		</action>
+		<action id="Y">
+			<when state="none" output="Y"/>
+			<when state="Dead Key State 0" output="Ý"/>
+			<when state="Macron" output="Ȳ"/>
+			<when state="hacek" output="Y̌"/>
+		</action>
+		<action id="Z">
+			<when state="none" output="Z"/>
+			<when state="Dead Key State 0" output="Ź"/>
+			<when state="Macron" output="Z̄"/>
+			<when state="hacek" output="Ž"/>
+		</action>
+		<action id="`">
+			<when state="none" next="Dead Key State 1"/>
+		</action>
 		<action id="a">
 			<when state="none" output="a"/>
+			<when state="Dead Key State 0" output="á"/>
+			<when state="Dead Key State 1" output="à"/>
+			<when state="Macron" output="ā"/>
+			<when state="hacek" output="ǎ"/>
+			<when state="state a" output="a"/>
 			<when state="拼音" output="ǎ"/>
+		</action>
+		<action id="b">
+			<when state="none" output="b"/>
+			<when state="Dead Key State 0" output="b́"/>
+			<when state="Macron" output="b̄"/>
+			<when state="hacek" output="b̌"/>
 		</action>
 		<action id="c">
 			<when state="none" output="c"/>
+			<when state="Dead Key State 0" output="ć"/>
+			<when state="Macron" output="c̄"/>
+			<when state="hacek" output="č"/>
+			<when state="state a" output="c"/>
 			<when state="拼音" output="é"/>
 		</action>
 		<action id="d">
 			<when state="none" output="d"/>
+			<when state="Dead Key State 0" output="d́"/>
+			<when state="Macron" output="d̄"/>
+			<when state="hacek" output="ď"/>
+			<when state="state a" output="d"/>
 			<when state="拼音" output="à"/>
 		</action>
 		<action id="e">
 			<when state="none" output="e"/>
+			<when state="Dead Key State 0" output="é"/>
+			<when state="Dead Key State 1" output="è"/>
+			<when state="Macron" output="ē"/>
+			<when state="hacek" output="ě"/>
+			<when state="state a" output="e"/>
 			<when state="拼音" output="ě"/>
 		</action>
 		<action id="f">
 			<when state="none" output="f"/>
+			<when state="Dead Key State 0" output="f́"/>
+			<when state="hacek" output="f̌"/>
+			<when state="state a" output="f"/>
 			<when state="拼音" output="á"/>
 		</action>
 		<action id="g">
 			<when state="none" output="g"/>
+			<when state="Dead Key State 0" output="ǵ"/>
+			<when state="Macron" output="ḡ"/>
+			<when state="hacek" output="ǧ"/>
+			<when state="state a" output="g"/>
 			<when state="拼音" output="ó"/>
 		</action>
 		<action id="h">
 			<when state="none" output="h"/>
+			<when state="Dead Key State 0" output="h́"/>
+			<when state="hacek" output="ȟ"/>
+			<when state="state a" output="h"/>
 			<when state="拼音" output="ò"/>
 		</action>
 		<action id="i">
 			<when state="none" output="i"/>
+			<when state="Dead Key State 0" output="í"/>
+			<when state="Dead Key State 1" output="ì"/>
+			<when state="Macron" output="ī"/>
+			<when state="hacek" output="ǐ"/>
+			<when state="state a" output="i"/>
 			<when state="拼音" output="ǐ"/>
 		</action>
 		<action id="j">
 			<when state="none" output="j"/>
+			<when state="Dead Key State 0" output="ȷ́"/>
+			<when state="Macron" output="j̄"/>
+			<when state="hacek" output="ǰ"/>
+			<when state="state a" output="j"/>
 			<when state="拼音" output="ǚ"/>
 		</action>
 		<action id="k">
 			<when state="none" output="k"/>
+			<when state="Dead Key State 0" output="ḱ"/>
+			<when state="Macron" output="k̄"/>
+			<when state="hacek" output="ǩ"/>
+			<when state="state a" output="k"/>
 			<when state="拼音" output="ǜ"/>
 		</action>
 		<action id="l">
 			<when state="none" output="l"/>
+			<when state="Dead Key State 0" output="ĺ"/>
+			<when state="hacek" output="ľ"/>
+			<when state="state a" output="l"/>
 			<when state="拼音" output="í"/>
+		</action>
+		<action id="m">
+			<when state="none" output="m"/>
+			<when state="Dead Key State 0" output="ḿ"/>
+			<when state="Macron" output="m̄"/>
+			<when state="hacek" output="m̌"/>
+			<when state="state a" output="m"/>
 		</action>
 		<action id="n">
 			<when state="none" output="n"/>
+			<when state="Dead Key State 0" output="ń"/>
+			<when state="Macron" output="n̄"/>
+			<when state="hacek" output="ň"/>
+			<when state="state a" output="n"/>
 			<when state="拼音" output="ù"/>
 		</action>
 		<action id="o">
 			<when state="none" output="o"/>
+			<when state="Dead Key State 0" output="ó"/>
+			<when state="Dead Key State 1" output="ò"/>
+			<when state="Macron" output="ō"/>
+			<when state="hacek" output="ǒ"/>
+			<when state="state a" output="o"/>
 			<when state="拼音" output="ǒ"/>
 		</action>
 		<action id="p">
 			<when state="none" output="p"/>
+			<when state="Dead Key State 0" output="ṕ"/>
+			<when state="Macron" output="p̄"/>
+			<when state="hacek" output="p̌"/>
+			<when state="state a" output="p"/>
 			<when state="拼音" output="ū"/>
 		</action>
 		<action id="q">
 			<when state="none" output="q"/>
+			<when state="Dead Key State 0" output="q́"/>
+			<when state="Macron" output="q̄"/>
+			<when state="hacek" output="q̌"/>
+			<when state="state a" output="q"/>
 			<when state="拼音" output="ǘ"/>
 		</action>
 		<action id="r">
 			<when state="none" output="r"/>
+			<when state="Dead Key State 0" output="ŕ"/>
+			<when state="Macron" output="r̄"/>
+			<when state="hacek" output="ř"/>
+			<when state="state a" output="r"/>
 			<when state="拼音" output="ú"/>
 		</action>
 		<action id="s">
 			<when state="none" output="s"/>
+			<when state="Dead Key State 0" output="ś"/>
+			<when state="Macron" output="s̄"/>
+			<when state="hacek" output="š"/>
+			<when state="state a" output="s"/>
 			<when state="拼音" output="ì"/>
 		</action>
 		<action id="t">
 			<when state="none" output="t"/>
+			<when state="Dead Key State 0" output="t́"/>
+			<when state="Macron" output="t̄"/>
+			<when state="hacek" output="ť"/>
+			<when state="state a" output="t"/>
 			<when state="拼音" output="è"/>
 		</action>
 		<action id="u">
 			<when state="none" output="u"/>
+			<when state="Dead Key State 0" output="ú"/>
+			<when state="Dead Key State 1" output="ù"/>
+			<when state="Macron" output="ū"/>
+			<when state="hacek" output="ǔ"/>
+			<when state="state a" output="u"/>
 			<when state="拼音" output="ǔ"/>
 		</action>
 		<action id="v">
 			<when state="none" output="v"/>
+			<when state="Dead Key State 0" output="ǘ"/>
+			<when state="Macron" output="v̄"/>
+			<when state="hacek" output="v̌"/>
+			<when state="state a" output="v"/>
 			<when state="拼音" output="ü"/>
+		</action>
+		<action id="w">
+			<when state="none" output="w"/>
+			<when state="Dead Key State 0" output="ẃ"/>
+			<when state="Macron" output="w̄"/>
+			<when state="hacek" output="w̌"/>
+		</action>
+		<action id="x">
+			<when state="none" output="x"/>
+			<when state="Dead Key State 0" output="x́"/>
+			<when state="Macron" output="x̄"/>
+			<when state="hacek" output="x̌"/>
 		</action>
 		<action id="y">
 			<when state="none" output="y"/>
+			<when state="Dead Key State 0" output="ý"/>
+			<when state="Macron" output="ȳ"/>
+			<when state="hacek" output="y̌"/>
+			<when state="state a" output="y"/>
 			<when state="拼音" output="ī"/>
+		</action>
+		<action id="z">
+			<when state="none" output="z"/>
+			<when state="Dead Key State 0" output="ź"/>
+			<when state="Macron" output="z̄"/>
+			<when state="hacek" output="ž"/>
+			<when state="state a" output="z"/>
 		</action>
 		<action id="ü">
 			<when state="none" next="拼音"/>
@@ -980,6 +1275,11 @@
 		</action>
 	</actions>
 	<terminators>
+		<when state="Dead Key State 0" output="&#x0027;"/>
+		<when state="Dead Key State 1" output="`"/>
+		<when state="Macron" output="-"/>
+		<when state="hacek" output="/"/>
+		<when state="state a" output="a"/>
 		<when state="拼音" output="ü"/>
 	</terminators>
 </keyboard>
