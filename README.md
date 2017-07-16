@@ -36,7 +36,7 @@ The decisions have been made as follows:
 
 - The 4 arithmetic operations +-/\* are located on the right of the keyboard.
 
-- - and _ are on the same key due to graphical similarity
+- \- and _ are on the same key due to graphical similarity
 
 - \ and | are together on the far right as two uncommon characters with great graphical similarity
 
