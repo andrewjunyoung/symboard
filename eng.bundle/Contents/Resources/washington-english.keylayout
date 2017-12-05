@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 17:17 (GMT)-->
+<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 17:47 (GMT)-->
 <keyboard group="126" id="-24891" name="Washington English" maxout="2">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -210,7 +210,7 @@
 			<key code="46" action="M"/>
 			<key code="47" action="V"/>
 			<key code="48" output="&#x0009;"/>
-			<key code="49" output=" "/>
+			<key code="49" action="  1"/>
 			<key code="50" output="~"/>
 			<key code="51" output="&#x0008;"/>
 			<key code="52" output="&#x0003;"/>
@@ -567,7 +567,7 @@
 			<key code="46" action="m"/>
 			<key code="47" action="v"/>
 			<key code="48" output="&#x0009;"/>
-			<key code="49" output=" "/>
+			<key code="49" action=" "/>
 			<key code="50" output="`"/>
 			<key code="51" output="&#x0008;"/>
 			<key code="52" output="&#x0003;"/>
@@ -873,6 +873,16 @@
 		</keyMap>
 	</keyMapSet>
 	<actions>
+		<action id=" ">
+			<when state="none" output=" "/>
+			<when state="acute" output="´ "/>
+			<when state="caron" output="ˇ "/>
+		</action>
+		<action id="  1">
+			<when state="none" output=" "/>
+			<when state="acute" output="´ "/>
+			<when state="caron" output="ˇ "/>
+		</action>
 		<action id="&#x0022;">
 			<when state="none" output="&#x0022;"/>
 			<when state="acute" output="´"/>
@@ -1001,6 +1011,7 @@
 		</action>
 		<action id="a">
 			<when state="none" output="a"/>
+			<when state="acute" output="á"/>
 			<when state="caron" output="ǎ"/>
 		</action>
 		<action id="action">
@@ -1015,10 +1026,12 @@
 		</action>
 		<action id="b">
 			<when state="none" output="b"/>
+			<when state="acute" output="b́"/>
 			<when state="caron" output="b̌"/>
 		</action>
 		<action id="c">
 			<when state="none" output="c"/>
+			<when state="acute" output="ć"/>
 			<when state="caron" output="č"/>
 		</action>
 		<action id="caron">
@@ -1027,94 +1040,117 @@
 		</action>
 		<action id="d">
 			<when state="none" output="d"/>
+			<when state="acute" output="d́"/>
 			<when state="caron" output="ď"/>
 		</action>
 		<action id="e">
 			<when state="none" output="e"/>
+			<when state="acute" output="é"/>
 			<when state="caron" output="ě"/>
 		</action>
 		<action id="f">
 			<when state="none" output="f"/>
+			<when state="acute" output="f́"/>
 			<when state="caron" output="f̌"/>
 		</action>
 		<action id="g">
 			<when state="none" output="g"/>
+			<when state="acute" output="ǵ"/>
 			<when state="caron" output="ǧ"/>
 		</action>
 		<action id="h">
 			<when state="none" output="h"/>
+			<when state="acute" output="h́"/>
 			<when state="caron" output="ȟ"/>
 		</action>
 		<action id="i">
 			<when state="none" output="i"/>
+			<when state="acute" output="í"/>
 			<when state="caron" output="ǐ"/>
 		</action>
 		<action id="j">
 			<when state="none" output="j"/>
+			<when state="acute" output="ȷ́"/>
 			<when state="caron" output="ǰ"/>
 		</action>
 		<action id="k">
 			<when state="none" output="k"/>
+			<when state="acute" output="ḱ"/>
 			<when state="caron" output="ǩ"/>
 		</action>
 		<action id="l">
 			<when state="none" output="l"/>
+			<when state="acute" output="ĺ"/>
 			<when state="caron" output="ľ"/>
 		</action>
 		<action id="m">
 			<when state="none" output="m"/>
+			<when state="acute" output="ḿ"/>
 			<when state="caron" output="m̌"/>
 		</action>
 		<action id="n">
 			<when state="none" output="n"/>
+			<when state="acute" output="ń"/>
 			<when state="caron" output="ň"/>
 		</action>
 		<action id="o">
 			<when state="none" output="o"/>
+			<when state="acute" output="ó"/>
 			<when state="caron" output="ǒ"/>
 		</action>
 		<action id="p">
 			<when state="none" output="p"/>
+			<when state="acute" output="ṕ"/>
 			<when state="caron" output="p̌"/>
 		</action>
 		<action id="q">
 			<when state="none" output="q"/>
+			<when state="acute" output="q́"/>
 			<when state="caron" output="q̌"/>
 		</action>
 		<action id="r">
 			<when state="none" output="r"/>
+			<when state="acute" output="ŕ"/>
 			<when state="caron" output="ř"/>
 		</action>
 		<action id="s">
 			<when state="none" output="s"/>
+			<when state="acute" output="ś"/>
 			<when state="caron" output="š"/>
 		</action>
 		<action id="t">
 			<when state="none" output="t"/>
+			<when state="acute" output="t́"/>
 			<when state="caron" output="ť"/>
 		</action>
 		<action id="u">
 			<when state="none" output="u"/>
+			<when state="acute" output="ú"/>
 			<when state="caron" output="ǔ"/>
 		</action>
 		<action id="v">
 			<when state="none" output="v"/>
+			<when state="acute" output="v́"/>
 			<when state="caron" output="v̌"/>
 		</action>
 		<action id="w">
 			<when state="none" output="w"/>
+			<when state="acute" output="ẃ"/>
 			<when state="caron" output="w̌"/>
 		</action>
 		<action id="x">
 			<when state="none" output="x"/>
+			<when state="acute" output="x́"/>
 			<when state="caron" output="x̌"/>
 		</action>
 		<action id="y">
 			<when state="none" output="y"/>
+			<when state="acute" output="ý"/>
 			<when state="caron" output="y̌"/>
 		</action>
 		<action id="z">
 			<when state="none" output="z"/>
+			<when state="acute" output="ź"/>
 			<when state="caron" output="ž"/>
 		</action>
 	</actions>
