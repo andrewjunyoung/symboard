@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 16:26 (GMT)-->
-<keyboard group="126" id="-12970" name="Washington English" maxout="1">
+<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 16:45 (GMT)-->
+<keyboard group="126" id="-18701" name="Washington English" maxout="1">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
 	</layouts>
@@ -875,111 +875,78 @@
 	<actions>
 		<action id=",">
 			<when state="none" output=","/>
-			<when state="拼音" output="ō"/>
 		</action>
 		<action id="-">
 			<when state="none" output="-"/>
 		</action>
 		<action id=".">
 			<when state="none" output="."/>
-			<when state="拼音" output="ē"/>
 		</action>
 		<action id=";">
 			<when state="none" output=";"/>
-			<when state="拼音" output="ā"/>
 		</action>
 		<action id="a">
 			<when state="none" output="a"/>
-			<when state="拼音" output="ǎ"/>
 		</action>
 		<action id="c">
 			<when state="none" output="c"/>
-			<when state="拼音" output="é"/>
 		</action>
 		<action id="d">
 			<when state="none" output="d"/>
-			<when state="拼音" output="à"/>
 		</action>
 		<action id="e">
 			<when state="none" output="e"/>
-			<when state="拼音" output="ě"/>
 		</action>
 		<action id="f">
 			<when state="none" output="f"/>
-			<when state="拼音" output="á"/>
 		</action>
 		<action id="g">
 			<when state="none" output="g"/>
-			<when state="拼音" output="ó"/>
 		</action>
 		<action id="h">
 			<when state="none" output="h"/>
-			<when state="拼音" output="ò"/>
 		</action>
 		<action id="i">
 			<when state="none" output="i"/>
-			<when state="拼音" output="ǐ"/>
 		</action>
 		<action id="j">
 			<when state="none" output="j"/>
-			<when state="拼音" output="ǚ"/>
 		</action>
 		<action id="k">
 			<when state="none" output="k"/>
-			<when state="拼音" output="ǜ"/>
 		</action>
 		<action id="l">
 			<when state="none" output="l"/>
-			<when state="拼音" output="í"/>
 		</action>
 		<action id="n">
 			<when state="none" output="n"/>
-			<when state="拼音" output="ù"/>
 		</action>
 		<action id="o">
 			<when state="none" output="o"/>
-			<when state="拼音" output="ǒ"/>
 		</action>
 		<action id="p">
 			<when state="none" output="p"/>
-			<when state="拼音" output="ū"/>
 		</action>
 		<action id="q">
 			<when state="none" output="q"/>
-			<when state="拼音" output="ǘ"/>
 		</action>
 		<action id="r">
 			<when state="none" output="r"/>
-			<when state="拼音" output="ú"/>
 		</action>
 		<action id="s">
 			<when state="none" output="s"/>
-			<when state="拼音" output="ì"/>
 		</action>
 		<action id="t">
 			<when state="none" output="t"/>
-			<when state="拼音" output="è"/>
 		</action>
 		<action id="u">
 			<when state="none" output="u"/>
-			<when state="拼音" output="ǔ"/>
 		</action>
 		<action id="v">
 			<when state="none" output="v"/>
-			<when state="拼音" output="ü"/>
 		</action>
 		<action id="y">
 			<when state="none" output="y"/>
-			<when state="拼音" output="ī"/>
-		</action>
-		<action id="ü">
-			<when state="none" next="拼音"/>
-		</action>
-		<action id="拼音">
-			<when state="none" next="拼音"/>
 		</action>
 	</actions>
-	<terminators>
-		<when state="拼音" output="ü"/>
-	</terminators>
 </keyboard>
