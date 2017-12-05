@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2017-05-18 at 12:01 (GMT+1)-->
-<keyboard group="126" id="-29201" name="英忞（永志键盘）" maxout="1">
+<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 16:26 (GMT)-->
+<keyboard group="126" id="-12970" name="Washington English" maxout="1">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
 	</layouts>
