@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 17:09 (GMT)-->
-<keyboard group="126" id="-663" name="Washington English" maxout="2">
+<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-05 at 17:17 (GMT)-->
+<keyboard group="126" id="-24891" name="Washington English" maxout="2">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
 	</layouts>
@@ -162,23 +162,23 @@
 		</keyMap>
 		<keyMap index="1">
 			<key code="0" action="A"/>
-			<key code="1" output="O"/>
-			<key code="2" output="E"/>
-			<key code="3" output="U"/>
-			<key code="4" output="D"/>
-			<key code="5" output="I"/>
+			<key code="1" action="O"/>
+			<key code="2" action="E"/>
+			<key code="3" action="U"/>
+			<key code="4" action="D"/>
+			<key code="5" action="I"/>
 			<key code="6" action="&#x0022;"/>
-			<key code="7" output="Q"/>
-			<key code="8" output="J"/>
-			<key code="9" output="K"/>
+			<key code="7" action="Q"/>
+			<key code="8" action="J"/>
+			<key code="9" action="K"/>
 			<key code="10" output=""/>
-			<key code="11" output="X"/>
+			<key code="11" action="X"/>
 			<key code="12" output=":"/>
 			<key code="13" output="!"/>
 			<key code="14" output="?"/>
-			<key code="15" output="P"/>
-			<key code="16" output="F"/>
-			<key code="17" output="Y"/>
+			<key code="15" action="P"/>
+			<key code="16" action="F"/>
+			<key code="17" action="Y"/>
 			<key code="18" output="&#x0026;"/>
 			<key code="19" output="@"/>
 			<key code="20" output="#"/>
@@ -192,23 +192,23 @@
 			<key code="28" output="&#x003E;"/>
 			<key code="29" output=")"/>
 			<key code="30" output="+"/>
-			<key code="31" output="R"/>
-			<key code="32" output="G"/>
+			<key code="31" action="R"/>
+			<key code="32" action="G"/>
 			<key code="33" output="*"/>
-			<key code="34" output="C"/>
-			<key code="35" output="L"/>
+			<key code="34" action="C"/>
+			<key code="35" action="L"/>
 			<key code="36" output="&#x000D;"/>
-			<key code="37" output="N"/>
-			<key code="38" output="H"/>
+			<key code="37" action="N"/>
+			<key code="38" action="H"/>
 			<key code="39" output="_"/>
-			<key code="40" output="T"/>
-			<key code="41" output="S"/>
+			<key code="40" action="T"/>
+			<key code="41" action="S"/>
 			<key code="42" output="|"/>
-			<key code="43" output="W"/>
-			<key code="44" output="Z"/>
-			<key code="45" output="B"/>
-			<key code="46" output="M"/>
-			<key code="47" output="V"/>
+			<key code="43" action="W"/>
+			<key code="44" action="Z"/>
+			<key code="45" action="B"/>
+			<key code="46" action="M"/>
+			<key code="47" action="V"/>
 			<key code="48" output="&#x0009;"/>
 			<key code="49" output=" "/>
 			<key code="50" output="~"/>
@@ -898,6 +898,106 @@
 		<action id="A">
 			<when state="none" output="A"/>
 			<when state="caron" output="Ǎ"/>
+		</action>
+		<action id="B">
+			<when state="none" output="B"/>
+			<when state="caron" output="B̌"/>
+		</action>
+		<action id="C">
+			<when state="none" output="C"/>
+			<when state="caron" output="Č"/>
+		</action>
+		<action id="D">
+			<when state="none" output="D"/>
+			<when state="caron" output="Ď"/>
+		</action>
+		<action id="E">
+			<when state="none" output="E"/>
+			<when state="caron" output="Ě"/>
+		</action>
+		<action id="F">
+			<when state="none" output="F"/>
+			<when state="caron" output="F̌"/>
+		</action>
+		<action id="G">
+			<when state="none" output="G"/>
+			<when state="caron" output="Ǧ"/>
+		</action>
+		<action id="H">
+			<when state="none" output="H"/>
+			<when state="caron" output="Ȟ"/>
+		</action>
+		<action id="I">
+			<when state="none" output="I"/>
+			<when state="caron" output="Ǐ"/>
+		</action>
+		<action id="J">
+			<when state="none" output="J"/>
+			<when state="caron" output="J̌"/>
+		</action>
+		<action id="K">
+			<when state="none" output="K"/>
+			<when state="caron" output="Ǩ"/>
+		</action>
+		<action id="L">
+			<when state="none" output="L"/>
+			<when state="caron" output="Ľ"/>
+		</action>
+		<action id="M">
+			<when state="none" output="M"/>
+			<when state="caron" output="M̌"/>
+		</action>
+		<action id="N">
+			<when state="none" output="N"/>
+			<when state="caron" output="Ň"/>
+		</action>
+		<action id="O">
+			<when state="none" output="O"/>
+			<when state="caron" output="Ǒ"/>
+		</action>
+		<action id="P">
+			<when state="none" output="P"/>
+			<when state="caron" output="P̌"/>
+		</action>
+		<action id="Q">
+			<when state="none" output="Q"/>
+			<when state="caron" output="Q̌"/>
+		</action>
+		<action id="R">
+			<when state="none" output="R"/>
+			<when state="caron" output="Ř"/>
+		</action>
+		<action id="S">
+			<when state="none" output="S"/>
+			<when state="caron" output="Š"/>
+		</action>
+		<action id="T">
+			<when state="none" output="T"/>
+			<when state="caron" output="Ť"/>
+		</action>
+		<action id="U">
+			<when state="none" output="U"/>
+			<when state="caron" output="Ǔ"/>
+		</action>
+		<action id="V">
+			<when state="none" output="V"/>
+			<when state="caron" output="V̌"/>
+		</action>
+		<action id="W">
+			<when state="none" output="W"/>
+			<when state="caron" output="W̌"/>
+		</action>
+		<action id="X">
+			<when state="none" output="X"/>
+			<when state="caron" output="X̌"/>
+		</action>
+		<action id="Y">
+			<when state="none" output="Y"/>
+			<when state="caron" output="Y̌"/>
+		</action>
+		<action id="Z">
+			<when state="none" output="Z"/>
+			<when state="caron" output="Ž"/>
 		</action>
 		<action id="a">
 			<when state="none" output="a"/>
