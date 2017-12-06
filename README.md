@@ -12,13 +12,13 @@ aoeuidhtns-
 
 'qjkxbmwvz
 
-SHIFT: 
+SHIFT:
 
 ~&@#$%^<>(){}
 
-:!?PYFGCRL*+|
+:!?PYFGCRL\*+|
 
-AOEUIDHTNS_
+AOEUIDHTNS\_
 
 "QJKXBMWVZ
 
@@ -26,7 +26,7 @@ In future I will publish an image for this layout which describes the location o
 
 The decisions have been made as follows:
 
-- All alphabetical and punctuation symbols are included in the lower 3 rows, except for parenthesis. 
+- All alphabetical and punctuation symbols are included in the lower 3 rows, except for parenthesis.
 
 - All bracketing characters are on the top row, on the left. They are ordered roughly according to the priority () <> [] {}.
 
