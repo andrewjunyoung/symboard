@@ -55,7 +55,7 @@ We match each of these criteria as follows:
     Brackets: [<>(){}[]]
     Punctuation: [;,.:!?"-]
     Mathematical: [*+/=-]
-    Other_Symbols: [~&@#$%^`_|\]
+    Other_Symbols: [~&@#$%^\`\_|\\]
 
 5: We used the Dvorak keyboard layout as a base, which is designed for English. Furthermore, groups of characters are decided according to their function in English.
 
