@@ -87,3 +87,17 @@ The decisions have been made as follows:
 - " is together with ' due to graphical similarity and similar function
 
 - All other symbols are placed to the left of the top row and placed in a near-traditional order (adjusted due to the movement of <>)
+
+# Compatibility
+
+This keyboard is compatible with the following diacriticized scripts (including romanized ones):
+
+- Japanese Romaji (Hepburn, Nihonshiki, Kunrei)
+- Polish
+
+Hopefully to add support for the following scripts:
+
+- Pinyin (with tone marks)
+- French
+- German
+- Spanish
