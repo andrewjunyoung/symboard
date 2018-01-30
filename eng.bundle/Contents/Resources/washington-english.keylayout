@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2017-12-06 at 14:49 (GMT)-->
+<!--Last edited by Ukelele version 3.2.4.172 on 2018-01-30 at 00:49 (GMT)-->
 <keyboard group="126" id="-28100" name="Washington English" maxout="5">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -319,7 +319,7 @@
 			<key code="36" output="&#x000D;"/>
 			<key code="37" output="9"/>
 			<key code="38" output="7"/>
-			<key code="39" output="="/>
+			<key code="39" action="¯"/>
 			<key code="40" output="8"/>
 			<key code="41" output="0"/>
 			<key code="42" output="∝"/>
@@ -920,26 +920,31 @@
 			<when state="none" output="A"/>
 			<when state="acute" output="Á"/>
 			<when state="caron" output="Ǎ"/>
+			<when state="macron" output="Ā"/>
 		</action>
 		<action id="B">
 			<when state="none" output="B"/>
 			<when state="acute" output="B́"/>
 			<when state="caron" output="B̌"/>
+			<when state="macron" output="B̄"/>
 		</action>
 		<action id="C">
 			<when state="none" output="C"/>
 			<when state="acute" output="Ć"/>
 			<when state="caron" output="Č"/>
+			<when state="macron" output="C̄"/>
 		</action>
 		<action id="D">
 			<when state="none" output="D"/>
 			<when state="acute" output="D́"/>
 			<when state="caron" output="Ď"/>
+			<when state="macron" output="D̄"/>
 		</action>
 		<action id="E">
 			<when state="none" output="E"/>
 			<when state="acute" output="É"/>
 			<when state="caron" output="Ě"/>
+			<when state="macron" output="Ē"/>
 		</action>
 		<action id="F">
 			<when state="none" output="F"/>
@@ -950,6 +955,7 @@
 			<when state="none" output="G"/>
 			<when state="acute" output="Ǵ"/>
 			<when state="caron" output="Ǧ"/>
+			<when state="macron" output="Ḡ"/>
 		</action>
 		<action id="H">
 			<when state="none" output="H"/>
@@ -961,16 +967,19 @@
 			<when state="acute" output="Í"/>
 			<when state="caron" output="Ǐ"/>
 			<when state="dot" output="İ"/>
+			<when state="macron" output="Ī"/>
 		</action>
 		<action id="J">
 			<when state="none" output="J"/>
 			<when state="acute" output="J́"/>
 			<when state="caron" output="J̌"/>
+			<when state="macron" output="J̄"/>
 		</action>
 		<action id="K">
 			<when state="none" output="K"/>
 			<when state="acute" output="Ḱ"/>
 			<when state="caron" output="Ǩ"/>
+			<when state="macron" output="K̄"/>
 		</action>
 		<action id="L">
 			<when state="none" output="L"/>
@@ -981,77 +990,92 @@
 			<when state="none" output="M"/>
 			<when state="acute" output="Ḿ"/>
 			<when state="caron" output="M̌"/>
+			<when state="macron" output="M̄"/>
 		</action>
 		<action id="N">
 			<when state="none" output="N"/>
 			<when state="acute" output="Ń"/>
 			<when state="caron" output="Ň"/>
+			<when state="macron" output="N̄"/>
 		</action>
 		<action id="O">
 			<when state="none" output="O"/>
 			<when state="acute" output="Ó"/>
 			<when state="caron" output="Ǒ"/>
+			<when state="macron" output="Ō"/>
 		</action>
 		<action id="P">
 			<when state="none" output="P"/>
 			<when state="acute" output="Ṕ"/>
 			<when state="caron" output="P̌"/>
+			<when state="macron" output="P̄"/>
 		</action>
 		<action id="Q">
 			<when state="none" output="Q"/>
 			<when state="acute" output="Q́"/>
 			<when state="caron" output="Q̌"/>
+			<when state="macron" output="Q̄"/>
 		</action>
 		<action id="R">
 			<when state="none" output="R"/>
 			<when state="acute" output="Ŕ"/>
 			<when state="caron" output="Ř"/>
+			<when state="macron" output="R̄"/>
 		</action>
 		<action id="S">
 			<when state="none" output="S"/>
 			<when state="acute" output="Ś"/>
 			<when state="caron" output="Š"/>
+			<when state="macron" output="S̄"/>
 		</action>
 		<action id="T">
 			<when state="none" output="T"/>
 			<when state="acute" output="T́"/>
 			<when state="caron" output="Ť"/>
+			<when state="macron" output="T̄"/>
 		</action>
 		<action id="U">
 			<when state="none" output="U"/>
 			<when state="acute" output="Ú"/>
 			<when state="caron" output="Ǔ"/>
+			<when state="macron" output="Ū"/>
 		</action>
 		<action id="V">
 			<when state="none" output="V"/>
 			<when state="acute" output="V́"/>
 			<when state="caron" output="V̌"/>
+			<when state="macron" output="V̄"/>
 		</action>
 		<action id="W">
 			<when state="none" output="W"/>
 			<when state="acute" output="Ẃ"/>
 			<when state="caron" output="W̌"/>
+			<when state="macron" output="W̄"/>
 		</action>
 		<action id="X">
 			<when state="none" output="X"/>
 			<when state="acute" output="X́"/>
 			<when state="caron" output="X̌"/>
+			<when state="macron" output="X̄"/>
 		</action>
 		<action id="Y">
 			<when state="none" output="Y"/>
 			<when state="acute" output="Ý"/>
 			<when state="caron" output="Y̌"/>
+			<when state="macron" output="Ȳ"/>
 		</action>
 		<action id="Z">
 			<when state="none" output="Z"/>
 			<when state="acute" output="Ź"/>
 			<when state="caron" output="Ž"/>
+			<when state="macron" output="Z̄"/>
 		</action>
 		<action id="a">
 			<when state="none" output="a"/>
 			<when state="acute" output="á"/>
 			<when state="caron" output="ǎ"/>
 			<when state="dot" output="ȧ"/>
+			<when state="macron" output="ā"/>
 		</action>
 		<action id="action">
 			<when state="none" output=""/>
@@ -1070,12 +1094,14 @@
 			<when state="acute" output="b́"/>
 			<when state="caron" output="b̌"/>
 			<when state="dot" output="ḃ"/>
+			<when state="macron" output="b̄"/>
 		</action>
 		<action id="c">
 			<when state="none" output="c"/>
 			<when state="acute" output="ć"/>
 			<when state="caron" output="č"/>
 			<when state="dot" output="ċ"/>
+			<when state="macron" output="c̄"/>
 		</action>
 		<action id="caron">
 			<when state="none" next="caron"/>
@@ -1086,6 +1112,7 @@
 			<when state="acute" output="d́"/>
 			<when state="caron" output="ď"/>
 			<when state="dot" output="ḋ"/>
+			<when state="macron" output="d̄"/>
 		</action>
 		<action id="dot">
 			<when state="none" next="dot"/>
@@ -1095,6 +1122,7 @@
 			<when state="acute" output="é"/>
 			<when state="caron" output="ě"/>
 			<when state="dot" output="ė"/>
+			<when state="macron" output="ē"/>
 		</action>
 		<action id="f">
 			<when state="none" output="f"/>
@@ -1107,6 +1135,7 @@
 			<when state="acute" output="ǵ"/>
 			<when state="caron" output="ǧ"/>
 			<when state="dot" output="ġ"/>
+			<when state="macron" output="ḡ"/>
 		</action>
 		<action id="h">
 			<when state="none" output="h"/>
@@ -1119,18 +1148,21 @@
 			<when state="acute" output="í"/>
 			<when state="caron" output="ǐ"/>
 			<when state="dot" output="ı"/>
+			<when state="macron" output="ī"/>
 		</action>
 		<action id="j">
 			<when state="none" output="j"/>
 			<when state="acute" output="ȷ́"/>
 			<when state="caron" output="ǰ"/>
 			<when state="dot" output="ȷ"/>
+			<when state="macron" output="j̄"/>
 		</action>
 		<action id="k">
 			<when state="none" output="k"/>
 			<when state="acute" output="ḱ"/>
 			<when state="caron" output="ǩ"/>
 			<when state="dot" output="k̇"/>
+			<when state="macron" output="k̄"/>
 		</action>
 		<action id="l">
 			<when state="none" output="l"/>
@@ -1143,84 +1175,101 @@
 			<when state="acute" output="ḿ"/>
 			<when state="caron" output="m̌"/>
 			<when state="dot" output="ṁ"/>
+			<when state="macron" output="m̄"/>
 		</action>
 		<action id="n">
 			<when state="none" output="n"/>
 			<when state="acute" output="ń"/>
 			<when state="caron" output="ň"/>
 			<when state="dot" output="ṅ"/>
+			<when state="macron" output="n̄"/>
 		</action>
 		<action id="o">
 			<when state="none" output="o"/>
 			<when state="acute" output="ó"/>
 			<when state="caron" output="ǒ"/>
 			<when state="dot" output="ȯ"/>
+			<when state="macron" output="ō"/>
 		</action>
 		<action id="p">
 			<when state="none" output="p"/>
 			<when state="acute" output="ṕ"/>
 			<when state="caron" output="p̌"/>
 			<when state="dot" output="ṗ"/>
+			<when state="macron" output="p̄"/>
 		</action>
 		<action id="q">
 			<when state="none" output="q"/>
 			<when state="acute" output="q́"/>
 			<when state="caron" output="q̌"/>
 			<when state="dot" output="q̇"/>
+			<when state="macron" output="q̄"/>
 		</action>
 		<action id="r">
 			<when state="none" output="r"/>
 			<when state="acute" output="ŕ"/>
 			<when state="caron" output="ř"/>
 			<when state="dot" output="ṙ"/>
+			<when state="macron" output="r̄"/>
 		</action>
 		<action id="s">
 			<when state="none" output="s"/>
 			<when state="acute" output="ś"/>
 			<when state="caron" output="š"/>
 			<when state="dot" output="ṡ"/>
+			<when state="macron" output="s̄"/>
 		</action>
 		<action id="t">
 			<when state="none" output="t"/>
 			<when state="acute" output="t́"/>
 			<when state="caron" output="ť"/>
 			<when state="dot" output="ṫ"/>
+			<when state="macron" output="t̄"/>
 		</action>
 		<action id="u">
 			<when state="none" output="u"/>
 			<when state="acute" output="ú"/>
 			<when state="caron" output="ǔ"/>
 			<when state="dot" output="u̇"/>
+			<when state="macron" output="ū"/>
 		</action>
 		<action id="v">
 			<when state="none" output="v"/>
 			<when state="acute" output="v́"/>
 			<when state="caron" output="v̌"/>
 			<when state="dot" output="v̇"/>
+			<when state="macron" output="v̄"/>
 		</action>
 		<action id="w">
 			<when state="none" output="w"/>
 			<when state="acute" output="ẃ"/>
 			<when state="caron" output="w̌"/>
 			<when state="dot" output="ẇ"/>
+			<when state="macron" output="w̄"/>
 		</action>
 		<action id="x">
 			<when state="none" output="x"/>
 			<when state="acute" output="x́"/>
 			<when state="caron" output="x̌"/>
 			<when state="dot" output="ẋ"/>
+			<when state="macron" output="x̄"/>
 		</action>
 		<action id="y">
 			<when state="none" output="y"/>
 			<when state="acute" output="ý"/>
 			<when state="caron" output="y̌"/>
 			<when state="dot" output="ẏ"/>
+			<when state="macron" output="ȳ"/>
 		</action>
 		<action id="z">
 			<when state="none" output="z"/>
 			<when state="acute" output="ź"/>
 			<when state="caron" output="ž"/>
 			<when state="dot" output="ż"/>
+			<when state="macron" output="z̄"/>
+		</action>
+		<action id="¯">
+			<when state="none" next="macron"/>
 		</action>
 		<action id="Ё">
 			<when state="none" output="Ё"/>
@@ -1231,5 +1280,6 @@
 		<when state="acute" output="´"/>
 		<when state="caron" output="ˇ"/>
 		<when state="dot" output="·&#x000A;·&#x000A;·"/>
+		<when state="macron" output="¯"/>
 	</terminators>
 </keyboard>
