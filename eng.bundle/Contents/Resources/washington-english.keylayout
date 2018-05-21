@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2018-05-21 at 10:31 (GMT+1)-->
+<!--Last edited by Ukelele version 3.2.4.172 on 2018-05-21 at 10:44 (GMT+1)-->
 <keyboard group="126" id="-28100" name="Washington English" maxout="5">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -173,7 +173,7 @@
 			<key code="9" action="K"/>
 			<key code="10" output=""/>
 			<key code="11" action="X"/>
-			<key code="12" output=":"/>
+			<key code="12" action=": 1"/>
 			<key code="13" output="!"/>
 			<key code="14" action="?"/>
 			<key code="15" action="P"/>
@@ -292,7 +292,7 @@
 			<!-- gap, 10 -->
 			<key code="10" output="□"/>
 			<key code="11" action="∑"/>
-			<key code="12" output=":"/>
+			<key code="12" action=":"/>
 			<key code="13" action=", 1"/>
 			<key code="14" action=". 1"/>
 			<key code="15" action="dot"/>
@@ -398,26 +398,26 @@
 			<key code="126" output="&#x001E;"/>
 		</keyMap>
 		<keyMap index="3">
-			<key code="0" output="α"/>
-			<key code="1" output=""/>
-			<key code="2" output=""/>
-			<key code="3" output=""/>
+			<key code="0" action="α"/>
+			<key code="1" action="action 4"/>
+			<key code="2" action="action 5"/>
+			<key code="3" action="action 6"/>
 			<key code="4" output="Ґ"/>
-			<key code="5" output=""/>
+			<key code="5" action="action 7"/>
 			<key code="6" action="action"/>
 			<!-- gap, 7 -->
-			<key code="7" output=""/>
+			<key code="7" action="action 8"/>
 			<key code="8" output=""/>
-			<key code="9" output=""/>
+			<key code="9" action="action 9"/>
 			<!-- gap, 10 -->
 			<key code="10" output=""/>
-			<key code="11" output=""/>
-			<key code="12" output="±"/>
+			<key code="11" action="action 10"/>
+			<key code="12" action="± 1"/>
 			<key code="13" output="Щ"/>
 			<key code="14" action="Ё"/>
-			<key code="15" output="®"/>
+			<key code="15" action="®"/>
 			<key code="16" output="™"/>
-			<key code="17" output="Ћ"/>
+			<key code="17" action="Ћ"/>
 			<key code="18" output="Ї"/>
 			<key code="19" output="Ё"/>
 			<key code="20" output="Є"/>
@@ -434,22 +434,22 @@
 			<key code="31" output="‘"/>
 			<key code="32" output="γ"/>
 			<key code="33" output="”"/>
-			<key code="34" output="І"/>
+			<key code="34" action="І"/>
 			<key code="35" output="’"/>
 			<key code="36" output="&#x000D;"/>
-			<key code="37" output="Љ"/>
-			<key code="38" output="Ј"/>
+			<key code="37" action="Љ"/>
+			<key code="38" action="Ј"/>
 			<key code="39" output="≠"/>
-			<key code="40" output="Ќ"/>
-			<key code="41" output="’"/>
+			<key code="40" action="Ќ"/>
+			<key code="41" action="’"/>
 			<key code="42" output=""/>
-			<key code="43" output="∵"/>
-			<key code="44" output=""/>
-			<key code="45" output="β"/>
-			<key code="46" output=""/>
-			<key code="47" output=""/>
+			<key code="43" action="∵"/>
+			<key code="44" action="action 13"/>
+			<key code="45" action="β"/>
+			<key code="46" action="action 11"/>
+			<key code="47" action="action 12"/>
 			<key code="48" output="&#x0009;"/>
-			<key code="49" output=" "/>
+			<key code="49" action=" "/>
 			<key code="50" output="∓"/>
 			<key code="51" output="&#x0008;"/>
 			<key code="52" output="&#x0003;"/>
@@ -877,15 +877,18 @@
 			<when state="none" output=" "/>
 			<when state="acute" output="´ "/>
 			<when state="caron" output="ˇ "/>
+			<when state="diaresis" output="¨"/>
 		</action>
 		<action id="  1">
 			<when state="none" output=" "/>
 			<when state="acute" output="´ "/>
 			<when state="caron" output="ˇ "/>
+			<when state="diaresis" output="¨"/>
 		</action>
 		<action id="  2">
 			<when state="none" output=" "/>
 			<when state="acute" output="´ "/>
+			<when state="diaresis" output="¨"/>
 		</action>
 		<action id="!">
 			<when state="none" output="!"/>
@@ -902,6 +905,7 @@
 		<action id="%">
 			<when state="none" output="%"/>
 			<when state="acute" output="ć"/>
+			<when state="diaresis" output="c̈"/>
 		</action>
 		<action id="&#x0027;">
 			<when state="none" output="&#x0027;"/>
@@ -933,30 +937,36 @@
 		<action id="0">
 			<when state="none" output="0"/>
 			<when state="acute" output="ś"/>
+			<when state="diaresis" output="s̈"/>
 		</action>
 		<action id="1">
 			<when state="none" output="1"/>
 			<when state="acute" output="á"/>
+			<when state="diaresis" output="ä"/>
 			<when state="tilde" output="ã"/>
 		</action>
 		<action id="2">
 			<when state="none" output="2"/>
 			<when state="acute" output="ó"/>
+			<when state="diaresis" output="ö"/>
 			<when state="tilde" output="õ"/>
 		</action>
 		<action id="3">
 			<when state="none" output="3"/>
 			<when state="acute" output="é"/>
+			<when state="diaresis" output="ë"/>
 			<when state="tilde" output="ẽ"/>
 		</action>
 		<action id="4">
 			<when state="none" output="4"/>
 			<when state="acute" output="ú"/>
+			<when state="diaresis" output="ü"/>
 			<when state="tilde" output="ũ"/>
 		</action>
 		<action id="5">
 			<when state="none" output="5"/>
 			<when state="acute" output="í"/>
+			<when state="diaresis" output="ï"/>
 			<when state="tilde" output="ĩ"/>
 		</action>
 		<action id="6">
@@ -966,18 +976,30 @@
 		<action id="7">
 			<when state="none" output="7"/>
 			<when state="acute" output="h́"/>
+			<when state="diaresis" output="ḧ"/>
 		</action>
 		<action id="8">
 			<when state="none" output="8"/>
 			<when state="acute" output="t́"/>
+			<when state="diaresis" output="ẗ"/>
 		</action>
 		<action id="9">
 			<when state="none" output="9"/>
 			<when state="acute" output="ń"/>
+			<when state="diaresis" output="n̈"/>
 			<when state="tilde" output="ñ"/>
+		</action>
+		<action id=":">
+			<when state="none" next="diaresis"/>
+			<when state="diaresis" output="¨"/>
+		</action>
+		<action id=": 1">
+			<when state="none" output=":"/>
+			<when state="diaresis" output="¨"/>
 		</action>
 		<action id=";">
 			<when state="none" output=";"/>
+			<when state="diaresis" output="¨"/>
 		</action>
 		<action id="?">
 			<when state="none" output="?"/>
@@ -987,6 +1009,7 @@
 			<when state="none" output="A"/>
 			<when state="acute" output="Á"/>
 			<when state="caron" output="Ǎ"/>
+			<when state="diaresis" output="Ä"/>
 			<when state="grave" output="À"/>
 			<when state="macron" output="Ā"/>
 			<when state="tilde" output="Ã"/>
@@ -995,12 +1018,14 @@
 			<when state="none" output="B"/>
 			<when state="acute" output="B́"/>
 			<when state="caron" output="B̌"/>
+			<when state="diaresis" output="B̈"/>
 			<when state="macron" output="B̄"/>
 		</action>
 		<action id="C">
 			<when state="none" output="C"/>
 			<when state="acute" output="Ć"/>
 			<when state="caron" output="Č"/>
+			<when state="diaresis" output="C̈"/>
 			<when state="macron" output="C̄"/>
 		</action>
 		<action id="D">
@@ -1013,6 +1038,7 @@
 			<when state="none" output="E"/>
 			<when state="acute" output="É"/>
 			<when state="caron" output="Ě"/>
+			<when state="diaresis" output="Ë"/>
 			<when state="grave" output="È"/>
 			<when state="macron" output="Ē"/>
 			<when state="tilde" output="Ẽ"/>
@@ -1032,12 +1058,14 @@
 			<when state="none" output="H"/>
 			<when state="acute" output="H́"/>
 			<when state="caron" output="Ȟ"/>
+			<when state="diaresis" output="Ḧ"/>
 			<when state="grave" output="H̀"/>
 		</action>
 		<action id="I">
 			<when state="none" output="I"/>
 			<when state="acute" output="Í"/>
 			<when state="caron" output="Ǐ"/>
+			<when state="diaresis" output="Ï"/>
 			<when state="dot" output="İ"/>
 			<when state="grave" output="Ì"/>
 			<when state="macron" output="Ī"/>
@@ -1053,6 +1081,7 @@
 			<when state="none" output="K"/>
 			<when state="acute" output="Ḱ"/>
 			<when state="caron" output="Ǩ"/>
+			<when state="diaresis" output="K̈"/>
 			<when state="grave" output="K̀"/>
 			<when state="macron" output="K̄"/>
 		</action>
@@ -1065,6 +1094,7 @@
 			<when state="none" output="M"/>
 			<when state="acute" output="Ḿ"/>
 			<when state="caron" output="M̌"/>
+			<when state="diaresis" output="M̈"/>
 			<when state="grave" output="M̀"/>
 			<when state="macron" output="M̄"/>
 		</action>
@@ -1072,6 +1102,7 @@
 			<when state="none" output="N"/>
 			<when state="acute" output="Ń"/>
 			<when state="caron" output="Ň"/>
+			<when state="diaresis" output="N̈"/>
 			<when state="grave" output="Ǹ"/>
 			<when state="macron" output="N̄"/>
 			<when state="tilde" output="Ñ"/>
@@ -1080,6 +1111,7 @@
 			<when state="none" output="O"/>
 			<when state="acute" output="Ó"/>
 			<when state="caron" output="Ǒ"/>
+			<when state="diaresis" output="Ö"/>
 			<when state="grave" output="Ò"/>
 			<when state="macron" output="Ō"/>
 			<when state="tilde" output="Õ"/>
@@ -1088,12 +1120,14 @@
 			<when state="none" output="P"/>
 			<when state="acute" output="Ṕ"/>
 			<when state="caron" output="P̌"/>
+			<when state="diaresis" output="P̈"/>
 			<when state="macron" output="P̄"/>
 		</action>
 		<action id="Q">
 			<when state="none" output="Q"/>
 			<when state="acute" output="Q́"/>
 			<when state="caron" output="Q̌"/>
+			<when state="diaresis" output="Q̈"/>
 			<when state="macron" output="Q̄"/>
 		</action>
 		<action id="R">
@@ -1107,6 +1141,7 @@
 			<when state="none" output="S"/>
 			<when state="acute" output="Ś"/>
 			<when state="caron" output="Š"/>
+			<when state="diaresis" output="S̈"/>
 			<when state="grave" output="S̀"/>
 			<when state="macron" output="S̄"/>
 		</action>
@@ -1114,6 +1149,7 @@
 			<when state="none" output="T"/>
 			<when state="acute" output="T́"/>
 			<when state="caron" output="Ť"/>
+			<when state="diaresis" output="T̈"/>
 			<when state="grave" output="T̀"/>
 			<when state="macron" output="T̄"/>
 		</action>
@@ -1121,6 +1157,7 @@
 			<when state="none" output="U"/>
 			<when state="acute" output="Ú"/>
 			<when state="caron" output="Ǔ"/>
+			<when state="diaresis" output="Ü"/>
 			<when state="grave" output="Ù"/>
 			<when state="macron" output="Ū"/>
 			<when state="tilde" output="Ũ"/>
@@ -1129,6 +1166,7 @@
 			<when state="none" output="V"/>
 			<when state="acute" output="V́"/>
 			<when state="caron" output="V̌"/>
+			<when state="diaresis" output="V̈"/>
 			<when state="grave" output="V̀"/>
 			<when state="macron" output="V̄"/>
 			<when state="tilde" output="Ṽ"/>
@@ -1137,6 +1175,7 @@
 			<when state="none" output="W"/>
 			<when state="acute" output="Ẃ"/>
 			<when state="caron" output="W̌"/>
+			<when state="diaresis" output="Ẅ"/>
 			<when state="grave" output="Ẁ"/>
 			<when state="macron" output="W̄"/>
 		</action>
@@ -1144,6 +1183,7 @@
 			<when state="none" output="X"/>
 			<when state="acute" output="X́"/>
 			<when state="caron" output="X̌"/>
+			<when state="diaresis" output="Ẍ"/>
 			<when state="grave" output="X̀"/>
 			<when state="macron" output="X̄"/>
 		</action>
@@ -1151,6 +1191,7 @@
 			<when state="none" output="Y"/>
 			<when state="acute" output="Ý"/>
 			<when state="caron" output="Y̌"/>
+			<when state="diaresis" output="Ÿ"/>
 			<when state="grave" output="Ỳ"/>
 			<when state="macron" output="Ȳ"/>
 			<when state="tilde" output="Ỹ"/>
@@ -1159,6 +1200,7 @@
 			<when state="none" output="Z"/>
 			<when state="acute" output="Ź"/>
 			<when state="caron" output="Ž"/>
+			<when state="diaresis" output="Z̈"/>
 			<when state="grave" output="Z̀"/>
 			<when state="macron" output="Z̄"/>
 		</action>
@@ -1170,6 +1212,7 @@
 			<when state="none" output="a"/>
 			<when state="acute" output="á"/>
 			<when state="caron" output="ǎ"/>
+			<when state="diaresis" output="ä"/>
 			<when state="dot" output="ȧ"/>
 			<when state="grave" output="à"/>
 			<when state="macron" output="ā"/>
@@ -1184,7 +1227,24 @@
 		<action id="action 1">
 			<when state="none" output=""/>
 			<when state="acute" output="ý"/>
+			<when state="diaresis" output="ÿ"/>
 			<when state="tilde" output="ỹ"/>
+		</action>
+		<action id="action 10">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Ẍ"/>
+		</action>
+		<action id="action 11">
+			<when state="none" output=""/>
+			<when state="diaresis" output="M̈"/>
+		</action>
+		<action id="action 12">
+			<when state="none" output=""/>
+			<when state="diaresis" output="V̈"/>
+		</action>
+		<action id="action 13">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Z̈"/>
 		</action>
 		<action id="action 2">
 			<when state="none" output=""/>
@@ -1193,6 +1253,30 @@
 		<action id="action 3">
 			<when state="none" output=""/>
 			<when state="acute" output="ǵ"/>
+		</action>
+		<action id="action 4">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Ö"/>
+		</action>
+		<action id="action 5">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Ë"/>
+		</action>
+		<action id="action 6">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Ü"/>
+		</action>
+		<action id="action 7">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Ï"/>
+		</action>
+		<action id="action 8">
+			<when state="none" output=""/>
+			<when state="diaresis" output="Q̈"/>
+		</action>
+		<action id="action 9">
+			<when state="none" output=""/>
+			<when state="diaresis" output="K̈"/>
 		</action>
 		<action id="acute">
 			<when state="none" next="grave"/>
@@ -1205,6 +1289,7 @@
 			<when state="none" output="b"/>
 			<when state="acute" output="b́"/>
 			<when state="caron" output="b̌"/>
+			<when state="diaresis" output="b̈"/>
 			<when state="dot" output="ḃ"/>
 			<when state="macron" output="b̄"/>
 		</action>
@@ -1212,6 +1297,7 @@
 			<when state="none" output="c"/>
 			<when state="acute" output="ć"/>
 			<when state="caron" output="č"/>
+			<when state="diaresis" output="c̈"/>
 			<when state="dot" output="ċ"/>
 			<when state="macron" output="c̄"/>
 		</action>
@@ -1219,6 +1305,7 @@
 			<when state="none" next="caron"/>
 			<when state="acute" output="v́"/>
 			<when state="caron" output="ˇ"/>
+			<when state="diaresis" output="v̈"/>
 			<when state="tilde" output="ṽ"/>
 		</action>
 		<action id="d">
@@ -1231,11 +1318,13 @@
 		<action id="dot">
 			<when state="none" next="dot"/>
 			<when state="acute" output="ṕ"/>
+			<when state="diaresis" output="p̈"/>
 		</action>
 		<action id="e">
 			<when state="none" output="e"/>
 			<when state="acute" output="é"/>
 			<when state="caron" output="ě"/>
+			<when state="diaresis" output="ë"/>
 			<when state="dot" output="ė"/>
 			<when state="grave" output="è"/>
 			<when state="macron" output="ē"/>
@@ -1258,6 +1347,7 @@
 			<when state="none" output="h"/>
 			<when state="acute" output="h́"/>
 			<when state="caron" output="ȟ"/>
+			<when state="diaresis" output="ḧ"/>
 			<when state="dot" output="ḣ"/>
 			<when state="grave" output="h̀"/>
 		</action>
@@ -1265,6 +1355,7 @@
 			<when state="none" output="i"/>
 			<when state="acute" output="í"/>
 			<when state="caron" output="ǐ"/>
+			<when state="diaresis" output="ï"/>
 			<when state="dot" output="ı"/>
 			<when state="grave" output="ì"/>
 			<when state="macron" output="ī"/>
@@ -1281,6 +1372,7 @@
 			<when state="none" output="k"/>
 			<when state="acute" output="ḱ"/>
 			<when state="caron" output="ǩ"/>
+			<when state="diaresis" output="k̈"/>
 			<when state="dot" output="k̇"/>
 			<when state="grave" output="k̀"/>
 			<when state="macron" output="k̄"/>
@@ -1295,6 +1387,7 @@
 			<when state="none" output="m"/>
 			<when state="acute" output="ḿ"/>
 			<when state="caron" output="m̌"/>
+			<when state="diaresis" output="m̈"/>
 			<when state="dot" output="ṁ"/>
 			<when state="grave" output="m̀"/>
 			<when state="macron" output="m̄"/>
@@ -1303,6 +1396,7 @@
 			<when state="none" output="n"/>
 			<when state="acute" output="ń"/>
 			<when state="caron" output="ň"/>
+			<when state="diaresis" output="n̈"/>
 			<when state="dot" output="ṅ"/>
 			<when state="grave" output="ǹ"/>
 			<when state="macron" output="n̄"/>
@@ -1312,6 +1406,7 @@
 			<when state="none" output="o"/>
 			<when state="acute" output="ó"/>
 			<when state="caron" output="ǒ"/>
+			<when state="diaresis" output="ö"/>
 			<when state="dot" output="ȯ"/>
 			<when state="grave" output="ò"/>
 			<when state="macron" output="ō"/>
@@ -1321,6 +1416,7 @@
 			<when state="none" output="p"/>
 			<when state="acute" output="ṕ"/>
 			<when state="caron" output="p̌"/>
+			<when state="diaresis" output="p̈"/>
 			<when state="dot" output="ṗ"/>
 			<when state="macron" output="p̄"/>
 		</action>
@@ -1328,6 +1424,7 @@
 			<when state="none" output="q"/>
 			<when state="acute" output="q́"/>
 			<when state="caron" output="q̌"/>
+			<when state="diaresis" output="q̈"/>
 			<when state="dot" output="q̇"/>
 			<when state="macron" output="q̄"/>
 		</action>
@@ -1343,6 +1440,7 @@
 			<when state="none" output="s"/>
 			<when state="acute" output="ś"/>
 			<when state="caron" output="š"/>
+			<when state="diaresis" output="s̈"/>
 			<when state="dot" output="ṡ"/>
 			<when state="grave" output="s̀"/>
 			<when state="macron" output="s̄"/>
@@ -1351,6 +1449,7 @@
 			<when state="none" output="t"/>
 			<when state="acute" output="t́"/>
 			<when state="caron" output="ť"/>
+			<when state="diaresis" output="ẗ"/>
 			<when state="dot" output="ṫ"/>
 			<when state="grave" output="t̀"/>
 			<when state="macron" output="t̄"/>
@@ -1359,6 +1458,7 @@
 			<when state="none" output="u"/>
 			<when state="acute" output="ú"/>
 			<when state="caron" output="ǔ"/>
+			<when state="diaresis" output="ü"/>
 			<when state="dot" output="u̇"/>
 			<when state="grave" output="ù"/>
 			<when state="macron" output="ū"/>
@@ -1368,6 +1468,7 @@
 			<when state="none" output="v"/>
 			<when state="acute" output="v́"/>
 			<when state="caron" output="v̌"/>
+			<when state="diaresis" output="v̈"/>
 			<when state="dot" output="v̇"/>
 			<when state="grave" output="v̀"/>
 			<when state="macron" output="v̄"/>
@@ -1377,6 +1478,7 @@
 			<when state="none" output="w"/>
 			<when state="acute" output="ẃ"/>
 			<when state="caron" output="w̌"/>
+			<when state="diaresis" output="ẅ"/>
 			<when state="dot" output="ẇ"/>
 			<when state="grave" output="ẁ"/>
 			<when state="macron" output="w̄"/>
@@ -1385,6 +1487,7 @@
 			<when state="none" output="x"/>
 			<when state="acute" output="x́"/>
 			<when state="caron" output="x̌"/>
+			<when state="diaresis" output="ẍ"/>
 			<when state="dot" output="ẋ"/>
 			<when state="grave" output="x̀"/>
 			<when state="macron" output="x̄"/>
@@ -1393,6 +1496,7 @@
 			<when state="none" output="y"/>
 			<when state="acute" output="ý"/>
 			<when state="caron" output="y̌"/>
+			<when state="diaresis" output="ÿ"/>
 			<when state="dot" output="ẏ"/>
 			<when state="grave" output="ỳ"/>
 			<when state="macron" output="ȳ"/>
@@ -1402,19 +1506,33 @@
 			<when state="none" output="z"/>
 			<when state="acute" output="ź"/>
 			<when state="caron" output="ž"/>
+			<when state="diaresis" output="z̈"/>
 			<when state="dot" output="ż"/>
 			<when state="grave" output="z̀"/>
 			<when state="macron" output="z̄"/>
 		</action>
+		<action id=" ">
+			<when state="none" output=" "/>
+			<when state="diaresis" output="¨"/>
+		</action>
 		<action id="¬">
 			<when state="none" output="¬"/>
 			<when state="acute" output="ź"/>
+			<when state="diaresis" output="z̈"/>
+		</action>
+		<action id="®">
+			<when state="none" output="®"/>
+			<when state="diaresis" output="P̈"/>
 		</action>
 		<action id="¯">
 			<when state="none" next="macron"/>
 		</action>
 		<action id="±">
 			<when state="none" next="tilde"/>
+		</action>
+		<action id="± 1">
+			<when state="none" output="±"/>
+			<when state="diaresis" output="¨"/>
 		</action>
 		<action id="·">
 			<when state="none" output="·"/>
@@ -1423,37 +1541,81 @@
 		<action id="×">
 			<when state="none" output="×"/>
 			<when state="acute" output="q́"/>
+			<when state="diaresis" output="q̈"/>
+		</action>
+		<action id="α">
+			<when state="none" output="α"/>
+			<when state="diaresis" output="Ä"/>
+		</action>
+		<action id="β">
+			<when state="none" output="β"/>
+			<when state="diaresis" output="B̈"/>
 		</action>
 		<action id="Ё">
 			<when state="none" output="Ё"/>
 			<when state="dot" output="·"/>
 		</action>
+		<action id="І">
+			<when state="none" output="І"/>
+			<when state="diaresis" output="C̈"/>
+		</action>
+		<action id="Ј">
+			<when state="none" output="Ј"/>
+			<when state="diaresis" output="Ḧ"/>
+		</action>
+		<action id="Љ">
+			<when state="none" output="Љ"/>
+			<when state="diaresis" output="N̈"/>
+		</action>
+		<action id="Ћ">
+			<when state="none" output="Ћ"/>
+			<when state="diaresis" output="Ÿ"/>
+		</action>
+		<action id="Ќ">
+			<when state="none" output="Ќ"/>
+			<when state="diaresis" output="T̈"/>
+		</action>
+		<action id="’">
+			<when state="none" output="’"/>
+			<when state="diaresis" output="S̈"/>
+		</action>
 		<action id="∑">
 			<when state="none" output="∑"/>
 			<when state="acute" output="x́"/>
+			<when state="diaresis" output="ẍ"/>
 		</action>
 		<action id="√">
 			<when state="none" output="√"/>
 			<when state="acute" output="ḱ"/>
+			<when state="diaresis" output="k̈"/>
 		</action>
 		<action id="∫">
 			<when state="none" output="∫"/>
 			<when state="acute" output="b́"/>
+			<when state="diaresis" output="b̈"/>
 		</action>
 		<action id="∮">
 			<when state="none" output="∮"/>
 			<when state="acute" output="ḿ"/>
+			<when state="diaresis" output="m̈"/>
 		</action>
 		<action id="∴">
 			<when state="none" output="∴"/>
 			<when state="acute" output="ẃ"/>
+			<when state="diaresis" output="ẅ"/>
+		</action>
+		<action id="∵">
+			<when state="none" output="∵"/>
+			<when state="diaresis" output="Ẅ"/>
 		</action>
 	</actions>
 	<terminators>
 		<when state="acute" output="´"/>
 		<when state="caron" output="ˇ"/>
+		<when state="diaresis" output="¨"/>
 		<when state="dot" output="·&#x000A;·&#x000A;·"/>
 		<when state="macron" output="¯"/>
 		<when state="tilde" output=""/>
+		<when state="umlaut" output=""/>
 	</terminators>
 </keyboard>
