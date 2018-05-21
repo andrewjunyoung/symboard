@@ -90,15 +90,19 @@ The decisions have been made as follows:
 
 # Compatibility
 
-This keyboard is compatible with the following diacriticized scripts (including romanized ones):
+This keyboard is compatible with the following diacriticized scripts (note that this includes romanized scripts):
 
+- Dutch
+- Chinese Mandarin, Pinyin (with tone marks)
+- Czech
 - Japanese Romaji (Hepburn, Nihonshiki, Kunrei)
 - Polish
-- Czech / Slovak
-- Pinyin (with tone marks)
+- Slovak
+- Spanish
 
 Hopefully to add support for the following scripts:
 
 - French
 - German
-- Spanish
+- Swedish
+- Cyrillic, ISO 9
