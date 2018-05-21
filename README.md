@@ -94,10 +94,11 @@ This keyboard is compatible with the following diacriticized scripts (including 
 
 - Japanese Romaji (Hepburn, Nihonshiki, Kunrei)
 - Polish
+- Czech / Slovak
+- Pinyin (with tone marks)
 
 Hopefully to add support for the following scripts:
 
-- Pinyin (with tone marks)
 - French
 - German
 - Spanish
