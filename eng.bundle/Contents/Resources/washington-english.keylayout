@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2018-05-21 at 11:02 (GMT+1)-->
+<!--Last edited by Ukelele version 3.2.4.172 on 2018-06-24 at 22:52 (GMT+1)-->
 <keyboard group="126" id="-28100" name="Washington English" maxout="5">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -528,7 +528,7 @@
 			<key code="7" action="q"/>
 			<key code="8" action="j"/>
 			<key code="9" action="k"/>
-			<key code="10" output="§"/>
+			<key code="10" output=""/>
 			<key code="11" action="x"/>
 			<key code="12" action=";"/>
 			<key code="13" action=","/>
@@ -891,7 +891,7 @@
 			<when state="diaresis" output="¨"/>
 		</action>
 		<action id="!">
-			<when state="none" output="!"/>
+			<when state="none" output="┘"/>
 			<when state="acute" output="ĺ"/>
 		</action>
 		<action id="&#x0022;">
@@ -903,7 +903,7 @@
 			<when state="macron" output="¯"/>
 		</action>
 		<action id="%">
-			<when state="none" output="%"/>
+			<when state="none" output="┐"/>
 			<when state="acute" output="ć"/>
 			<when state="diaresis" output="c̈"/>
 		</action>
@@ -935,56 +935,56 @@
 			<when state="dot" output="·"/>
 		</action>
 		<action id="0">
-			<when state="none" output="0"/>
+			<when state="none" output="→"/>
 			<when state="acute" output="ś"/>
 			<when state="diaresis" output="s̈"/>
 		</action>
 		<action id="1">
-			<when state="none" output="1"/>
+			<when state="none" output="a"/>
 			<when state="acute" output="á"/>
 			<when state="diaresis" output="ä"/>
 			<when state="tilde" output="ã"/>
 		</action>
 		<action id="2">
-			<when state="none" output="2"/>
+			<when state="none" output="o"/>
 			<when state="acute" output="ó"/>
 			<when state="diaresis" output="ö"/>
 			<when state="tilde" output="õ"/>
 		</action>
 		<action id="3">
-			<when state="none" output="3"/>
+			<when state="none" next="diaresis"/>
 			<when state="acute" output="é"/>
 			<when state="diaresis" output="ë"/>
 			<when state="tilde" output="ẽ"/>
 		</action>
 		<action id="4">
-			<when state="none" output="4"/>
+			<when state="none" output="u"/>
 			<when state="acute" output="ú"/>
 			<when state="diaresis" output="ü"/>
 			<when state="tilde" output="ũ"/>
 		</action>
 		<action id="5">
-			<when state="none" output="5"/>
+			<when state="none" output="↺"/>
 			<when state="acute" output="í"/>
 			<when state="diaresis" output="ï"/>
 			<when state="tilde" output="ĩ"/>
 		</action>
 		<action id="6">
-			<when state="none" output="6"/>
+			<when state="none" output="↻"/>
 			<when state="acute" output="d́"/>
 		</action>
 		<action id="7">
-			<when state="none" output="7"/>
+			<when state="none" output="←"/>
 			<when state="acute" output="h́"/>
 			<when state="diaresis" output="ḧ"/>
 		</action>
 		<action id="8">
-			<when state="none" output="8"/>
+			<when state="none" output="↑"/>
 			<when state="acute" output="t́"/>
 			<when state="diaresis" output="ẗ"/>
 		</action>
 		<action id="9">
-			<when state="none" output="9"/>
+			<when state="none" output="↓"/>
 			<when state="acute" output="ń"/>
 			<when state="diaresis" output="n̈"/>
 			<when state="tilde" output="ñ"/>
@@ -1205,7 +1205,7 @@
 			<when state="macron" output="Z̄"/>
 		</action>
 		<action id="^">
-			<when state="none" output="^"/>
+			<when state="none" output="└"/>
 			<when state="acute" output="ŕ"/>
 		</action>
 		<action id="a">
@@ -1225,7 +1225,7 @@
 			<when state="dot" output="·"/>
 		</action>
 		<action id="action 1">
-			<when state="none" output=""/>
+			<when state="none" output="─"/>
 			<when state="acute" output="ý"/>
 			<when state="diaresis" output="ÿ"/>
 			<when state="tilde" output="ỹ"/>
@@ -1247,11 +1247,11 @@
 			<when state="diaresis" output="Z̈"/>
 		</action>
 		<action id="action 2">
-			<when state="none" output=""/>
+			<when state="none" output="│"/>
 			<when state="acute" output="f́"/>
 		</action>
 		<action id="action 3">
-			<when state="none" output=""/>
+			<when state="none" output="┌"/>
 			<when state="acute" output="ǵ"/>
 		</action>
 		<action id="action 4">
