@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2018-06-24 at 22:52 (GMT+1)-->
+<!--Last edited by Ukelele version 3.2.4.172 on 2018-07-29 at 12:48 (GMT+1)-->
 <keyboard group="126" id="-28100" name="Washington English" maxout="5">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -171,7 +171,7 @@
 			<key code="7" action="Q"/>
 			<key code="8" action="J"/>
 			<key code="9" action="K"/>
-			<key code="10" output=""/>
+			<key code="10" output="·"/>
 			<key code="11" action="X"/>
 			<key code="12" action=": 1"/>
 			<key code="13" output="!"/>
@@ -528,7 +528,7 @@
 			<key code="7" action="q"/>
 			<key code="8" action="j"/>
 			<key code="9" action="k"/>
-			<key code="10" output=""/>
+			<key code="10" output="±"/>
 			<key code="11" action="x"/>
 			<key code="12" action=";"/>
 			<key code="13" action=","/>
