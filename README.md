@@ -95,6 +95,8 @@ This keyboard is compatible with the following diacriticized scripts (note that 
 - Dutch
 - Chinese Mandarin, Pinyin (with tone marks)
 - Czech
+- Greenlandic
+- Italian
 - Japanese Romaji (Hepburn, Nihonshiki, Kunrei)
 - Polish
 - Slovak
@@ -104,5 +106,5 @@ Hopefully to add support for the following scripts:
 
 - French
 - German
-- Swedish
+- Nordic (Danish, Faroese, Icelandic, Norwegian (Bokmal, Nynorsk), Swedish)
 - Cyrillic, ISO 9
