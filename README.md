@@ -90,21 +90,49 @@ The decisions have been made as follows:
 
 # Compatibility
 
-This keyboard is compatible with the following diacriticized scripts (note that this includes romanized scripts):
+This keyboard is compatible with the following diacriticized scripts:
 
+- Albanian
+- Asturian
+- Breton
+- Danish
 - Dutch
 - Chinese Mandarin, Pinyin (with tone marks)
 - Czech
+- English
+- Estonian
+- Esperanto
+- Faroese
+- French
+- Filipino
+- Galician
+- German
 - Greenlandic
+- Icelandic
+- Irish
 - Italian
 - Japanese Romaji (Hepburn, Nihonshiki, Kunrei)
-- Polish
+- Kurdish
+- Lakota
+- Latvian
+- Manx
+- Māori
+- Norwegian (Bokmal, Nynorsk)
+- Portuguese
+- Scottish Gaelic
+- Slovenian
 - Slovak
 - Spanish
+- Swedish
+- Welsh
 
 Hopefully to add support for the following scripts:
 
-- French
-- German
-- Nordic (Danish, Faroese, Icelandic, Norwegian (Bokmal, Nynorsk), Swedish)
+- Arabic, Romanization
+- Turkic (Azerbaijani, Crimean Tatar, Turkish, Turkmen)
 - Cyrillic, ISO 9
+- Hungarian
+- Lithuanian
+- Polish
+- Romanian
+- Vietnamese
