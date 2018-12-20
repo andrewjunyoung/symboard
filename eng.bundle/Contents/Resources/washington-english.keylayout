@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.4.172 on 2018-10-03 at 21:59 (GMT+1)-->
-<keyboard group="126" id="-31889" name="Washington English" maxout="5">
+<!--Last edited by Ukelele version 3.2.4.172 on 2018-12-20 at 03:23 (GMT)-->
+<keyboard group="126" id="-31889" name="Washington English" maxout="2">
 	<layouts>
 		<layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
 	</layouts>
@@ -892,6 +892,7 @@
 		</action>
 		<action id="!">
 			<when state="none" output="┘"/>
+			<when state="Extended Latin 1" output="ł"/>
 			<when state="acute" output="ĺ"/>
 			<when state="cedilla" output="ļ"/>
 			<when state="ring" output="l̥"/>
@@ -906,7 +907,7 @@
 			<when state="macron" output="¯"/>
 		</action>
 		<action id="%">
-			<when state="none" output="┐"/>
+			<when state="none" next="ogonek"/>
 			<when state="acute" output="ć"/>
 			<when state="cedilla" output="ç"/>
 			<when state="diaresis" output="c̈"/>
@@ -940,7 +941,7 @@
 			<when state="dot" output="·"/>
 		</action>
 		<action id=". 1">
-			<when state="none" output="."/>
+			<when state="none" next="dot"/>
 			<when state="dot" output="·"/>
 		</action>
 		<action id="0">
@@ -975,6 +976,7 @@
 		</action>
 		<action id="3">
 			<when state="none" next="E digraphs"/>
+			<when state="Extended Latin 1" output="ə"/>
 			<when state="acute" output="é"/>
 			<when state="cedilla" output="ȩ"/>
 			<when state="diaresis" output="ë"/>
@@ -1058,8 +1060,10 @@
 			<when state="caron" output="Ǎ"/>
 			<when state="cedilla" output="A̧"/>
 			<when state="diaresis" output="Ä"/>
+			<when state="dot" output="Ȧ"/>
 			<when state="grave" output="À"/>
 			<when state="macron" output="Ā"/>
+			<when state="ogonek" output="Ą"/>
 			<when state="ring" output="Å"/>
 			<when state="tilde" output="Ã"/>
 			<when state="ˆ" output="Â"/>
@@ -1070,6 +1074,7 @@
 			<when state="caron" output="B̌"/>
 			<when state="cedilla" output="B̧"/>
 			<when state="diaresis" output="B̈"/>
+			<when state="dot" output="Ḃ"/>
 			<when state="macron" output="B̄"/>
 			<when state="ˆ" output="B̂"/>
 		</action>
@@ -1079,7 +1084,9 @@
 			<when state="caron" output="Č"/>
 			<when state="cedilla" output="Ç"/>
 			<when state="diaresis" output="C̈"/>
+			<when state="dot" output="Ċ"/>
 			<when state="macron" output="C̄"/>
+			<when state="ogonek" output="C̨"/>
 			<when state="ˆ" output="Ĉ"/>
 		</action>
 		<action id="D">
@@ -1088,18 +1095,22 @@
 			<when state="acute" output="D́"/>
 			<when state="caron" output="Ď"/>
 			<when state="cedilla" output="Ḑ"/>
+			<when state="dot" output="Ḋ"/>
 			<when state="macron" output="D̄"/>
 			<when state="ring" output="D̊"/>
 			<when state="ˆ" output="D̂"/>
 		</action>
 		<action id="E">
 			<when state="none" output="E"/>
+			<when state="Extended Latin 1" output="Ə"/>
 			<when state="acute" output="É"/>
 			<when state="caron" output="Ě"/>
 			<when state="cedilla" output="Ȩ"/>
 			<when state="diaresis" output="Ë"/>
+			<when state="dot" output="Ė"/>
 			<when state="grave" output="È"/>
 			<when state="macron" output="Ē"/>
+			<when state="ogonek" output="Ę"/>
 			<when state="ring" output="E̊"/>
 			<when state="tilde" output="Ẽ"/>
 			<when state="ˆ" output="Ê"/>
@@ -1108,12 +1119,15 @@
 			<when state="none" output="F"/>
 			<when state="acute" output="F́"/>
 			<when state="caron" output="F̌"/>
+			<when state="dot" output="Ḟ"/>
 		</action>
 		<action id="G">
 			<when state="none" output="G"/>
+			<when state="Extended Latin 1" output="Ğ"/>
 			<when state="acute" output="Ǵ"/>
 			<when state="caron" output="Ǧ"/>
 			<when state="cedilla" output="Ģ"/>
+			<when state="dot" output="Ġ"/>
 			<when state="macron" output="Ḡ"/>
 			<when state="ring" output="G̊"/>
 			<when state="ˆ" output="Ĝ"/>
@@ -1124,6 +1138,7 @@
 			<when state="caron" output="Ȟ"/>
 			<when state="cedilla" output="Ḩ"/>
 			<when state="diaresis" output="Ḧ"/>
+			<when state="dot" output="Ḣ"/>
 			<when state="grave" output="H̀"/>
 			<when state="ˆ" output="Ĥ"/>
 		</action>
@@ -1136,6 +1151,7 @@
 			<when state="dot" output="İ"/>
 			<when state="grave" output="Ì"/>
 			<when state="macron" output="Ī"/>
+			<when state="ogonek" output="Į"/>
 			<when state="ring" output="I̊"/>
 			<when state="tilde" output="Ĩ"/>
 			<when state="ˆ" output="Î"/>
@@ -1144,7 +1160,9 @@
 			<when state="none" output="J"/>
 			<when state="acute" output="J́"/>
 			<when state="caron" output="J̌"/>
+			<when state="dot" output="J"/>
 			<when state="macron" output="J̄"/>
+			<when state="ogonek" output="J̨"/>
 			<when state="ring" output="J̊"/>
 			<when state="ˆ" output="Ĵ"/>
 		</action>
@@ -1154,15 +1172,19 @@
 			<when state="caron" output="Ǩ"/>
 			<when state="cedilla" output="Ķ"/>
 			<when state="diaresis" output="K̈"/>
+			<when state="dot" output="K̇"/>
 			<when state="grave" output="K̀"/>
 			<when state="macron" output="K̄"/>
 			<when state="ˆ" output="K̂"/>
 		</action>
 		<action id="L">
 			<when state="none" output="L"/>
+			<when state="Extended Latin 1" output="Ł"/>
 			<when state="acute" output="Ĺ"/>
 			<when state="caron" output="Ľ"/>
 			<when state="cedilla" output="Ļ"/>
+			<when state="dot" output="L̇"/>
+			<when state="ogonek" output="Ł̨"/>
 			<when state="ring" output="L̥"/>
 			<when state="ˆ" output="L̂"/>
 		</action>
@@ -1172,6 +1194,7 @@
 			<when state="caron" output="M̌"/>
 			<when state="cedilla" output="M̧"/>
 			<when state="diaresis" output="M̈"/>
+			<when state="dot" output="Ṁ"/>
 			<when state="grave" output="M̀"/>
 			<when state="macron" output="M̄"/>
 			<when state="ˆ" output="M̂"/>
@@ -1182,8 +1205,10 @@
 			<when state="caron" output="Ň"/>
 			<when state="cedilla" output="Ņ"/>
 			<when state="diaresis" output="N̈"/>
+			<when state="dot" output="Ṅ"/>
 			<when state="grave" output="Ǹ"/>
 			<when state="macron" output="N̄"/>
+			<when state="ogonek" output="N̨"/>
 			<when state="tilde" output="Ñ"/>
 			<when state="ˆ" output="N̂"/>
 		</action>
@@ -1195,8 +1220,10 @@
 			<when state="caron" output="Ǒ"/>
 			<when state="cedilla" output="O̧"/>
 			<when state="diaresis" output="Ö"/>
+			<when state="dot" output="Ȯ"/>
 			<when state="grave" output="Ò"/>
 			<when state="macron" output="Ō"/>
+			<when state="ogonek" output="Ǫ"/>
 			<when state="ring" output="O̊"/>
 			<when state="tilde" output="Õ"/>
 			<when state="ˆ" output="Ô"/>
@@ -1206,6 +1233,7 @@
 			<when state="acute" output="Ṕ"/>
 			<when state="caron" output="P̌"/>
 			<when state="diaresis" output="P̈"/>
+			<when state="dot" output="Ṗ"/>
 			<when state="macron" output="P̄"/>
 		</action>
 		<action id="Q">
@@ -1214,6 +1242,7 @@
 			<when state="caron" output="Q̌"/>
 			<when state="cedilla" output="Q̧"/>
 			<when state="diaresis" output="Q̈"/>
+			<when state="dot" output="Q̇"/>
 			<when state="macron" output="Q̄"/>
 			<when state="ring" output="Q̊"/>
 		</action>
@@ -1222,6 +1251,7 @@
 			<when state="acute" output="Ŕ"/>
 			<when state="caron" output="Ř"/>
 			<when state="cedilla" output="Ŗ"/>
+			<when state="dot" output="Ṙ"/>
 			<when state="grave" output="R̀"/>
 			<when state="macron" output="R̄"/>
 			<when state="ˆ" output="R̂"/>
@@ -1233,8 +1263,10 @@
 			<when state="caron" output="Š"/>
 			<when state="cedilla" output="Ş"/>
 			<when state="diaresis" output="S̈"/>
+			<when state="dot" output="Ṡ"/>
 			<when state="grave" output="S̀"/>
 			<when state="macron" output="S̄"/>
+			<when state="ogonek" output="S̨"/>
 			<when state="ring" output="S̊"/>
 			<when state="ˆ" output="Ŝ"/>
 		</action>
@@ -1245,6 +1277,7 @@
 			<when state="caron" output="Ť"/>
 			<when state="cedilla" output="Ţ"/>
 			<when state="diaresis" output="T̈"/>
+			<when state="dot" output="Ṫ"/>
 			<when state="grave" output="T̀"/>
 			<when state="macron" output="T̄"/>
 			<when state="ˆ" output="T̂"/>
@@ -1255,8 +1288,10 @@
 			<when state="caron" output="Ǔ"/>
 			<when state="cedilla" output="U̧"/>
 			<when state="diaresis" output="Ü"/>
+			<when state="dot" output="U̇"/>
 			<when state="grave" output="Ù"/>
 			<when state="macron" output="Ū"/>
+			<when state="ogonek" output="Ų"/>
 			<when state="ring" output="Ů"/>
 			<when state="tilde" output="Ũ"/>
 			<when state="ˆ" output="Û"/>
@@ -1266,6 +1301,7 @@
 			<when state="acute" output="V́"/>
 			<when state="caron" output="V̌"/>
 			<when state="diaresis" output="V̈"/>
+			<when state="dot" output="V̇"/>
 			<when state="grave" output="V̀"/>
 			<when state="macron" output="V̄"/>
 			<when state="ring" output="V̊"/>
@@ -1277,6 +1313,7 @@
 			<when state="acute" output="Ẃ"/>
 			<when state="caron" output="W̌"/>
 			<when state="diaresis" output="Ẅ"/>
+			<when state="dot" output="Ẇ"/>
 			<when state="grave" output="Ẁ"/>
 			<when state="macron" output="W̄"/>
 			<when state="ring" output="W̊"/>
@@ -1289,6 +1326,7 @@
 			<when state="caron" output="X̌"/>
 			<when state="cedilla" output="X̧"/>
 			<when state="diaresis" output="Ẍ"/>
+			<when state="dot" output="Ẋ"/>
 			<when state="grave" output="X̀"/>
 			<when state="macron" output="X̄"/>
 			<when state="ring" output="X̊"/>
@@ -1299,8 +1337,10 @@
 			<when state="acute" output="Ý"/>
 			<when state="caron" output="Y̌"/>
 			<when state="diaresis" output="Ÿ"/>
+			<when state="dot" output="Ẏ"/>
 			<when state="grave" output="Ỳ"/>
 			<when state="macron" output="Ȳ"/>
+			<when state="ogonek" output="Y̨"/>
 			<when state="ring" output="Y̊"/>
 			<when state="tilde" output="Ỹ"/>
 			<when state="ˆ" output="Ŷ"/>
@@ -1311,8 +1351,10 @@
 			<when state="caron" output="Ž"/>
 			<when state="cedilla" output="Z̧"/>
 			<when state="diaresis" output="Z̈"/>
+			<when state="dot" output="Ż"/>
 			<when state="grave" output="Z̀"/>
 			<when state="macron" output="Z̄"/>
+			<when state="ogonek" output="Z̨"/>
 			<when state="ˆ" output="Ẑ"/>
 		</action>
 		<action id="^">
@@ -1338,6 +1380,7 @@
 			<when state="dot" output="ȧ"/>
 			<when state="grave" output="à"/>
 			<when state="macron" output="ā"/>
+			<when state="ogonek" output="ą"/>
 			<when state="ring" output="å"/>
 			<when state="tilde" output="ã"/>
 			<when state="ˆ" output="â"/>
@@ -1393,6 +1436,7 @@
 		</action>
 		<action id="action 3">
 			<when state="none" output="┌"/>
+			<when state="Extended Latin 1" output="ğ"/>
 			<when state="acute" output="ǵ"/>
 			<when state="cedilla" output="ģ"/>
 			<when state="ring" output="g̊"/>
@@ -1409,6 +1453,7 @@
 		</action>
 		<action id="action 5">
 			<when state="none" output=""/>
+			<when state="Extended Latin 1" output="Ə"/>
 			<when state="cedilla" output="Ȩ"/>
 			<when state="diaresis" output="Ë"/>
 			<when state="ring" output="E̊"/>
@@ -1465,6 +1510,7 @@
 			<when state="diaresis" output="c̈"/>
 			<when state="dot" output="ċ"/>
 			<when state="macron" output="c̄"/>
+			<when state="ogonek" output="c̨"/>
 			<when state="ˆ" output="ĉ"/>
 		</action>
 		<action id="caron">
@@ -1488,12 +1534,13 @@
 			<when state="ˆ" output="d̂"/>
 		</action>
 		<action id="dot">
-			<when state="none" next="dot"/>
+			<when state="none" output="p"/>
 			<when state="acute" output="ṕ"/>
 			<when state="diaresis" output="p̈"/>
 		</action>
 		<action id="e">
 			<when state="none" output="e"/>
+			<when state="Extended Latin 1" output="ə"/>
 			<when state="acute" output="é"/>
 			<when state="caron" output="ě"/>
 			<when state="cedilla" output="ȩ"/>
@@ -1501,6 +1548,7 @@
 			<when state="dot" output="ė"/>
 			<when state="grave" output="è"/>
 			<when state="macron" output="ē"/>
+			<when state="ogonek" output="ę"/>
 			<when state="ring" output="e̊"/>
 			<when state="tilde" output="ẽ"/>
 			<when state="ˆ" output="ê"/>
@@ -1513,6 +1561,7 @@
 		</action>
 		<action id="g">
 			<when state="none" output="g"/>
+			<when state="Extended Latin 1" output="ğ"/>
 			<when state="acute" output="ǵ"/>
 			<when state="caron" output="ǧ"/>
 			<when state="cedilla" output="ģ"/>
@@ -1540,6 +1589,7 @@
 			<when state="dot" output="ı"/>
 			<when state="grave" output="ì"/>
 			<when state="macron" output="ī"/>
+			<when state="ogonek" output="į"/>
 			<when state="ring" output="i̊"/>
 			<when state="tilde" output="ĩ"/>
 			<when state="ˆ" output="î"/>
@@ -1550,6 +1600,7 @@
 			<when state="caron" output="ǰ"/>
 			<when state="dot" output="ȷ"/>
 			<when state="macron" output="j̄"/>
+			<when state="ogonek" output="j̨"/>
 			<when state="ring" output="j̊"/>
 			<when state="ˆ" output="ĵ"/>
 		</action>
@@ -1566,10 +1617,12 @@
 		</action>
 		<action id="l">
 			<when state="none" output="l"/>
+			<when state="Extended Latin 1" output="ł"/>
 			<when state="acute" output="ĺ"/>
 			<when state="caron" output="ľ"/>
 			<when state="cedilla" output="ļ"/>
 			<when state="dot" output="l̇"/>
+			<when state="ogonek" output="ł̨"/>
 			<when state="ring" output="l̥"/>
 			<when state="ˆ" output="l̂"/>
 		</action>
@@ -1593,6 +1646,7 @@
 			<when state="dot" output="ṅ"/>
 			<when state="grave" output="ǹ"/>
 			<when state="macron" output="n̄"/>
+			<when state="ogonek" output="n̨"/>
 			<when state="tilde" output="ñ"/>
 			<when state="ˆ" output="n̂"/>
 		</action>
@@ -1607,6 +1661,7 @@
 			<when state="dot" output="ȯ"/>
 			<when state="grave" output="ò"/>
 			<when state="macron" output="ō"/>
+			<when state="ogonek" output="ǫ"/>
 			<when state="ring" output="o̊"/>
 			<when state="tilde" output="õ"/>
 			<when state="ˆ" output="ô"/>
@@ -1649,6 +1704,7 @@
 			<when state="dot" output="ṡ"/>
 			<when state="grave" output="s̀"/>
 			<when state="macron" output="s̄"/>
+			<when state="ogonek" output="s̨"/>
 			<when state="ring" output="s̊"/>
 			<when state="ˆ" output="ŝ"/>
 		</action>
@@ -1673,6 +1729,7 @@
 			<when state="dot" output="u̇"/>
 			<when state="grave" output="ù"/>
 			<when state="macron" output="ū"/>
+			<when state="ogonek" output="ų"/>
 			<when state="ring" output="ů"/>
 			<when state="tilde" output="ũ"/>
 			<when state="ˆ" output="û"/>
@@ -1721,6 +1778,7 @@
 			<when state="dot" output="ẏ"/>
 			<when state="grave" output="ỳ"/>
 			<when state="macron" output="ȳ"/>
+			<when state="ogonek" output="y̨"/>
 			<when state="ring" output="ẙ"/>
 			<when state="tilde" output="ỹ"/>
 			<when state="ˆ" output="ŷ"/>
@@ -1734,6 +1792,7 @@
 			<when state="dot" output="ż"/>
 			<when state="grave" output="z̀"/>
 			<when state="macron" output="z̄"/>
+			<when state="ogonek" output="z̨"/>
 			<when state="ˆ" output="ẑ"/>
 		</action>
 		<action id=" ">
@@ -1794,6 +1853,7 @@
 		</action>
 		<action id="γ">
 			<when state="none" output="γ"/>
+			<when state="Extended Latin 1" output="Ğ"/>
 			<when state="cedilla" output="Ģ"/>
 			<when state="ring" output="G̊"/>
 			<when state="ˆ" output="Ĝ"/>
@@ -1855,6 +1915,7 @@
 		</action>
 		<action id="’ 1">
 			<when state="none" output="’"/>
+			<when state="Extended Latin 1" output="Ł"/>
 			<when state="cedilla" output="Ļ"/>
 			<when state="ring" output="L̥"/>
 			<when state="ˆ" output="L̂"/>
@@ -1910,9 +1971,10 @@
 		<when state="caron" output="ˇ"/>
 		<when state="cedilla" output="¸"/>
 		<when state="diaresis" output="¨"/>
-		<when state="dot" output="·&#x000A;·&#x000A;·"/>
+		<when state="dot" output="·"/>
 		<when state="grave" output="`"/>
 		<when state="macron" output="¯"/>
+		<when state="ogonek" output="˛"/>
 		<when state="ring" output="˚"/>
 		<when state="tilde" output="~"/>
 		<when state="umlaut" output=""/>

@@ -94,6 +94,7 @@ This keyboard is compatible with the following diacriticized scripts:
 
 - Albanian
 - Asturian
+- Azerbaijani
 - Breton
 - Danish
 - Dutch
@@ -115,24 +116,26 @@ This keyboard is compatible with the following diacriticized scripts:
 - Kurdish
 - Lakota
 - Latvian
+- Lithuanian
 - Manx
 - Māori
 - Norwegian (Bokmal, Nynorsk)
+- Polish
 - Portuguese
+- Qazaq
 - Scottish Gaelic
 - Slovenian
 - Slovak
 - Spanish
 - Swedish
+- Turkish
+- Uzbek
 - Welsh
 
 Hopefully to add support for the following scripts:
 
-- Arabic, Romanization
-- Turkic (Azerbaijani, Crimean Tatar, Turkish, Turkmen)
+- Arabic romanization
 - Cyrillic, ISO 9
 - Hungarian
-- Lithuanian
-- Polish
 - Romanian
 - Vietnamese
