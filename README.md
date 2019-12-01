@@ -1,7 +1,10 @@
-# DvorakCustom
+# JDvorak
 
 A custom implementation of Dvorak which relocates certain keys based off a combination of logical grouping and comfort.
 
+## About the name
+
+The top left letter row on JDvorak begins with ;,.pyfgcrl. The first letter, unlike regular dvorak, is a semicolon (;), which looks like a lowercase J (j), hence «JDvorak».
 
 The full keyboard is, when typed on an ANSI keyboard:
 
