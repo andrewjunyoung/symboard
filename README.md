@@ -1,42 +1,40 @@
-# JDvorak
+# jDvorak
 
 A custom implementation of Dvorak which relocates certain keys based off a combination of logical grouping and comfort.
 
-## About the name
+## About
 
-The top left letter row on JDvorak begins with ;,.pyfgcrl. The first letter, unlike regular dvorak, is a semicolon (;), which looks like a lowercase J (j), hence «JDvorak».
+### Naming
 
-The full keyboard is, when typed on an ANSI keyboard:
+jDvorak (/dʒei dvoɹæk/) gets its name from its layout. Just like the QWERTY keyboard gets its name from its first few alphabetical characters, jDvorak gets its name from its top left letter - a semicolon (;), which looks like a lowercase J (j).
 
-\`1234567890[]
+### Layout
 
-;,.pyfgcrl/=\\
+The basic layout is as follows:
 
-aoeuidhtns-
+<img src="docs/res/images/basic_layout.png" alt="drawing" width="400"/>
 
-'qjkxbmwvz
+Pressing the shift and alt keys will provide access to different key sets, including modifier keys. These are presented below.
 
-SHIFT:
+|                    | Shift not pressed                                                       | Shift pressed                                                        |
+|--------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **Alt not pressed** | <img src="docs/res/images/basic_layout.png" alt="drawing" width="300"/> | <img src="docs/res/images/shift.png" alt="drawing" width="300"/>     |
+| **Alt pressed**      | <img src="docs/res/images/alt.png" alt="drawing" width="300"/>          | <img src="docs/res/images/alt_shift.png" alt="drawing" width="300"/> |
 
-~&@#$%^<>(){}
 
-:!?PYFGCRL\*+|
-
-AOEUIDHTNS\_
-
-"QJKXBMWVZ
-
+#### Design considerations
 
 The design decisions of this keyboard were made against the following principles for what the keyboard should do:
 
-1: Be typable using only a 54 keyboard [0]
+1: Be typable using only a 54 key keyboard [0]
 2: Be comfortable to use for experienced users, using minimal effort to type the majority of text
 3: Minimize typos for experienced users
 4: Keys should be placed logically according to their function in English [1]
 5: Work well for English
-6: Support all non-English, roman scripts (though not necessarily with ease)
+6: Support all non-English latin scripts in a logical way
+6: Support other common scripts and symbols in a logical a way (EG arrows, math symbols, and cyrillic)
 
-[0] Our definition of a 54 keyboard is defined as an ANSI keyboard which contains only 54 keys: 26 alphabetical, 21 non-alphabetical, a space bar, a shift key, a return key, a delete key, 2 modal keys (alt, control), and an escape key.
+[0] We define a 54 key keyboard as an ANSI keyboard which contains only 54 keys: 26 alphabetical, 21 non-alphabetical, a space bar, a return key, a delete key, 3 modal keys (alt, control, shift), and an escape key.
 
 [1] We split character functions into groups: alpabetical, numerical, brackets, punctuation, mathematical, other symbols. Alphabetical is funther divided into separate sets if they have different diacritics, and then again if they are upper or lower case.
 
@@ -57,7 +55,7 @@ We match each of these criteria as follows:
     Numerical: [0-9]
     Brackets: [<>(){}[]]
     Punctuation: [;,.:!?"-]
-    Mathematical: [*+/=-]
+    Operators: [*+/=-]
     Other_Symbols: [~&@#$%^\`\_|\\]
 
 5: We used the Dvorak keyboard layout as a base, which is designed for English. Furthermore, groups of characters are decided according to their function in English.
