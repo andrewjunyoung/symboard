@@ -132,11 +132,11 @@ This keyboard is compatible with the following diacriticized scripts:
 - Turkish
 - Uzbek
 - Welsh
+- Hungarian
+- Romanian
 
 Hopefully to add support for the following scripts:
 
 - Arabic romanization
 - Cyrillic, ISO 9
-- Hungarian
-- Romanian
 - Vietnamese
