@@ -91,7 +91,7 @@ The decisions have been made as follows:
 
 # Compatibility
 
-This keyboard is compatible with the following diacriticized scripts:
+This keyboard is compatible with (at least) the following scripts:
 
 - Albanian
 - Asturian
@@ -140,3 +140,6 @@ Hopefully to add support for the following scripts:
 - Arabic romanization
 - Cyrillic, ISO 9
 - Vietnamese
+- Arabic
+- Cyrillic
+- Hebrew
