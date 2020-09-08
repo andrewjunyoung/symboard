@@ -95,7 +95,7 @@ Below is a map of the world showing the countries where some or all of the admin
 
 <img src="docs/res/images/symboard_support_current.png" alt="drawing" width="800"/>
 
-This keyboard is compatible with the following diacriticized scripts:
+This keyboard is compatible with (at least) the following scripts:
 
 - Albanian
 - Asturian
@@ -136,11 +136,14 @@ This keyboard is compatible with the following diacriticized scripts:
 - Turkish
 - Uzbek
 - Welsh
+- Hungarian
+- Romanian
 
 Hopefully to add support for the following scripts:
 
 - Arabic romanization
 - Cyrillic, ISO 9
-- Hungarian
-- Romanian
 - Vietnamese
+- Arabic
+- Cyrillic
+- Hebrew
