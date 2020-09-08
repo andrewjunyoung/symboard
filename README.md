@@ -91,6 +91,10 @@ The decisions have been made as follows:
 
 # Compatibility
 
+Below is a map of the world showing the countries where some or all of the administrative languages can be written using jDvorak.
+
+<img src="docs/res/images/symboard_support_current.png" alt="drawing" width="800"/>
+
 This keyboard is compatible with the following diacriticized scripts:
 
 - Albanian
