@@ -2,8 +2,8 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Created by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
 <!-- Last updated by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
-<!--Last edited by Ukelele version 3.4.2.314 on 2020-08-21 at 17:41 (GMT+1)-->
-<keyboard group="126" id="-1136" name="JDvorak keyboard (iso)" maxout="9">
+<!--Last edited by Ukelele version 343 on 2022-03-05 at 16:17 (EST)-->
+<keyboard group="126" id="-15958" name="JDvorak keyboard (iso)" maxout="9">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
     </layouts>
@@ -169,7 +169,7 @@
             <key code="10" output="·"/>
             <key code="11" action="X"/>
             <key code="12" action=":"/>
-            <key code="13" output="!"/>
+            <key code="13" action="! 1"/>
             <key code="14" action="?"/>
             <key code="15" action="P"/>
             <key code="16" action="F"/>
@@ -181,12 +181,12 @@
             <key code="22" action="^"/>
             <key code="23" output="%"/>
             <key code="24" output="}"/>
-            <key code="25" output="("/>
+            <key code="25" action="("/>
             <key code="26" output="&#x003C;"/>
             <key code="27" output="{"/>
-            <key code="28" output="&#x003E;"/>
+            <key code="28" action="&#x003E;"/>
             <key code="29" output=")"/>
-            <key code="30" output="+"/>
+            <key code="30" action="+"/>
             <key code="31" action="R"/>
             <key code="32" action="G"/>
             <key code="33" output="*"/>
@@ -298,7 +298,7 @@
             <key code="27" output="«"/>
             <key code="28" output=""/>
             <key code="29" output=""/>
-            <key code="30" output=""/>
+            <key code="30" action="math_operators"/>
             <key code="31" action="alt+r"/>
             <key code="32" action="alt+g"/>
             <key code="33" action="alt+/"/>
@@ -522,7 +522,7 @@
             <key code="27" output="["/>
             <key code="28" action="8"/>
             <key code="29" action="0"/>
-            <key code="30" output="="/>
+            <key code="30" action="="/>
             <key code="31" action="r"/>
             <key code="32" action="g"/>
             <key code="33" output="/"/>
@@ -542,7 +542,7 @@
             <key code="47" action="v"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output="`"/>
+            <key code="50" action="`"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
             <key code="53" output="&#x001B;"/>
@@ -835,14 +835,27 @@
         <action id="!">
             <when state="none" output="!"/>
         </action>
+        <action id="! 1">
+            <when state="none" output="!"/>
+            <when state="latin_rotated_lower" output="¡"/>
+        </action>
         <action id="&#x0022;">
             <when state="none" output="&#x0022;"/>
             <when state="cyrillic" output="ъ"/>
         </action>
         <action id="&#x0027;">
             <when state="none" output="&#x0027;"/>
+            <when state="arabic" output="ع"/>
             <when state="arrows_basic_dvorak" output="↙"/>
             <when state="cyrillic" output="ь"/>
+        </action>
+        <action id="(">
+            <when state="none" output="("/>
+            <when state="arabic" output="ض "/>
+        </action>
+        <action id="+">
+            <when state="none" output="+"/>
+            <when state="math_operators" output="±"/>
         </action>
         <action id=",">
             <when state="none" output=","/>
@@ -854,42 +867,56 @@
         </action>
         <action id="0">
             <when state="none" output="0"/>
+            <when state="arabic" output="٠"/>
             <when state="latin_extensions" output=""/>
         </action>
         <action id="1">
             <when state="none" output="1"/>
+            <when state="arabic" output="١"/>
             <when state="latin_extensions" output=""/>
         </action>
         <action id="2">
             <when state="none" output="2"/>
+            <when state="arabic" output="٢"/>
             <when state="latin_extensions" output="ƨ"/>
         </action>
         <action id="3">
             <when state="none" output="3"/>
+            <when state="math_operators" output="△"/>
+            <when state="arabic" output="٣"/>
             <when state="latin_extensions" output="з"/>
         </action>
         <action id="4">
             <when state="none" output="4"/>
+            <when state="math_operators" output="□"/>
+            <when state="arabic" output="٤"/>
             <when state="latin_extensions" output="ч"/>
         </action>
         <action id="5">
             <when state="none" output="5"/>
+            <when state="math_operators" output="☆"/>
+            <when state="arabic" output="٥"/>
             <when state="latin_extensions" output="ƽ"/>
         </action>
         <action id="6">
             <when state="none" output="6"/>
+            <when state="arabic" output="٦"/>
             <when state="latin_extensions" output="ƅ"/>
         </action>
         <action id="7">
             <when state="none" output="7"/>
+            <when state="arabic" output="٧"/>
             <when state="latin_extensions" output="ʔ"/>
         </action>
         <action id="8">
             <when state="none" output="8"/>
+            <when state="math_operators" output="∞"/>
+            <when state="arabic" output="٨"/>
             <when state="latin_extensions" output=""/>
         </action>
         <action id="9">
             <when state="none" output="9"/>
+            <when state="arabic" output="٩"/>
             <when state="latin_extensions" output=""/>
         </action>
         <action id=":">
@@ -899,8 +926,17 @@
             <when state="none" output=";"/>
             <when state="arrows_basic_dvorak" output="↖"/>
         </action>
+        <action id="=">
+            <when state="none" output="="/>
+            <when state="math_operators" output="≒"/>
+        </action>
+        <action id="&#x003E;">
+            <when state="none" output="&#x003E;"/>
+            <when state="math_operators" output="×"/>
+        </action>
         <action id="?">
             <when state="none" output="?"/>
+            <when state="latin_rotated_lower" output="¿"/>
         </action>
         <action id="A">
             <when state="none" output="A"/>
@@ -1009,6 +1045,8 @@
         </action>
         <action id="D">
             <when state="none" output="D"/>
+            <when state="math_operators" output="∇"/>
+            <when state="arabic" output="ض"/>
             <when state="cyrillic" output="Д"/>
             <when state="greek" output="Δ"/>
             <when state="latin_acute" output="D́"/>
@@ -1149,6 +1187,7 @@
         </action>
         <action id="H">
             <when state="none" output="H"/>
+            <when state="arabic" output="ح"/>
             <when state="cyrillic" output="Х"/>
             <when state="greek" output="Η"/>
             <when state="latin_acute" output="H́"/>
@@ -1254,6 +1293,7 @@
         </action>
         <action id="K">
             <when state="none" output="K"/>
+            <when state="arabic" output="خ"/>
             <when state="cyrillic" output="К"/>
             <when state="greek" output="Κ"/>
             <when state="latin_acute" output="Ḱ"/>
@@ -1356,6 +1396,9 @@
             <when state="latin_tilde_above" output=""/>
             <when state="latin_tilde_below" output=""/>
             <when state="latin_umlaut" output="M̈"/>
+        </action>
+        <action id="math_operators">
+            <when state="none" next="math_operators"/>
         </action>
         <action id="N">
             <when state="none" output="N"/>
@@ -1534,6 +1577,8 @@
         </action>
         <action id="S">
             <when state="none" output="S"/>
+            <when state="math_operators" output="∮"/>
+            <when state="arabic" output="ص"/>
             <when state="cyrillic" output="С"/>
             <when state="greek" output="Σ"/>
             <when state="latin_acute" output="Ś"/>
@@ -1569,6 +1614,7 @@
         </action>
         <action id="T">
             <when state="none" output="T"/>
+            <when state="arabic" output="ط"/>
             <when state="cyrillic" output="Т"/>
             <when state="greek" output="Τ"/>
             <when state="latin_acute" output="T́"/>
@@ -1779,6 +1825,7 @@
         </action>
         <action id="Z">
             <when state="none" output="Z"/>
+            <when state="arabic" output="ظ"/>
             <when state="cyrillic" output="З"/>
             <when state="greek" output="Ζ"/>
             <when state="latin_acute" output="Ź"/>
@@ -1814,14 +1861,23 @@
         </action>
         <action id="^">
             <when state="none" output="^"/>
+            <when state="arabic" output="ظ "/>
             <when state="latin_extensions" output="Ƅ"/>
         </action>
         <action id="_">
             <when state="none" output="_"/>
+            <when state="arabic" output="ذ "/>
+        </action>
+        <action id="`">
+            <when state="none" output="`"/>
+            <when state="arabic" output="ء"/>
         </action>
         <action id="a">
             <when state="none" output="a"/>
+            <when state="math_operators" output="∝"/>
+            <when state="arabic" output="ا"/>
             <when state="arrows_basic_dvorak" output="←"/>
+            <when state="canadian_aboriginal_syllabics" output="ᐊ"/>
             <when state="cyrillic" output="а"/>
             <when state="greek" output="α"/>
             <when state="latin_acute" output="á"/>
@@ -2014,6 +2070,7 @@
         </action>
         <action id="b">
             <when state="none" output="b"/>
+            <when state="arabic" output="ب"/>
             <when state="cyrillic" output="в"/>
             <when state="greek" output="β"/>
             <when state="latin_acute" output="b́"/>
@@ -2050,6 +2107,8 @@
         </action>
         <action id="c">
             <when state="none" output="c"/>
+            <when state="math_operators" output="⊂"/>
+            <when state="arabic" output="ث "/>
             <when state="cyrillic" output="ц"/>
             <when state="greek" output="ξ"/>
             <when state="latin_acute" output="ć"/>
@@ -2086,6 +2145,7 @@
         </action>
         <action id="d">
             <when state="none" output="d"/>
+            <when state="arabic" output="د"/>
             <when state="cyrillic" output="д"/>
             <when state="greek" output="δ"/>
             <when state="latin_acute" output="d́"/>
@@ -2125,7 +2185,10 @@
         </action>
         <action id="e">
             <when state="none" output="e"/>
+            <when state="math_operators" output="∈"/>
+            <when state="arabic" output="خ"/>
             <when state="arrows_basic_dvorak" output="→"/>
+            <when state="canadian_aboriginal_syllabics" output="ᐁ"/>
             <when state="cyrillic" output="е"/>
             <when state="greek" output="ε"/>
             <when state="latin_acute" output="é"/>
@@ -2162,6 +2225,7 @@
         </action>
         <action id="f">
             <when state="none" output="f"/>
+            <when state="arabic" output="ف"/>
             <when state="cyrillic" output="ф"/>
             <when state="greek" output="φ"/>
             <when state="latin_acute" output="f́"/>
@@ -2198,6 +2262,7 @@
         </action>
         <action id="g">
             <when state="none" output="g"/>
+            <when state="arabic" output="غ"/>
             <when state="cyrillic" output="г"/>
             <when state="greek" output="γ"/>
             <when state="latin_acute" output="ǵ"/>
@@ -2234,6 +2299,7 @@
         </action>
         <action id="h">
             <when state="none" output="h"/>
+            <when state="arabic" output="ه"/>
             <when state="cyrillic" output="х"/>
             <when state="greek" output="η"/>
             <when state="latin_acute" output="h́"/>
@@ -2270,6 +2336,8 @@
         </action>
         <action id="i">
             <when state="none" output="i"/>
+            <when state="arabic" output="ي"/>
+            <when state="canadian_aboriginal_syllabics" output="ᐃ"/>
             <when state="cyrillic" output="и"/>
             <when state="greek" output="ι"/>
             <when state="latin_acute" output="í"/>
@@ -2306,6 +2374,7 @@
         </action>
         <action id="j">
             <when state="none" output="j"/>
+            <when state="arabic" output="ج"/>
             <when state="arrows_basic_dvorak" output="↘"/>
             <when state="cyrillic" output="й"/>
             <when state="greek" output="ς"/>
@@ -2343,6 +2412,7 @@
         </action>
         <action id="k">
             <when state="none" output="k"/>
+            <when state="arabic" output="ك"/>
             <when state="cyrillic" output="к"/>
             <when state="greek" output="κ"/>
             <when state="latin_acute" output="ḱ"/>
@@ -2379,6 +2449,7 @@
         </action>
         <action id="l">
             <when state="none" output="l"/>
+            <when state="arabic" output="ل"/>
             <when state="cyrillic" output="л"/>
             <when state="greek" output="λ"/>
             <when state="latin_acute" output="ĺ"/>
@@ -2415,6 +2486,7 @@
         </action>
         <action id="m">
             <when state="none" output="m"/>
+            <when state="arabic" output="م"/>
             <when state="cyrillic" output="м"/>
             <when state="greek" output="μ"/>
             <when state="latin_acute" output="ḿ"/>
@@ -2451,6 +2523,8 @@
         </action>
         <action id="n">
             <when state="none" output="n"/>
+            <when state="math_operators" output="∩"/>
+            <when state="arabic" output="ن"/>
             <when state="cyrillic" output="н"/>
             <when state="greek" output="ν"/>
             <when state="latin_acute" output="ń"/>
@@ -2487,6 +2561,8 @@
         </action>
         <action id="o">
             <when state="none" output="o"/>
+            <when state="arabic" output="ح"/>
+            <when state="canadian_aboriginal_syllabics" output="ᐅ"/>
             <when state="cyrillic" output="о"/>
             <when state="greek" output="ο"/>
             <when state="latin_acute" output="ó"/>
@@ -2523,6 +2599,7 @@
         </action>
         <action id="p">
             <when state="none" output="p"/>
+            <when state="arabic" output="ص"/>
             <when state="cyrillic" output="п"/>
             <when state="greek" output="π"/>
             <when state="latin_acute" output="ṕ"/>
@@ -2559,6 +2636,7 @@
         </action>
         <action id="q">
             <when state="none" output="q"/>
+            <when state="arabic" output="ق"/>
             <when state="arrows_basic_dvorak" output="↓"/>
             <when state="cyrillic" output="ԛ"/>
             <when state="greek" output="θ"/>
@@ -2596,6 +2674,7 @@
         </action>
         <action id="r">
             <when state="none" output="r"/>
+            <when state="arabic" output="ر"/>
             <when state="cyrillic" output="р"/>
             <when state="greek" output="ρ"/>
             <when state="latin_acute" output="ŕ"/>
@@ -2632,6 +2711,8 @@
         </action>
         <action id="s">
             <when state="none" output="s"/>
+            <when state="math_operators" output="∫"/>
+            <when state="arabic" output="س"/>
             <when state="cyrillic" output="с"/>
             <when state="greek" output="σ"/>
             <when state="latin_acute" output="ś"/>
@@ -2668,6 +2749,8 @@
         </action>
         <action id="t">
             <when state="none" output="t"/>
+            <when state="math_operators" output="⊥"/>
+            <when state="arabic" output="ت"/>
             <when state="cyrillic" output="т"/>
             <when state="greek" output="τ"/>
             <when state="latin_acute" output="t́"/>
@@ -2704,6 +2787,8 @@
         </action>
         <action id="u">
             <when state="none" output="u"/>
+            <when state="math_operators" output="∪"/>
+            <when state="arabic" output="و"/>
             <when state="cyrillic" output="у"/>
             <when state="greek" output="υ"/>
             <when state="latin_acute" output="ú"/>
@@ -2740,6 +2825,8 @@
         </action>
         <action id="v">
             <when state="none" output="v"/>
+            <when state="math_operators" output="√"/>
+            <when state="arabic" output="ظ "/>
             <when state="cyrillic" output="б"/>
             <when state="greek" output="ϝ"/>
             <when state="latin_acute" output="v́"/>
@@ -2776,6 +2863,7 @@
         </action>
         <action id="w">
             <when state="none" output="w"/>
+            <when state="arabic" output="ط"/>
             <when state="cyrillic" output="ԝ"/>
             <when state="greek" output="ω"/>
             <when state="latin_acute" output="ẃ"/>
@@ -2812,6 +2900,8 @@
         </action>
         <action id="x">
             <when state="none" output="x"/>
+            <when state="math_operators" output="×"/>
+            <when state="arabic" output="ش"/>
             <when state="cyrillic" output=""/>
             <when state="greek" output="χ"/>
             <when state="latin_acute" output="x́"/>
@@ -2848,6 +2938,7 @@
         </action>
         <action id="y">
             <when state="none" output="y"/>
+            <when state="arabic" output="ض "/>
             <when state="cyrillic" output="ы"/>
             <when state="greek" output="ψ"/>
             <when state="latin_acute" output="ý"/>
@@ -2884,6 +2975,7 @@
         </action>
         <action id="z">
             <when state="none" output="z"/>
+            <when state="arabic" output="ز"/>
             <when state="cyrillic" output="з"/>
             <when state="greek" output="ζ"/>
             <when state="latin_acute" output="ź"/>
@@ -2935,7 +3027,7 @@
             <when state="none" output="×"/>
         </action>
         <action id="α">
-            <when state="none" output="α"/>
+            <when state="none" next="arabic"/>
         </action>
         <action id="β">
             <when state="none" output="β"/>
@@ -2953,7 +3045,7 @@
             <when state="none" output="Ґ"/>
         </action>
         <action id="’">
-            <when state="none" output="’"/>
+            <when state="none" next="canadian_aboriginal_syllabics"/>
         </action>
         <action id="’ 1">
             <when state="none" output="’ 1"/>
@@ -2975,7 +3067,10 @@
         </action>
     </actions>
     <terminators>
+        <when state="math_operators" output="="/>
+        <when state="arabic" output="ا"/>
         <when state="arrows_basic_dvorak" output="→"/>
+        <when state="canadian_aboriginal_syllabics" output="ᐃ"/>
         <when state="cyrillic" output="д"/>
         <when state="greek" output="α"/>
         <when state="latin_acute" output="´"/>
