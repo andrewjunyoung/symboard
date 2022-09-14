@@ -95,15 +95,19 @@ Below is a map of the world showing the countries where some or all of the admin
 
 <img src="docs/res/images/symboard_support_current.png" alt="drawing" width="800"/>
 
-This keyboard is compatible with (at least) the following scripts:
+This keyboard is compatible with (at least) the following scripts (\* to be
+confirmed):
 
 - Albanian
+- Arabic\*
+- Arabic, romanization (ALA-LC; ISO)\*
 - Asturian
 - Azerbaijani
 - Breton
 - Danish
 - Dutch
-- Chinese Mandarin, Pinyin (with tone marks)
+- Chinese Mandarin, pinyin (with tone marks)
+- Cyrillic, romanization, ISO 9\*
 - Czech
 - English
 - Estonian
@@ -114,6 +118,7 @@ This keyboard is compatible with (at least) the following scripts:
 - Galician
 - German
 - Greenlandic
+- Hawai'ian
 - Icelandic
 - Irish
 - Italian
@@ -124,10 +129,10 @@ This keyboard is compatible with (at least) the following scripts:
 - Lithuanian
 - Manx
 - Māori
-- Norwegian (Bokmal, Nynorsk)
+- Norwegian (bokmal, nynorsk)
 - Polish
 - Portuguese
-- Qazaq
+- Qazaq (latin script)
 - Scottish Gaelic
 - Slovenian
 - Slovak
@@ -138,12 +143,25 @@ This keyboard is compatible with (at least) the following scripts:
 - Welsh
 - Hungarian
 - Romanian
+- Russian
+- Serbian
+- Montenegrin
+- Bosnian (cyrllic; latin scripts)
+- Macedonian
+- Ukrainian
+- Mongolian (cyrillic script
+- Hebrew
+- Belarusian
+- Bulgarian
+- Tifinagh
+- Georgian (mkhedruli)
 
 Hopefully to add support for the following scripts:
 
-- Arabic romanization
-- Cyrillic, ISO 9
 - Vietnamese
-- Arabic
-- Cyrillic
-- Hebrew
+- Arabic derivative scripts
+  - Persian
+  - Urdu
+- Syllabaries
+  - Japanese
+  - Ge'ez
