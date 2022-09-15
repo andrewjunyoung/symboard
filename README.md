@@ -31,6 +31,9 @@ This keyboard was designed according to the following tenets:
 2. *Make typing in english fast, comfortable, and low-effort*
   - The alphabet is arranged in the Dvorak layout. Common English punctuation is all in the lower 4 rows. 
 3. *Minimize typos for experienced users*
+  - Characters are grouped with letters they're often typed alongside. For example:
+    - & usually appears alone, or with capital letters (in acronyms like A&E), so is in the "shift" row
+    - ;,. are usually used after lowercase letters, so are grouped with lowercase letters
 4. *Support other common symbols in an intuitive way (EG greek, cyrillic, arrows, math symbols)*
   - The keyboard is arranged in groups:
     1. Alphabetical: [a-zA-Z'] (with \' considered as lower case)
