@@ -76,6 +76,7 @@ Below is a map of the world showing the countries where some or all of the admin
 This keyboard is compatible with (at least) the following scripts (\* to be
 confirmed):
 
+| | | |
 |-----------------------------|--------------------------------------------|-----------------------------------------------|----------------------|
 | Albanian                    | Arabic, romanization (ALA-LC; ISO)\*       | Arabic\*                                      | Asturian             |
 | Azerbaijani                 | Belarusian                                 | Bosnian (cyrllic; latin scripts)              | Breton               |
@@ -92,7 +93,6 @@ confirmed):
 | Slovak                      | Slovenian                                  | Spanish                                       | Swedish              |
 | Tifinagh                    | Turkish                                    | Ukrainian                                     | Uzbek                |
 | Welsh                       |                                            |                                               |                      |
-|-----------------------------|--------------------------------------------|-----------------------------------------------|----------------------|
 
 Hopefully to add support for the following scripts:
 
