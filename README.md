@@ -6,7 +6,7 @@ A custom implementation of Dvorak which relocates certain keys based off a combi
 
 ### Naming
 
-jDvorak (/dʒei dvoɹæk/) gets its name from its layout. Just like the QWERTY keyboard gets its name from its first few alphabetical characters, jDvorak gets its name from its top left letter - a semicolon (;), which looks like a lowercase J (j).
+jDvorak (/dʒej dvɔɹak/) gets its name from its layout. Just like the QWERTY keyboard gets its name from its first few alphabetical characters, jDvorak gets its name from its top left letter - a semicolon (;), which looks like a lowercase J (j).
 
 ### Layout
 
@@ -22,50 +22,28 @@ Pressing the shift and alt keys will provide access to different key sets, inclu
 | **Alt pressed**      | <img src="docs/res/images/alt.png" alt="drawing" width="300"/>          | <img src="docs/res/images/alt_shift.png" alt="drawing" width="300"/> |
 
 
-#### Design considerations
+#### Design tenets
 
-The design decisions of this keyboard were made against the following principles for what the keyboard should do:
+This keyboard was designed according to the following tenets:
 
-1: Be typable using only a 54 key keyboard [0]
-2: Be comfortable to use for experienced users, using minimal effort to type the majority of text
-3: Minimize typos for experienced users
-4: Keys should be placed logically according to their function in English [1]
-5: Work well for English
-6: Support all non-English latin scripts in a logical way
-6: Support other common scripts and symbols in a logical a way (EG arrows, math symbols, and cyrillic)
+1. *Be typable using only a 54 key keyboard [0]*
+  - All keys are made to be typable using only these 54 keys. All other keys may be used, but add no additional functionality, only alternative ways of typing. 
+2. *Make typing in english fast, comfortable, and low-effort*
+  - The alphabet is arranged in the Dvorak layout. Common English punctuation is all in the lower 4 rows. 
+3. *Minimize typos for experienced users*
+4. *Support other common symbols in an intuitive way (EG greek, cyrillic, arrows, math symbols)*
+  - The keyboard is arranged in groups:
+    1. Alphabetical: [a-zA-Z'] (with \' considered as lower case)
+    1. Numerical: [0-9]
+    1. Brackets: [<>(){}[]]
+    1. Punctuation: [;,.:!?"-]
+    1. Operators: [\*+/=-]
+    1. Other symbols: [~&@#$%^\`\_|\\]
+5. *Determine where to place other common symbols based off the core (english) layout, whatever that is.*
+  - Groups of other characters (EG greek; cyrillic) are in the same location as their latin script equivalents, following the common romanization scheme for each script. Diacritics and extensions are generally available through the alt key, and following logical placements
 
-[0] We define a 54 key keyboard as an ANSI keyboard which contains only 54 keys: 26 alphabetical, 21 non-alphabetical, a space bar, a return key, a delete key, 3 modal keys (alt, control, shift), and an escape key.
-
-[1] We split character functions into groups: alpabetical, numerical, brackets, punctuation, mathematical, other symbols. Alphabetical is funther divided into separate sets if they have different diacritics, and then again if they are upper or lower case.
-
-
-We match each of these criteria as follows:
-
-1: All keys are made to be typable using only these 54 keys. All other keys may be used, but add no additional functionality, only alternative ways of typing.
-
-2: This is done in various ways, as listed below.
-    2.1: The alphabet is arranged in the Dvorak layout, with uppercase characters accessed by holding shift.
-    2.2: All punctuation needed to write comprehensible English documets are contained in the lower 4 rows of the keyboard. This assumes no numbers, brackets, or special characters are used, and so all words are written out in full, with punctuation.
-    2.3: The least commonly used keys are placed furthest away from the hands, and the most common ones are placed nearer the hand (largely).
-
-3: [Write up todo]
-
-4: We split the groups as follows:
-    Alphabetical: [a-zA-Z'] (' is considered lower case)
-    Numerical: [0-9]
-    Brackets: [<>(){}[]]
-    Punctuation: [;,.:!?"-]
-    Operators: [*+/=-]
-    Other_Symbols: [~&@#$%^\`\_|\\]
-
-5: We used the Dvorak keyboard layout as a base, which is designed for English. Furthermore, groups of characters are decided according to their function in English.
-
-6: We are in the process of adding diacritics through the alt-key, which should enable users to type all (or nearly all) characters in the latin block of unicode. As this section is not designed to be typed easily, we have grouped characters entirely by their appearance so that it is easy to find a character and remember where it is, although not necessarily easy to type quickly.
-
-
-In future I will publish an image for this layout which describes the location of characters on keys, including an extended description of grouping logic.
-
-The decisions have been made as follows:
+## Decisions behind Key placement 
+Decisions have been made as follows:
 
 - All alphabetical and punctuation symbols are included in the lower 3 rows, except for parenthesis.
 
@@ -98,63 +76,21 @@ Below is a map of the world showing the countries where some or all of the admin
 This keyboard is compatible with (at least) the following scripts (\* to be
 confirmed):
 
-- Albanian
-- Arabic\*
-- Arabic, romanization (ALA-LC; ISO)\*
-- Asturian
-- Azerbaijani
-- Breton
-- Danish
-- Dutch
-- Chinese Mandarin, pinyin (with tone marks)
-- Cyrillic, romanization, ISO 9\*
-- Czech
-- English
-- Estonian
-- Esperanto
-- Faroese
-- French
-- Filipino
-- Galician
-- German
-- Greenlandic
-- Hawai'ian
-- Icelandic
-- Irish
-- Italian
-- Japanese Romaji (Hepburn, Nihonshiki, Kunrei)
-- Kurdish
-- Lakota
-- Latvian
-- Lithuanian
-- Manx
-- Māori
-- Norwegian (bokmal, nynorsk)
-- Polish
-- Portuguese
-- Qazaq (latin script)
-- Scottish Gaelic
-- Slovenian
-- Slovak
-- Spanish
-- Swedish
-- Turkish
-- Uzbek
-- Welsh
-- Hungarian
-- Romanian
-- Russian
-- Serbian
-- Montenegrin
-- Bosnian (cyrllic; latin scripts)
-- Macedonian
-- Ukrainian
-- Mongolian (cyrillic script
-- Hebrew
-- Belarusian
-- Bulgarian
-- Tifinagh
-- Georgian (mkhedruli)
+| Albanian                    | Arabic, romanization (ALA-LC; ISO)\*       | Arabic\*                                      | Asturian             |
+| Azerbaijani                 | Belarusian                                 | Bosnian (cyrllic; latin scripts)              | Breton               |
+| Bulgarian                   | Chinese Mandarin, pinyin (with tone marks) | Cyrillic, romanization, ISO 9\*               | Czech                |
+| Danish                      | Dutch                                      | English                                       | Esperanto            |
+| Estonian                    | Faroese                                    | Filipino                                      | French               |
+| Galician                    | Georgian (mkhedruli)                       | German                                        | Greenlandic          |
+| Hawai'ian                   | Hebrew                                     | Hungarian                                     | Icelandic            |
+| Irish                       | Italian                                    | Japanese Romaji (Hepburn, Nihonshiki, Kunrei) | Kurdish              |
+| Lakota                      | Latvian                                    | Lithuanian                                    | Macedonian           |
+| Manx                        | Mongolian (cyrillic script                 | Montenegrin                                   | Māori                |
+| Norwegian (bokmal, nynorsk) | Polish                                     | Portuguese                                    | Qazaq (latin script) |
+| Romanian                    | Russian                                    | Scottish Gaelic                               | Serbian              |
+| Slovak                      | Slovenian                                  | Spanish                                       | Swedish              |
+| Tifinagh                    | Turkish                                    | Ukrainian                                     | Uzbek                |
+| Welsh                       |                                            |                                               |                      |
 
 Hopefully to add support for the following scripts:
 
