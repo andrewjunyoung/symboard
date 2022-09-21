@@ -2,8 +2,8 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Created by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
 <!-- Last updated by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
-<!--Last edited by Ukelele version 343 on 2022-09-18 at 05:31 (EDT)-->
-<keyboard group="126" id="-25943" name="JDvorak keyboard (iso)" maxout="9">
+<!--Last edited by Ukelele version 343 on 2022-09-21 at 09:45 (EDT)-->
+<keyboard group="126" id="-25082" name="JDvorak keyboard (iso)" maxout="9">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
     </layouts>
@@ -829,6 +829,27 @@
         </keyMap>
     </keyMapSet>
     <actions>
+        <action id="&#x0001;">
+            <when state="none" next="arabic"/>
+        </action>
+        <action id="&#x0003;">
+            <when state="none" next="cyrillic"/>
+        </action>
+        <action id="&#x0008;">
+            <when state="none" next="hebrew"/>
+        </action>
+        <action id="&#x0009;">
+            <when state="none" next="greek"/>
+        </action>
+        <action id="&#x000D;">
+            <when state="none" next="mongolian"/>
+        </action>
+        <action id="&#x000F;">
+            <when state="none" next="armenian"/>
+        </action>
+        <action id="&#x0018;">
+            <when state="none" next="georgian_mkhedruli"/>
+        </action>
         <action id="&#x001B;">
             <when state="none" output="&#x001B;"/>
             <when state="cyrillic" next="Dead Key State 0"/>
@@ -862,34 +883,9 @@
             <when state="none" output="%"/>
             <when state="hindi" output="ो"/>
         </action>
-        <action id="&#x0001;">
-            <when state="none" next="arabic"/>
-        </action>
-        <action id="&#x0003;">
-            <when state="none" next="cyrillic"/>
-        </action>
-        <action id="&#x0008;">
-            <when state="none" next="hebrew"/>
-        </action>
-        <action id="&#x0009;">
-            <when state="none" next="greek"/>
-        </action>
-        <action id="&#x000D;">
-            <when state="none" next="mongolian"/>
-        </action>
-        <action id="&#x000F;">
-            <when state="none" next="armenian"/>
-        </action>
-        <action id="&#x0018;">
-            <when state="none" next="georgian_mkhedruli"/>
-        </action>
         <action id="&#x0026;">
             <when state="none" output="&#x0026;"/>
             <when state="armenian" output="Ց"/>
-        </action>
-        <action id="&#x003C;">
-            <when state="none" output="&#x003C;"/>
-            <when state="hindi" output="ौ"/>
         </action>
         <action id="&#x0027;">
             <when state="none" output="&#x0027;"/>
@@ -921,7 +917,7 @@
             <when state="mongolian" output="᠂"/>
         </action>
         <action id="-">
-            <when state="none" output="-"/>
+            <when state="none" output="_"/>
             <when state="armenian" output="Ը"/>
             <when state="mongolian" output="᠊"/>
         </action>
@@ -1022,6 +1018,10 @@
             <when state="arrows_basic_dvorak" output="↖"/>
             <when state="hindi" output="ः"/>
             <when state="mongolian" output="᠁"/>
+        </action>
+        <action id="&#x003C;">
+            <when state="none" output="&#x003C;"/>
+            <when state="hindi" output="ौ"/>
         </action>
         <action id="=">
             <when state="none" output="="/>
@@ -2147,7 +2147,7 @@
             <when state="latin_extensions" output="Ƅ"/>
         </action>
         <action id="_">
-            <when state="none" output="_"/>
+            <when state="none" output="-"/>
             <when state="arabic" output="ذ "/>
             <when state="armenian" output="ը"/>
             <when state="hindi" output="ञ"/>
