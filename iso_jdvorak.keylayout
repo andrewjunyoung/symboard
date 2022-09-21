@@ -2,7 +2,7 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Created by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
 <!-- Last updated by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
-<!--Last edited by Ukelele version 343 on 2022-09-21 at 09:45 (EDT)-->
+<!--Last edited by Ukelele version 343 on 2022-09-21 at 09:51 (EDT)-->
 <keyboard group="126" id="-25082" name="JDvorak keyboard (iso)" maxout="9">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -185,7 +185,7 @@
             <key code="26" action="&#x003C;"/>
             <key code="27" output="{"/>
             <key code="28" action="&#x003E;"/>
-            <key code="29" output=")"/>
+            <key code="29" output="]"/>
             <key code="30" action="+"/>
             <key code="31" action="R"/>
             <key code="32" action="G"/>
@@ -516,10 +516,10 @@
             <key code="21" action="4"/>
             <key code="22" action="6"/>
             <key code="23" action="5"/>
-            <key code="24" output="]"/>
+            <key code="24" output=")"/>
             <key code="25" action="9"/>
             <key code="26" action="7"/>
-            <key code="27" output="["/>
+            <key code="27" output="("/>
             <key code="28" action="8"/>
             <key code="29" action="0"/>
             <key code="30" action="="/>
@@ -896,7 +896,7 @@
             <when state="hindi" output="े"/>
         </action>
         <action id="(">
-            <when state="none" output="("/>
+            <when state="none" output="["/>
             <when state="arabic" output="ض "/>
             <when state="hindi" output="ू"/>
         </action>
