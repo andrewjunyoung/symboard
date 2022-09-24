@@ -2,8 +2,8 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Created by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
 <!-- Last updated by Symboard version 0.2.0 at 2019-12-07 21:54:51 (UTC) -->
-<!--Last edited by Ukelele version 343 on 2022-09-21 at 23:48 (EDT)-->
-<keyboard group="126" id="-25082" name="JDvorak keyboard (iso)" maxout="9">
+<!--Last edited by Ukelele version 343 on 2022-09-23 at 23:33 (EDT)-->
+<keyboard group="126" id="-32046" name="JDvorak keyboard (iso)" maxout="9">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
     </layouts>
@@ -3643,7 +3643,6 @@
         </action>
     </actions>
     <terminators>
-        <when state="Dead Key State 0" output=""/>
         <when state="arabic" output="ا"/>
         <when state="arabic_4_dots" output="ط"/>
         <when state="arabic_hacek" output="٧"/>
