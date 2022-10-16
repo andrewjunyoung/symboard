@@ -3671,7 +3671,7 @@
         <when state="hebrew_dagesh" output=""/>
         <when state="hindi" output="अ"/>
         <when state="hindi_dot_below" output="."/>
-        <when state="latin_acute" output="́"/>
+        <when state="latin_acute" output=""́"/>
         <when state="latin_acute_double" output="˝"/>
         <when state="latin_bar" output="-"/>
         <when state="latin_breve" output="˘"/>
