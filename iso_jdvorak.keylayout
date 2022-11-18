@@ -305,7 +305,6 @@
             <key code="34" output="̨"/>
             <key code="35" action="!"/>
             <key code="36" output="&#x000D;"/>
-            <key code="37" action="alt+?1"/>
             <key code="38" action="alt+h"/>
             <key code="39" action="alt+_"/>
             <key code="40" action="alt+t"/>
@@ -1872,20 +1871,14 @@
             <when state="none" output="̦"/>
             <when state="cyrillic" next="cyrillic_romanized_comma_below"/>
         </action>
-        <action id="alt+*">
-        </action>
         <action id="alt+,">
             <when state="none" next="latin_horn"/>
             <when state="cyrillic" next="cyrillic_romanized_acute"/>
-        </action>
-        <action id="alt+-">
         </action>
         <action id="alt+.">
             <when state="none" output="̇"/>
             <when state="cyrillic" next="cyrillic_romanized_dot_above"/>
             <when state="hindi" next="hindi_dot_below"/>
-        </action>
-        <action id="alt+/">
         </action>
         <action id="alt+1">
             <when state="none" next="arrows_basic_dvorak"/>
@@ -1901,11 +1894,6 @@
             <when state="none" output="̈"/>
             <when state="cyrillic" next="cyrillic_romanized_diaresis"/>
         </action>
-        <action id="alt+?">
-        </action>
-        <action id="alt+?1">
-            <when state="none" output=""/>
-        </action>
         <action id="alt+C">
             <when state="none" next="cyrillic"/>
         </action>
@@ -1915,15 +1903,11 @@
         <action id="alt+J">
             <when state="none" next="latin_hook_retroflex"/>
         </action>
-        <action id="alt+O">
-        </action>
         <action id="alt+R">
             <when state="none" next="latin_rotated_upper"/>
         </action>
         <action id="alt+T">
             <when state="none" next="latin_slash"/>
-        </action>
-        <action id="alt+U">
         </action>
         <action id="alt+\">
             <when state="none" next="latin_grave"/>
@@ -1939,8 +1923,6 @@
         <action id="alt+`">
             <when state="none" output="̃"/>
             <when state="arabic" next="arabic_hamza_above"/>
-        </action>
-        <action id="alt+c">
         </action>
         <action id="alt+d">
             <when state="none" output=""/>
@@ -1961,8 +1943,6 @@
         <action id="alt+j">
             <when state="none" next="latin_hook_palatal"/>
         </action>
-        <action id="alt+o">
-        </action>
         <action id="alt+r">
             <when state="none" next="latin_rotated_lower"/>
         </action>
@@ -1973,18 +1953,12 @@
             <when state="none" next="latin_bar"/>
             <when state="cyrillic" next="cyrillic_romanized_stroke"/>
         </action>
-        <action id="alt+u">
-        </action>
         <action id="alt+v">
             <when state="none" output="̌"/>
             <when state="cyrillic" next="cyrillic_romanized_hacek"/>
         </action>
         <action id="alt+x">
             <when state="none" next="latin_extensions"/>
-        </action>
-        <action id="alt+z">
-        </action>
-        <action id="alt+|">
         </action>
         <action id="alt+~">
             <when state="none" next="latin_tilde_below"/>
