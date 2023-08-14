@@ -1050,7 +1050,6 @@
       <when state="greek" next="greek" output="Α"/>
       <when state="hindi" next="hindi" output="ा"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="Â"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="Æ"/>
@@ -1072,7 +1071,6 @@
       <when state="greek" next="greek" output="Β"/>
       <when state="hindi" next="hindi" output="भ"/>
       <when state="latin_bar" output="Ƀ"/>
-      <when state="latin_circumflex_above" output="B̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1106,7 +1104,6 @@
       <when state="greek" next="greek" output="Ξ"/>
       <when state="hindi" next="hindi" output="छ"/>
       <when state="latin_bar" output="Ꞓ"/>
-      <when state="latin_circumflex_above" output="Ĉ"/>
       <when state="latin_circumflex_below" output="C̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1132,7 +1129,6 @@
       <when state="greek" next="greek" output="Δ"/>
       <when state="hindi" next="hindi" output="ध"/>
       <when state="latin_bar" output="Đ"/>
-      <when state="latin_circumflex_above" output="D̂"/>
       <when state="latin_circumflex_below" output="Ḓ"/>
       <when state="latin_comma_below" output="D̦"/>
       <when state="latin_e" output=""/>
@@ -1162,7 +1158,6 @@
       <when state="cyrillic_umlaut" output="Ё"/>
       <when state="greek" next="greek" output="Ε"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="Ê"/>
       <when state="latin_circumflex_below" output="Ḙ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1186,7 +1181,6 @@
       <when state="cyrillic" next="cyrillic" output="Ф"/>
       <when state="greek" next="greek" output="Φ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output=""/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1211,7 +1205,6 @@
       <when state="greek" next="greek" output="Γ"/>
       <when state="hindi" next="hindi" output="घ"/>
       <when state="latin_bar" output="Ǥ"/>
-      <when state="latin_circumflex_above" output="Ĝ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1235,7 +1228,6 @@
       <when state="cyrillic_romanized_comma_below" output="Ҳ"/>
       <when state="greek" next="greek" output="Η"/>
       <when state="latin_bar" output="Ħ"/>
-      <when state="latin_circumflex_above" output="Ĥ"/>
       <when state="latin_circumflex_below" output="H̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1261,7 +1253,6 @@
       <when state="cyrillic_romanized_macron" output="Ӣ"/>
       <when state="greek" next="greek" output="Ι"/>
       <when state="latin_bar" output="Ɨ"/>
-      <when state="latin_circumflex_above" output="Î"/>
       <when state="latin_circumflex_below" output="I̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1290,7 +1281,6 @@
       <when state="hindi" next="hindi" output="झ"/>
       <when state="hindi_dot_below" output="झ़"/>
       <when state="latin_bar" output="Ɉ"/>
-      <when state="latin_circumflex_above" output="Ĵ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1323,7 +1313,6 @@
       <when state="hindi" next="hindi" output="ख"/>
       <when state="hindi_dot_below" output="ख़"/>
       <when state="latin_bar" output="Ꝁ"/>
-      <when state="latin_circumflex_above" output="K̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1348,7 +1337,6 @@
       <when state="cyrillic_softened" output="Љ"/>
       <when state="greek" next="greek" output="Λ"/>
       <when state="latin_bar" output="Ƚ"/>
-      <when state="latin_circumflex_above" output="L̂"/>
       <when state="latin_circumflex_below" output="Ḽ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1371,7 +1359,6 @@
       <when state="greek" next="greek" output="Μ"/>
       <when state="hebrew" output="ם‎"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="M̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1402,7 +1389,6 @@
       <when state="hebrew" output="ף"/>
       <when state="hindi" next="hindi" output="ङ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="N̂"/>
       <when state="latin_circumflex_below" output="Ṋ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1429,7 +1415,6 @@
       <when state="greek" next="greek" output="Ο"/>
       <when state="hindi" next="hindi" output="ू"/>
       <when state="latin_bar" output="Ɵ"/>
-      <when state="latin_circumflex_above" output="Ô"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="Œ"/>
@@ -1459,7 +1444,6 @@
       <when state="hindi" next="hindi" output="फ"/>
       <when state="hindi_dot_below" output="फ़"/>
       <when state="latin_bar" output="Ᵽ"/>
-      <when state="latin_circumflex_above" output=""/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1482,7 +1466,6 @@
       <when state="greek" next="greek" output="Θ"/>
       <when state="hindi" next="hindi" output="ौ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output=""/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1507,7 +1490,6 @@
       <when state="greek" next="greek" output="Ρ"/>
       <when state="hindi" next="hindi" output="ऋ"/>
       <when state="latin_bar" output="Ɍ"/>
-      <when state="latin_circumflex_above" output="R̂"/>
       <when state="latin_circumflex_below" output="R̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1537,7 +1519,6 @@
       <when state="georgian_mkhedruli" output="შ"/>
       <when state="greek" next="greek" output="Σ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="Ŝ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output="Ș"/>
       <when state="latin_e" output=""/>
@@ -1566,7 +1547,6 @@
       <when state="greek" next="greek" output="Τ"/>
       <when state="hindi" next="hindi" output="थ"/>
       <when state="latin_bar" output="Ŧ"/>
-      <when state="latin_circumflex_above" output="T̂"/>
       <when state="latin_circumflex_below" output="Ṱ"/>
       <when state="latin_comma_below" output="Ț"/>
       <when state="latin_e" output=""/>
@@ -1592,7 +1572,6 @@
       <when state="cyrillic_romanized_macron" output="Ӯ"/>
       <when state="greek" next="greek" output="Υ"/>
       <when state="latin_bar" output="Ʉ"/>
-      <when state="latin_circumflex_above" output="Û"/>
       <when state="latin_circumflex_below" output="Ṷ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1614,7 +1593,6 @@
       <when state="cyrillic" next="cyrillic" output="В"/>
       <when state="greek" next="greek" output="Ϝ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="V̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1638,11 +1616,10 @@
       <when state="greek" next="greek" output="Ω"/>
       <when state="hindi" next="hindi" output="ठ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="Ŵ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
-      <when state="latin_extensions" output=""/>
+      <when state="latin_extensions" output="Ɯ"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1661,7 +1638,6 @@
       <when state="greek" next="greek" output="Χ"/>
       <when state="hindi" next="hindi" output="ष"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="X̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1685,7 +1661,6 @@
       <when state="cyrillic_romanized_macron" output="Ы̄"/>
       <when state="greek" next="greek" output="Ψ"/>
       <when state="latin_bar" output="Ɏ"/>
-      <when state="latin_circumflex_above" output="Ŷ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1716,7 +1691,6 @@
       <when state="greek" next="greek" output="Ζ"/>
       <when state="hindi" next="hindi" output="ढ"/>
       <when state="latin_bar" output="Ƶ"/>
-      <when state="latin_circumflex_above" output="Ẑ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1777,7 +1751,6 @@
       <when state="hebrew" output="א"/>
       <when state="hindi" next="hindi" output="अ"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="â"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="æ"/>
@@ -1847,9 +1820,6 @@
     </action>
     <action id="alt+1">
       <when state="none" next="arrows_basic_dvorak"/>
-    </action>
-    <action id="alt+6">
-      <when state="none" next="latin_circumflex_above"/>
     </action>
     <action id="alt+7">
       <when state="none" output="̉"/>
@@ -1940,7 +1910,6 @@
       <when state="hebrew_dagesh" output="בּ"/>
       <when state="hindi" next="hindi" output="ब"/>
       <when state="latin_bar" output="ƀ"/>
-      <when state="latin_circumflex_above" output="b̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -1977,7 +1946,6 @@
       <when state="hebrew" output="ס"/>
       <when state="hindi" next="hindi" output="च"/>
       <when state="latin_bar" output="ꞓ"/>
-      <when state="latin_circumflex_above" output="ĉ"/>
       <when state="latin_circumflex_below" output="c̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2014,7 +1982,6 @@
       <when state="hebrew_dagesh" output="דּ"/>
       <when state="hindi" next="hindi" output="द"/>
       <when state="latin_bar" output="đ"/>
-      <when state="latin_circumflex_above" output="d̂"/>
       <when state="latin_circumflex_below" output="ḓ"/>
       <when state="latin_comma_below" output="d̦"/>
       <when state="latin_e" output=""/>
@@ -2053,7 +2020,6 @@
       <when state="hebrew" output="ה"/>
       <when state="hindi" next="hindi" output="ए"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="ê"/>
       <when state="latin_circumflex_below" output="ḙ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2083,7 +2049,6 @@
       <when state="hebrew_dagesh" output="תּ"/>
       <when state="hindi" next="hindi" output="फ़"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output=""/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2117,7 +2082,6 @@
       <when state="hindi" next="hindi" output="ग"/>
       <when state="hindi_dot_below" output="ग़"/>
       <when state="latin_bar" output="ǥ"/>
-      <when state="latin_circumflex_above" output="ĝ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2146,7 +2110,6 @@
       <when state="hebrew" output="ח"/>
       <when state="hindi" next="hindi" output="ह"/>
       <when state="latin_bar" output="ħ"/>
-      <when state="latin_circumflex_above" output="ĥ"/>
       <when state="latin_circumflex_below" output="h̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2181,7 +2144,6 @@
       <when state="hebrew" output="י"/>
       <when state="hindi" next="hindi" output="इ"/>
       <when state="latin_bar" output="ɨ"/>
-      <when state="latin_circumflex_above" output="î"/>
       <when state="latin_circumflex_below" output="i̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2215,7 +2177,6 @@
       <when state="hindi" next="hindi" output="ज"/>
       <when state="hindi_dot_below" output="ज़"/>
       <when state="latin_bar" output="ɉ"/>
-      <when state="latin_circumflex_above" output="ĵ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2250,7 +2211,6 @@
       <when state="hindi" next="hindi" output="क"/>
       <when state="hindi_dot_below" output="क़"/>
       <when state="latin_bar" output="ꝁ"/>
-      <when state="latin_circumflex_above" output="k̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2282,7 +2242,6 @@
       <when state="hebrew" output="ל‎ "/>
       <when state="hindi" next="hindi" output="ल"/>
       <when state="latin_bar" output="ƚ"/>
-      <when state="latin_circumflex_above" output="l̂"/>
       <when state="latin_circumflex_below" output="ḽ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2310,7 +2269,6 @@
       <when state="hebrew" output="מ"/>
       <when state="hindi" next="hindi" output="म"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="m̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2349,7 +2307,6 @@
       <when state="hebrew" output="נ"/>
       <when state="hindi" next="hindi" output="न"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="n̂"/>
       <when state="latin_circumflex_below" output="ṋ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2382,7 +2339,6 @@
       <when state="hebrew" output="ע"/>
       <when state="hindi" next="hindi" output="ु"/>
       <when state="latin_bar" output="ɵ"/>
-      <when state="latin_circumflex_above" output="ô"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="œ"/>
@@ -2412,7 +2368,6 @@
       <when state="hebrew" output="פ"/>
       <when state="hindi" next="hindi" output="प"/>
       <when state="latin_bar" output="ᵽ"/>
-      <when state="latin_circumflex_above" output=""/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2441,7 +2396,6 @@
       <when state="hebrew" output="ק"/>
       <when state="hindi" next="hindi" output="ै"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output=""/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2473,7 +2427,6 @@
       <when state="hebrew" output="ר"/>
       <when state="hindi" next="hindi" output="र"/>
       <when state="latin_bar" output="ɍ"/>
-      <when state="latin_circumflex_above" output="r̂"/>
       <when state="latin_circumflex_below" output="r̭"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2507,7 +2460,6 @@
       <when state="hebrew" output="ש"/>
       <when state="hindi" next="hindi" output="स"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="ŝ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output="ș"/>
       <when state="latin_e" output=""/>
@@ -2540,7 +2492,6 @@
       <when state="hebrew" output="ט"/>
       <when state="hindi" next="hindi" output="त"/>
       <when state="latin_bar" output="ŧ"/>
-      <when state="latin_circumflex_above" output="t̂"/>
       <when state="latin_circumflex_below" output="ṱ"/>
       <when state="latin_comma_below" output="ț"/>
       <when state="latin_e" output=""/>
@@ -2575,7 +2526,6 @@
       <when state="hebrew" output="ו"/>
       <when state="hindi" next="hindi" output="उ"/>
       <when state="latin_bar" output="ʉ"/>
-      <when state="latin_circumflex_above" output="û"/>
       <when state="latin_circumflex_below" output="ṷ"/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2603,7 +2553,6 @@
       <when state="greek" next="greek" output="ϝ"/>
       <when state="hindi" next="hindi" output="व"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="v̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2630,11 +2579,10 @@
       <when state="greek" next="greek" output="ω"/>
       <when state="hindi" next="hindi" output="ट"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="ŵ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
-      <when state="latin_extensions" output=""/>
+      <when state="latin_extensions" output="ɯ"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2657,7 +2605,6 @@
       <when state="greek" next="greek" output="χ"/>
       <when state="hindi" next="hindi" output="श"/>
       <when state="latin_bar" output=""/>
-      <when state="latin_circumflex_above" output="x̂"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2688,7 +2635,6 @@
       <when state="greek" next="greek" output="ψ"/>
       <when state="hindi" next="hindi" output="य"/>
       <when state="latin_bar" output="ɏ"/>
-      <when state="latin_circumflex_above" output="ŷ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2723,7 +2669,6 @@
       <when state="hebrew" output="ז"/>
       <when state="hindi" next="hindi" output="ड"/>
       <when state="latin_bar" output="ƶ"/>
-      <when state="latin_circumflex_above" output="ẑ"/>
       <when state="latin_circumflex_below" output=""/>
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
@@ -2835,7 +2780,6 @@
     <when state="hindi" output="अ"/>
     <when state="hindi_dot_below" output="."/>
     <when state="latin_bar" output="-"/>
-    <when state="latin_circumflex_above" output="ˆ"/>
     <when state="latin_circumflex_below" output="ˆ"/>
     <when state="latin_comma_below" output=","/>
     <when state="latin_e" output="æ"/>
