@@ -893,7 +893,7 @@
         </action>
         <action id="(">
             <when state="none" output="["/>
-            <when state="arabic" next="arabic" output="ض "/>
+            <when state="arabic" next="arabic" output="ض"/>
             <when state="hindi" next="hindi" output="ू"/>
         </action>
         <action id="*">
@@ -1091,7 +1091,7 @@
         </action>
         <action id="C">
             <when state="none" output="C"/>
-            <when state="arabic" next="arabic" output="چ "/>
+            <when state="arabic" next="arabic" output="چ"/>
             <when state="armenian" output="Ծ"/>
             <when state="armenian_2" output="Ճ"/>
             <when state="cyrillic" next="cyrillic" output="Ц"/>
@@ -1103,7 +1103,7 @@
             <when state="cyrillic_romanized_hacek" output="Ч"/>
             <when state="cyrillic_romanized_macron" output="Ҵ"/>
             <when state="cyrillic_softened" output="Ч"/>
-            <when state="georgian_mkhedruli" output="ჩ "/>
+            <when state="georgian_mkhedruli" output="ჩ"/>
             <when state="greek" next="greek" output="Ξ"/>
             <when state="hindi" next="hindi" output="छ"/>
             <when state="latin_bar" output="Ꞓ"/>
@@ -1208,7 +1208,7 @@
         </action>
         <action id="G">
             <when state="none" output="G"/>
-            <when state="arabic" next="arabic" output="گ "/>
+            <when state="arabic" next="arabic" output="گ"/>
             <when state="armenian" output="Գ"/>
             <when state="cyrillic" next="cyrillic" output="Г"/>
             <when state="cyrillic_romanized_acute" output="Ѓ"/>
@@ -1290,7 +1290,7 @@
         </action>
         <action id="J">
             <when state="none" output="J"/>
-            <when state="arabic" next="arabic" output="ژ "/>
+            <when state="arabic" next="arabic" output="ژ"/>
             <when state="armenian" output="Ձ"/>
             <when state="armenian_2" output="Ջ"/>
             <when state="cyrillic" next="cyrillic" output="Й"/>
@@ -1773,14 +1773,14 @@
         </action>
         <action id="^">
             <when state="none" output="^"/>
-            <when state="arabic" next="arabic" output="ظ "/>
+            <when state="arabic" next="arabic" output="ظ"/>
             <when state="cyrillic" next="cyrillic_circumflex"/>
             <when state="hindi" next="hindi" output="ै"/>
             <when state="latin_extensions" output="Ƅ"/>
         </action>
         <action id="_">
             <when state="none" output="-"/>
-            <when state="arabic" next="arabic" output="ذ "/>
+            <when state="arabic" next="arabic" output="ذ"/>
             <when state="armenian" output="ը"/>
             <when state="hindi" next="hindi" output="ञ"/>
             <when state="mongolian" output="᠆"/>
@@ -1994,7 +1994,7 @@
         </action>
         <action id="c">
             <when state="none" output="c"/>
-            <when state="arabic" next="arabic" output="ث "/>
+            <when state="arabic" next="arabic" output="ث"/>
             <when state="armenian" output="ծ"/>
             <when state="armenian_2" output="ճ"/>
             <when state="cyrillic" next="cyrillic" output="ц"/>
@@ -2660,7 +2660,7 @@
         </action>
         <action id="v">
             <when state="none" output="v"/>
-            <when state="arabic" next="arabic" output="ظ "/>
+            <when state="arabic" next="arabic" output="ظ"/>
             <when state="armenian" output="վ"/>
             <when state="cyrillic" next="cyrillic" output="в"/>
             <when state="georgian_mkhedruli" output="ვ"/>
@@ -2745,7 +2745,7 @@
         </action>
         <action id="y">
             <when state="none" output="y"/>
-            <when state="arabic" next="arabic" output="ض "/>
+            <when state="arabic" next="arabic" output="ض"/>
             <when state="armenian" next="armenian" output="յ"/>
             <when state="cyrillic" next="cyrillic" output="ы"/>
             <when state="cyrillic_romanized_diaresis" next="cyrillic" output="ӹ"/>
