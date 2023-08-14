@@ -1,7 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Last edited by AJY on 2023-07-12 at 23:59 (EST)-->
-<keyboard group="0" id="11974" name="JDvorak keyboard (iso)" maxout="3">
+<!--Last edited by Ukelele version 359 on 2023-08-14 at 00:17 (EDT)-->
+<keyboard group="0" id="1494" name="JDvorak keyboard (iso)" maxout="3">
   <layouts>
     <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
   </layouts>
@@ -303,11 +304,12 @@
       <key code="34" output="̨"/>
       <key code="35" action="!"/>
       <key code="36" output="&#x000D;"/>
+      <key code="37" output=""/>
       <key code="38" action="alt+h"/>
       <key code="39" action="alt+_"/>
       <key code="40" action="alt+t"/>
       <key code="41" action="alt+s"/>
-      <key code="42" action="̀"/>
+      <key code="42" output="̀"/>
       <key code="43" action="∴"/>
       <key code="44" output="̧"/>
       <key code="45" action="∫"/>
@@ -717,7 +719,7 @@
       <key code="1" output="&#x0013;"/>
       <key code="2" action="&#x0009;"/>
       <key code="3" output="&#x0006;"/>
-      <key code="4" action="hindi" next="hindi"/>
+      <key code="4" action="hindi"/>
       <key code="5" output="&#x0007;"/>
       <key code="6" output="&#x001A;"/>
       <key code="7" action="&#x0018;"/>
@@ -1042,7 +1044,6 @@
       <when state="armenian" output="Ա"/>
       <when state="cyrillic" next="cyrillic" output="А"/>
       <when state="cyrillic_circumflex" output="Я"/>
-      <when state="cyrillic_romanized_acute" output="А́"/>
       <when state="cyrillic_romanized_grave" output="Ӛ"/>
       <when state="cyrillic_romanized_hacek" output="Ѫ"/>
       <when state="cyrillic_romanized_macron" output="А̄"/>
@@ -1054,7 +1055,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="Æ"/>
       <when state="latin_extensions" output="Ɑ"/>
-      <when state="latin_grave" output="À"/>
       <when state="latin_hook_above" output="Ả"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1077,7 +1077,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1112,7 +1111,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1139,7 +1137,6 @@
       <when state="latin_comma_below" output="D̦"/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1170,7 +1167,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ɛ"/>
-      <when state="latin_grave" output="È"/>
       <when state="latin_hook_above" output="Ẻ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1195,7 +1191,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ƒ"/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="Ƒ"/>
       <when state="latin_horn" output=""/>
@@ -1211,7 +1206,6 @@
       <when state="arabic" next="arabic" output="گ"/>
       <when state="armenian" output="Գ"/>
       <when state="cyrillic" next="cyrillic" output="Г"/>
-      <when state="cyrillic_romanized_acute" output="Ѓ"/>
       <when state="cyrillic_romanized_dot_above" output="Ғ"/>
       <when state="cyrillic_romanized_grave" output="Ґ"/>
       <when state="greek" next="greek" output="Γ"/>
@@ -1222,7 +1216,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ɣ"/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1247,7 +1240,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ƕ"/>
-      <when state="latin_grave" output="H̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1264,9 +1256,6 @@
       <when state="arabic" next="arabic" output="ی"/>
       <when state="armenian" output="Ի"/>
       <when state="cyrillic" next="cyrillic" output="И"/>
-      <when state="cyrillic_circumflex" output="Ӥ"/>
-      <when state="cyrillic_romanized_acute" output="И́"/>
-      <when state="cyrillic_romanized_diaresis" output="Ї"/>
       <when state="cyrillic_romanized_grave" output="І"/>
       <when state="cyrillic_romanized_hacek" output="І̄"/>
       <when state="cyrillic_romanized_macron" output="Ӣ"/>
@@ -1277,7 +1266,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ɪ"/>
-      <when state="latin_grave" output="Ì"/>
       <when state="latin_hook_above" output="Ỉ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1307,7 +1295,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="J"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="Ʝ"/>
       <when state="latin_horn" output=""/>
@@ -1326,7 +1313,6 @@
       <when state="armenian_2" output="Ք"/>
       <when state="cyrillic" next="cyrillic" output="К"/>
       <when state="cyrillic_circumflex" output="Ҝ"/>
-      <when state="cyrillic_romanized_acute" output="Ќ"/>
       <when state="cyrillic_romanized_comma_below" output="Қ"/>
       <when state="cyrillic_romanized_grave" output="К̨"/>
       <when state="cyrillic_romanized_hacek" output="Ҡ"/>
@@ -1342,7 +1328,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="K̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1368,7 +1353,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1392,7 +1376,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="M̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="Ɱ"/>
       <when state="latin_horn" output=""/>
@@ -1424,7 +1407,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="Ǹ"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="Ŋ"/>
       <when state="latin_horn" output=""/>
@@ -1441,7 +1423,6 @@
       <when state="armenian" output="Օ"/>
       <when state="cyrillic" next="cyrillic" output="О"/>
       <when state="cyrillic_circumflex" output="Ө"/>
-      <when state="cyrillic_romanized_acute" output="О́"/>
       <when state="cyrillic_romanized_diaresis" output="Ӧ"/>
       <when state="cyrillic_romanized_grave" output="Ҩ"/>
       <when state="cyrillic_romanized_macron" output="О̄"/>
@@ -1453,7 +1434,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="Œ"/>
       <when state="latin_extensions" output="Ɔ"/>
-      <when state="latin_grave" output="Ò"/>
       <when state="latin_hook_above" output="Ỏ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output="Ơ"/>
@@ -1484,7 +1464,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1508,7 +1487,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1534,7 +1512,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="R̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1565,7 +1542,6 @@
       <when state="latin_comma_below" output="Ș"/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ẞ"/>
-      <when state="latin_grave" output="S̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1595,7 +1571,6 @@
       <when state="latin_comma_below" output="Ț"/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Þ"/>
-      <when state="latin_grave" output="T̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1612,7 +1587,6 @@
       <when state="armenian" output="Ո"/>
       <when state="cyrillic" next="cyrillic" output="У"/>
       <when state="cyrillic_circumflex" output="Ю"/>
-      <when state="cyrillic_romanized_acute" output="У́"/>
       <when state="cyrillic_romanized_diaresis" output="Ӱ"/>
       <when state="cyrillic_romanized_grave" output="Ү"/>
       <when state="cyrillic_romanized_macron" output="Ӯ"/>
@@ -1623,7 +1597,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ʊ"/>
-      <when state="latin_grave" output="Ù"/>
       <when state="latin_hook_above" output="Ủ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output="Ư"/>
@@ -1646,7 +1619,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ʋ"/>
-      <when state="latin_grave" output="V̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1671,7 +1643,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="Ẁ"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1695,7 +1666,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ʃ"/>
-      <when state="latin_grave" output="X̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1720,7 +1690,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ƴ"/>
-      <when state="latin_grave" output="Ỳ"/>
       <when state="latin_hook_above" output="Ỷ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
@@ -1752,7 +1721,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="Ʒ"/>
-      <when state="latin_grave" output="Z̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="Ᶎ"/>
       <when state="latin_horn" output=""/>
@@ -1814,7 +1782,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="æ"/>
       <when state="latin_extensions" output="ɑ"/>
-      <when state="latin_grave" output="à"/>
       <when state="latin_hook_above" output="ả"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output="ᶏ"/>
@@ -1908,7 +1875,7 @@
       <when state="none" next="latin_slash"/>
     </action>
     <action id="alt+\">
-      <when state="none" next="latin_grave"/>
+      <when state="none" output=""/>
       <when state="cyrillic" next="cyrillic_romanized_grave"/>
     </action>
     <action id="alt+^">
@@ -1978,7 +1945,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶀ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2016,7 +1982,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ʕ"/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2054,7 +2019,6 @@
       <when state="latin_comma_below" output="d̦"/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶁ"/>
       <when state="latin_hook_retroflex" output="ɖ"/>
@@ -2094,7 +2058,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ɛ"/>
-      <when state="latin_grave" output="è"/>
       <when state="latin_hook_above" output="ẻ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output="ᶒ"/>
@@ -2125,7 +2088,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ƒ"/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ƒ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2145,7 +2107,6 @@
       <when state="arabic_ring_below" output="ګ"/>
       <when state="armenian" output="գ"/>
       <when state="cyrillic" next="cyrillic" output="г"/>
-      <when state="cyrillic_romanized_acute" output="ѓ"/>
       <when state="cyrillic_romanized_dot_above" output="ғ"/>
       <when state="cyrillic_romanized_grave" output="ґ"/>
       <when state="devanagari_line_below" output="ॻ"/>
@@ -2161,7 +2122,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ɣ"/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶃ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2191,7 +2151,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ƕ"/>
-      <when state="latin_grave" output="h̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2215,12 +2174,8 @@
       <when state="armenian" output="ի"/>
       <when state="canadian_aboriginal_syllabics" output="ᐃ"/>
       <when state="cyrillic" next="cyrillic" output="и"/>
-      <when state="cyrillic_circumflex" output="ӥ"/>
-      <when state="cyrillic_romanized_acute" output="и́"/>
-      <when state="cyrillic_romanized_diaresis" output="ї"/>
       <when state="cyrillic_romanized_grave" output="і"/>
       <when state="cyrillic_romanized_hacek" output="і̄"/>
-      <when state="cyrillic_romanized_macron" output="ӣ"/>
       <when state="georgian_mkhedruli" output="ი"/>
       <when state="greek" next="greek" output="ι"/>
       <when state="hebrew" output="י"/>
@@ -2231,7 +2186,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ɪ"/>
-      <when state="latin_grave" output="ì"/>
       <when state="latin_hook_above" output="ỉ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output="ᶖ"/>
@@ -2266,7 +2220,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="j"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ʝ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2287,7 +2240,6 @@
       <when state="armenian_2" output="ք"/>
       <when state="cyrillic" next="cyrillic" output="к"/>
       <when state="cyrillic_circumflex" output="ҝ"/>
-      <when state="cyrillic_romanized_acute" output="ќ"/>
       <when state="cyrillic_romanized_comma_below" output="қ"/>
       <when state="cyrillic_romanized_grave" output="к̨"/>
       <when state="cyrillic_romanized_hacek" output="ҡ"/>
@@ -2303,7 +2255,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="k̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶄ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2336,7 +2287,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶅ"/>
       <when state="latin_hook_retroflex" output="ɭ"/>
@@ -2365,7 +2315,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="m̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ɱ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2405,7 +2354,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="ǹ"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ŋ"/>
       <when state="latin_hook_retroflex" output="ɳ"/>
@@ -2427,8 +2375,6 @@
       <when state="canadian_aboriginal_syllabics" output="ᐅ"/>
       <when state="cyrillic" next="cyrillic" output="о"/>
       <when state="cyrillic_circumflex" output="ө"/>
-      <when state="cyrillic_romanized_acute" output="о́"/>
-      <when state="cyrillic_romanized_diaresis" output="ӧ"/>
       <when state="cyrillic_romanized_grave" output="ҩ"/>
       <when state="cyrillic_romanized_macron" output="о̄"/>
       <when state="georgian_mkhedruli" output="ო"/>
@@ -2441,7 +2387,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output="œ"/>
       <when state="latin_extensions" output="ɔ"/>
-      <when state="latin_grave" output="ò"/>
       <when state="latin_hook_above" output="ỏ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2472,7 +2417,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶈ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2502,7 +2446,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output=""/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2535,7 +2478,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ɾ"/>
-      <when state="latin_grave" output="r̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶉ"/>
       <when state="latin_hook_retroflex" output="ɽ"/>
@@ -2570,7 +2512,6 @@
       <when state="latin_comma_below" output="ș"/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ß"/>
-      <when state="latin_grave" output="s̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶊ"/>
       <when state="latin_hook_retroflex" output="ʂ"/>
@@ -2604,7 +2545,6 @@
       <when state="latin_comma_below" output="ț"/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="þ"/>
-      <when state="latin_grave" output="t̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ƫ"/>
       <when state="latin_hook_retroflex" output="ʈ"/>
@@ -2629,10 +2569,7 @@
       <when state="armenian" output="ո"/>
       <when state="cyrillic" next="cyrillic" output="у"/>
       <when state="cyrillic_circumflex" output="ю"/>
-      <when state="cyrillic_romanized_acute" output="у́"/>
-      <when state="cyrillic_romanized_diaresis" output="ӱ"/>
       <when state="cyrillic_romanized_grave" output="ү"/>
-      <when state="cyrillic_romanized_macron" output="ӯ"/>
       <when state="georgian_mkhedruli" output="უ"/>
       <when state="greek" next="greek" output="υ"/>
       <when state="hebrew" output="ו"/>
@@ -2643,7 +2580,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ʊ"/>
-      <when state="latin_grave" output="ù"/>
       <when state="latin_hook_above" output="ủ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output="ᶙ"/>
@@ -2672,7 +2608,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ʋ"/>
-      <when state="latin_grave" output="v̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶌ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2700,7 +2635,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output=""/>
-      <when state="latin_grave" output="ẁ"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2728,7 +2662,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ʃ"/>
-      <when state="latin_grave" output="x̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶍ"/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2760,7 +2693,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ƴ"/>
-      <when state="latin_grave" output="ỳ"/>
       <when state="latin_hook_above" output="ỷ"/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_hook_retroflex" output=""/>
@@ -2796,7 +2728,6 @@
       <when state="latin_comma_below" output=""/>
       <when state="latin_e" output=""/>
       <when state="latin_extensions" output="ʒ"/>
-      <when state="latin_grave" output="z̀"/>
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="ᶎ"/>
       <when state="latin_hook_retroflex" output="ʐ"/>
@@ -2909,7 +2840,6 @@
     <when state="latin_comma_below" output=","/>
     <when state="latin_e" output="æ"/>
     <when state="latin_extensions" output="x"/>
-    <when state="latin_grave" output="`"/>
     <when state="latin_hook_above" output=" ̉"/>
     <when state="latin_hook_palatal" output=" ̡"/>
     <when state="latin_hook_retroflex" output="◌̢"/>
