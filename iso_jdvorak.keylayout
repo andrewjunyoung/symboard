@@ -917,40 +917,40 @@
     <action id="-">
       <when state="none" output="_"/>
       <when state="armenian" output="Ը"/>
-      <when state="mongolian" output="᠊"/>
+      <when state="mongolian" next="mongolian" output="᠊"/>
     </action>
     <action id=".">
       <when state="none" output="."/>
       <when state="arrows_basic_dvorak" output="↗"/>
       <when state="hebrew" next="hebrew_dagesh"/>
       <when state="hindi" next="hindi" output="ं"/>
-      <when state="mongolian" output="᠃"/>
+      <when state="mongolian" next="mongolian" output="᠃"/>
     </action>
     <action id="/">
       <when state="none" output="/"/>
       <when state="hindi" next="hindi" output="ऌ"/>
-      <when state="mongolian" output="᠀"/>
+      <when state="mongolian" next="mongolian" output="᠀"/>
     </action>
     <action id="0">
       <when state="none" output="0"/>
       <when state="arabic" next="arabic" output="٠"/>
       <when state="hindi" next="hindi" output="०"/>
       <when state="latin_extensions" output=""/>
-      <when state="mongolian" output="᠐"/>
+      <when state="mongolian" next="mongolian" output="᠐"/>
     </action>
     <action id="1">
       <when state="none" output="1"/>
       <when state="arabic" next="arabic" output="١"/>
       <when state="hindi" next="hindi" output="१"/>
       <when state="latin_extensions" output=""/>
-      <when state="mongolian" output="᠑"/>
+      <when state="mongolian" next="mongolian" output="᠑"/>
     </action>
     <action id="2">
       <when state="none" output="2"/>
       <when state="arabic" next="arabic" output="٢"/>
       <when state="hindi" next="hindi" output="२"/>
       <when state="latin_extensions" output="ƨ"/>
-      <when state="mongolian" output="᠒"/>
+      <when state="mongolian" next="mongolian" output="᠒"/>
     </action>
     <action id="3">
       <when state="none" output="3"/>
@@ -958,7 +958,7 @@
       <when state="hindi" next="hindi" output="३"/>
       <when state="latin_extensions" output="з"/>
       <when state="math_operators" output="△"/>
-      <when state="mongolian" output="᠓"/>
+      <when state="mongolian" next="mongolian" output="᠓"/>
     </action>
     <action id="4">
       <when state="none" output="4"/>
@@ -966,7 +966,7 @@
       <when state="hindi" next="hindi" output="४"/>
       <when state="latin_extensions" output="ч"/>
       <when state="math_operators" output="□"/>
-      <when state="mongolian" output="᠔"/>
+      <when state="mongolian" next="mongolian" output="᠔"/>
     </action>
     <action id="5">
       <when state="none" output="5"/>
@@ -974,21 +974,21 @@
       <when state="hindi" next="hindi" output="५"/>
       <when state="latin_extensions" output="ƽ"/>
       <when state="math_operators" output="☆"/>
-      <when state="mongolian" output="᠕"/>
+      <when state="mongolian" next="mongolian" output="᠕"/>
     </action>
     <action id="6">
       <when state="none" output="6"/>
       <when state="arabic" next="arabic" output="٦"/>
       <when state="hindi" next="hindi" output="६"/>
       <when state="latin_extensions" output="ƅ"/>
-      <when state="mongolian" output="᠖"/>
+      <when state="mongolian" next="mongolian" output="᠖"/>
     </action>
     <action id="7">
       <when state="none" output="7"/>
       <when state="arabic" next="arabic" output="٧"/>
       <when state="hindi" next="hindi" output="७"/>
       <when state="latin_extensions" output="ʔ"/>
-      <when state="mongolian" output="᠗"/>
+      <when state="mongolian" next="mongolian" output="᠗"/>
     </action>
     <action id="8">
       <when state="none" output="8"/>
@@ -996,26 +996,26 @@
       <when state="hindi" next="hindi" output="८"/>
       <when state="latin_extensions" output=""/>
       <when state="math_operators" output="∞"/>
-      <when state="mongolian" output="᠘"/>
+      <when state="mongolian" next="mongolian" output="᠘"/>
     </action>
     <action id="9">
       <when state="none" output="9"/>
       <when state="arabic" next="arabic" output="٩"/>
       <when state="hindi" next="hindi" output="९"/>
       <when state="latin_extensions" output=""/>
-      <when state="mongolian" output="᠙"/>
+      <when state="mongolian" next="mongolian" output="᠙"/>
     </action>
     <action id=":">
       <when state="none" output=":"/>
       <when state="hindi" next="hindi" output="ः"/>
-      <when state="mongolian" output="᠄"/>
+      <when state="mongolian" next="mongolian" output="᠄"/>
     </action>
     <action id=";">
       <when state="none" output="&#x0022;"/>
       <when state="armenian" next="armenian_2"/>
       <when state="arrows_basic_dvorak" output="↖"/>
       <when state="hindi" next="hindi" output="ः"/>
-      <when state="mongolian" output="᠁"/>
+      <when state="mongolian" next="mongolian" output="᠁"/>
     </action>
     <action id="&#x003C;">
       <when state="none" output="&#x003C;"/>
@@ -1086,7 +1086,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="B̈"/>
-      <when state="tifinagh" output="ⴲ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴲ"/>
     </action>
     <action id="C">
       <when state="none" output="C"/>
@@ -1120,7 +1120,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="C̈"/>
-      <when state="mongolian" output="ᠼ"/>
+      <when state="mongolian" next="mongolian" output="ᠼ"/>
     </action>
     <action id="D">
       <when state="none" output="D"/>
@@ -1147,7 +1147,7 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output=""/>
       <when state="math_operators" output="∇"/>
-      <when state="tifinagh" output="ⴹ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴹ"/>
     </action>
     <action id="E">
       <when state="none" output="E"/>
@@ -1176,8 +1176,8 @@
       <when state="latin_tilde_above" output="Ẽ"/>
       <when state="latin_tilde_below" output="Ḛ"/>
       <when state="latin_umlaut" output="Ë"/>
-      <when state="mongolian" output="ᠧ"/>
-      <when state="tifinagh" output="ⵄ"/>
+      <when state="mongolian" next="mongolian" output="ᠧ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵄ"/>
     </action>
     <action id="F">
       <when state="none" output="F"/>
@@ -1225,7 +1225,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output=""/>
-      <when state="mongolian" output="ᠺ"/>
+      <when state="mongolian" next="mongolian" output="ᠺ"/>
     </action>
     <action id="H">
       <when state="none" output="H"/>
@@ -1249,7 +1249,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="Ḧ"/>
-      <when state="tifinagh" output="ⵃ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵃ"/>
     </action>
     <action id="I">
       <when state="none" output="I"/>
@@ -1304,7 +1304,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="J̈"/>
-      <when state="mongolian" output="ᡁ"/>
+      <when state="mongolian" next="mongolian" output="ᡁ"/>
     </action>
     <action id="K">
       <when state="none" output="K"/>
@@ -1337,7 +1337,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="K̈"/>
-      <when state="mongolian" output="ᠻ"/>
+      <when state="mongolian" next="mongolian" output="ᠻ"/>
     </action>
     <action id="L">
       <when state="none" output="L"/>
@@ -1362,7 +1362,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="L̈"/>
-      <when state="mongolian" output="ᡀ"/>
+      <when state="mongolian" next="mongolian" output="ᡀ"/>
     </action>
     <action id="M">
       <when state="none" output="M"/>
@@ -1410,13 +1410,13 @@
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output="Ŋ"/>
       <when state="latin_horn" output=""/>
-      <when state="latin_rotated_lower" output="U"/>
-      <when state="latin_rotated_upper" output="N"/>
+      <when state="latin_rotated_lower" output=""/>
+      <when state="latin_rotated_upper" output=""/>
       <when state="latin_slash" output="Ꞥ"/>
       <when state="latin_tilde_above" output="Ñ"/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="N̈"/>
-      <when state="mongolian" output="ᠩ"/>
+      <when state="mongolian" next="mongolian" output="ᠩ"/>
     </action>
     <action id="O">
       <when state="none" output="O"/>
@@ -1443,7 +1443,7 @@
       <when state="latin_tilde_above" output="Õ"/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="Ö"/>
-      <when state="mongolian" output="ᠥ"/>
+      <when state="mongolian" next="mongolian" output="ᠥ"/>
     </action>
     <action id="P">
       <when state="none" output="P"/>
@@ -1467,7 +1467,7 @@
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
-      <when state="latin_rotated_lower" output="D"/>
+      <when state="latin_rotated_lower" output="d"/>
       <when state="latin_rotated_upper" output="d"/>
       <when state="latin_slash" output=""/>
       <when state="latin_tilde_above" output=""/>
@@ -1490,7 +1490,7 @@
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
-      <when state="latin_rotated_lower" output="B"/>
+      <when state="latin_rotated_lower" output=""/>
       <when state="latin_rotated_upper" output=""/>
       <when state="latin_slash" output=""/>
       <when state="latin_tilde_above" output=""/>
@@ -1515,13 +1515,13 @@
       <when state="latin_hook_above" output=""/>
       <when state="latin_hook_palatal" output=""/>
       <when state="latin_horn" output=""/>
-      <when state="latin_rotated_lower" output=""/>
+      <when state="latin_rotated_lower" output="ᴚ"/>
       <when state="latin_rotated_upper" output=""/>
       <when state="latin_slash" output="Ꞧ"/>
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="R̈"/>
-      <when state="tifinagh" output="ⵕ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵕ"/>
     </action>
     <action id="S">
       <when state="none" output="S"/>
@@ -1552,8 +1552,8 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="S̈"/>
       <when state="math_operators" output="∮"/>
-      <when state="mongolian" output="ᠱ"/>
-      <when state="tifinagh" output="ⵚ"/>
+      <when state="mongolian" next="mongolian" output="ᠱ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵚ"/>
     </action>
     <action id="T">
       <when state="none" output="T"/>
@@ -1580,7 +1580,7 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="T̈"/>
-      <when state="tifinagh" output="ⵟ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵟ"/>
     </action>
     <action id="U">
       <when state="none" output="U"/>
@@ -1606,7 +1606,7 @@
       <when state="latin_tilde_above" output="Ũ"/>
       <when state="latin_tilde_below" output="Ṵ"/>
       <when state="latin_umlaut" output="Ü"/>
-      <when state="mongolian" output="ᠦ"/>
+      <when state="mongolian" next="mongolian" output="ᠦ"/>
     </action>
     <action id="V">
       <when state="none" output="V"/>
@@ -1652,12 +1652,12 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="Ẅ"/>
-      <when state="tifinagh" output="ⵯ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵯ"/>
     </action>
     <action id="X">
       <when state="none" output="X"/>
       <when state="armenian" output="Խ"/>
-      <when state="cyrillic" next="cyrillic" output="ш"/>
+      <when state="cyrillic" next="cyrillic" output="Ш"/>
       <when state="greek" next="greek" output="Χ"/>
       <when state="hindi" next="hindi" output="ष"/>
       <when state="latin_bar" output=""/>
@@ -1699,7 +1699,7 @@
       <when state="latin_tilde_above" output="Ỹ"/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="Ÿ"/>
-      <when state="tifinagh" output="ⵖ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵖ"/>
     </action>
     <action id="Z">
       <when state="none" output="Z"/>
@@ -1730,14 +1730,14 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="Z̈"/>
-      <when state="mongolian" output="ᠿ"/>
-      <when state="tifinagh" output="ⵥ"/>
+      <when state="mongolian" next="mongolian" output="ᠿ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵥ"/>
     </action>
     <action id="\">
       <when state="none" output="\"/>
       <when state="cyrillic" next="cyrillic_umlaut"/>
       <when state="hindi" next="hindi" output="ॅ"/>
-      <when state="mongolian" output="᠅"/>
+      <when state="mongolian" next="mongolian" output="᠅"/>
     </action>
     <action id="^">
       <when state="none" output="^"/>
@@ -1751,7 +1751,7 @@
       <when state="arabic" next="arabic" output="ذ"/>
       <when state="armenian" output="ը"/>
       <when state="hindi" next="hindi" output="ञ"/>
-      <when state="mongolian" output="᠆"/>
+      <when state="mongolian" next="mongolian" output="᠆"/>
     </action>
     <action id="`">
       <when state="none" output="`"/>
@@ -1793,8 +1793,8 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="ä"/>
       <when state="math_operators" output="∝"/>
-      <when state="mongolian" output="ᠠ"/>
-      <when state="tifinagh" output="ⴰ"/>
+      <when state="mongolian" next="mongolian" output="ᠠ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴰ"/>
     </action>
     <action id="action">
       <when state="none" output=""/>
@@ -1952,8 +1952,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="b̈"/>
-      <when state="mongolian" output="ᠪ"/>
-      <when state="tifinagh" output="ⴱ"/>
+      <when state="mongolian" next="mongolian" output="ᠪ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴱ"/>
     </action>
     <action id="c">
       <when state="none" output="c"/>
@@ -1990,8 +1990,8 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="c̈"/>
       <when state="math_operators" output="⊂"/>
-      <when state="mongolian" output="ᠴ"/>
-      <when state="tifinagh" output="ⵛ"/>
+      <when state="mongolian" next="mongolian" output="ᠴ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵛ"/>
     </action>
     <action id="canadian_aboriginal_syllabics">
       <when state="none" next="canadian_aboriginal_syllabics"/>
@@ -2026,8 +2026,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output=""/>
-      <when state="mongolian" output="ᠳ"/>
-      <when state="tifinagh" output="ⴷ"/>
+      <when state="mongolian" next="mongolian" output="ᠳ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴷ"/>
     </action>
     <action id="dot">
       <when state="none" output=""/>
@@ -2066,8 +2066,8 @@
       <when state="latin_tilde_below" output="ḛ"/>
       <when state="latin_umlaut" output="ë"/>
       <when state="math_operators" output="∈"/>
-      <when state="mongolian" output="ᠡ"/>
-      <when state="tifinagh" output="ⴻ"/>
+      <when state="mongolian" next="mongolian" output="ᠡ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴻ"/>
     </action>
     <action id="f">
       <when state="none" output="f"/>
@@ -2095,8 +2095,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output=""/>
-      <when state="mongolian" output="ᠹ"/>
-      <when state="tifinagh" output="ⴼ"/>
+      <when state="mongolian" next="mongolian" output="ᠹ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴼ"/>
     </action>
     <action id="g">
       <when state="none" output="g"/>
@@ -2129,8 +2129,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output=""/>
-      <when state="mongolian" output="ᠭ"/>
-      <when state="tifinagh" output="ⴳ"/>
+      <when state="mongolian" next="mongolian" output="ᠭ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴳ"/>
     </action>
     <action id="h">
       <when state="none" output="h"/>
@@ -2158,8 +2158,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="ḧ"/>
-      <when state="mongolian" output="ᠾ"/>
-      <when state="tifinagh" output="ⵀ"/>
+      <when state="mongolian" next="mongolian" output="ᠾ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵀ"/>
     </action>
     <action id="hindi">
       <when state="none" next="hindi"/>
@@ -2193,8 +2193,8 @@
       <when state="latin_tilde_above" output="ĩ"/>
       <when state="latin_tilde_below" output="ḭ"/>
       <when state="latin_umlaut" output="ï"/>
-      <when state="mongolian" output="ᠢ"/>
-      <when state="tifinagh" output="ⵉ"/>
+      <when state="mongolian" next="mongolian" output="ᠢ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵉ"/>
     </action>
     <action id="j">
       <when state="none" output="j"/>
@@ -2227,8 +2227,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="j̈"/>
-      <when state="mongolian" output="ᠵ"/>
-      <when state="tifinagh" output="ⵊ"/>
+      <when state="mongolian" next="mongolian" output="ᠵ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵊ"/>
     </action>
     <action id="k">
       <when state="none" output="k"/>
@@ -2262,8 +2262,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="k̈"/>
-      <when state="mongolian" output="ᠬ"/>
-      <when state="tifinagh" output="ⴽ"/>
+      <when state="mongolian" next="mongolian" output="ᠬ"/>
+      <when state="tifinagh" next="tifinagh" output="ⴽ"/>
     </action>
     <action id="l">
       <when state="none" output="l"/>
@@ -2294,8 +2294,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="l̈"/>
-      <when state="mongolian" output="ᠯ"/>
-      <when state="tifinagh" output="ⵍ"/>
+      <when state="mongolian" next="mongolian" output="ᠯ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵍ"/>
     </action>
     <action id="m">
       <when state="none" output="m"/>
@@ -2322,8 +2322,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="m̈"/>
-      <when state="mongolian" output="ᠮ"/>
-      <when state="tifinagh" output="ⵎ"/>
+      <when state="mongolian" next="mongolian" output="ᠮ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵎ"/>
     </action>
     <action id="math_operators">
       <when state="none" next="math_operators"/>
@@ -2362,8 +2362,8 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="n̈"/>
       <when state="math_operators" output="∩"/>
-      <when state="mongolian" output="ᠨ"/>
-      <when state="tifinagh" output="ⵏ"/>
+      <when state="mongolian" next="mongolian" output="ᠨ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵏ"/>
     </action>
     <action id="o">
       <when state="none" output="o"/>
@@ -2394,8 +2394,8 @@
       <when state="latin_tilde_above" output="õ"/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="ö"/>
-      <when state="mongolian" output="ᠣ"/>
-      <when state="tifinagh" output="ⵧ"/>
+      <when state="mongolian" next="mongolian" output="ᠣ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵧ"/>
     </action>
     <action id="p">
       <when state="none" output="p"/>
@@ -2424,8 +2424,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="p̈"/>
-      <when state="mongolian" output="ᠫ"/>
-      <when state="tifinagh" output="ⵒ"/>
+      <when state="mongolian" next="mongolian" output="ᠫ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵒ"/>
     </action>
     <action id="q">
       <when state="none" output="q"/>
@@ -2453,8 +2453,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="q̈"/>
-      <when state="mongolian" output="ᡂ"/>
-      <when state="tifinagh" output="ⵇ"/>
+      <when state="mongolian" next="mongolian" output="ᡂ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵇ"/>
     </action>
     <action id="r">
       <when state="none" output="r"/>
@@ -2485,8 +2485,8 @@
       <when state="latin_tilde_above" output=""/>
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="r̈"/>
-      <when state="mongolian" output="ᠷ"/>
-      <when state="tifinagh" output="ⵔ"/>
+      <when state="mongolian" next="mongolian" output="ᠷ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵔ"/>
     </action>
     <action id="s">
       <when state="none" output="s"/>
@@ -2520,8 +2520,8 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="s̈"/>
       <when state="math_operators" output="∫"/>
-      <when state="mongolian" output="ᠰ"/>
-      <when state="tifinagh" output="ⵙ"/>
+      <when state="mongolian" next="mongolian" output="ᠰ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵙ"/>
     </action>
     <action id="t">
       <when state="none" output="t"/>
@@ -2553,8 +2553,8 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="ẗ"/>
       <when state="math_operators" output="⊥"/>
-      <when state="mongolian" output="ᠲ"/>
-      <when state="tifinagh" output="ⵜ"/>
+      <when state="mongolian" next="mongolian" output="ᠲ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵜ"/>
     </action>
     <action id="tifinagh">
       <when state="none" next="tifinagh"/>
@@ -2588,8 +2588,8 @@
       <when state="latin_tilde_below" output="ṵ"/>
       <when state="latin_umlaut" output="ü"/>
       <when state="math_operators" output="∪"/>
-      <when state="mongolian" output="ᠤ"/>
-      <when state="tifinagh" output="ⵓ"/>
+      <when state="mongolian" next="mongolian" output="ᠤ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵓ"/>
     </action>
     <action id="v">
       <when state="none" output="v"/>
@@ -2616,7 +2616,7 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="v̈"/>
       <when state="math_operators" output="√"/>
-      <when state="tifinagh" output="ⵠ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵠ"/>
     </action>
     <action id="w">
       <when state="none" output="w"/>
@@ -2643,7 +2643,7 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="ẅ"/>
       <when state="mongolian" output="ᠸ"/>
-      <when state="tifinagh" output="ⵡ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵡ"/>
     </action>
     <action id="x">
       <when state="none" output="x"/>
@@ -2705,8 +2705,8 @@
     </action>
     <action id="z">
       <when state="none" output="z"/>
-      <when state="arabic" output="ز"/>
-      <when state="armenian" output="զ"/>
+      <when state="arabic" next="arabic" output="ز"/>
+      <when state="armenian" next="armenian" output="զ"/>
       <when state="armenian_2" output="ժ"/>
       <when state="cyrillic" next="cyrillic" output="з"/>
       <when state="cyrillic_circumflex" output="ѕ"/>
@@ -2736,7 +2736,7 @@
       <when state="latin_tilde_below" output=""/>
       <when state="latin_umlaut" output="z̈"/>
       <when state="mongolian" output="ᠽ"/>
-      <when state="tifinagh" output="ⵣ"/>
+      <when state="tifinagh" next="tifinagh" output="ⵣ"/>
     </action>
     <action id="|">
       <when state="none" output="|"/>
@@ -2849,6 +2849,6 @@
     <when state="latin_umlaut" output="¨"/>
     <when state="math_operators" output="="/>
     <when state="mongolian" output="ᠪ"/>
-    <when state="tifinagh" output="ⵥ"/>
+    <when state="tifinagh" next="tifinagh" output="ⵥ"/>
   </terminators>
 </keyboard>
