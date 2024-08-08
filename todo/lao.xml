@@ -1,0 +1,87 @@
+<when state="lao" next="lao" output="໐" english="0"/>
+<when state="lao" next="lao" output="໑" english="1"/>
+<when state="lao" next="lao" output="໒" english="2"/>
+<when state="lao" next="lao" output="໓" english="3"/>
+<when state="lao" next="lao" output="໔" english="4"/>
+<when state="lao" next="lao" output="໕" english="5"/>
+<when state="lao" next="lao" output="໖" english="6"/>
+<when state="lao" next="lao" output="໗" english="7"/>
+<when state="lao" next="lao" output="໘" english="8"/>
+<when state="lao" next="lao" output="໙" english="9"/>
+
+
+
+<when state="lao" next="lao" output="ກ" english="k"/>
+<when state="lao" next="lao" output="ຂ" english="kh"/>
+<when state="lao" next="lao" output="ຄ" english="kh"/>
+<when state="lao" next="lao" output="ງ" english="ng"/>
+<when state="lao" next="lao" output="ຈ" english="ch"/>
+<when state="lao" next="lao" output="ຊ" english="s"/>
+<when state="lao" next="lao" output="ຍ" english="ny"/>
+<when state="lao" next="lao" output="ຑ" english="th"/>
+<when state="lao" next="lao" output="ດ" english="d"/>
+<when state="lao" next="lao" output="ດ" english="d"/>
+<when state="lao" next="lao" output="ຕ" english="t"/>
+<when state="lao" next="lao" output="ຕ" english="t"/>
+<when state="lao" next="lao" output="ຖ" english="th"/>
+<when state="lao" next="lao" output="ທ" english="th"/>
+<when state="lao" next="lao" output="ນ" english="n"/>
+<when state="lao" next="lao" output="ບ" english="b"/>
+<when state="lao" next="lao" output="ປ" english="p"/>
+<when state="lao" next="lao" output="ຜ" english="ph"/>
+<when state="lao" next="lao" output="ພ" english="ph"/>
+<when state="lao" next="lao" output="ຟ" english="f"/>
+<when state="lao" next="lao" output="ມ" english="m"/>
+<when state="lao" next="lao" output="ຢ" english="y"/>
+<when state="lao" next="lao" output="ຣ" english="r"/>
+<when state="lao" next="lao" output="ຣ" english="r"/>
+<when state="lao" next="lao" output="ລ" english="l"/>
+<when state="lao" next="lao" output="ລ" english="l"/>
+<when state="lao" next="lao" output="ວ" english="w"/>
+<when state="lao" next="lao" output="ສ" english="s"/>
+<when state="lao" next="lao" output="ສ" english="s"/>
+<when state="lao" next="lao" output="ຫ" english="h"/>
+<when state="lao" next="lao" output="ຫ໌" english="h"/>
+<when state="lao" next="lao" output="ຫ໌" english="h"/>
+<when state="lao" next="lao" output="ອ" english="o"/>
+<when state="lao" next="lao" output="ອິ" english="i"/>
+<when state="lao" next="lao" output="ອຸ" english="u"/>
+<when state="lao" next="lao" output="າ" english="a"/>
+<when state="lao" next="lao" output="າ" english="a"/>
+<when state="lao" next="lao" output="ິ" english="i"/>
+<when state="lao" next="lao" output="ິ" english="i"/>
+<when state="lao" next="lao" output="ີ" english="i"/>
+<when state="lao" next="lao" output="ີ" english="i"/>
+<when state="lao" next="lao" output="ຸ" english="u"/>
+<when state="lao" next="lao" output="ຸ" english="u"/>
+<when state="lao" next="lao" output="ູ" english="u"/>
+<when state="lao" next="lao" output="ູ" english="u"/>
+<when state="lao" next="lao" output="ຼ" english="l"/>
+<when state="lao" next="lao" output="ຼ" english="l"/>
+<when state="lao" next="lao" output="ເ" english="e"/>
+<when state="lao" next="lao" output="ເ" english="e"/>
+<when state="lao" next="lao" output="ເອ" english="e"/>
+<when state="lao" next="lao" output="ເົາ" english="ao"/>
+<when state="lao" next="lao" output="ເົາ" english="ao"/>
+<when state="lao" next="lao" output="ໂ" english="o"/>
+<when state="lao" next="lao" output="ໂ" english="o"/>
+<when state="lao" next="lao" output="ໄ" english="ai"/>
+<when state="lao" next="lao" output="ໄ" english="ai"/>
+<when state="lao" next="lao_dot_below"/>
+<when state="lao" output="ອ" english="o"/>
+<when state="lao_dot_below" output="໌" english="silent"/>
+<when state="none" next="lao"/>
+
+<!-- Lao letters with no direct Hindi correspondence -->
+<when state="lao" next="lao" output="ຫຼ" english="hl"/>
+<when state="lao" next="lao" output="ໜ" english="n"/>
+<when state="lao" next="lao" output="ໝ" english="m"/>
+<when state="lao" next="lao" output="ຼ" english="l"/>
+<when state="lao" next="lao" output="ຯ" english="ellipsis"/>
+<when state="lao" next="lao" output="ໆ" english="repetition"/>
+
+    g j     q    wxyz
+BCD G JKLMNPQR TVWXYZ"
+
+KH, TH, PH, NG
+g   q   x   j

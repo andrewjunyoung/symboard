@@ -1,0 +1,76 @@
+<when state="tamil" next="tamil" output="ீ" english="ii"/>
+<when state="tamil" next="tamil" output="ோ" english="o"/>
+<when state="tamil" next="tamil" output="ீ" english="ii"/>
+<when state="tamil" next="tamil" output="ே" english="e"/>
+<when state="tamil" next="tamil" output="ோ" english="o"/>
+<when state="tamil" next="tamil" output="ே" english="e"/>
+<when state="tamil" next="tamil" output="ூ" english="uu"/>
+<when state="tamil" next="tamil" output="ி" english="i"/>
+<when state="tamil" next="tamil" output="ங" english="nga"/>
+<when state="tamil" next="tamil" output="௦" english="0"/>
+<when state="tamil" next="tamil" output="௧" english="1"/>
+<when state="tamil" next="tamil" output="௨" english="2"/>
+<when state="tamil" next="tamil" output="௩" english="3"/>
+<when state="tamil" next="tamil" output="௪" english="4"/>
+<when state="tamil" next="tamil" output="௫" english="5"/>
+<when state="tamil" next="tamil" output="௬" english="6"/>
+<when state="tamil" next="tamil" output="௭" english="7"/>
+<when state="tamil" next="tamil" output="௮" english="8"/>
+<when state="tamil" next="tamil" output="௯" english="9"/>
+<when state="tamil" next="tamil" output="ஃ" english="ah"/>
+<when state="tamil" next="tamil" output="ஃ" english="ah"/>
+<when state="tamil" next="tamil" output="ௌ" english="au"/>
+<when state="tamil" next="tamil" output="ள" english="la"/>
+<when state="tamil" next="tamil" output="ு" english="u"/>
+<when state="tamil" next="tamil" output="ி" english="i"/>
+<when state="tamil" next="tamil" output="ா" english="aa"/>
+<when state="tamil" next="tamil" output="ப" english="pa"/>
+<when state="tamil" next="tamil" output="ச" english="ca"/>
+<when state="tamil" next="tamil" output="த" english="ta"/>
+<when state="tamil" next="tamil" output="க" english="ka"/>
+<when state="tamil" next="tamil" output="ஜ" english="ja"/>
+<when state="tamil" next="tamil" output="க" english="ka"/>
+<when state="tamil" next="tamil" output="ங" english="nga"/>
+<when state="tamil" next="tamil" output="ூ" english="uu"/>
+<when state="tamil" next="tamil" output="ப" english="pa"/>
+<when state="tamil" next="tamil" output="ௌ" english="au"/>
+<when state="tamil" next="tamil" output="த" english="ta"/>
+<when state="tamil" next="tamil" output="ட" english="ta"/>
+<when state="tamil" next="tamil" output="ஷ" english="sha"/>
+<when state="tamil" next="tamil" output="ை" english="ai"/>
+<when state="tamil" next="tamil" output="ஞ" english="nya"/>
+<when state="tamil" next="tamil" output="அ" english="a"/>
+<when state="tamil" next="tamil_dot_below"/>
+<when state="tamil" next="tamil" output="ப" english="pa"/>
+<when state="tamil" next="tamil" output="ச" english="ca"/>
+<when state="tamil" next="tamil" output="த" english="ta"/>
+<when state="tamil" next="tamil" output="எ" english="e"/>
+<when state="tamil" next="tamil" output="க" english="ka"/>
+<when state="tamil" next="tamil" output="ஹ" english="ha"/>
+<when state="tamil" next="tamil" output="இ" english="i"/>
+<when state="tamil" next="tamil" output="ஜ" english="ja"/>
+<when state="tamil" next="tamil" output="க" english="ka"/>
+<when state="tamil" next="tamil" output="ல" english="la"/>
+<when state="tamil" next="tamil" output="ம" english="ma"/>
+<when state="tamil" next="tamil" output="ந" english="na"/>
+<when state="tamil" next="tamil" output="ு" english="u"/>
+<when state="tamil" next="tamil" output="ப" english="pa"/>
+<when state="tamil" next="tamil" output="ை" english="ai"/>
+<when state="tamil" next="tamil" output="ர" english="ra"/>
+<when state="tamil" next="tamil" output="ஸ" english="sa"/>
+<when state="tamil" next="tamil" output="த" english="ta"/>
+<when state="tamil" next="tamil" output="உ" english="u"/>
+<when state="tamil" next="tamil" output="வ" english="va"/>
+<when state="tamil" next="tamil" output="ட" english="ta"/>
+<when state="tamil" next="tamil" output="ஶ" english="sha"/>
+<when state="tamil" next="tamil" output="ய" english="ya"/>
+<when state="tamil" next="tamil" output="ட" english="ta"/>
+<when state="tamil" next="tamil" output="ா" english="aa"/>
+<when state="none" next="tamil"/>
+<when state="tamil" output="அ" english="a"/>
+<when state="tamil_dot_below" output="." english="dot"/>
+
+<!-- Tamil letters with no direct Brahmic correspondence -->
+<when state="tamil" next="tamil" output="ன" english="na"/>
+<when state="tamil" next="tamil" output="ற" english="ra"/>
+<when state="tamil" next="tamil" output="ழ" english="zha"/>
