@@ -892,6 +892,7 @@
             <when state="arrows_basic_dvorak" output="↙"/>
             <when state="cyrillic" next="cyrillic" output="ь"/>
             <when state="hindi" next="hindi" output="े"/>
+            <when state="lao" next="lao" output="ອ"/>
         </action>
         <action id="(">
             <when state="none" output="["/>
@@ -943,6 +944,7 @@
             <when state="none" output="1"/>
             <when state="arabic" next="arabic" output="١"/>
             <when state="hindi" next="hindi" output="१"/>
+            <when state="lao" next="lao" output="໑"/>
             <when state="latin_extensions" output=""/>
             <when state="mongolian" next="mongolian" output="᠑"/>
         </action>
@@ -950,6 +952,7 @@
             <when state="none" output="2"/>
             <when state="arabic" next="arabic" output="٢"/>
             <when state="hindi" next="hindi" output="२"/>
+            <when state="lao" next="lao" output="໒"/>
             <when state="latin_extensions" output="ƨ"/>
             <when state="mongolian" next="mongolian" output="᠒"/>
         </action>
@@ -957,6 +960,7 @@
             <when state="none" output="3"/>
             <when state="arabic" next="arabic" output="٣"/>
             <when state="hindi" next="hindi" output="३"/>
+            <when state="lao" next="lao" output="໓"/>
             <when state="latin_extensions" output="з"/>
             <when state="math_operators" output="△"/>
             <when state="mongolian" next="mongolian" output="᠓"/>
@@ -965,6 +969,7 @@
             <when state="none" output="4"/>
             <when state="arabic" next="arabic" output="٤"/>
             <when state="hindi" next="hindi" output="४"/>
+            <when state="lao" next="lao" output="໔"/>
             <when state="latin_extensions" output="ч"/>
             <when state="math_operators" output="□"/>
             <when state="mongolian" next="mongolian" output="᠔"/>
@@ -973,6 +978,7 @@
             <when state="none" output="5"/>
             <when state="arabic" next="arabic" output="٥"/>
             <when state="hindi" next="hindi" output="५"/>
+            <when state="lao" next="lao" output="໕"/>
             <when state="latin_extensions" output="ƽ"/>
             <when state="math_operators" output="☆"/>
             <when state="mongolian" next="mongolian" output="᠕"/>
@@ -981,6 +987,7 @@
             <when state="none" output="6"/>
             <when state="arabic" next="arabic" output="٦"/>
             <when state="hindi" next="hindi" output="६"/>
+            <when state="lao" next="lao" output="໖"/>
             <when state="latin_extensions" output="ƅ"/>
             <when state="mongolian" next="mongolian" output="᠖"/>
         </action>
@@ -988,6 +995,7 @@
             <when state="none" output="7"/>
             <when state="arabic" next="arabic" output="٧"/>
             <when state="hindi" next="hindi" output="७"/>
+            <when state="lao" next="lao" output="໗"/>
             <when state="latin_extensions" output="ʔ"/>
             <when state="mongolian" next="mongolian" output="᠗"/>
         </action>
@@ -995,6 +1003,7 @@
             <when state="none" output="8"/>
             <when state="arabic" next="arabic" output="٨"/>
             <when state="hindi" next="hindi" output="८"/>
+            <when state="lao" next="lao" output="໘"/>
             <when state="latin_extensions" output=""/>
             <when state="math_operators" output="∞"/>
             <when state="mongolian" next="mongolian" output="᠘"/>
@@ -1003,6 +1012,7 @@
             <when state="none" output="9"/>
             <when state="arabic" next="arabic" output="٩"/>
             <when state="hindi" next="hindi" output="९"/>
+            <when state="lao" next="lao" output="໙"/>
             <when state="latin_extensions" output=""/>
             <when state="mongolian" next="mongolian" output="᠙"/>
         </action>
@@ -1182,6 +1192,7 @@
             <when state="armenian" output="Ֆ"/>
             <when state="cyrillic" next="cyrillic" output="Ф"/>
             <when state="greek" next="greek" output="Φ"/>
+            <when state="lao" next="lao" output="ຟ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -1206,6 +1217,7 @@
             <when state="cyrillic_romanized_grave" output="Ґ"/>
             <when state="greek" next="greek" output="Γ"/>
             <when state="hindi" next="hindi" output="घ"/>
+            <when state="lao" next="lao" output="ຄ"/>
             <when state="latin_bar" output="Ǥ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -1282,6 +1294,7 @@
             <when state="hebrew" output="ץ"/>
             <when state="hindi" next="hindi" output="झ"/>
             <when state="hindi_dot_below" output="झ़"/>
+            <when state="lao" next="lao" output="ຍ"/>
             <when state="latin_bar" output="Ɉ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -1468,6 +1481,7 @@
             <when state="cyrillic" next="cyrillic" output="Ԛ"/>
             <when state="greek" next="greek" output="Θ"/>
             <when state="hindi" next="hindi" output="ौ"/>
+            <when state="lao" next="lao" output="ທ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -1521,6 +1535,7 @@
             <when state="cyrillic_softened" output="Ш"/>
             <when state="georgian_mkhedruli" output="შ"/>
             <when state="greek" next="greek" output="Σ"/>
+            <when state="lao" next="lao" output="ຊ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output="Ș"/>
@@ -1640,6 +1655,7 @@
             <when state="cyrillic" next="cyrillic" output="Ш"/>
             <when state="greek" next="greek" output="Χ"/>
             <when state="hindi" next="hindi" output="ष"/>
+            <when state="lao" next="lao" output="ພ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -1912,6 +1928,7 @@
             <when state="hebrew" output="ב"/>
             <when state="hebrew_dagesh" output="בּ"/>
             <when state="hindi" next="hindi" output="ब"/>
+            <when state="lao" next="lao" output="ບ"/>
             <when state="latin_bar" output="ƀ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -1948,6 +1965,7 @@
             <when state="greek" next="greek" output="ξ"/>
             <when state="hebrew" output="ס"/>
             <when state="hindi" next="hindi" output="च"/>
+            <when state="lao" next="lao" output="ຈ"/>
             <when state="latin_bar" output="ꞓ"/>
             <when state="latin_circumflex_below" output="c̭"/>
             <when state="latin_comma_below" output=""/>
@@ -1984,6 +2002,7 @@
             <when state="hebrew" output="ד"/>
             <when state="hebrew_dagesh" output="דּ"/>
             <when state="hindi" next="hindi" output="द"/>
+            <when state="lao" next="lao" output="ດ"/>
             <when state="latin_bar" output="đ"/>
             <when state="latin_circumflex_below" output="ḓ"/>
             <when state="latin_comma_below" output="d̦"/>
@@ -2084,6 +2103,7 @@
             <when state="hebrew_dagesh" output="גּ"/>
             <when state="hindi" next="hindi" output="ग"/>
             <when state="hindi_dot_below" output="ग़"/>
+            <when state="lao" next="lao" output="ຂ"/>
             <when state="latin_bar" output="ǥ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2112,6 +2132,7 @@
             <when state="greek" next="greek" output="η"/>
             <when state="hebrew" output="ח"/>
             <when state="hindi" next="hindi" output="ह"/>
+            <when state="lao" next="lao" output="ຫ໌"/>
             <when state="latin_bar" output="ħ"/>
             <when state="latin_circumflex_below" output="h̭"/>
             <when state="latin_comma_below" output=""/>
@@ -2179,6 +2200,7 @@
             <when state="hebrew" output="צ"/>
             <when state="hindi" next="hindi" output="ज"/>
             <when state="hindi_dot_below" output="ज़"/>
+            <when state="lao" next="lao" output="ງ"/>
             <when state="latin_bar" output="ɉ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2213,6 +2235,7 @@
             <when state="hebrew_dagesh" output="כּ"/>
             <when state="hindi" next="hindi" output="क"/>
             <when state="hindi_dot_below" output="क़"/>
+            <when state="lao" next="lao" output="ກ"/>
             <when state="latin_bar" output="ꝁ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2244,6 +2267,7 @@
             <when state="greek" next="greek" output="λ"/>
             <when state="hebrew" output="ל‎ "/>
             <when state="hindi" next="hindi" output="ल"/>
+            <when state="lao" next="lao" output="ລ"/>
             <when state="latin_bar" output="ƚ"/>
             <when state="latin_circumflex_below" output="ḽ"/>
             <when state="latin_comma_below" output=""/>
@@ -2271,6 +2295,7 @@
             <when state="greek" next="greek" output="μ"/>
             <when state="hebrew" output="מ"/>
             <when state="hindi" next="hindi" output="म"/>
+            <when state="lao" next="lao" output="ມ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2309,6 +2334,7 @@
             <when state="greek" next="greek" output="ν"/>
             <when state="hebrew" output="נ"/>
             <when state="hindi" next="hindi" output="न"/>
+            <when state="lao" next="lao" output="ນ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output="ṋ"/>
             <when state="latin_comma_below" output=""/>
@@ -2370,6 +2396,7 @@
             <when state="greek" next="greek" output="π"/>
             <when state="hebrew" output="פ"/>
             <when state="hindi" next="hindi" output="प"/>
+            <when state="lao" next="lao" output="ປ"/>
             <when state="latin_bar" output="ᵽ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2398,6 +2425,7 @@
             <when state="greek" next="greek" output="θ"/>
             <when state="hebrew" output="ק"/>
             <when state="hindi" next="hindi" output="ै"/>
+            <when state="lao" next="lao" output="ຖ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2429,6 +2457,7 @@
             <when state="greek" next="greek" output="ρ"/>
             <when state="hebrew" output="ר"/>
             <when state="hindi" next="hindi" output="र"/>
+            <when state="lao" next="lao" output="ຣ"/>
             <when state="latin_bar" output="ɍ"/>
             <when state="latin_circumflex_below" output="r̭"/>
             <when state="latin_comma_below" output=""/>
@@ -2462,6 +2491,7 @@
             <when state="greek" next="greek" output="σ"/>
             <when state="hebrew" output="ש"/>
             <when state="hindi" next="hindi" output="स"/>
+            <when state="lao" next="lao" output="ສ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output="ș"/>
@@ -2494,6 +2524,7 @@
             <when state="greek" next="greek" output="τ"/>
             <when state="hebrew" output="ט"/>
             <when state="hindi" next="hindi" output="त"/>
+            <when state="lao" next="lao" output="ຕ"/>
             <when state="latin_bar" output="ŧ"/>
             <when state="latin_circumflex_below" output="ṱ"/>
             <when state="latin_comma_below" output="ț"/>
@@ -2555,6 +2586,7 @@
             <when state="georgian_mkhedruli" output="ვ"/>
             <when state="greek" next="greek" output="ϝ"/>
             <when state="hindi" next="hindi" output="व"/>
+            <when state="lao" next="lao" output="ວ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2607,6 +2639,7 @@
             <when state="georgian_mkhedruli" next="georgian_mkhedruli" output="ხ"/>
             <when state="greek" next="greek" output="χ"/>
             <when state="hindi" next="hindi" output="श"/>
+            <when state="lao" next="lao" output="ຜ"/>
             <when state="latin_bar" output=""/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
@@ -2637,6 +2670,7 @@
             <when state="georgian_mkhedruli" output="ყ"/>
             <when state="greek" next="greek" output="ψ"/>
             <when state="hindi" next="hindi" output="य"/>
+            <when state="lao" next="lao" output="ຢ"/>
             <when state="latin_bar" output="ɏ"/>
             <when state="latin_circumflex_below" output=""/>
             <when state="latin_comma_below" output=""/>
