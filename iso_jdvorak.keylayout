@@ -2386,6 +2386,7 @@
         <when state="hebr_dagesh" output=""/>
         <when state="hindi" output="अ"/>
         <when state="hindi_dot_below" output="."/>
+        <when state="lao" output="ອ"/>
         <when state="latn_bar" output="-"/>
         <when state="latn_circumflex_below" output="ˆ"/>
         <when state="latn_comma_below" output=","/>
