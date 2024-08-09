@@ -1923,9 +1923,6 @@
             <when state="tibt" next="tibt" output="ཿ"/>
             <when state="tfng" next="tfng" output="ⵀ"/>
         </action>
-        <action id="deva">
-            <when state="none" next="deva"/>
-        </action>
         <action id="i">
             <when state="none" output="i"/>
             <when state="arab" next="arab" output="ي"/>
@@ -2358,6 +2355,12 @@
             <when state="mong" output="ᠽ"/>
             <when state="tibt" next="tibt" output="ཙ"/>
             <when state="tfng" next="tfng" output="ⵣ"/>
+        </action>
+        <action id="deva">
+            <when state="none" next="deva"/>
+        </action>
+        <action id="tibt">
+            <when state="none" next="tibt"/>
         </action>
         <action id="|">
             <when state="none" output="|"/>
