@@ -1130,7 +1130,6 @@
             <when state="latn_rotated_upper" output="Ɐ"/>
             <when state="latn_slash" output="Ⱥ"/>
             <when state="latn_small_caps" output="ᴀ"/>
-            <when state="latn_tilde_above" output="Ã"/>
         </action>
         <action id="B">
             <when state="none" output="B"/>
@@ -1223,7 +1222,6 @@
             <when state="latn_rotated_upper" output="Ǝ"/>
             <when state="latn_slash" output="Ɇ"/>
             <when state="latn_small_caps" output="ᴇ"/>
-            <when state="latn_tilde_above" output="Ẽ"/>
             <when state="latn_tilde_below" output="Ḛ"/>
             <when state="mong" next="mong" output="ᠧ"/>
             <when state="tfng" next="tfng" output="ⵄ"/>
@@ -1292,7 +1290,6 @@
             <when state="latn_hook_above" output="Ỉ"/>
             <when state="latn_rotated_upper" output="I"/>
             <when state="latn_small_caps" output="ɪ"/>
-            <when state="latn_tilde_above" output="Ĩ"/>
             <when state="latn_tilde_below" output="Ḭ"/>
         </action>
         <action id="J">
@@ -1397,7 +1394,6 @@
             <when state="latn_hook_palatal" output="Ŋ"/>
             <when state="latn_slash" output="Ꞥ"/>
             <when state="latn_small_caps" output="ɴ"/>
-            <when state="latn_tilde_above" output="Ñ"/>
             <when state="mong" next="mong" output="ᠩ"/>
             <when state="mymr" next="mymr" output="င"/>
             <when state="sinh" next="sinh" output="ඞ"/>
@@ -1424,7 +1420,6 @@
             <when state="latn_rotated_upper" output="O"/>
             <when state="latn_slash" output="Ø"/>
             <when state="latn_small_caps" output="ᴏ"/>
-            <when state="latn_tilde_above" output="Õ"/>
             <when state="mong" next="mong" output="ᠥ"/>
         </action>
         <action id="P">
@@ -1548,7 +1543,6 @@
             <when state="latn_horn" output="Ư"/>
             <when state="latn_rotated_lower" output="N"/>
             <when state="latn_small_caps" output="ᴜ"/>
-            <when state="latn_tilde_above" output="Ũ"/>
             <when state="latn_tilde_below" output="Ṵ"/>
             <when state="mong" next="mong" output="ᠦ"/>
         </action>
@@ -1562,7 +1556,6 @@
             <when state="latn_rotated_upper" output="Ʌ"/>
             <when state="latn_slash" output="Ꝟ"/>
             <when state="latn_small_caps" output="ᴠ"/>
-            <when state="latn_tilde_above" output="Ṽ"/>
         </action>
         <action id="W">
             <when state="none" output="W"/>
@@ -1612,7 +1605,6 @@
             <when state="latn_rotated_lower" output="ʎ"/>
             <when state="latn_rotated_upper" output="⅄"/>
             <when state="latn_small_caps" output="ʏ"/>
-            <when state="latn_tilde_above" output="Ỹ"/>
             <when state="tfng" next="tfng" output="ⵖ"/>
         </action>
         <action id="Z">
@@ -1751,7 +1743,6 @@
             <when state="latn_rotated_lower" output="ɐ"/>
             <when state="latn_slash" output="ⱥ"/>
             <when state="latn_small_caps" output="ᴀ"/>
-            <when state="latn_tilde_above" output="ã"/>
             <when state="math_operators" output="∝"/>
             <when state="mong" next="mong" output="ᠠ"/>
             <when state="mymr" next="mymr" output="အ"/>
@@ -1919,7 +1910,6 @@
             <when state="latn_rotated_upper" output=""/>
             <when state="latn_slash" output=""/>
             <when state="latn_small_caps" output="ʙ"/>
-            <when state="latn_tilde_above" output=""/>
             <when state="latn_tilde_below" output=""/>
             <when state="mong" next="mong" output="ᠪ"/>
             <when state="mymr" next="mymr" output="ဗ"/>
@@ -1967,7 +1957,6 @@
             <when state="latn_rotated_upper" output="ᴐ"/>
             <when state="latn_slash" output="ȼ"/>
             <when state="latn_small_caps" output="ᴄ"/>
-            <when state="latn_tilde_above" output=""/>
             <when state="latn_tilde_below" output=""/>
             <when state="math_operators" output="⊂"/>
             <when state="mong" next="mong" output="ᠴ"/>
@@ -2094,7 +2083,6 @@
             <when state="latn_rotated_upper" output="ⱻ"/>
             <when state="latn_slash" output="ɇ"/>
             <when state="latn_small_caps" output="ᴇ"/>
-            <when state="latn_tilde_above" output="ẽ"/>
             <when state="latn_tilde_below" output="ḛ"/>
             <when state="math_operators" output="∈"/>
             <when state="mong" next="mong" output="ᠡ"/>
@@ -2271,7 +2259,6 @@
             <when state="latn_rotated_lower" output="ᴉ"/>
             <when state="latn_rotated_upper" output="ɪ"/>
             <when state="latn_small_caps" output="ɪ"/>
-            <when state="latn_tilde_above" output="ĩ"/>
             <when state="latn_tilde_below" output="ḭ"/>
             <when state="mong" next="mong" output="ᠢ"/>
             <when state="mymr" next="mymr" output="ဣ"/>
@@ -2452,7 +2439,6 @@
             <when state="latn_rotated_upper" output="ɴ"/>
             <when state="latn_slash" output="ꞥ"/>
             <when state="latn_small_caps" output="ɴ"/>
-            <when state="latn_tilde_above" output="ñ"/>
             <when state="math_operators" output="∩"/>
             <when state="mong" next="mong" output="ᠨ"/>
             <when state="mymr" next="mymr" output="န"/>
@@ -2538,7 +2524,6 @@
             <when state="latn_rotated_upper" output="ᴏ"/>
             <when state="latn_slash" output="ø"/>
             <when state="latn_small_caps" output="ᴏ"/>
-            <when state="latn_tilde_above" output="õ"/>
             <when state="mong" next="mong" output="ᠣ"/>
             <when state="tfng" next="tfng" output="ⵧ"/>
         </action>
@@ -2787,7 +2772,6 @@
             <when state="latn_horn" output="ư"/>
             <when state="latn_rotated_lower" output="n"/>
             <when state="latn_small_caps" output="ᴜ"/>
-            <when state="latn_tilde_above" output="ũ"/>
             <when state="latn_tilde_below" output="ṵ"/>
             <when state="math_operators" output="∪"/>
             <when state="mong" next="mong" output="ᠤ"/>
@@ -2836,7 +2820,6 @@
             <when state="latn_rotated_lower" output="ʌ"/>
             <when state="latn_slash" output="ꝟ"/>
             <when state="latn_small_caps" output="ᴠ"/>
-            <when state="latn_tilde_above" output="ṽ"/>
             <when state="math_operators" output="√"/>
             <when state="mymr" next="mymr" output="ဝ"/>
             <when state="sinh" next="sinh" output="ව"/>
@@ -2911,7 +2894,6 @@
             <when state="latn_hook_above" output="ỷ"/>
             <when state="latn_rotated_lower" output="ʎ"/>
             <when state="latn_small_caps" output="ʏ"/>
-            <when state="latn_tilde_above" output="ỹ"/>
             <when state="mong" output="ᠶ"/>
             <when state="mymr" next="mymr" output="ယ"/>
             <when state="sinh" next="sinh" output="ය"/>
@@ -2950,7 +2932,6 @@
             <when state="latn_rotated_upper" output="ᴢ"/>
             <when state="latn_slash" output=""/>
             <when state="latn_small_caps" output="ᴢ"/>
-            <when state="latn_tilde_above" output=""/>
             <when state="latn_tilde_below" output=""/>
             <when state="mong" output="ᠽ"/>
             <when state="mymr" next="mymr" output="ဍ"/>
@@ -3074,7 +3055,6 @@
         <when state="latn_rotated_upper" output="Ɐ"/>
         <when state="latn_slash" output="/"/>
         <when state="latn_small_caps" output="ᴀ"/>
-        <when state="latn_tilde_above" output="~"/>
         <when state="latn_tilde_below" output="~"/>
         <when state="math_operators" output="="/>
         <when state="mong" output="ᠪ"/>
