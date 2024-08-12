@@ -860,7 +860,7 @@
             <when state="deva" next="deva" output="ी"/>
             <when state="hira" output="！"/>
             <when state="kata" output="！"/>
-            <when state="latin_extensions" output="¡"/>
+            <when state="latn_extensions" output="¡"/>
             <when state="latn_rotated_lower" output="¡"/>
         </action>
         <action id="&#x0022;">
