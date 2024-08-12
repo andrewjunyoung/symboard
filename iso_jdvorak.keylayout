@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Last edited by AJY on 2023-07-12 at 23:59 (EST)-->
-<!--Last edited by Ukelele version 359 on 2024-08-09 at 18:57 (EDT)-->
-<keyboard group="0" id="1494" name="JDvorak keyboard (iso)" maxout="4">
+<!--Last edited by Ukelele version 359 on 2024-08-12 at 00:37 (EDT)-->
+<keyboard group="126" id="-21171" name="JDvorak keyboard (iso)" maxout="4">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
     </layouts>
@@ -712,12 +712,18 @@
             <key code="5" output="&#x0007;"/>
             <key code="6" output="&#x001A;"/>
             <key code="7" action="&#x0018;"/>
+            <key code="8" action="hira"/>
             <key code="9" output="khmr"/>
+            <key code="10" output=""/>
+            <key code="11" output=""/>
             <key code="12" output="&#x0011;"/>
             <key code="13" output="&#x0017;"/>
+            <key code="14" output=""/>
             <key code="15" action="tibt"/>
             <key code="16" output="&#x001D;"/>
             <key code="17" output="&#x0014;"/>
+            <key code="18" output=""/>
+            <key code="19" output=""/>
             <key code="20" output="3"/>
             <key code="21" output="4"/>
             <key code="22" action="mymr"/>
@@ -728,15 +734,18 @@
             <key code="27" output="&#x001F;"/>
             <key code="28" output="8"/>
             <key code="29" output="0"/>
+            <key code="30" output=""/>
             <key code="31" action="&#x000F;"/>
-            <key code="32" output="&#x0015;"/>
+            <key code="33" output=""/>
             <key code="34" action="&#x0003;"/>
             <key code="35" action="lao"/>
             <key code="36" output="&#x000D;"/>
             <key code="37" output="&#x001F;"/>
             <key code="38" action="&#x0008;"/>
+            <key code="39" output=""/>
             <key code="40" action="tfng"/>
             <key code="41" action="sinh"/>
+            <key code="42" output=""/>
             <key code="43" output=","/>
             <key code="44" output="/"/>
             <key code="45" action="beng"/>
@@ -744,6 +753,7 @@
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
+            <key code="50" output=""/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
             <key code="53" output="&#x001B;"/>
@@ -871,8 +881,8 @@
             <when state="arrows_basic_dvorak" output="↙"/>
             <when state="cyrl" next="cyrl" output="ь"/>
             <when state="deva" next="deva" output="े"/>
-            <when state="tibt" next="tibt" output="ང"/>
             <when state="lao" next="lao" output="ອ"/>
+            <when state="tibt" next="tibt" output="ང"/>
         </action>
         <action id="(">
             <when state="none" output="["/>
@@ -903,8 +913,8 @@
         <action id=".">
             <when state="none" output="."/>
             <when state="arrows_basic_dvorak" output="↗"/>
-            <when state="hebr" next="hebr_dagesh"/>
             <when state="deva" next="deva" output="ं"/>
+            <when state="hebr" next="hebr_dagesh"/>
             <when state="mong" next="mong" output="᠃"/>
         </action>
         <action id="/">
@@ -915,12 +925,12 @@
         <action id="0">
             <when state="none" output="0"/>
             <when state="arab" next="arab" output="٠"/>
-            <when state="deva" next="deva" output="०"/>
-            <when state="lao" next="lao" output="໐"/>
-            <when state="mong" next="mong" output="᠐"/>
             <when state="bengali" next="bengali" output="০"/>
             <when state="burmese" next="burmese" output="၀"/>
+            <when state="deva" next="deva" output="०"/>
             <when state="khmer" next="khmer" output="០"/>
+            <when state="lao" next="lao" output="໐"/>
+            <when state="mong" next="mong" output="᠐"/>
             <when state="tamil" next="tamil" output="௦"/>
             <when state="thai" next="thai" output="๐"/>
             <when state="tibt" next="tibt" output="༠"/>
@@ -928,12 +938,12 @@
         <action id="1">
             <when state="none" output="1"/>
             <when state="arab" next="arab" output="١"/>
-            <when state="deva" next="deva" output="१"/>
-            <when state="lao" next="lao" output="໑"/>
-            <when state="mong" next="mong" output="᠑"/>
             <when state="bengali" next="bengali" output="১"/>
             <when state="burmese" next="burmese" output="၁"/>
+            <when state="deva" next="deva" output="१"/>
             <when state="khmer" next="khmer" output="១"/>
+            <when state="lao" next="lao" output="໑"/>
+            <when state="mong" next="mong" output="᠑"/>
             <when state="tamil" next="tamil" output="௧"/>
             <when state="thai" next="thai" output="๑"/>
             <when state="tibt" next="tibt" output="༡"/>
@@ -941,13 +951,13 @@
         <action id="2">
             <when state="none" output="2"/>
             <when state="arab" next="arab" output="٢"/>
+            <when state="bengali" next="bengali" output="২"/>
+            <when state="burmese" next="burmese" output="၂"/>
             <when state="deva" next="deva" output="२"/>
+            <when state="khmer" next="khmer" output="២"/>
             <when state="lao" next="lao" output="໒"/>
             <when state="latn_extensions" output="ƨ"/>
             <when state="mong" next="mong" output="᠒"/>
-            <when state="bengali" next="bengali" output="২"/>
-            <when state="burmese" next="burmese" output="၂"/>
-            <when state="khmer" next="khmer" output="២"/>
             <when state="tamil" next="tamil" output="௨"/>
             <when state="thai" next="thai" output="๒"/>
             <when state="tibt" next="tibt" output="༢"/>
@@ -955,14 +965,14 @@
         <action id="3">
             <when state="none" output="3"/>
             <when state="arab" next="arab" output="٣"/>
+            <when state="bengali" next="bengali" output="৩"/>
+            <when state="burmese" next="burmese" output="၃"/>
             <when state="deva" next="deva" output="३"/>
+            <when state="khmer" next="khmer" output="៣"/>
             <when state="lao" next="lao" output="໓"/>
             <when state="latn_extensions" output="з"/>
             <when state="math_operators" output="△"/>
             <when state="mong" next="mong" output="᠓"/>
-            <when state="bengali" next="bengali" output="৩"/>
-            <when state="burmese" next="burmese" output="၃"/>
-            <when state="khmer" next="khmer" output="៣"/>
             <when state="tamil" next="tamil" output="௩"/>
             <when state="thai" next="thai" output="๓"/>
             <when state="tibt" next="tibt" output="༣"/>
@@ -970,14 +980,14 @@
         <action id="4">
             <when state="none" output="4"/>
             <when state="arab" next="arab" output="٤"/>
+            <when state="bengali" next="bengali" output="৪"/>
+            <when state="burmese" next="burmese" output="၄"/>
             <when state="deva" next="deva" output="४"/>
+            <when state="khmer" next="khmer" output="៤"/>
             <when state="lao" next="lao" output="໔"/>
             <when state="latn_extensions" output="ч"/>
             <when state="math_operators" output="□"/>
             <when state="mong" next="mong" output="᠔"/>
-            <when state="bengali" next="bengali" output="৪"/>
-            <when state="burmese" next="burmese" output="၄"/>
-            <when state="khmer" next="khmer" output="៤"/>
             <when state="tamil" next="tamil" output="௪"/>
             <when state="thai" next="thai" output="๔"/>
             <when state="tibt" next="tibt" output="༤"/>
@@ -985,14 +995,14 @@
         <action id="5">
             <when state="none" output="5"/>
             <when state="arab" next="arab" output="٥"/>
+            <when state="bengali" next="bengali" output="৫"/>
+            <when state="burmese" next="burmese" output="၅"/>
             <when state="deva" next="deva" output="५"/>
+            <when state="khmer" next="khmer" output="៥"/>
             <when state="lao" next="lao" output="໕"/>
             <when state="latn_extensions" output="ƽ"/>
             <when state="math_operators" output="☆"/>
             <when state="mong" next="mong" output="᠕"/>
-            <when state="bengali" next="bengali" output="৫"/>
-            <when state="burmese" next="burmese" output="၅"/>
-            <when state="khmer" next="khmer" output="៥"/>
             <when state="tamil" next="tamil" output="௫"/>
             <when state="thai" next="thai" output="๕"/>
             <when state="tibt" next="tibt" output="༥"/>
@@ -1000,13 +1010,13 @@
         <action id="6">
             <when state="none" output="6"/>
             <when state="arab" next="arab" output="٦"/>
+            <when state="bengali" next="bengali" output="৬"/>
+            <when state="burmese" next="burmese" output="၆"/>
             <when state="deva" next="deva" output="६"/>
+            <when state="khmer" next="khmer" output="៦"/>
             <when state="lao" next="lao" output="໖"/>
             <when state="latn_extensions" output="ƅ"/>
             <when state="mong" next="mong" output="᠖"/>
-            <when state="bengali" next="bengali" output="৬"/>
-            <when state="burmese" next="burmese" output="၆"/>
-            <when state="khmer" next="khmer" output="៦"/>
             <when state="tamil" next="tamil" output="௬"/>
             <when state="thai" next="thai" output="๖"/>
             <when state="tibt" next="tibt" output="༦"/>
@@ -1014,13 +1024,13 @@
         <action id="7">
             <when state="none" output="7"/>
             <when state="arab" next="arab" output="٧"/>
+            <when state="bengali" next="bengali" output="৭"/>
+            <when state="burmese" next="burmese" output="၇"/>
             <when state="deva" next="deva" output="७"/>
+            <when state="khmer" next="khmer" output="៧"/>
             <when state="lao" next="lao" output="໗"/>
             <when state="latn_extensions" output="ʔ"/>
             <when state="mong" next="mong" output="᠗"/>
-            <when state="bengali" next="bengali" output="৭"/>
-            <when state="burmese" next="burmese" output="၇"/>
-            <when state="khmer" next="khmer" output="៧"/>
             <when state="tamil" next="tamil" output="௭"/>
             <when state="thai" next="thai" output="๗"/>
             <when state="tibt" next="tibt" output="༧"/>
@@ -1028,13 +1038,13 @@
         <action id="8">
             <when state="none" output="8"/>
             <when state="arab" next="arab" output="٨"/>
+            <when state="bengali" next="bengali" output="৮"/>
+            <when state="burmese" next="burmese" output="၈"/>
             <when state="deva" next="deva" output="८"/>
+            <when state="khmer" next="khmer" output="៨"/>
             <when state="lao" next="lao" output="໘"/>
             <when state="math_operators" output="∞"/>
             <when state="mong" next="mong" output="᠘"/>
-            <when state="bengali" next="bengali" output="৮"/>
-            <when state="burmese" next="burmese" output="၈"/>
-            <when state="khmer" next="khmer" output="៨"/>
             <when state="tamil" next="tamil" output="௮"/>
             <when state="thai" next="thai" output="๘"/>
             <when state="tibt" next="tibt" output="༨"/>
@@ -1042,12 +1052,12 @@
         <action id="9">
             <when state="none" output="9"/>
             <when state="arab" next="arab" output="٩"/>
-            <when state="deva" next="deva" output="९"/>
-            <when state="lao" next="lao" output="໙"/>
-            <when state="mong" next="mong" output="᠙"/>
             <when state="bengali" next="bengali" output="৯"/>
             <when state="burmese" next="burmese" output="၉"/>
+            <when state="deva" next="deva" output="९"/>
             <when state="khmer" next="khmer" output="៩"/>
+            <when state="lao" next="lao" output="໙"/>
+            <when state="mong" next="mong" output="᠙"/>
             <when state="tamil" next="tamil" output="௯"/>
             <when state="thai" next="thai" output="๙"/>
             <when state="tibt" next="tibt" output="༩"/>
@@ -1095,8 +1105,8 @@
             <when state="cyrl_romanized_grave" output="Ӛ"/>
             <when state="cyrl_romanized_hacek" output="Ѫ"/>
             <when state="cyrl_romanized_macron" output="А̄"/>
-            <when state="grek" next="grek" output="Α"/>
             <when state="deva" next="deva" output="ा"/>
+            <when state="grek" next="grek" output="Α"/>
             <when state="latn_e" output="Æ"/>
             <when state="latn_extensions" output="Ɑ"/>
             <when state="latn_hook_above" output="Ả"/>
@@ -1109,18 +1119,18 @@
         <action id="B">
             <when state="none" output="B"/>
             <when state="armn" output="Բ"/>
-            <when state="cyrl" next="cyrl" output="Б"/>
-            <when state="grek" next="grek" output="Β"/>
-            <when state="deva" next="deva" output="भ"/>
             <when state="beng" next="beng" output="ভ"/>
-            <when state="mymr" next="mymr" output="ဘ"/>
+            <when state="cyrl" next="cyrl" output="Б"/>
+            <when state="deva" next="deva" output="भ"/>
+            <when state="grek" next="grek" output="Β"/>
             <when state="khmr" next="khmr" output="ភ"/>
-            <when state="sinh" next="sinh" output="භ"/>
-            <when state="thai" next="thai" output="ภ"/>
             <when state="latn_bar" output="Ƀ"/>
             <when state="latn_rotated_lower" output="Q"/>
             <when state="latn_small_caps" output="ʙ"/>
+            <when state="mymr" next="mymr" output="ဘ"/>
+            <when state="sinh" next="sinh" output="භ"/>
             <when state="tfng" next="tfng" output="ⴲ"/>
+            <when state="thai" next="thai" output="ภ"/>
         </action>
         <!-- Brahmic consonants complete till here-->
         <action id="C">
@@ -1128,6 +1138,7 @@
             <when state="arab" next="arab" output="چ"/>
             <when state="armn" output="Ծ"/>
             <when state="armn_2" output="Ճ"/>
+            <when state="beng" next="beng" output="ছ"/>
             <when state="cyrl" next="cyrl" output="Ц"/>
             <when state="cyrl_circumflex" output="Ҹ"/>
             <when state="cyrl_romanized_acute" output="Ћ"/>
@@ -1137,15 +1148,10 @@
             <when state="cyrl_romanized_hacek" output="Ч"/>
             <when state="cyrl_romanized_macron" output="Ҵ"/>
             <when state="cyrl_softened" output="Ч"/>
+            <when state="deva" next="deva" output="छ"/>
             <when state="georgian_mkhedruli" output="ჩ"/>
             <when state="grek" next="grek" output="Ξ"/>
-            <when state="deva" next="deva" output="छ"/>
-            <when state="beng" next="beng" output="ছ"/>
-            <when state="mymr" next="mymr" output="ဆ"/>
             <when state="khmr" next="khmr" output="ឆ"/>
-            <when state="sinh" next="sinh" output="ඡ"/>
-            <when state="taml" next="taml" output="ச"/>
-            <when state="thai" next="thai" output="ฉ"/>
             <when state="latn_bar" output="Ꞓ"/>
             <when state="latn_circumflex_below" output="C̭"/>
             <when state="latn_rotated_lower" output="Ɔ"/>
@@ -1153,22 +1159,22 @@
             <when state="latn_slash" output="Ȼ"/>
             <when state="latn_small_caps" output="ᴄ"/>
             <when state="mong" next="mong" output="ᠼ"/>
+            <when state="mymr" next="mymr" output="ဆ"/>
+            <when state="sinh" next="sinh" output="ඡ"/>
+            <when state="taml" next="taml" output="ச"/>
+            <when state="thai" next="thai" output="ฉ"/>
         </action>
         <action id="D">
             <when state="none" output="D"/>
             <when state="arab" next="arab" output="ض"/>
             <when state="armn" output="Դ"/>
+            <when state="beng" next="beng" output="ধ"/>
             <when state="cyrl" next="cyrl" output="Д"/>
             <when state="cyrl_circumflex" output="Џ"/>
             <when state="cyrl_romanized_stroke" output="Ђ"/>
-            <when state="grek" next="grek" output="Δ"/>
             <when state="deva" next="deva" output="ध"/>
-            <when state="beng" next="beng" output="ধ"/>
-            <when state="mymr" next="mymr" output="ဓ"/>
+            <when state="grek" next="grek" output="Δ"/>
             <when state="khmr" next="khmr" output="ធ"/>
-            <when state="sinh" next="sinh" output="ධ"/>
-            <when state="taml" next="taml" output="த"/>
-            <when state="thai" next="thai" output="ธ"/>
             <when state="latn_bar" output="Đ"/>
             <when state="latn_circumflex_below" output="Ḓ"/>
             <when state="latn_comma_below" output="D̦"/>
@@ -1176,7 +1182,11 @@
             <when state="latn_slash" output="Ð"/>
             <when state="latn_small_caps" output="ᴅ"/>
             <when state="math_operators" output="∇"/>
+            <when state="mymr" next="mymr" output="ဓ"/>
+            <when state="sinh" next="sinh" output="ධ"/>
+            <when state="taml" next="taml" output="த"/>
             <when state="tfng" next="tfng" output="ⴹ"/>
+            <when state="thai" next="thai" output="ธ"/>
         </action>
         <action id="E">
             <when state="none" output="E"/>
@@ -1218,16 +1228,13 @@
             <when state="none" output="G"/>
             <when state="arab" next="arab" output="گ"/>
             <when state="armn" output="Գ"/>
+            <when state="beng" next="beng" output="ঘ"/>
             <when state="cyrl" next="cyrl" output="Г"/>
             <when state="cyrl_romanized_dot_above" output="Ғ"/>
             <when state="cyrl_romanized_grave" output="Ґ"/>
-            <when state="grek" next="grek" output="Γ"/>
             <when state="deva" next="deva" output="घ"/>
-            <when state="beng" next="beng" output="ঘ"/>
-            <when state="mymr" next="mymr" output="ဃ"/>
+            <when state="grek" next="grek" output="Γ"/>
             <when state="khmr" next="khmr" output="ឃ"/>
-            <when state="sinh" next="sinh" output="ඝ"/>
-            <when state="thai" next="thai" output="ฆ"/>
             <when state="lao" next="lao" output="ຄ"/>
             <when state="latn_bar" output="Ǥ"/>
             <when state="latn_extensions" output="Ɣ"/>
@@ -1235,6 +1242,9 @@
             <when state="latn_slash" output="Ꞡ"/>
             <when state="latn_small_caps" output="ɢ"/>
             <when state="mong" next="mong" output="ᠺ"/>
+            <when state="mymr" next="mymr" output="ဃ"/>
+            <when state="sinh" next="sinh" output="ඝ"/>
+            <when state="thai" next="thai" output="ฆ"/>
         </action>
         <action id="H">
             <when state="none" output="H"/>
@@ -1274,54 +1284,54 @@
             <when state="arab" next="arab" output="ژ"/>
             <when state="armn" output="Ձ"/>
             <when state="armn_2" output="Ջ"/>
+            <when state="beng" next="beng" output="ঝ"/>
             <when state="cyrl" next="cyrl" output="Й"/>
             <when state="cyrl_romanized_acute" output="Ј̵"/>
             <when state="cyrl_romanized_hacek" output="Ј"/>
+            <when state="deva" next="deva" output="झ"/>
+            <when state="deva_dot_below" output="झ़"/>
             <when state="georgian_mkhedruli" output="ჟ"/>
             <when state="grek" next="grek" output="Σ"/>
             <when state="hebr" output="ץ"/>
-            <when state="deva" next="deva" output="झ"/>
-            <when state="beng" next="beng" output="ঝ"/>
-            <when state="mymr" next="mymr" output="ဈ"/>
             <when state="khmr" next="khmr" output="ឈ"/>
-            <when state="sinh" next="sinh" output="ඣ"/>
-            <when state="taml" next="taml" output="ஜ"/>
-            <when state="thai" next="thai" output="ฌ"/>
-            <when state="deva_dot_below" output="झ़"/>
             <when state="lao" next="lao" output="ຍ"/>
             <when state="latn_bar" output="Ɉ"/>
             <when state="latn_hook_palatal" output="Ʝ"/>
             <when state="latn_rotated_lower" output="Ṣ"/>
             <when state="latn_small_caps" output="ᴊ"/>
             <when state="mong" next="mong" output="ᡁ"/>
+            <when state="mymr" next="mymr" output="ဈ"/>
+            <when state="sinh" next="sinh" output="ඣ"/>
+            <when state="taml" next="taml" output="ஜ"/>
+            <when state="thai" next="thai" output="ฌ"/>
         </action>
         <action id="K">
             <when state="none" output="K"/>
             <when state="arab" next="arab" output="خ"/>
             <when state="armn" output="Կ"/>
             <when state="armn_2" output="Ք"/>
+            <when state="beng" next="beng" output="খ"/>
             <when state="cyrl" next="cyrl" output="К"/>
             <when state="cyrl_circumflex" output="Ҝ"/>
             <when state="cyrl_romanized_comma_below" output="Қ"/>
             <when state="cyrl_romanized_grave" output="К̨"/>
             <when state="cyrl_romanized_hacek" output="Ҡ"/>
+            <when state="deva" next="deva" output="ख"/>
+            <when state="deva_dot_below" output="ख़"/>
             <when state="georgian_mkhedruli" output="ქ"/>
             <when state="grek" next="grek" output="Κ"/>
             <when state="hebr" output="ך"/>
             <when state="hebr_dagesh" output="ךּ"/>
-            <when state="deva" next="deva" output="ख"/>
-            <when state="beng" next="beng" output="খ"/>
-            <when state="mymr" next="mymr" output="ခ"/>
             <when state="khmr" next="khmr" output="ខ"/>
-            <when state="sinh" next="sinh" output="ඛ"/>
-            <when state="thai" next="thai" output="ข"/>
-            <when state="deva_dot_below" output="ख़"/>
             <when state="latn_bar" output="Ꝁ"/>
             <when state="latn_rotated_lower" output="Ʞ"/>
             <when state="latn_rotated_upper" output="Ʞ"/>
             <when state="latn_slash" output="Ꝃ"/>
             <when state="latn_small_caps" output="ᴋ"/>
             <when state="mong" next="mong" output="ᠻ"/>
+            <when state="mymr" next="mymr" output="ခ"/>
+            <when state="sinh" next="sinh" output="ඛ"/>
+            <when state="thai" next="thai" output="ข"/>
         </action>
         <action id="L">
             <when state="none" output="L"/>
@@ -1354,6 +1364,7 @@
             <when state="none" output="N"/>
             <when state="arab" next="arab" output="ں"/>
             <when state="armn" output="Ն"/>
+            <when state="beng" next="beng" output="ঙ"/>
             <when state="cyrl" next="cyrl" output="Н"/>
             <when state="cyrl_circumflex" output="Њ"/>
             <when state="cyrl_romanized_acute" output="Ԣ"/>
@@ -1362,21 +1373,20 @@
             <when state="cyrl_romanized_hacek" output="Ӈ"/>
             <when state="cyrl_romanized_macron" output="Н̄"/>
             <when state="cyrl_softened" output="Њ"/>
+            <when state="deva" next="deva" output="ङ"/>
             <when state="grek" next="grek" output="Ν"/>
             <when state="hebr" output="ף"/>
-            <when state="deva" next="deva" output="ङ"/>
-            <when state="beng" next="beng" output="ঙ"/>
-            <when state="mymr" next="mymr" output="င"/>
             <when state="khmr" next="khmr" output="ង"/>
-            <when state="sinh" next="sinh" output="ඞ"/>
-            <when state="taml" next="taml" output="ங"/>
-            <when state="thai" next="thai" output="ง"/>
             <when state="latn_circumflex_below" output="Ṋ"/>
             <when state="latn_hook_palatal" output="Ŋ"/>
             <when state="latn_slash" output="Ꞥ"/>
             <when state="latn_small_caps" output="ɴ"/>
             <when state="latn_tilde_above" output="Ñ"/>
             <when state="mong" next="mong" output="ᠩ"/>
+            <when state="mymr" next="mymr" output="င"/>
+            <when state="sinh" next="sinh" output="ඞ"/>
+            <when state="taml" next="taml" output="ங"/>
+            <when state="thai" next="thai" output="ง"/>
         </action>
         <action id="O">
             <when state="none" output="O"/>
@@ -1387,8 +1397,8 @@
             <when state="cyrl_romanized_diaresis" output="Ӧ"/>
             <when state="cyrl_romanized_grave" output="Ҩ"/>
             <when state="cyrl_romanized_macron" output="О̄"/>
-            <when state="grek" next="grek" output="Ο"/>
             <when state="deva" next="deva" output="ू"/>
+            <when state="grek" next="grek" output="Ο"/>
             <when state="latn_bar" output="Ɵ"/>
             <when state="latn_e" output="Œ"/>
             <when state="latn_extensions" output="Ɔ"/>
@@ -1406,32 +1416,32 @@
             <when state="arab" next="arab" output="پ"/>
             <when state="armn" output="Պ"/>
             <when state="armn_2" output="Փ"/>
+            <when state="beng" next="beng" output="ফ"/>
             <when state="cyrl" next="cyrl" output="П"/>
             <when state="cyrl_romanized_grave" output="Ԥ"/>
+            <when state="deva" next="deva" output="फ"/>
+            <when state="deva_dot_below" output="फ़"/>
             <when state="georgian_mkhedruli" output="ფ"/>
             <when state="grek" next="grek" output="Π"/>
             <when state="hebr" output="ף"/>
             <when state="hebr_dagesh" output="פּ"/>
-            <when state="deva" next="deva" output="फ"/>
-            <when state="beng" next="beng" output="ফ"/>
-            <when state="mymr" next="mymr" output="ဖ"/>
             <when state="khmr" next="khmr" output="ផ"/>
-            <when state="sinh" next="sinh" output="ඵ"/>
-            <when state="taml" next="taml" output="ப"/>
-            <when state="thai" next="thai" output="พ"/>
-            <when state="deva_dot_below" output="फ़"/>
             <when state="latn_bar" output="Ᵽ"/>
             <when state="latn_rotated_lower" output="d"/>
             <when state="latn_rotated_upper" output="d"/>
             <when state="latn_small_caps" output="ᴘ"/>
+            <when state="mymr" next="mymr" output="ဖ"/>
+            <when state="sinh" next="sinh" output="ඵ"/>
+            <when state="taml" next="taml" output="ப"/>
+            <when state="thai" next="thai" output="พ"/>
         </action>
         <action id="Q">
             <when state="none" output="Q"/>
             <when state="arab" next="arab" output="څ"/>
             <when state="armn" output="Ղ"/>
             <when state="cyrl" next="cyrl" output="Ԛ"/>
-            <when state="grek" next="grek" output="Θ"/>
             <when state="deva" next="deva" output="ौ"/>
+            <when state="grek" next="grek" output="Θ"/>
             <when state="lao" next="lao" output="ທ"/>
             <when state="latn_small_caps" output="ꞯ"/>
         </action>
@@ -1440,21 +1450,21 @@
             <when state="arab" next="arab" output="ږ"/>
             <when state="armn" output="Ռ"/>
             <when state="armn_2" output="Ր"/>
+            <when state="beng" next="beng" output="ঋ"/>
             <when state="cyrl" next="cyrl" output="Р"/>
+            <when state="deva" next="deva" output="ऋ"/>
             <when state="georgian_mkhedruli" output="ღ"/>
             <when state="grek" next="grek" output="Ρ"/>
-            <when state="deva" next="deva" output="ऋ"/>
-            <when state="beng" next="beng" output="ঋ"/>
-            <when state="mymr" next="mymr" output="ရိ"/>
             <when state="khmr" next="khmr" output="ឫ"/>
-            <when state="sinh" next="sinh" output="ඍ"/>
-            <when state="thai" next="thai" output="ฤ"/>
             <when state="latn_bar" output="Ɍ"/>
             <when state="latn_circumflex_below" output="R̭"/>
             <when state="latn_rotated_lower" output="ᴚ"/>
             <when state="latn_slash" output="Ꞧ"/>
             <when state="latn_small_caps" output="ʀ"/>
+            <when state="mymr" next="mymr" output="ရိ"/>
+            <when state="sinh" next="sinh" output="ඍ"/>
             <when state="tfng" next="tfng" output="ⵕ"/>
+            <when state="thai" next="thai" output="ฤ"/>
         </action>
         <action id="S">
             <when state="none" output="S"/>
@@ -1485,17 +1495,13 @@
             <when state="arab" next="arab" output="ط"/>
             <when state="armn" output="Տ"/>
             <when state="armn_2" output="Թ"/>
+            <when state="beng" next="beng" output="থ"/>
             <when state="cyrl" next="cyrl" output="Т"/>
             <when state="cyrl_romanized_grave" output="Ԏ"/>
+            <when state="deva" next="deva" output="थ"/>
             <when state="georgian_mkhedruli" output="თ"/>
             <when state="grek" next="grek" output="Τ"/>
-            <when state="deva" next="deva" output="थ"/>
-            <when state="beng" next="beng" output="থ"/>
-            <when state="mymr" next="mymr" output="သ"/>
             <when state="khmr" next="khmr" output="ថ"/>
-            <when state="sinh" next="sinh" output="ථ"/>
-            <when state="taml" next="taml" output="த"/>
-            <when state="thai" next="thai" output="ถ"/>
             <when state="latn_bar" output="Ŧ"/>
             <when state="latn_circumflex_below" output="Ṱ"/>
             <when state="latn_comma_below" output="Ț"/>
@@ -1504,7 +1510,11 @@
             <when state="latn_rotated_upper" output="⊥"/>
             <when state="latn_slash" output="Ⱦ"/>
             <when state="latn_small_caps" output="ᴛ"/>
+            <when state="mymr" next="mymr" output="သ"/>
+            <when state="sinh" next="sinh" output="ථ"/>
+            <when state="taml" next="taml" output="த"/>
             <when state="tfng" next="tfng" output="ⵟ"/>
+            <when state="thai" next="thai" output="ถ"/>
         </action>
         <action id="U">
             <when state="none" output="U"/>
@@ -1542,35 +1552,35 @@
             <when state="none" output="W"/>
             <when state="arab" next="arab" output="ښ"/>
             <when state="armn" output="Ւ"/>
+            <when state="beng" next="beng" output="ঠ"/>
             <when state="cyrl" next="cyrl" output="Ԝ"/>
+            <when state="deva" next="deva" output="ठ"/>
             <when state="georgian_mkhedruli" output="ჭ"/>
             <when state="grek" next="grek" output="Ω"/>
-            <when state="deva" next="deva" output="ठ"/>
-            <when state="beng" next="beng" output="ঠ"/>
-            <when state="mymr" next="mymr" output="ဋ"/>
             <when state="khmr" next="khmr" output="ឋ"/>
-            <when state="sinh" next="sinh" output="ඨ"/>
-            <when state="thai" next="thai" output="ฐ"/>
             <when state="latn_extensions" output="Ɯ"/>
             <when state="latn_small_caps" output="ᴡ"/>
+            <when state="mymr" next="mymr" output="ဋ"/>
+            <when state="sinh" next="sinh" output="ඨ"/>
             <when state="tfng" next="tfng" output="ⵯ"/>
+            <when state="thai" next="thai" output="ฐ"/>
         </action>
         <action id="X">
             <when state="none" output="X"/>
             <when state="armn" output="Խ"/>
-            <when state="cyrl" next="cyrl" output="Ш"/>
-            <when state="grek" next="grek" output="Χ"/>
-            <when state="deva" next="deva" output="ष"/>
             <when state="beng" next="beng" output="ষ"/>
-            <when state="mymr" next="mymr" output="ဆ"/>
+            <when state="cyrl" next="cyrl" output="Ш"/>
+            <when state="deva" next="deva" output="ष"/>
+            <when state="grek" next="grek" output="Χ"/>
             <when state="khmr" next="khmr" output="ឞ"/>
-            <when state="sinh" next="sinh" output="ෂ"/>
-            <when state="taml" next="taml" output="ஷ"/>
-            <when state="thai" next="thai" output="ษ"/>
             <when state="lao" next="lao" output="ພ"/>
             <when state="latn_extensions" output="Ʃ"/>
             <when state="latn_rotated_lower" output="X"/>
             <when state="latn_small_caps" output="x"/>
+            <when state="mymr" next="mymr" output="ဆ"/>
+            <when state="sinh" next="sinh" output="ෂ"/>
+            <when state="taml" next="taml" output="ஷ"/>
+            <when state="thai" next="thai" output="ษ"/>
         </action>
         <action id="Y">
             <when state="none" output="Y"/>
@@ -1594,28 +1604,28 @@
             <when state="arab" next="arab" output="ظ"/>
             <when state="armn" output="Զ"/>
             <when state="armn_2" output="Ժ"/>
+            <when state="beng" next="beng" output="ঢ"/>
             <when state="cyrl" next="cyrl" output="З"/>
             <when state="cyrl_circumflex" output="Ѕ"/>
             <when state="cyrl_romanized_acute" output="Ӡ"/>
             <when state="cyrl_romanized_comma_below" output="Җ"/>
             <when state="cyrl_romanized_hacek" output="Ж"/>
             <when state="cyrl_softened" output="Ж"/>
+            <when state="deva" next="deva" output="ढ"/>
             <when state="georgian_mkhedruli" output="ძ"/>
             <when state="grek" next="grek" output="Ζ"/>
-            <when state="deva" next="deva" output="ढ"/>
-            <when state="beng" next="beng" output="ঢ"/>
-            <when state="mymr" next="mymr" output="ဎ"/>
             <when state="khmr" next="khmr" output="ឍ"/>
-            <when state="sinh" next="sinh" output="ඪ"/>
-            <when state="taml" next="taml" output="ட"/>
-            <when state="thai" next="thai" output="ฒ"/>
             <when state="latn_bar" output="Ƶ"/>
             <when state="latn_extensions" output="Ʒ"/>
             <when state="latn_hook_palatal" output="Ᶎ"/>
             <when state="latn_rotated_lower" output="Z"/>
             <when state="latn_small_caps" output="ᴢ"/>
             <when state="mong" next="mong" output="ᠿ"/>
+            <when state="mymr" next="mymr" output="ဎ"/>
+            <when state="sinh" next="sinh" output="ඪ"/>
+            <when state="taml" next="taml" output="ட"/>
             <when state="tfng" next="tfng" output="ⵥ"/>
+            <when state="thai" next="thai" output="ฒ"/>
         </action>
         <action id="\">
             <when state="none" output="\"/>
@@ -1649,6 +1659,7 @@
             <when state="arab" next="arab" output="ا"/>
             <when state="armn" output="ա"/>
             <when state="arrows_basic_dvorak" output="←"/>
+            <when state="beng" next="beng" output="অ"/>
             <when state="cans" output="ᐊ"/>
             <when state="cyrl" next="cyrl" output="а"/>
             <when state="cyrl_circumflex" output="я"/>
@@ -1656,16 +1667,26 @@
             <when state="cyrl_romanized_grave" output="ӛ"/>
             <when state="cyrl_romanized_hacek" output="ѫ"/>
             <when state="cyrl_romanized_macron" output="а̄"/>
+            <when state="deva" next="deva" output="अ"/>
             <when state="georgian_mkhedruli" output="ა"/>
             <when state="grek" next="grek" output="α"/>
             <when state="hebr" output="א"/>
-            <when state="deva" next="deva" output="अ"/>
-            <when state="beng" next="beng" output="অ"/>
-            <when state="mymr" next="mymr" output="အ"/>
+            <when state="hira" next="hira" output="あ"/>
+            <when state="hira_b" next="hira" output="ば"/>
+            <when state="hira_d" next="hira" output="だ"/>
+            <when state="hira_g" next="hira" output="が"/>
+            <when state="hira_h" next="hira" output="は"/>
+            <when state="hira_k" next="hira" output="か"/>
+            <when state="hira_m" next="hira" output="ま"/>
+            <when state="hira_n" next="hira" output="な"/>
+            <when state="hira_p" next="hira" output="ぱ"/>
+            <when state="hira_r" next="hira" output="ら"/>
+            <when state="hira_s" next="hira" output="さ"/>
+            <when state="hira_t" next="hira" output="た"/>
+            <when state="hira_w" next="hira" output="わ"/>
+            <when state="hira_y" next="hira" output="や"/>
+            <when state="hira_z" next="hira" output="ざ"/>
             <when state="khmr" next="khmr" output="អ"/>
-            <when state="sinh" next="sinh" output="අ"/>
-            <when state="taml" next="taml" output="அ"/>
-            <when state="thai" next="thai" output="อ"/>
             <when state="latn_e" output="æ"/>
             <when state="latn_extensions" output="ɑ"/>
             <when state="latn_hook_above" output="ả"/>
@@ -1676,7 +1697,11 @@
             <when state="latn_tilde_above" output="ã"/>
             <when state="math_operators" output="∝"/>
             <when state="mong" next="mong" output="ᠠ"/>
+            <when state="mymr" next="mymr" output="အ"/>
+            <when state="sinh" next="sinh" output="අ"/>
+            <when state="taml" next="taml" output="அ"/>
             <when state="tfng" next="tfng" output="ⴰ"/>
+            <when state="thai" next="thai" output="อ"/>
         </action>
         <action id="action">
             <when state="none" output=""/>
@@ -1811,19 +1836,16 @@
             <when state="none" output="b"/>
             <when state="arab" next="arab" output="ب"/>
             <when state="armn" output="բ"/>
+            <when state="beng" next="beng" output="ব"/>
             <when state="cyrl" next="cyrl" output="б"/>
+            <when state="deva" next="deva" output="ब"/>
             <when state="deva_line_below" output="ॿ"/>
             <when state="georgian_mkhedruli" output="ბ"/>
             <when state="grek" next="grek" output="β"/>
             <when state="hebr" output="ב"/>
             <when state="hebr_dagesh" output="בּ"/>
-            <when state="deva" next="deva" output="ब"/>
-            <when state="beng" next="beng" output="ব"/>
-            <when state="mymr" next="mymr" output="ဗ"/>
+            <when state="hira" next="hira_b"/>
             <when state="khmr" next="khmr" output="ប"/>
-            <when state="sinh" next="sinh" output="බ"/>
-            <when state="taml" next="taml" output="ப"/>
-            <when state="thai" next="thai" output="บ"/>
             <when state="lao" next="lao" output="ບ"/>
             <when state="latn_bar" output="ƀ"/>
             <when state="latn_circumflex_below" output=""/>
@@ -1841,14 +1863,22 @@
             <when state="latn_tilde_above" output=""/>
             <when state="latn_tilde_below" output=""/>
             <when state="mong" next="mong" output="ᠪ"/>
-            <when state="tibt" next="tibt" output="བ"/>
+            <when state="mymr" next="mymr" output="ဗ"/>
+            <when state="sinh" next="sinh" output="බ"/>
+            <when state="taml" next="taml" output="ப"/>
             <when state="tfng" next="tfng" output="ⴱ"/>
+            <when state="thai" next="thai" output="บ"/>
+            <when state="tibt" next="tibt" output="བ"/>
+        </action>
+        <action id="beng">
+            <when state="none" next="beng"/>
         </action>
         <action id="c">
             <when state="none" output="c"/>
             <when state="arab" next="arab" output="ث"/>
             <when state="armn" output="ծ"/>
             <when state="armn_2" output="ճ"/>
+            <when state="beng" next="beng" output="চ"/>
             <when state="cyrl" next="cyrl" output="ц"/>
             <when state="cyrl_circumflex" output="ҹ"/>
             <when state="cyrl_romanized_acute" output="ћ"/>
@@ -1858,16 +1888,11 @@
             <when state="cyrl_romanized_hacek" output="ч"/>
             <when state="cyrl_romanized_macron" output="ҵ"/>
             <when state="cyrl_softened" output="ч"/>
+            <when state="deva" next="deva" output="च"/>
             <when state="georgian_mkhedruli" output="ც"/>
             <when state="grek" next="grek" output="ξ"/>
             <when state="hebr" output="ס"/>
-            <when state="deva" next="deva" output="च"/>
-            <when state="beng" next="beng" output="চ"/>
-            <when state="mymr" next="mymr" output="စ"/>
             <when state="khmr" next="khmr" output="ច"/>
-            <when state="sinh" next="sinh" output="ච"/>
-            <when state="taml" next="taml" output="ச"/>
-            <when state="thai" next="thai" output="จ"/>
             <when state="lao" next="lao" output="ຈ"/>
             <when state="latn_bar" output="ꞓ"/>
             <when state="latn_circumflex_below" output="c̭"/>
@@ -1886,8 +1911,12 @@
             <when state="latn_tilde_below" output=""/>
             <when state="math_operators" output="⊂"/>
             <when state="mong" next="mong" output="ᠴ"/>
-            <when state="tibt" next="tibt" output="ཚ"/>
+            <when state="mymr" next="mymr" output="စ"/>
+            <when state="sinh" next="sinh" output="ච"/>
+            <when state="taml" next="taml" output="ச"/>
             <when state="tfng" next="tfng" output="ⵛ"/>
+            <when state="thai" next="thai" output="จ"/>
+            <when state="tibt" next="tibt" output="ཚ"/>
         </action>
         <action id="d">
             <when state="none" output="d"/>
@@ -1895,20 +1924,17 @@
             <when state="arab_4_dots" output="ڈ"/>
             <when state="arab_ring_below" output="ډ"/>
             <when state="armn" output="դ"/>
+            <when state="beng" next="beng" output="দ"/>
             <when state="cyrl" next="cyrl" output="д"/>
             <when state="cyrl_circumflex" output="џ"/>
             <when state="cyrl_romanized_stroke" output="ђ"/>
+            <when state="deva" next="deva" output="द"/>
             <when state="georgian_mkhedruli" output="დ"/>
             <when state="grek" next="grek" output="δ"/>
             <when state="hebr" output="ד"/>
             <when state="hebr_dagesh" output="דּ"/>
-            <when state="deva" next="deva" output="द"/>
-            <when state="beng" next="beng" output="দ"/>
-            <when state="mymr" next="mymr" output="ဒ"/>
+            <when state="hira" next="hira_d"/>
             <when state="khmr" next="khmr" output="ទ"/>
-            <when state="sinh" next="sinh" output="ද"/>
-            <when state="taml" next="taml" output="த"/>
-            <when state="thai" next="thai" output="ท"/>
             <when state="lao" next="lao" output="ດ"/>
             <when state="latn_bar" output="đ"/>
             <when state="latn_circumflex_below" output="ḓ"/>
@@ -1919,8 +1945,15 @@
             <when state="latn_slash" output="ð"/>
             <when state="latn_small_caps" output="ᴅ"/>
             <when state="mong" next="mong" output="ᠳ"/>
-            <when state="tibt" next="tibt" output="ཏ"/>
+            <when state="mymr" next="mymr" output="ဒ"/>
+            <when state="sinh" next="sinh" output="ද"/>
+            <when state="taml" next="taml" output="த"/>
             <when state="tfng" next="tfng" output="ⴷ"/>
+            <when state="thai" next="thai" output="ท"/>
+            <when state="tibt" next="tibt" output="ཏ"/>
+        </action>
+        <action id="deva">
+            <when state="none" next="deva"/>
         </action>
         <action id="e">
             <when state="none" output="e"/>
@@ -1928,6 +1961,7 @@
             <when state="armn" output="ե"/>
             <when state="armn_2" output="է"/>
             <when state="arrows_basic_dvorak" output="→"/>
+            <when state="beng" next="beng" output="এ"/>
             <when state="cans" output="ᐁ"/>
             <when state="cyrl" next="cyrl" output="е"/>
             <when state="cyrl_circumflex" output="є"/>
@@ -1935,15 +1969,24 @@
             <when state="cyrl_romanized_grave" output="э"/>
             <when state="cyrl_romanized_hacek" output="ѣ"/>
             <when state="cyrl_umlaut" output="ё"/>
+            <when state="deva" next="deva" output="ए"/>
             <when state="georgian_mkhedruli" output="ე"/>
             <when state="grek" next="grek" output="ε"/>
             <when state="hebr" output="ה"/>
-            <when state="deva" next="deva" output="ए"/>
-            <when state="beng" next="beng" output="এ"/>
-            <when state="mymr" next="mymr" output="ဧ"/>
+            <when state="hira" next="hira" output="え"/>
+            <when state="hira_b" next="hira" output="べ"/>
+            <when state="hira_d" next="hira" output="で"/>
+            <when state="hira_g" next="hira" output="げ"/>
+            <when state="hira_h" next="hira" output="へ"/>
+            <when state="hira_k" next="hira" output="け"/>
+            <when state="hira_m" next="hira" output="め"/>
+            <when state="hira_n" next="hira" output="ね"/>
+            <when state="hira_p" next="hira" output="ぺ"/>
+            <when state="hira_r" next="hira" output="れ"/>
+            <when state="hira_s" next="hira" output="せ"/>
+            <when state="hira_t" next="hira" output="て"/>
+            <when state="hira_z" next="hira" output="ぜ"/>
             <when state="khmr" next="khmr" output="ឯ"/>
-            <when state="sinh" next="sinh" output="ඒ"/>
-            <when state="taml" next="taml" output="ஏ"/>
             <when state="latn_circumflex_below" output="ḙ"/>
             <when state="latn_extensions" output="ɛ"/>
             <when state="latn_hook_above" output="ẻ"/>
@@ -1956,52 +1999,52 @@
             <when state="latn_tilde_below" output="ḛ"/>
             <when state="math_operators" output="∈"/>
             <when state="mong" next="mong" output="ᠡ"/>
+            <when state="mymr" next="mymr" output="ဧ"/>
+            <when state="sinh" next="sinh" output="ඒ"/>
+            <when state="taml" next="taml" output="ஏ"/>
             <when state="tfng" next="tfng" output="ⴻ"/>
         </action>
         <action id="f">
             <when state="none" output="f"/>
             <when state="arab" next="arab" output="ف"/>
             <when state="armn" output="ֆ"/>
+            <when state="beng" next="beng" output="ফ়"/>
             <when state="cyrl" next="cyrl" output="ф"/>
+            <when state="deva" next="deva" output="फ़"/>
             <when state="georgian_mkhedruli" output="ფ"/>
             <when state="grek" next="grek" output="φ"/>
             <when state="hebr" output="ת"/>
             <when state="hebr_dagesh" output="תּ"/>
-            <when state="deva" next="deva" output="फ़"/>
-            <when state="beng" next="beng" output="ফ়"/>
-            <when state="mymr" next="mymr" output="ဖ"/>
             <when state="khmr" next="khmr" output="ហ្វ"/>
-            <when state="sinh" next="sinh" output="ෆ"/>
-            <when state="thai" next="thai" output="ฟ"/>
             <when state="latn_extensions" output="ƒ"/>
             <when state="latn_hook_palatal" output="ƒ"/>
             <when state="latn_rotated_lower" output="ɟ"/>
             <when state="latn_rotated_upper" output="ⅎ"/>
             <when state="latn_small_caps" output="ꜰ"/>
             <when state="mong" next="mong" output="ᠹ"/>
+            <when state="mymr" next="mymr" output="ဖ"/>
+            <when state="sinh" next="sinh" output="ෆ"/>
             <when state="tfng" next="tfng" output="ⴼ"/>
+            <when state="thai" next="thai" output="ฟ"/>
         </action>
         <action id="g">
             <when state="none" output="g"/>
             <when state="arab" next="arab" output="غ"/>
             <when state="arab_ring_below" output="ګ"/>
             <when state="armn" output="գ"/>
+            <when state="beng" next="beng" output="গ"/>
             <when state="cyrl" next="cyrl" output="г"/>
             <when state="cyrl_romanized_dot_above" output="ғ"/>
             <when state="cyrl_romanized_grave" output="ґ"/>
+            <when state="deva" next="deva" output="ग"/>
+            <when state="deva_dot_below" output="ग़"/>
             <when state="deva_line_below" output="ॻ"/>
             <when state="georgian_mkhedruli" output="გ"/>
             <when state="grek" next="grek" output="γ"/>
             <when state="hebr" output="ג"/>
             <when state="hebr_dagesh" output="גּ"/>
-            <when state="deva" next="deva" output="ग"/>
-            <when state="beng" next="beng" output="গ"/>
-            <when state="mymr" next="mymr" output="ဂ"/>
+            <when state="hira" next="hira_g"/>
             <when state="khmr" next="khmr" output="គ"/>
-            <when state="sinh" next="sinh" output="ග"/>
-            <when state="taml" next="taml" output="க"/>
-            <when state="thai" next="thai" output="ค"/>
-            <when state="deva_dot_below" output="ग़"/>
             <when state="lao" next="lao" output="ຂ"/>
             <when state="latn_bar" output="ǥ"/>
             <when state="latn_extensions" output="ɣ"/>
@@ -2010,25 +2053,26 @@
             <when state="latn_slash" output="ꞡ"/>
             <when state="latn_small_caps" output="ɢ"/>
             <when state="mong" next="mong" output="ᠭ"/>
-            <when state="tibt" next="tibt" output="ག"/>
+            <when state="mymr" next="mymr" output="ဂ"/>
+            <when state="sinh" next="sinh" output="ග"/>
+            <when state="taml" next="taml" output="க"/>
             <when state="tfng" next="tfng" output="ⴳ"/>
+            <when state="thai" next="thai" output="ค"/>
+            <when state="tibt" next="tibt" output="ག"/>
         </action>
         <action id="h">
             <when state="none" output="h"/>
             <when state="arab" next="arab" output="ح"/>
             <when state="armn" output="հ"/>
+            <when state="beng" next="beng" output="হ"/>
             <when state="cyrl" next="cyrl" output="х"/>
             <when state="cyrl_romanized_comma_below" output="ҳ"/>
+            <when state="deva" next="deva" output="ह"/>
             <when state="georgian_mkhedruli" output="ჰ"/>
             <when state="grek" next="grek" output="η"/>
             <when state="hebr" output="ח"/>
-            <when state="deva" next="deva" output="ह"/>
-            <when state="beng" next="beng" output="হ"/>
-            <when state="mymr" next="mymr" output="ဟ"/>
+            <when state="hira" next="hira_h"/>
             <when state="khmr" next="khmr" output="ហ"/>
-            <when state="sinh" next="sinh" output="හ"/>
-            <when state="taml" next="taml" output="ஹ"/>
-            <when state="thai" next="thai" output="ห"/>
             <when state="lao" next="lao" output="ຫ໌"/>
             <when state="latn_bar" output="ħ"/>
             <when state="latn_circumflex_below" output="h̭"/>
@@ -2037,28 +2081,44 @@
             <when state="latn_rotated_upper" output="ʜ"/>
             <when state="latn_small_caps" output="ʜ"/>
             <when state="mong" next="mong" output="ᠾ"/>
-            <when state="tibt" next="tibt" output="ཿ"/>
+            <when state="mymr" next="mymr" output="ဟ"/>
+            <when state="sinh" next="sinh" output="හ"/>
+            <when state="taml" next="taml" output="ஹ"/>
             <when state="tfng" next="tfng" output="ⵀ"/>
+            <when state="thai" next="thai" output="ห"/>
+            <when state="tibt" next="tibt" output="ཿ"/>
+        </action>
+        <action id="hira">
+            <when state="none" next="hira"/>
         </action>
         <action id="i">
             <when state="none" output="i"/>
             <when state="arab" next="arab" output="ي"/>
             <when state="arab_hacek" output="ێ"/>
             <when state="armn" output="ի"/>
+            <when state="beng" next="beng" output="ই"/>
             <when state="cans" output="ᐃ"/>
             <when state="cyrl" next="cyrl" output="и"/>
             <when state="cyrl_romanized_grave" output="і"/>
             <when state="cyrl_romanized_hacek" output="і̄"/>
+            <when state="deva" next="deva" output="इ"/>
             <when state="georgian_mkhedruli" output="ი"/>
             <when state="grek" next="grek" output="ι"/>
             <when state="hebr" output="י"/>
-            <when state="deva" next="deva" output="इ"/>
-            <when state="beng" next="beng" output="ই"/>
-            <when state="mymr" next="mymr" output="ဣ"/>
+            <when state="hira" next="hira" output="い"/>
+            <when state="hira_b" next="hira" output="び"/>
+            <when state="hira_d" next="hira" output="ぢ"/>
+            <when state="hira_g" next="hira" output="ぎ"/>
+            <when state="hira_h" next="hira" output="ひ"/>
+            <when state="hira_k" next="hira" output="き"/>
+            <when state="hira_m" next="hira" output="み"/>
+            <when state="hira_n" next="hira" output="に"/>
+            <when state="hira_p" next="hira" output="ぴ"/>
+            <when state="hira_r" next="hira" output="り"/>
+            <when state="hira_s" next="hira" output="し"/>
+            <when state="hira_t" next="hira" output="ち"/>
+            <when state="hira_z" next="hira" output="じ"/>
             <when state="khmr" next="khmr" output="ឥ"/>
-            <when state="sinh" next="sinh" output="ඉ"/>
-            <when state="taml" next="taml" output="இ"/>
-            <when state="thai" next="thai" output="อิ"/>
             <when state="latn_bar" output="ɨ"/>
             <when state="latn_circumflex_below" output="i̭"/>
             <when state="latn_extensions" output="ɪ"/>
@@ -2070,7 +2130,11 @@
             <when state="latn_tilde_above" output="ĩ"/>
             <when state="latn_tilde_below" output="ḭ"/>
             <when state="mong" next="mong" output="ᠢ"/>
+            <when state="mymr" next="mymr" output="ဣ"/>
+            <when state="sinh" next="sinh" output="ඉ"/>
+            <when state="taml" next="taml" output="இ"/>
             <when state="tfng" next="tfng" output="ⵉ"/>
+            <when state="thai" next="thai" output="อิ"/>
         </action>
         <action id="j">
             <when state="none" output="j"/>
@@ -2078,21 +2142,17 @@
             <when state="armn" output="ձ"/>
             <when state="armn_2" output="ջ"/>
             <when state="arrows_basic_dvorak" output="↘"/>
+            <when state="beng" next="beng" output="জ"/>
             <when state="cyrl" next="cyrl" output="й"/>
             <when state="cyrl_romanized_acute" output="ј̵"/>
             <when state="cyrl_romanized_hacek" output="ј"/>
+            <when state="deva" next="deva" output="ज"/>
+            <when state="deva_dot_below" output="ज़"/>
             <when state="deva_line_below" output="ॼ"/>
             <when state="georgian_mkhedruli" output="ჯ"/>
             <when state="grek" next="grek" output="ς"/>
             <when state="hebr" output="צ"/>
-            <when state="deva" next="deva" output="ज"/>
-            <when state="beng" next="beng" output="জ"/>
-            <when state="mymr" next="mymr" output="ဇ"/>
             <when state="khmr" next="khmr" output="ជ"/>
-            <when state="sinh" next="sinh" output="ජ"/>
-            <when state="taml" next="taml" output="ஜ"/>
-            <when state="thai" next="thai" output="ช"/>
-            <when state="deva_dot_below" output="ज़"/>
             <when state="lao" next="lao" output="ງ"/>
             <when state="latn_bar" output="ɉ"/>
             <when state="latn_hook_palatal" output="ʝ"/>
@@ -2100,31 +2160,32 @@
             <when state="latn_rotated_upper" output="ɾ"/>
             <when state="latn_small_caps" output="ᴊ"/>
             <when state="mong" next="mong" output="ᠵ"/>
-            <when state="tibt" next="tibt" output="ཅ"/>
+            <when state="mymr" next="mymr" output="ဇ"/>
+            <when state="sinh" next="sinh" output="ජ"/>
+            <when state="taml" next="taml" output="ஜ"/>
             <when state="tfng" next="tfng" output="ⵊ"/>
+            <when state="thai" next="thai" output="ช"/>
+            <when state="tibt" next="tibt" output="ཅ"/>
         </action>
         <action id="k">
             <when state="none" output="k"/>
             <when state="arab" next="arab" output="ك"/>
             <when state="armn" output="կ"/>
             <when state="armn_2" output="ք"/>
+            <when state="beng" next="beng" output="ক"/>
             <when state="cyrl" next="cyrl" output="к"/>
             <when state="cyrl_circumflex" output="ҝ"/>
             <when state="cyrl_romanized_comma_below" output="қ"/>
             <when state="cyrl_romanized_grave" output="к̨"/>
             <when state="cyrl_romanized_hacek" output="ҡ"/>
+            <when state="deva" next="deva" output="क"/>
+            <when state="deva_dot_below" output="क़"/>
             <when state="georgian_mkhedruli" output="კ"/>
             <when state="grek" next="grek" output="κ"/>
             <when state="hebr" output="כ"/>
             <when state="hebr_dagesh" output="כּ"/>
-            <when state="deva" next="deva" output="क"/>
-            <when state="beng" next="beng" output="ক"/>
-            <when state="mymr" next="mymr" output="က"/>
+            <when state="hira" next="hira_k"/>
             <when state="khmr" next="khmr" output="ក"/>
-            <when state="sinh" next="sinh" output="ක"/>
-            <when state="taml" next="taml" output="க"/>
-            <when state="thai" next="thai" output="ก"/>
-            <when state="deva_dot_below" output="क़"/>
             <when state="lao" next="lao" output="ກ"/>
             <when state="latn_bar" output="ꝁ"/>
             <when state="latn_hook_palatal" output="ᶄ"/>
@@ -2132,28 +2193,32 @@
             <when state="latn_slash" output="ꝃ"/>
             <when state="latn_small_caps" output="ᴋ"/>
             <when state="mong" next="mong" output="ᠬ"/>
-            <when state="tibt" next="tibt" output="ཀ"/>
+            <when state="mymr" next="mymr" output="က"/>
+            <when state="sinh" next="sinh" output="ක"/>
+            <when state="taml" next="taml" output="க"/>
             <when state="tfng" next="tfng" output="ⴽ"/>
+            <when state="thai" next="thai" output="ก"/>
+            <when state="tibt" next="tibt" output="ཀ"/>
+        </action>
+        <action id="khmr">
+            <when state="none" next="khmr"/>
         </action>
         <action id="l">
             <when state="none" output="l"/>
             <when state="arab" next="arab" output="ل"/>
             <when state="arab_hacek" output="ڵ"/>
             <when state="armn" output="լ"/>
+            <when state="beng" next="beng" output="ল"/>
             <when state="cyrl" next="cyrl" output="л"/>
             <when state="cyrl_circumflex" output="љ"/>
             <when state="cyrl_romanized_comma_below" output="ԡ"/>
             <when state="cyrl_softened" output="љ"/>
+            <when state="deva" next="deva" output="ल"/>
             <when state="georgian_mkhedruli" output="ლ"/>
             <when state="grek" next="grek" output="λ"/>
             <when state="hebr" output="ל‎ "/>
-            <when state="deva" next="deva" output="ल"/>
-            <when state="beng" next="beng" output="ল"/>
-            <when state="mymr" next="mymr" output="လ"/>
+            <when state="hira" next="hira" output="ん"/>
             <when state="khmr" next="khmr" output="ល"/>
-            <when state="sinh" next="sinh" output="ල"/>
-            <when state="taml" next="taml" output="ல"/>
-            <when state="thai" next="thai" output="ล"/>
             <when state="lao" next="lao" output="ລ"/>
             <when state="latn_bar" output="ƚ"/>
             <when state="latn_circumflex_below" output="ḽ"/>
@@ -2163,8 +2228,12 @@
             <when state="latn_slash" output="ł"/>
             <when state="latn_small_caps" output="ʟ"/>
             <when state="mong" next="mong" output="ᠯ"/>
-            <when state="tibt" next="tibt" output="ལ"/>
+            <when state="mymr" next="mymr" output="လ"/>
+            <when state="sinh" next="sinh" output="ල"/>
+            <when state="taml" next="taml" output="ல"/>
             <when state="tfng" next="tfng" output="ⵍ"/>
+            <when state="thai" next="thai" output="ล"/>
+            <when state="tibt" next="tibt" output="ལ"/>
         </action>
         <action id="lao">
             <when state="none" next="lao"/>
@@ -2173,33 +2242,38 @@
             <when state="none" output="m"/>
             <when state="arab" next="arab" output="م"/>
             <when state="armn" output="մ"/>
+            <when state="beng" next="beng" output="ম"/>
             <when state="cyrl" next="cyrl" output="м"/>
+            <when state="deva" next="deva" output="म"/>
             <when state="georgian_mkhedruli" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
             <when state="hebr" output="מ"/>
-            <when state="deva" next="deva" output="म"/>
-            <when state="beng" next="beng" output="ম"/>
-            <when state="mymr" next="mymr" output="မ"/>
+            <when state="hira" next="hira_m"/>
             <when state="khmr" next="khmr" output="ម"/>
-            <when state="sinh" next="sinh" output="ම"/>
-            <when state="taml" next="taml" output="ம"/>
-            <when state="thai" next="thai" output="ม"/>
             <when state="lao" next="lao" output="ມ"/>
             <when state="latn_hook_palatal" output="ɱ"/>
             <when state="latn_rotated_lower" output="ɯ"/>
             <when state="latn_small_caps" output="ᴍ"/>
             <when state="mong" next="mong" output="ᠮ"/>
-            <when state="tibt" next="tibt" output="མ"/>
+            <when state="mymr" next="mymr" output="မ"/>
+            <when state="sinh" next="sinh" output="ම"/>
+            <when state="taml" next="taml" output="ம"/>
             <when state="tfng" next="tfng" output="ⵎ"/>
+            <when state="thai" next="thai" output="ม"/>
+            <when state="tibt" next="tibt" output="མ"/>
         </action>
         <action id="math_operators">
             <when state="none" next="math_operators"/>
+        </action>
+        <action id="mymr">
+            <when state="none" next="mymr"/>
         </action>
         <action id="n">
             <when state="none" output="n"/>
             <when state="arab" next="arab" output="ن"/>
             <when state="arab_ring_below" output="ڼ"/>
             <when state="armn" output="ն"/>
+            <when state="beng" next="beng" output="ন"/>
             <when state="cyrl" next="cyrl" output="н"/>
             <when state="cyrl_circumflex" output="њ"/>
             <when state="cyrl_romanized_acute" output="ԣ"/>
@@ -2208,16 +2282,12 @@
             <when state="cyrl_romanized_hacek" output="ӈ"/>
             <when state="cyrl_romanized_macron" output="н̄"/>
             <when state="cyrl_softened" output="њ"/>
+            <when state="deva" next="deva" output="न"/>
             <when state="georgian_mkhedruli" output="ნ"/>
             <when state="grek" next="grek" output="ν"/>
             <when state="hebr" output="נ"/>
-            <when state="deva" next="deva" output="न"/>
-            <when state="beng" next="beng" output="ন"/>
-            <when state="mymr" next="mymr" output="န"/>
+            <when state="hira" next="hira_n"/>
             <when state="khmr" next="khmr" output="ន"/>
-            <when state="sinh" next="sinh" output="න"/>
-            <when state="taml" next="taml" output="ந"/>
-            <when state="thai" next="thai" output="น"/>
             <when state="lao" next="lao" output="ນ"/>
             <when state="latn_circumflex_below" output="ṋ"/>
             <when state="latn_hook_palatal" output="ŋ"/>
@@ -2229,8 +2299,12 @@
             <when state="latn_tilde_above" output="ñ"/>
             <when state="math_operators" output="∩"/>
             <when state="mong" next="mong" output="ᠨ"/>
-            <when state="tibt" next="tibt" output="ན"/>
+            <when state="mymr" next="mymr" output="န"/>
+            <when state="sinh" next="sinh" output="න"/>
+            <when state="taml" next="taml" output="ந"/>
             <when state="tfng" next="tfng" output="ⵏ"/>
+            <when state="thai" next="thai" output="น"/>
+            <when state="tibt" next="tibt" output="ན"/>
         </action>
         <action id="o">
             <when state="none" output="o"/>
@@ -2241,10 +2315,25 @@
             <when state="cyrl_circumflex" output="ө"/>
             <when state="cyrl_romanized_grave" output="ҩ"/>
             <when state="cyrl_romanized_macron" output="о̄"/>
+            <when state="deva" next="deva" output="ु"/>
             <when state="georgian_mkhedruli" output="ო"/>
             <when state="grek" next="grek" output="ο"/>
             <when state="hebr" output="ע"/>
-            <when state="deva" next="deva" output="ु"/>
+            <when state="hira" next="hira" output="お"/>
+            <when state="hira_b" next="hira" output="ぼ"/>
+            <when state="hira_d" next="hira" output="ど"/>
+            <when state="hira_g" next="hira" output="ご"/>
+            <when state="hira_h" next="hira" output="ほ"/>
+            <when state="hira_k" next="hira" output="こ"/>
+            <when state="hira_m" next="hira" output="も"/>
+            <when state="hira_n" next="hira" output="の"/>
+            <when state="hira_p" next="hira" output="ぽ"/>
+            <when state="hira_r" next="hira" output="ろ"/>
+            <when state="hira_s" next="hira" output="そ"/>
+            <when state="hira_t" next="hira" output="と"/>
+            <when state="hira_w" next="hira" output="を"/>
+            <when state="hira_y" next="hira" output="よ"/>
+            <when state="hira_z" next="hira" output="ぞ"/>
             <when state="latn_bar" output="ɵ"/>
             <when state="latn_e" output="œ"/>
             <when state="latn_extensions" output="ɔ"/>
@@ -2263,26 +2352,27 @@
             <when state="arab" next="arab" output="ص"/>
             <when state="armn" output="պ"/>
             <when state="armn_2" output="փ"/>
+            <when state="beng" next="beng" output="প"/>
             <when state="cyrl" next="cyrl" output="п"/>
             <when state="cyrl_romanized_grave" output="ԥ"/>
+            <when state="deva" next="deva" output="प"/>
             <when state="georgian_mkhedruli" output="პ"/>
             <when state="grek" next="grek" output="π"/>
             <when state="hebr" output="פ"/>
-            <when state="deva" next="deva" output="प"/>
-            <when state="beng" next="beng" output="প"/>
-            <when state="mymr" next="mymr" output="ပ"/>
+            <when state="hira" next="hira_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
-            <when state="sinh" next="sinh" output="ප"/>
-            <when state="taml" next="taml" output="ப"/>
-            <when state="thai" next="thai" output="ป"/>
             <when state="lao" next="lao" output="ປ"/>
             <when state="latn_bar" output="ᵽ"/>
             <when state="latn_hook_palatal" output="ᶈ"/>
             <when state="latn_rotated_lower" output="d"/>
             <when state="latn_small_caps" output="ᴘ"/>
             <when state="mong" next="mong" output="ᠫ"/>
-            <when state="tibt" next="tibt" output="པ"/>
+            <when state="mymr" next="mymr" output="ပ"/>
+            <when state="sinh" next="sinh" output="ප"/>
+            <when state="taml" next="taml" output="ப"/>
             <when state="tfng" next="tfng" output="ⵒ"/>
+            <when state="thai" next="thai" output="ป"/>
+            <when state="tibt" next="tibt" output="པ"/>
         </action>
         <action id="q">
             <when state="none" output="q"/>
@@ -2290,16 +2380,16 @@
             <when state="armn" output="ղ"/>
             <when state="arrows_basic_dvorak" output="↓"/>
             <when state="cyrl" next="cyrl" output="ԛ"/>
+            <when state="deva" next="deva" output="ै"/>
             <when state="georgian_mkhedruli" output="ქ"/>
             <when state="grek" next="grek" output="θ"/>
             <when state="hebr" output="ק"/>
-            <when state="deva" next="deva" output="ै"/>
             <when state="lao" next="lao" output="ຖ"/>
             <when state="latn_rotated_lower" output="b"/>
             <when state="latn_small_caps" output="ꞯ"/>
             <when state="mong" next="mong" output="ᡂ"/>
-            <when state="tibt" next="tibt" output="ཆ"/>
             <when state="tfng" next="tfng" output="ⵇ"/>
+            <when state="tibt" next="tibt" output="ཆ"/>
         </action>
         <action id="r">
             <when state="none" output="r"/>
@@ -2309,17 +2399,14 @@
             <when state="arab_ring_below" output="ړ"/>
             <when state="armn" output="ռ"/>
             <when state="armn_2" output="ր"/>
+            <when state="beng" next="beng" output="র"/>
             <when state="cyrl" next="cyrl" output="р"/>
+            <when state="deva" next="deva" output="र"/>
             <when state="georgian_mkhedruli" output="რ"/>
             <when state="grek" next="grek" output="ρ"/>
             <when state="hebr" output="ר"/>
-            <when state="deva" next="deva" output="र"/>
-            <when state="beng" next="beng" output="র"/>
-            <when state="mymr" next="mymr" output="ရ"/>
+            <when state="hira" next="hira_r"/>
             <when state="khmr" next="khmr" output="រ"/>
-            <when state="sinh" next="sinh" output="ර"/>
-            <when state="taml" next="taml" output="ர"/>
-            <when state="thai" next="thai" output="ร"/>
             <when state="lao" next="lao" output="ຣ"/>
             <when state="latn_bar" output="ɍ"/>
             <when state="latn_circumflex_below" output="r̭"/>
@@ -2331,30 +2418,31 @@
             <when state="latn_slash" output="ꞧ"/>
             <when state="latn_small_caps" output="ʀ"/>
             <when state="mong" next="mong" output="ᠷ"/>
-            <when state="tibt" next="tibt" output="ར"/>
+            <when state="mymr" next="mymr" output="ရ"/>
+            <when state="sinh" next="sinh" output="ර"/>
+            <when state="taml" next="taml" output="ர"/>
             <when state="tfng" next="tfng" output="ⵔ"/>
+            <when state="thai" next="thai" output="ร"/>
+            <when state="tibt" next="tibt" output="ར"/>
         </action>
         <action id="s">
             <when state="none" output="s"/>
             <when state="arab" next="arab" output="س"/>
             <when state="armn" output="ս"/>
             <when state="armn_2" output="շ"/>
+            <when state="beng" next="beng" output="স"/>
             <when state="cyrl" next="cyrl" output="с"/>
             <when state="cyrl_circumflex" output="щ"/>
             <when state="cyrl_romanized_comma_below" output="ҫ"/>
             <when state="cyrl_romanized_grave" output="с̀"/>
             <when state="cyrl_romanized_hacek" output="ш"/>
             <when state="cyrl_softened" output="ш"/>
+            <when state="deva" next="deva" output="स"/>
             <when state="georgian_mkhedruli" output="ს"/>
             <when state="grek" next="grek" output="σ"/>
             <when state="hebr" output="ש"/>
-            <when state="deva" next="deva" output="स"/>
-            <when state="beng" next="beng" output="স"/>
-            <when state="mymr" next="mymr" output="သ"/>
+            <when state="hira" next="hira_s"/>
             <when state="khmr" next="khmr" output="ស"/>
-            <when state="sinh" next="sinh" output="ස"/>
-            <when state="taml" next="taml" output="ச"/>
-            <when state="thai" next="thai" output="ส"/>
             <when state="lao" next="lao" output="ສ"/>
             <when state="latn_comma_below" output="ș"/>
             <when state="latn_extensions" output="ß"/>
@@ -2366,7 +2454,14 @@
             <when state="latn_small_caps" output="ꜱ"/>
             <when state="math_operators" output="∫"/>
             <when state="mong" next="mong" output="ᠰ"/>
+            <when state="mymr" next="mymr" output="သ"/>
+            <when state="sinh" next="sinh" output="ස"/>
+            <when state="taml" next="taml" output="ச"/>
             <when state="tfng" next="tfng" output="ⵙ"/>
+            <when state="thai" next="thai" output="ส"/>
+        </action>
+        <action id="sinh">
+            <when state="none" next="sinh"/>
         </action>
         <action id="t">
             <when state="none" output="t"/>
@@ -2375,18 +2470,15 @@
             <when state="arab_ring_below" output="ټ"/>
             <when state="armn" output="տ"/>
             <when state="armn_2" output="թ"/>
+            <when state="beng" next="beng" output="ত"/>
             <when state="cyrl" next="cyrl" output="т"/>
             <when state="cyrl_romanized_grave" output="ԏ"/>
+            <when state="deva" next="deva" output="त"/>
             <when state="georgian_mkhedruli" output="ტ"/>
             <when state="grek" next="grek" output="τ"/>
             <when state="hebr" output="ט"/>
-            <when state="deva" next="deva" output="त"/>
-            <when state="beng" next="beng" output="ত"/>
-            <when state="mymr" next="mymr" output="တ"/>
+            <when state="hira" next="hira_t"/>
             <when state="khmr" next="khmr" output="ត"/>
-            <when state="sinh" next="sinh" output="ත"/>
-            <when state="taml" next="taml" output="த"/>
-            <when state="thai" next="thai" output="ต"/>
             <when state="lao" next="lao" output="ຕ"/>
             <when state="latn_bar" output="ŧ"/>
             <when state="latn_circumflex_below" output="ṱ"/>
@@ -2399,29 +2491,53 @@
             <when state="latn_small_caps" output="ᴛ"/>
             <when state="math_operators" output="⊥"/>
             <when state="mong" next="mong" output="ᠲ"/>
-            <when state="tibt" next="tibt" output="ཋ"/>
+            <when state="mymr" next="mymr" output="တ"/>
+            <when state="sinh" next="sinh" output="ත"/>
+            <when state="taml" next="taml" output="த"/>
             <when state="tfng" next="tfng" output="ⵜ"/>
+            <when state="thai" next="thai" output="ต"/>
+            <when state="tibt" next="tibt" output="ཋ"/>
+        </action>
+        <action id="taml">
+            <when state="none" next="taml"/>
         </action>
         <action id="tfng">
             <when state="none" output="tfng"/>
+        </action>
+        <action id="thai">
+            <when state="none" next="thai"/>
+        </action>
+        <action id="tibt">
+            <when state="none" next="tibt"/>
         </action>
         <action id="u">
             <when state="none" output="u"/>
             <when state="arab" next="arab" output="و"/>
             <when state="arab_hacek" output="ۆ"/>
             <when state="armn" output="ո"/>
+            <when state="beng" next="beng" output="উ"/>
             <when state="cyrl" next="cyrl" output="у"/>
             <when state="cyrl_circumflex" output="ю"/>
             <when state="cyrl_romanized_grave" output="ү"/>
+            <when state="deva" next="deva" output="उ"/>
             <when state="georgian_mkhedruli" output="უ"/>
             <when state="grek" next="grek" output="υ"/>
             <when state="hebr" output="ו"/>
-            <when state="deva" next="deva" output="उ"/>
-            <when state="beng" next="beng" output="উ"/>
-            <when state="mymr" next="mymr" output="ဥ"/>
+            <when state="hira" next="hira" output="う"/>
+            <when state="hira_b" next="hira" output="ぶ"/>
+            <when state="hira_d" next="hira" output="づ"/>
+            <when state="hira_g" next="hira" output="ぐ"/>
+            <when state="hira_h" next="hira" output="ふ"/>
+            <when state="hira_k" next="hira" output="く"/>
+            <when state="hira_m" next="hira" output="む"/>
+            <when state="hira_n" next="hira" output="ぬ"/>
+            <when state="hira_p" next="hira" output="ぷ"/>
+            <when state="hira_r" next="hira" output="る"/>
+            <when state="hira_s" next="hira" output="す"/>
+            <when state="hira_t" next="hira" output="つ"/>
+            <when state="hira_y" next="hira" output="ゆ"/>
+            <when state="hira_z" next="hira" output="ず"/>
             <when state="khmr" next="khmr" output="ឧ"/>
-            <when state="sinh" next="sinh" output="උ"/>
-            <when state="taml" next="taml" output="உ"/>
             <when state="latn_bar" output="ʉ"/>
             <when state="latn_circumflex_below" output="ṷ"/>
             <when state="latn_extensions" output="ʊ"/>
@@ -2434,22 +2550,21 @@
             <when state="latn_tilde_below" output="ṵ"/>
             <when state="math_operators" output="∪"/>
             <when state="mong" next="mong" output="ᠤ"/>
+            <when state="mymr" next="mymr" output="ဥ"/>
+            <when state="sinh" next="sinh" output="උ"/>
+            <when state="taml" next="taml" output="உ"/>
             <when state="tfng" next="tfng" output="ⵓ"/>
         </action>
         <action id="v">
             <when state="none" output="v"/>
             <when state="arab" next="arab" output="ظ"/>
             <when state="armn" output="վ"/>
+            <when state="beng" next="beng" output="ব"/>
             <when state="cyrl" next="cyrl" output="в"/>
+            <when state="deva" next="deva" output="व"/>
             <when state="georgian_mkhedruli" output="ვ"/>
             <when state="grek" next="grek" output="ϝ"/>
-            <when state="deva" next="deva" output="व"/>
-            <when state="beng" next="beng" output="ব"/>
-            <when state="mymr" next="mymr" output="ဝ"/>
             <when state="khmr" next="khmr" output="វ"/>
-            <when state="sinh" next="sinh" output="ව"/>
-            <when state="taml" next="taml" output="வ"/>
-            <when state="thai" next="thai" output="ว"/>
             <when state="lao" next="lao" output="ວ"/>
             <when state="latn_extensions" output="ʋ"/>
             <when state="latn_hook_palatal" output="ᶌ"/>
@@ -2458,41 +2573,42 @@
             <when state="latn_small_caps" output="ᴠ"/>
             <when state="latn_tilde_above" output="ṽ"/>
             <when state="math_operators" output="√"/>
+            <when state="mymr" next="mymr" output="ဝ"/>
+            <when state="sinh" next="sinh" output="ව"/>
+            <when state="taml" next="taml" output="வ"/>
             <when state="tfng" next="tfng" output="ⵠ"/>
+            <when state="thai" next="thai" output="ว"/>
         </action>
         <action id="w">
             <when state="none" output="w"/>
             <when state="arab" next="arab" output="ط"/>
             <when state="armn" output="ւ"/>
+            <when state="beng" next="beng" output="ট"/>
             <when state="cyrl" next="cyrl" output="ԝ"/>
+            <when state="deva" next="deva" output="ट"/>
             <when state="georgian_mkhedruli" output="წ"/>
             <when state="grek" next="grek" output="ω"/>
-            <when state="deva" next="deva" output="ट"/>
-            <when state="beng" next="beng" output="ট"/>
-            <when state="mymr" next="mymr" output="ဋ"/>
+            <when state="hira" next="hira_w"/>
             <when state="khmr" next="khmr" output="ដ"/>
-            <when state="sinh" next="sinh" output="ට"/>
-            <when state="thai" next="thai" output="ฏ"/>
             <when state="latn_extensions" output="ɯ"/>
             <when state="latn_rotated_lower" output="ʍ"/>
             <when state="latn_small_caps" output="ᴡ"/>
             <when state="mong" output="ᠸ"/>
+            <when state="mymr" next="mymr" output="ဋ"/>
+            <when state="sinh" next="sinh" output="ට"/>
             <when state="tfng" next="tfng" output="ⵡ"/>
+            <when state="thai" next="thai" output="ฏ"/>
         </action>
         <action id="x">
             <when state="none" output="x"/>
             <when state="arab" next="arab" output="ش"/>
             <when state="armn" next="armn" output="խ"/>
+            <when state="beng" next="beng" output="শ"/>
             <when state="cyrl" next="cyrl"/>
+            <when state="deva" next="deva" output="श"/>
             <when state="georgian_mkhedruli" next="georgian_mkhedruli" output="ხ"/>
             <when state="grek" next="grek" output="χ"/>
-            <when state="deva" next="deva" output="श"/>
-            <when state="beng" next="beng" output="শ"/>
-            <when state="mymr" next="mymr" output="ဆ"/>
             <when state="khmr" next="khmr" output="ឝ"/>
-            <when state="sinh" next="sinh" output="ශ"/>
-            <when state="taml" next="taml" output="ஶ"/>
-            <when state="thai" next="thai" output="ศ"/>
             <when state="lao" next="lao" output="ຜ"/>
             <when state="latn_extensions" output="ʃ"/>
             <when state="latn_hook_palatal" output="ᶍ"/>
@@ -2500,25 +2616,26 @@
             <when state="latn_small_caps" output="x"/>
             <when state="math_operators" output="×"/>
             <when state="mong" next="mong" output="ᠱ"/>
+            <when state="mymr" next="mymr" output="ဆ"/>
+            <when state="sinh" next="sinh" output="ශ"/>
+            <when state="taml" next="taml" output="ஶ"/>
             <when state="tfng" next="tfng" output="ⵅ"/>
+            <when state="thai" next="thai" output="ศ"/>
         </action>
         <action id="y">
             <when state="none" output="y"/>
             <when state="arab" next="arab" output="ض"/>
             <when state="armn" next="armn" output="յ"/>
+            <when state="beng" next="beng" output="য"/>
             <when state="cyrl" next="cyrl" output="ы"/>
             <when state="cyrl_romanized_diaresis" next="cyrl" output="ӹ"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="ѵ"/>
             <when state="cyrl_romanized_macron" next="cyrl" output="ы̄"/>
+            <when state="deva" next="deva" output="य"/>
             <when state="georgian_mkhedruli" output="ყ"/>
             <when state="grek" next="grek" output="ψ"/>
-            <when state="deva" next="deva" output="य"/>
-            <when state="beng" next="beng" output="য"/>
-            <when state="mymr" next="mymr" output="ယ"/>
+            <when state="hira" next="hira_y"/>
             <when state="khmr" next="khmr" output="យ"/>
-            <when state="sinh" next="sinh" output="ය"/>
-            <when state="taml" next="taml" output="ய"/>
-            <when state="thai" next="thai" output="ย"/>
             <when state="lao" next="lao" output="ຢ"/>
             <when state="latn_bar" output="ɏ"/>
             <when state="latn_extensions" output="ƴ"/>
@@ -2527,30 +2644,32 @@
             <when state="latn_small_caps" output="ʏ"/>
             <when state="latn_tilde_above" output="ỹ"/>
             <when state="mong" output="ᠶ"/>
-            <when state="tibt" next="tibt" output="ཡ"/>
+            <when state="mymr" next="mymr" output="ယ"/>
+            <when state="sinh" next="sinh" output="ය"/>
+            <when state="taml" next="taml" output="ய"/>
             <when state="tfng" next="tfng" output="ⵢ"/>
+            <when state="thai" next="thai" output="ย"/>
+            <when state="tibt" next="tibt" output="ཡ"/>
         </action>
         <action id="z">
             <when state="none" output="z"/>
             <when state="arab" next="arab" output="ز"/>
             <when state="armn" next="armn" output="զ"/>
             <when state="armn_2" output="ժ"/>
+            <when state="beng" next="beng" output="ড"/>
             <when state="cyrl" next="cyrl" output="з"/>
             <when state="cyrl_circumflex" output="ѕ"/>
             <when state="cyrl_romanized_acute" output="ӡ"/>
             <when state="cyrl_romanized_comma_below" output="җ"/>
             <when state="cyrl_romanized_hacek" output="ж"/>
             <when state="cyrl_softened" output="ж"/>
+            <when state="deva" next="deva" output="ड"/>
             <when state="deva_line_below" output="ॾ"/>
             <when state="georgian_mkhedruli" output="ზ"/>
             <when state="grek" next="grek" output="ζ"/>
             <when state="hebr" output="ז"/>
-            <when state="deva" next="deva" output="ड"/>
-            <when state="beng" next="beng" output="ড"/>
-            <when state="mymr" next="mymr" output="ဍ"/>
+            <when state="hira" next="hira_z"/>
             <when state="khmr" next="khmr" output="ឌ"/>
-            <when state="sinh" next="sinh" output="ඩ"/>
-            <when state="thai" next="thai" output="ฑ"/>
             <when state="latn_bar" output="ƶ"/>
             <when state="latn_extensions" output="ʒ"/>
             <when state="latn_hook_palatal" output="ᶎ"/>
@@ -2563,32 +2682,11 @@
             <when state="latn_tilde_above" output=""/>
             <when state="latn_tilde_below" output=""/>
             <when state="mong" output="ᠽ"/>
-            <when state="tibt" next="tibt" output="ཙ"/>
+            <when state="mymr" next="mymr" output="ဍ"/>
+            <when state="sinh" next="sinh" output="ඩ"/>
             <when state="tfng" next="tfng" output="ⵣ"/>
-        </action>
-        <action id="deva">
-            <when state="none" next="deva"/>
-        </action>
-        <action id="beng">
-            <when state="none" next="beng"/>
-        </action>
-        <action id="mymr">
-            <when state="none" next="mymr"/>
-        </action>
-        <action id="khmr">
-            <when state="none" next="khmr"/>
-        </action>
-        <action id="sinh">
-            <when state="none" next="sinh"/>
-        </action>
-        <action id="taml">
-            <when state="none" next="taml"/>
-        </action>
-        <action id="thai">
-            <when state="none" next="thai"/>
-        </action>
-        <action id="tibt">
-            <when state="none" next="tibt"/>
+            <when state="thai" next="thai" output="ฑ"/>
+            <when state="tibt" next="tibt" output="ཙ"/>
         </action>
         <action id="|">
             <when state="none" output="|"/>
@@ -2615,6 +2713,7 @@
         <when state="armn" output="Ա"/>
         <when state="armn_2" output=""/>
         <when state="arrows_basic_dvorak" output="→"/>
+        <when state="beng" output="অ"/>
         <when state="cans" output="ᐃ"/>
         <when state="cyrl" output="д"/>
         <when state="cyrl_circumflex" output="ˆ"/>
@@ -2628,19 +2727,29 @@
         <when state="cyrl_romanized_stroke" output=""/>
         <when state="cyrl_softened" output=""/>
         <when state="cyrl_umlaut" output=""/>
+        <when state="deva" output="अ"/>
+        <when state="deva_dot_below" output="."/>
         <when state="deva_line_below" output="_"/>
         <when state="georgian_mkhedruli" output="&#x000A;რ"/>
         <when state="grek" output="α"/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
-        <when state="deva" output="अ"/>
-        <when state="beng" output="অ"/>
-        <when state="mymr" output="အ"/>
+        <when state="hira" output="あ"/>
+        <when state="hira_b" output="ぶ"/>
+        <when state="hira_d" output="ど"/>
+        <when state="hira_g" output="ぐ"/>
+        <when state="hira_h" output="ふ"/>
+        <when state="hira_k" output="く"/>
+        <when state="hira_m" output="む"/>
+        <when state="hira_n" output="の"/>
+        <when state="hira_p" output="ぷ"/>
+        <when state="hira_r" output="る"/>
+        <when state="hira_s" output="す"/>
+        <when state="hira_t" output="と"/>
+        <when state="hira_w" output="を"/>
+        <when state="hira_y" output="ゆ"/>
+        <when state="hira_z" output="ず"/>
         <when state="khmr" output="អ"/>
-        <when state="sinh" output="අ"/>
-        <when state="taml" output="அ"/>
-        <when state="thai" output="อ"/>
-        <when state="deva_dot_below" output="."/>
         <when state="lao" output="ອ"/>
         <when state="latn_bar" output="-"/>
         <when state="latn_circumflex_below" output="ˆ"/>
@@ -2659,7 +2768,11 @@
         <when state="latn_tilde_below" output="~"/>
         <when state="math_operators" output="="/>
         <when state="mong" output="ᠪ"/>
-        <when state="tibt" output="ཨ"/>
+        <when state="mymr" output="အ"/>
+        <when state="sinh" output="අ"/>
+        <when state="taml" output="அ"/>
         <when state="tfng" output="ⵥ"/>
+        <when state="thai" output="อ"/>
+        <when state="tibt" output="ཨ"/>
     </terminators>
 </keyboard>
