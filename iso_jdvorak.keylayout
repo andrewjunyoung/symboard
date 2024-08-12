@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Last edited by AJY on 2023-07-12 at 23:59 (EST)-->
-<!--Last edited by Ukelele version 359 on 2024-08-12 at 12:50 (EDT)-->
+<!--Last edited by Ukelele version 359 on 2024-08-12 at 18:00 (EDT)-->
 <keyboard group="126" id="-24635" name="JDvorak keyboard (iso)" maxout="4">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -752,7 +752,7 @@
             <key code="34" action="&#x0003;"/>
             <key code="35" action="lao"/>
             <key code="36" output="&#x000D;"/>
-            <key code="37" output="&#x001F;"/>
+            <key code="37" action="kata"/>
             <key code="38" action="&#x0008;"/>
             <key code="39" output=""/>
             <key code="40" action="tfng"/>
@@ -859,6 +859,7 @@
             <when state="none" output="!"/>
             <when state="deva" next="deva" output="ी"/>
             <when state="hira" output="！"/>
+            <when state="kata" output="！"/>
             <when state="latin_extensions" output="¡"/>
             <when state="latn_rotated_lower" output="¡"/>
         </action>
@@ -1103,6 +1104,7 @@
             <when state="none" output="?"/>
             <when state="arab" output="؟"/>
             <when state="hira" output="？"/>
+            <when state="kata" output="？"/>
             <when state="latn_extensions" output="¿"/>
             <when state="latn_rotated_lower" output="¿"/>
         </action>
@@ -1657,8 +1659,10 @@
         <action id="_">
             <when state="none" output="-"/>
             <when state="arab" next="arab" output="ذ"/>
-            <when state="armn" output="ը"/>
+            <when state="armn" next="armn" output="ը"/>
             <when state="deva" next="deva" output="ञ"/>
+            <when state="hira" next="hira" output="ー"/>
+            <when state="kata" next="kata" output="ー"/>
             <when state="mong" next="mong" output="᠆"/>
         </action>
         <action id="`">
@@ -1682,7 +1686,6 @@
             <when state="cyrl_romanized_hacek" output="ѫ"/>
             <when state="cyrl_romanized_macron" output="а̄"/>
             <when state="deva" next="deva" output="अ"/>
-            <when state="georgian_mkhedruli" output="ა"/>
             <when state="geez" output="ኣ"/>
             <when state="geez_b" output="ባ"/>
             <when state="geez_c" output="ጫ"/>
@@ -1707,6 +1710,7 @@
             <when state="geez_w" output="ዋ"/>
             <when state="geez_y" output="ያ"/>
             <when state="geez_z" output="ዛ"/>
+            <when state="georgian_mkhedruli" output="ა"/>
             <when state="grek" next="grek" output="α"/>
             <when state="hebr" output="א"/>
             <when state="hira" next="hira" output="あ"/>
@@ -1724,6 +1728,21 @@
             <when state="hira_w" next="hira" output="わ"/>
             <when state="hira_y" next="hira" output="や"/>
             <when state="hira_z" next="hira" output="ざ"/>
+            <when state="kata" next="kata" output="ア"/>
+            <when state="kata_b" next="kata" output="バ"/>
+            <when state="kata_d" next="kata" output="ダ"/>
+            <when state="kata_g" next="kata" output="ガ"/>
+            <when state="kata_h" next="kata" output="ハ"/>
+            <when state="kata_k" next="kata" output="カ"/>
+            <when state="kata_m" next="kata" output="マ"/>
+            <when state="kata_n" next="kata" output="ナ"/>
+            <when state="kata_p" next="kata" output="パ"/>
+            <when state="kata_r" next="kata" output="ラ"/>
+            <when state="kata_s" next="kata" output="サ"/>
+            <when state="kata_t" next="kata" output="タ"/>
+            <when state="kata_w" next="kata" output="ワ"/>
+            <when state="kata_y" next="kata" output="ヤ"/>
+            <when state="kata_z" next="kata" output="ザ"/>
             <when state="khmr" next="khmr" output="អ"/>
             <when state="latn_e" output="æ"/>
             <when state="latn_extensions" output="ɑ"/>
@@ -1878,12 +1897,13 @@
             <when state="cyrl" next="cyrl" output="б"/>
             <when state="deva" next="deva" output="ब"/>
             <when state="deva_line_below" output="ॿ"/>
-            <when state="georgian_mkhedruli" output="ბ"/>
             <when state="geez" next="geez_b"/>
+            <when state="georgian_mkhedruli" output="ბ"/>
             <when state="grek" next="grek" output="β"/>
             <when state="hebr" output="ב"/>
             <when state="hebr_dagesh" output="בּ"/>
             <when state="hira" next="hira_b"/>
+            <when state="kata" next="kata_b"/>
             <when state="khmr" next="khmr" output="ប"/>
             <when state="lao" next="lao" output="ບ"/>
             <when state="latn_bar" output="ƀ"/>
@@ -1928,8 +1948,8 @@
             <when state="cyrl_romanized_macron" output="ҵ"/>
             <when state="cyrl_softened" output="ч"/>
             <when state="deva" next="deva" output="च"/>
-            <when state="georgian_mkhedruli" output="ც"/>
             <when state="geez" next="geez_c"/>
+            <when state="georgian_mkhedruli" output="ც"/>
             <when state="grek" next="grek" output="ξ"/>
             <when state="hebr" output="ס"/>
             <when state="khmr" next="khmr" output="ច"/>
@@ -1969,12 +1989,13 @@
             <when state="cyrl_circumflex" output="џ"/>
             <when state="cyrl_romanized_stroke" output="ђ"/>
             <when state="deva" next="deva" output="द"/>
-            <when state="georgian_mkhedruli" output="დ"/>
             <when state="geez" next="geez_d"/>
+            <when state="georgian_mkhedruli" output="დ"/>
             <when state="grek" next="grek" output="δ"/>
             <when state="hebr" output="ד"/>
             <when state="hebr_dagesh" output="דּ"/>
             <when state="hira" next="hira_d"/>
+            <when state="kata" next="kata_d"/>
             <when state="khmr" next="khmr" output="ទ"/>
             <when state="lao" next="lao" output="ດ"/>
             <when state="latn_bar" output="đ"/>
@@ -2051,6 +2072,19 @@
             <when state="hira_s" next="hira" output="せ"/>
             <when state="hira_t" next="hira" output="て"/>
             <when state="hira_z" next="hira" output="ぜ"/>
+            <when state="kata" next="kata" output="エ"/>
+            <when state="kata_b" next="kata" output="ベ"/>
+            <when state="kata_d" next="kata" output="デ"/>
+            <when state="kata_g" next="kata" output="ゲ"/>
+            <when state="kata_h" next="kata" output="ヘ"/>
+            <when state="kata_k" next="kata" output="ケ"/>
+            <when state="kata_m" next="kata" output="メ"/>
+            <when state="kata_n" next="kata" output="ネ"/>
+            <when state="kata_p" next="kata" output="ペ"/>
+            <when state="kata_r" next="kata" output="レ"/>
+            <when state="kata_s" next="kata" output="セ"/>
+            <when state="kata_t" next="kata" output="テ"/>
+            <when state="kata_z" next="kata" output="ゼ"/>
             <when state="khmr" next="khmr" output="ឯ"/>
             <when state="latn_circumflex_below" output="ḙ"/>
             <when state="latn_extensions" output="ɛ"/>
@@ -2076,8 +2110,8 @@
             <when state="beng" next="beng" output="ফ়"/>
             <when state="cyrl" next="cyrl" output="ф"/>
             <when state="deva" next="deva" output="फ़"/>
-            <when state="georgian_mkhedruli" output="ფ"/>
             <when state="geez" next="geez_f"/>
+            <when state="georgian_mkhedruli" output="ფ"/>
             <when state="grek" next="grek" output="φ"/>
             <when state="hebr" output="ת"/>
             <when state="hebr_dagesh" output="תּ"/>
@@ -2105,12 +2139,13 @@
             <when state="deva" next="deva" output="ग"/>
             <when state="deva_dot_below" output="ग़"/>
             <when state="deva_line_below" output="ॻ"/>
-            <when state="georgian_mkhedruli" output="გ"/>
             <when state="geez" next="geez_g"/>
+            <when state="georgian_mkhedruli" output="გ"/>
             <when state="grek" next="grek" output="γ"/>
             <when state="hebr" output="ג"/>
             <when state="hebr_dagesh" output="גּ"/>
             <when state="hira" next="hira_g"/>
+            <when state="kata" next="kata_g"/>
             <when state="khmr" next="khmr" output="គ"/>
             <when state="lao" next="lao" output="ຂ"/>
             <when state="latn_bar" output="ǥ"/>
@@ -2138,11 +2173,12 @@
             <when state="cyrl" next="cyrl" output="х"/>
             <when state="cyrl_romanized_comma_below" output="ҳ"/>
             <when state="deva" next="deva" output="ह"/>
-            <when state="georgian_mkhedruli" output="ჰ"/>
             <when state="geez" next="geez_h"/>
+            <when state="georgian_mkhedruli" output="ჰ"/>
             <when state="grek" next="grek" output="η"/>
             <when state="hebr" output="ח"/>
             <when state="hira" next="hira_h"/>
+            <when state="kata" next="kata_h"/>
             <when state="khmr" next="khmr" output="ហ"/>
             <when state="lao" next="lao" output="ຫ໌"/>
             <when state="latn_bar" output="ħ"/>
@@ -2173,7 +2209,6 @@
             <when state="cyrl_romanized_grave" output="і"/>
             <when state="cyrl_romanized_hacek" output="і̄"/>
             <when state="deva" next="deva" output="इ"/>
-            <when state="georgian_mkhedruli" output="ი"/>
             <when state="geez" output="ኢ"/>
             <when state="geez_b" output="ቢ"/>
             <when state="geez_c" output="ቺ"/>
@@ -2198,6 +2233,7 @@
             <when state="geez_w" output="ዊ"/>
             <when state="geez_y" output="ዪ"/>
             <when state="geez_z" output="ዚ"/>
+            <when state="georgian_mkhedruli" output="ი"/>
             <when state="grek" next="grek" output="ι"/>
             <when state="hebr" output="י"/>
             <when state="hira" next="hira" output="い"/>
@@ -2213,6 +2249,19 @@
             <when state="hira_s" next="hira" output="し"/>
             <when state="hira_t" next="hira" output="ち"/>
             <when state="hira_z" next="hira" output="じ"/>
+            <when state="kata" next="kata" output="イ"/>
+            <when state="kata_b" next="kata" output="ビ"/>
+            <when state="kata_d" next="kata" output="ヂ"/>
+            <when state="kata_g" next="kata" output="ギ"/>
+            <when state="kata_h" next="kata" output="ヘ"/>
+            <when state="kata_k" next="kata" output="ケ"/>
+            <when state="kata_m" next="kata" output="メ"/>
+            <when state="kata_n" next="kata" output="ネ"/>
+            <when state="kata_p" next="kata" output="ペ"/>
+            <when state="kata_r" next="kata" output="レ"/>
+            <when state="kata_s" next="kata" output="セ"/>
+            <when state="kata_t" next="kata" output="テ"/>
+            <when state="kata_z" next="kata" output="ゼ"/>
             <when state="khmr" next="khmr" output="ឥ"/>
             <when state="latn_bar" output="ɨ"/>
             <when state="latn_circumflex_below" output="i̭"/>
@@ -2244,8 +2293,8 @@
             <when state="deva" next="deva" output="ज"/>
             <when state="deva_dot_below" output="ज़"/>
             <when state="deva_line_below" output="ॼ"/>
-            <when state="georgian_mkhedruli" output="ჯ"/>
             <when state="geez" next="geez_j"/>
+            <when state="georgian_mkhedruli" output="ჯ"/>
             <when state="grek" next="grek" output="ς"/>
             <when state="hebr" output="צ"/>
             <when state="khmr" next="khmr" output="ជ"/>
@@ -2276,12 +2325,13 @@
             <when state="cyrl_romanized_hacek" output="ҡ"/>
             <when state="deva" next="deva" output="क"/>
             <when state="deva_dot_below" output="क़"/>
-            <when state="georgian_mkhedruli" output="კ"/>
             <when state="geez" next="geez_k"/>
+            <when state="georgian_mkhedruli" output="კ"/>
             <when state="grek" next="grek" output="κ"/>
             <when state="hebr" output="כ"/>
             <when state="hebr_dagesh" output="כּ"/>
             <when state="hira" next="hira_k"/>
+            <when state="kata" next="kata_k"/>
             <when state="khmr" next="khmr" output="ក"/>
             <when state="lao" next="lao" output="ກ"/>
             <when state="latn_bar" output="ꝁ"/>
@@ -2297,6 +2347,9 @@
             <when state="thai" next="thai" output="ก"/>
             <when state="tibt" next="tibt" output="ཀ"/>
         </action>
+        <action id="kata">
+            <when state="none" next="kata"/>
+        </action>
         <action id="khmr">
             <when state="none" next="khmr"/>
         </action>
@@ -2311,11 +2364,12 @@
             <when state="cyrl_romanized_comma_below" output="ԡ"/>
             <when state="cyrl_softened" output="љ"/>
             <when state="deva" next="deva" output="ल"/>
-            <when state="georgian_mkhedruli" output="ლ"/>
             <when state="geez" next="geez_l"/>
+            <when state="georgian_mkhedruli" output="ლ"/>
             <when state="grek" next="grek" output="λ"/>
             <when state="hebr" output="ל‎ "/>
             <when state="hira" next="hira" output="ん"/>
+            <when state="kata" next="kata" output="ン"/>
             <when state="khmr" next="khmr" output="ល"/>
             <when state="lao" next="lao" output="ລ"/>
             <when state="latn_bar" output="ƚ"/>
@@ -2343,11 +2397,12 @@
             <when state="beng" next="beng" output="ম"/>
             <when state="cyrl" next="cyrl" output="м"/>
             <when state="deva" next="deva" output="म"/>
-            <when state="georgian_mkhedruli" output="მ"/>
             <when state="geez" next="geez_m"/>
+            <when state="georgian_mkhedruli" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
             <when state="hebr" output="מ"/>
             <when state="hira" next="hira_m"/>
+            <when state="kata" next="kata_m"/>
             <when state="khmr" next="khmr" output="ម"/>
             <when state="lao" next="lao" output="ມ"/>
             <when state="latn_hook_palatal" output="ɱ"/>
@@ -2382,11 +2437,12 @@
             <when state="cyrl_romanized_macron" output="н̄"/>
             <when state="cyrl_softened" output="њ"/>
             <when state="deva" next="deva" output="न"/>
-            <when state="georgian_mkhedruli" output="ნ"/>
             <when state="geez" next="geez_n"/>
+            <when state="georgian_mkhedruli" output="ნ"/>
             <when state="grek" next="grek" output="ν"/>
             <when state="hebr" output="נ"/>
             <when state="hira" next="hira_n"/>
+            <when state="kata" next="kata_n"/>
             <when state="khmr" next="khmr" output="ន"/>
             <when state="lao" next="lao" output="ນ"/>
             <when state="latn_circumflex_below" output="ṋ"/>
@@ -2416,7 +2472,6 @@
             <when state="cyrl_romanized_grave" output="ҩ"/>
             <when state="cyrl_romanized_macron" output="о̄"/>
             <when state="deva" next="deva" output="ु"/>
-            <when state="georgian_mkhedruli" output="ო"/>
             <when state="geez" output="ኡ"/>
             <when state="geez_b" output="ቡ"/>
             <when state="geez_c" output="ቹ"/>
@@ -2441,6 +2496,7 @@
             <when state="geez_w" output="ዉ"/>
             <when state="geez_y" output="ዩ"/>
             <when state="geez_z" output="ዙ"/>
+            <when state="georgian_mkhedruli" output="ო"/>
             <when state="grek" next="grek" output="ο"/>
             <when state="hebr" output="ע"/>
             <when state="hira" next="hira" output="お"/>
@@ -2458,6 +2514,21 @@
             <when state="hira_w" next="hira" output="を"/>
             <when state="hira_y" next="hira" output="よ"/>
             <when state="hira_z" next="hira" output="ぞ"/>
+            <when state="kata" next="kata" output="オ"/>
+            <when state="kata_b" next="kata" output="ボ"/>
+            <when state="kata_d" next="kata" output="ド"/>
+            <when state="kata_g" next="kata" output="ゴ"/>
+            <when state="kata_h" next="kata" output="ホ"/>
+            <when state="kata_k" next="kata" output="コ"/>
+            <when state="kata_m" next="kata" output="モ"/>
+            <when state="kata_n" next="kata" output="ノ"/>
+            <when state="kata_p" next="kata" output="ポ"/>
+            <when state="kata_r" next="kata" output="ロ"/>
+            <when state="kata_s" next="kata" output="ソ"/>
+            <when state="kata_t" next="kata" output="ト"/>
+            <when state="kata_w" next="kata" output="ヲ"/>
+            <when state="kata_y" next="kata" output="ヨ"/>
+            <when state="kata_z" next="kata" output="ゾ"/>
             <when state="latn_bar" output="ɵ"/>
             <when state="latn_e" output="œ"/>
             <when state="latn_extensions" output="ɔ"/>
@@ -2480,11 +2551,12 @@
             <when state="cyrl" next="cyrl" output="п"/>
             <when state="cyrl_romanized_grave" output="ԥ"/>
             <when state="deva" next="deva" output="प"/>
-            <when state="georgian_mkhedruli" output="პ"/>
             <when state="geez" next="geez_p"/>
+            <when state="georgian_mkhedruli" output="პ"/>
             <when state="grek" next="grek" output="π"/>
             <when state="hebr" output="פ"/>
             <when state="hira" next="hira_p"/>
+            <when state="kata" next="kata_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
             <when state="lao" next="lao" output="ປ"/>
             <when state="latn_bar" output="ᵽ"/>
@@ -2527,11 +2599,12 @@
             <when state="beng" next="beng" output="র"/>
             <when state="cyrl" next="cyrl" output="р"/>
             <when state="deva" next="deva" output="र"/>
-            <when state="georgian_mkhedruli" output="რ"/>
             <when state="geez" next="geez_r"/>
+            <when state="georgian_mkhedruli" output="რ"/>
             <when state="grek" next="grek" output="ρ"/>
             <when state="hebr" output="ר"/>
             <when state="hira" next="hira_r"/>
+            <when state="kata" next="kata_r"/>
             <when state="khmr" next="khmr" output="រ"/>
             <when state="lao" next="lao" output="ຣ"/>
             <when state="latn_bar" output="ɍ"/>
@@ -2564,11 +2637,12 @@
             <when state="cyrl_romanized_hacek" output="ш"/>
             <when state="cyrl_softened" output="ш"/>
             <when state="deva" next="deva" output="स"/>
-            <when state="georgian_mkhedruli" output="ს"/>
             <when state="geez" next="geez_s"/>
+            <when state="georgian_mkhedruli" output="ს"/>
             <when state="grek" next="grek" output="σ"/>
             <when state="hebr" output="ש"/>
             <when state="hira" next="hira_s"/>
+            <when state="kata" next="kata_s"/>
             <when state="khmr" next="khmr" output="ស"/>
             <when state="lao" next="lao" output="ສ"/>
             <when state="latn_comma_below" output="ș"/>
@@ -2601,11 +2675,12 @@
             <when state="cyrl" next="cyrl" output="т"/>
             <when state="cyrl_romanized_grave" output="ԏ"/>
             <when state="deva" next="deva" output="त"/>
-            <when state="georgian_mkhedruli" output="ტ"/>
             <when state="geez" next="geez_t"/>
+            <when state="georgian_mkhedruli" output="ტ"/>
             <when state="grek" next="grek" output="τ"/>
             <when state="hebr" output="ט"/>
             <when state="hira" next="hira_t"/>
+            <when state="kata" next="kata_t"/>
             <when state="khmr" next="khmr" output="ត"/>
             <when state="lao" next="lao" output="ຕ"/>
             <when state="latn_bar" output="ŧ"/>
@@ -2630,7 +2705,7 @@
             <when state="none" next="taml"/>
         </action>
         <action id="tfng">
-            <when state="none" output="tfng"/>
+            <when state="none" next="tfng"/>
         </action>
         <action id="thai">
             <when state="none" next="thai"/>
@@ -2648,7 +2723,6 @@
             <when state="cyrl_circumflex" output="ю"/>
             <when state="cyrl_romanized_grave" output="ү"/>
             <when state="deva" next="deva" output="उ"/>
-            <when state="georgian_mkhedruli" output="უ"/>
             <when state="geez" output="ኡ"/>
             <when state="geez_b" output="ቡ"/>
             <when state="geez_c" output="ቹ"/>
@@ -2673,6 +2747,7 @@
             <when state="geez_w" output="ዉ"/>
             <when state="geez_y" output="ዩ"/>
             <when state="geez_z" output="ዙ"/>
+            <when state="georgian_mkhedruli" output="უ"/>
             <when state="grek" next="grek" output="υ"/>
             <when state="hebr" output="ו"/>
             <when state="hira" next="hira" output="う"/>
@@ -2689,6 +2764,20 @@
             <when state="hira_t" next="hira" output="つ"/>
             <when state="hira_y" next="hira" output="ゆ"/>
             <when state="hira_z" next="hira" output="ず"/>
+            <when state="kata" next="kata" output="ウ"/>
+            <when state="kata_b" next="kata" output="ブ"/>
+            <when state="kata_d" next="kata" output="ヅ"/>
+            <when state="kata_g" next="kata" output="グ"/>
+            <when state="kata_h" next="kata" output="フ"/>
+            <when state="kata_k" next="kata" output="ク"/>
+            <when state="kata_m" next="kata" output="ム"/>
+            <when state="kata_n" next="kata" output="ヌ"/>
+            <when state="kata_p" next="kata" output="プ"/>
+            <when state="kata_r" next="kata" output="ル"/>
+            <when state="kata_s" next="kata" output="ス"/>
+            <when state="kata_t" next="kata" output="ツ"/>
+            <when state="kata_y" next="kata" output="ユ"/>
+            <when state="kata_z" next="kata" output="ズ"/>
             <when state="khmr" next="khmr" output="ឧ"/>
             <when state="latn_bar" output="ʉ"/>
             <when state="latn_circumflex_below" output="ṷ"/>
@@ -2762,10 +2851,11 @@
             <when state="beng" next="beng" output="ট"/>
             <when state="cyrl" next="cyrl" output="ԝ"/>
             <when state="deva" next="deva" output="ट"/>
-            <when state="georgian_mkhedruli" output="წ"/>
             <when state="geez" next="geez_w"/>
+            <when state="georgian_mkhedruli" output="წ"/>
             <when state="grek" next="grek" output="ω"/>
             <when state="hira" next="hira_w"/>
+            <when state="kata" next="kata_w"/>
             <when state="khmr" next="khmr" output="ដ"/>
             <when state="latn_extensions" output="ɯ"/>
             <when state="latn_rotated_lower" output="ʍ"/>
@@ -2809,10 +2899,11 @@
             <when state="cyrl_romanized_grave" next="cyrl" output="ѵ"/>
             <when state="cyrl_romanized_macron" next="cyrl" output="ы̄"/>
             <when state="deva" next="deva" output="य"/>
-            <when state="georgian_mkhedruli" output="ყ"/>
             <when state="geez" next="geez_y"/>
+            <when state="georgian_mkhedruli" output="ყ"/>
             <when state="grek" next="grek" output="ψ"/>
             <when state="hira" next="hira_y"/>
+            <when state="kata" next="kata_y"/>
             <when state="khmr" next="khmr" output="យ"/>
             <when state="lao" next="lao" output="ຢ"/>
             <when state="latn_bar" output="ɏ"/>
@@ -2843,11 +2934,12 @@
             <when state="cyrl_softened" output="ж"/>
             <when state="deva" next="deva" output="ड"/>
             <when state="deva_line_below" output="ॾ"/>
-            <when state="georgian_mkhedruli" output="ზ"/>
             <when state="geez" next="geez_z"/>
+            <when state="georgian_mkhedruli" output="ზ"/>
             <when state="grek" next="grek" output="ζ"/>
             <when state="hebr" output="ז"/>
             <when state="hira" next="hira_z"/>
+            <when state="kata" next="kata_z"/>
             <when state="khmr" next="khmr" output="ឌ"/>
             <when state="latn_bar" output="ƶ"/>
             <when state="latn_extensions" output="ʒ"/>
@@ -2952,6 +3044,21 @@
         <when state="hira_w" output="を"/>
         <when state="hira_y" output="ゆ"/>
         <when state="hira_z" output="ず"/>
+        <when state="kata" output="ア"/>
+        <when state="kata_b" output="ブ"/>
+        <when state="kata_d" output="ド"/>
+        <when state="kata_g" output="グ"/>
+        <when state="kata_h" output="フ"/>
+        <when state="kata_k" output="ク"/>
+        <when state="kata_m" output="ム"/>
+        <when state="kata_n" output="ノ"/>
+        <when state="kata_p" output="プ"/>
+        <when state="kata_r" output="ル"/>
+        <when state="kata_s" output="ス"/>
+        <when state="kata_t" output="ト"/>
+        <when state="kata_w" output="ワ"/>
+        <when state="kata_y" output="ユ"/>
+        <when state="kata_z" output="ズ"/>
         <when state="khmr" output="អ"/>
         <when state="lao" output="ອ"/>
         <when state="latn_bar" output="-"/>
