@@ -67,83 +67,55 @@ Below is a map of the world showing the countries where some or all of the admin
 This keyboard is compatible with (at least) the following scripts (\* to be
 confirmed):
 
-|                                               |                                            |                                  |                 |
-|-----------------------------------------------|--------------------------------------------|----------------------------------|-----------------|
-| Albanian                                      | Arabic, romanization (ALA-LC; ISO)\*       | Arabic\*                         | Asturian        |
-| Azerbaijani                                   | Belarusian                                 | Bosnian (cyrllic; latin scripts) | Breton          |
-| Bulgarian                                     | Chinese Mandarin, pinyin (with tone marks) | Cyrillic, romanization, ISO 9\*  | Czech           |
-| Danish                                        | Dutch                                      | English                          | Esperanto       |
-| Estonian                                      | Faroese                                    | Farsi / Dari / Persian           | Filipino        |
-| French                                        | Galician                                   | Georgian (mkhedruli)             | German          |
-| Greenlandic                                   | Hawai'ian                                  | Hebrew                           | Hindi           |
-| Hungarian                                     | Icelandic                                  | Irish                            | Italian         |
-| Japanese Romaji (hepburn, nihonshiki, kunrei) | Kurdish                                    | Kurdish (arabic)                 | Lakota          |
-| Latvian                                       | Lithuanian                                 | Macedonian                       | Manx            |
-| Mongolian (cyrillic; mongolian)               | Montenegrin                                | Māori                            | Nepalese        |
-| Norwegian (bokmal, nynorsk)                   | Pashto                                     | Polish                           | Portuguese      |
-| Qazaq (latin script)                          | Romanian                                   | Russian                          | Scottish Gaelic |
-| Serbian                                       | Slovak                                     | Slovenian                        | Spanish         |
-| Swedish                                       | Tifinagh                                   | Turkish                          | Ukrainian       |
-| Urdu                                          | Uzbek                                      | Welsh                            |
 
-Hopefully to add support for the following scripts:
+
+Albanian, Arabic, romanization (ALA-LC; ISO), Arabic, Asturian, Azerbaijani, Belarusian, Bengali, Bosnian (cyrllic; latin scripts), Breton, Bulgarian, Burmese, Chinese Mandarin (pinyin), Cyrillic (romanization, ISO 9), Czech, Danish, Dutch, Dzongkha, English, Esperanto, Estonian, Faroese, Farsi / Dari / Persian, Filipino, French, Galician, Georgian (mkhedruli), German, Greenlandic, Hawaiian, Hebrew, Hindi, Hungarian, Icelandic, Irish, Italian, Japanese (romaji; hepburn, nihonshiki, kunrei), Khmer, Kurdish, Kurdish (arabic), Lakota, Lao, Latvian, Lithuanian, Macedonian, Manx, Mongolian (cyrillic; mongolian), Montenegrin, Māori, Nepalese, Norwegian (bokmal, nynorsk), Pashto, Polish, Portuguese, Qazaq (latin script), Romanian, Russian, Scottish Gaelic, Serbian, Slovak, Slovenian, Sinhala, Spanish, Swedish, Tamil, Thai, Tibetan, Tifinagh, Turkish, Ukrainian, Urdu, Uzbek, Welsh 
+
+
+To add support for the following scripts:
 
 - vietnamese
 - syllabic writing systems
   - korean
   - ge'ez
-- brahmic scripts
-  - burmese
-  - bengali
-  - tamil
-  - sinhala
-  - thai
-  - lao
-  - khmer
-  - dzongkha
 
-# Musings: how to make typing other alphabets intuitive
+# Why?
 
-Non-latin characters should be placed so intuitively that anybody can learn a few rules, and be able to start typing as if the language used the latin alphabet, and convert this into mostly correct writing in the other alphabet.
+It's needlessly hard to type! Symbols like θ, π, and √ are incredibly common in handwriting! And yet, almost impossible to type on a computer. This isn't just a problem in math, but also in linguistics, and for bilingual people.
+
+*This keyboard makes it easy to type.*
+
+*If you study math, you can type math symbols. If you're bilingual, you can type in your other language. If you study linguistics, you can type linguistics notation.*
+
+In order to make it as easy as possible, you should be able to start typing in any language with minimal learning - you shouldn't have to learn a new keyboard layout for every new language, or look up where to find θ on your keyboard.
+
+There are basically 3 ways to achieve this:
+1. Type characters by using graphically similar characters
+2. Make users memorize 1 romanization system for all scripts, and have them learn a few exceptions for each script
+
+\# 1 sounds painful. Chinese and Japanese had to be typed using mostly visual components for 100 years, and as soon as computers allowed you to type Japanese / Chinese phonetically, almost everyone switched to typing characters phonetically using the latin alphabet. I consider the debate on graphical vs phonetic typing to be settled, with phonetic typing having won.
+
+Even so, typing graphically can *sometimes* be unavoidable, since lots of latin script languages use diacritics. Take `p̃` as an example - you may not know how that's pronounced, but vou *do* know that it's a "p" with a tilde above it, and that's exactly how you want to type it.
+
+We use a nearly universal romanization scheme, which maps every language's letters to that romanization scheme. That romanization scheme must:
+- only use basic latin letters
+- no diacritics
+- if exceptions are made, they must be easy to guess or learn.
+- when typing diacritics, they must be intuitive to find (ȧ = a + .)
+
+Our universal romanization scheme is based on the IPA. To save time, if a letter in the basic 26 letters is unused, then we fill that slot with a nearby convenient IPA value.
+
 The idea should be that if i want to type russian but i don't know how to write it, that i can close my eyes and type russian. I'd type "andrej" and get "андрей".
 
-But languages have messy writing systems. English has 3 letters that all make the /k/ sound (q; k; c), and many languages also have the same kind of problem. It's impossible to have a purely phonetic system for placing letters. Plus, many non-latin alphabets have letters for sounds that latin doesn't have, especially sounds like "ts", "ch", "zh", and "sh".
+*Problem 1*: Languages have messy writing systems. English has 3 letters that all make the /k/ sound (q; k; c), and many languages also have the same kind of problem. 
+*Solution*: For these cases, we use "t", "t1" and "t2", and which one is which will be sorted alphabetically. So in English, you can imagine that "c" maps to "k", "k" maps "k1", and "q" maps to "k2".
 
-So, a person will have to know *something* about the language they're trying to type. But we want it to be really easy to start typing in any language, with minimal learning.
+*Problem 2*: Many non-latin alphabets have letters for sounds that latin doesn't have, especially sounds like "ts", "ch", "zh", and "sh".
+*Solution*: Use the universal romanization scheme, and allow typing of diacritics. To get russian "ц", type "ts". To get "тс", type "t-s". Common sounds like "sh" are simply "x".
 
-The easiest way to do this is to have users memorize 1 phonetic romanization system for all scripts, and learn a few exceptions for each script they want to type.
+## Examples
 
-For example, I might need to learn that "j" makes a "y" sound in russian, or that the greek letter θ is placed on top of the "q" on the keyboard, but once I learn these rules I can start typing valid russian / greek.
-
-It can't be entirely phonetic either. We already mentioned that some letters represent the same sound, but there are also diacritics like å. You may not know how that's pronounced, but you *do* know that it's an "a" with a ring above it, and you should be able to type it just like that.
-
-For example:
-Arabic has a lot of h sounds. It has distinct letters for /h/; /x/; /ʕ/; /ʔ/.
-I'll need to learn that the keyboard uses h; H; X; '; and \` to represent those sounds, which is some memorization, but not unmanageable.
-
-Lots of languages have very similar alphabets (like english, greek, and russian), so fewer exceptions need to be learned. You'll have to learn where some weird letters like θ go, but once you know, you don't have to re-learn. In fact, most languages have such similar alphabets that you only need to learn rules for a couple of basic alphabets to type in any of its related scripts.
-
-If you know latin, you'll only need to learn around 5 or so extra rules to type any of:
-- cyrillic
-- greek
-- hangeul
-- katakana
-- canadian syllabics
-
-Some languages have more than a few rules to learn because their sound systems are so different to most latin alphabets:
-- arabic
-- hebrew
-- georgian m.
-- armenian
-- devanagari
-
-But once you learn the rules for arabic, you can probably type ge'ez
-
-And if you can type devanagari, you can type any other indic script, including:
-- gujarati
-- assamese
-- tamil
-- thai
-- khmer
-- lao
-and more
+*Example 1*
+- Perso-Arabic script has a /gh/ sound and a /g/ sound.
+- Greek has a single letter which can sound like /gh/ or /g/.
+Therefore, Greek would allow you to simply type /g/, But in perso-arabic script, there is a separate letter for /g/ and /gh/. So you would have to distinguish the two when you write Persian.
