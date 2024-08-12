@@ -736,6 +736,7 @@
             <key code="29" output="0"/>
             <key code="30" output=""/>
             <key code="31" action="&#x000F;"/>
+            <key code="32" action="geez"/>
             <key code="33" output=""/>
             <key code="34" action="&#x0003;"/>
             <key code="35" action="lao"/>
@@ -845,6 +846,8 @@
         </action>
         <action id="!">
             <when state="none" output=""/>
+            <when state="hira" output="！"/>
+            <when state="latin_extensions" output="¡"/>
         </action>
         <action id="! 1">
             <when state="none" output="!"/>
@@ -1090,7 +1093,10 @@
         </action>
         <action id="?">
             <when state="none" output="?"/>
+            <when state="hira" output="？"/>
+            <when state="arab" output="؟"/>
             <when state="latn_rotated_lower" output="¿"/>
+            <when state="latn_extensions" output="¿"/>
         </action>
         <action id="@">
             <when state="none" output="@"/>
@@ -2703,6 +2709,10 @@
         <action id="α">
             <when state="none" next="arab"/>
         </action>
+        <action id="geez">
+          <when state="none" next="geez"/>
+        </action>
+
     </actions>
     <terminators>
         <when state="arab" output="ا"/>
@@ -2731,6 +2741,7 @@
         <when state="deva_dot_below" output="."/>
         <when state="deva_line_below" output="_"/>
         <when state="georgian_mkhedruli" output="&#x000A;რ"/>
+        <when state="geez" output="አ"/>
         <when state="grek" output="α"/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
