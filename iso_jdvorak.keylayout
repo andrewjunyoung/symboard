@@ -1,7 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Last edited by AJY on 2023-07-12 at 23:59 (EST)-->
-<!--Last edited by Ukelele version 359 on 2024-08-12 at 18:00 (EDT)-->
 <keyboard group="126" id="-24635" name="JDvorak keyboard (iso)" maxout="4">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -2134,6 +2133,7 @@
             <when state="arab_ring_below" output="ګ"/>
             <when state="armn" output="գ"/>
             <when state="beng" next="beng" output="গ"/>
+            <when state="cans" next="cans_g"/>
             <when state="cyrl" next="cyrl" output="г"/>
             <when state="cyrl_romanized_dot_above" output="ғ"/>
             <when state="cyrl_romanized_grave" output="ґ"/>
@@ -2146,7 +2146,6 @@
             <when state="hebr" output="ג"/>
             <when state="hebr_dagesh" output="גּ"/>
             <when state="hira" next="hira_g"/>
-            <when state="cans" next="cans_g"/>
             <when state="kata" next="kata_g"/>
             <when state="khmr" next="khmr" output="គ"/>
             <when state="lao" next="lao" output="ຂ"/>
@@ -2172,6 +2171,7 @@
             <when state="arab" next="arab" output="ح"/>
             <when state="armn" output="հ"/>
             <when state="beng" next="beng" output="হ"/>
+            <when state="cans" next="cans_h"/>
             <when state="cyrl" next="cyrl" output="х"/>
             <when state="cyrl_romanized_comma_below" output="ҳ"/>
             <when state="deva" next="deva" output="ह"/>
@@ -2180,7 +2180,6 @@
             <when state="grek" next="grek" output="η"/>
             <when state="hebr" output="ח"/>
             <when state="hira" next="hira_h"/>
-            <when state="cans" next="cans_h"/>
             <when state="kata" next="kata_h"/>
             <when state="khmr" next="khmr" output="ហ"/>
             <when state="lao" next="lao" output="ຫ໌"/>
@@ -2302,7 +2301,7 @@
             <when state="armn_2" output="ջ"/>
             <when state="arrows_basic_dvorak" output="↘"/>
             <when state="beng" next="beng" output="জ"/>
-            <when state="cans" next="cans_j" output=""/>
+            <when state="cans" next="cans_j"/>
             <when state="cyrl" next="cyrl" output="й"/>
             <when state="cyrl_romanized_acute" output="ј̵"/>
             <when state="cyrl_romanized_hacek" output="ј"/>
@@ -2334,6 +2333,7 @@
             <when state="armn" output="կ"/>
             <when state="armn_2" output="ք"/>
             <when state="beng" next="beng" output="ক"/>
+            <when state="cans" next="cans_k"/>
             <when state="cyrl" next="cyrl" output="к"/>
             <when state="cyrl_circumflex" output="ҝ"/>
             <when state="cyrl_romanized_comma_below" output="қ"/>
@@ -2347,7 +2347,6 @@
             <when state="hebr" output="כ"/>
             <when state="hebr_dagesh" output="כּ"/>
             <when state="hira" next="hira_k"/>
-            <when state="cans" next="cans_k"/>
             <when state="kata" next="kata_k"/>
             <when state="khmr" next="khmr" output="ក"/>
             <when state="lao" next="lao" output="ກ"/>
@@ -2376,6 +2375,7 @@
             <when state="arab_hacek" output="ڵ"/>
             <when state="armn" output="լ"/>
             <when state="beng" next="beng" output="ল"/>
+            <when state="cans" next="cans_l"/>
             <when state="cyrl" next="cyrl" output="л"/>
             <when state="cyrl_circumflex" output="љ"/>
             <when state="cyrl_romanized_comma_below" output="ԡ"/>
@@ -2384,7 +2384,7 @@
             <when state="geez" next="geez_l"/>
             <when state="georgian_mkhedruli" output="ლ"/>
             <when state="grek" next="grek" output="λ"/>
-            <when state="hebr" output="ל‎ "/>
+            <when state="hebr" output="ל"/>
             <when state="hira" next="hira" output="ん"/>
             <when state="kata" next="kata" output="ン"/>
             <when state="khmr" next="khmr" output="ល"/>
@@ -2414,12 +2414,12 @@
             <when state="beng" next="beng" output="ম"/>
             <when state="cyrl" next="cyrl" output="м"/>
             <when state="deva" next="deva" output="म"/>
+            <when state="cans" next="cans_m"/>
             <when state="geez" next="geez_m"/>
             <when state="georgian_mkhedruli" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
             <when state="hebr" output="מ"/>
             <when state="hira" next="hira_m"/>
-            <when state="cans" next="cans_m"/>
             <when state="kata" next="kata_m"/>
             <when state="khmr" next="khmr" output="ម"/>
             <when state="lao" next="lao" output="ມ"/>
@@ -2446,6 +2446,7 @@
             <when state="arab_ring_below" output="ڼ"/>
             <when state="armn" output="ն"/>
             <when state="beng" next="beng" output="ন"/>
+            <when state="cans" next="cans_n"/>
             <when state="cyrl" next="cyrl" output="н"/>
             <when state="cyrl_circumflex" output="њ"/>
             <when state="cyrl_romanized_acute" output="ԣ"/>
@@ -2460,7 +2461,6 @@
             <when state="grek" next="grek" output="ν"/>
             <when state="hebr" output="נ"/>
             <when state="hira" next="hira_n"/>
-            <when state="cans" next="cans_n"/>
             <when state="kata" next="kata_n"/>
             <when state="khmr" next="khmr" output="ន"/>
             <when state="lao" next="lao" output="ນ"/>
@@ -2565,6 +2565,7 @@
             <when state="armn_2" output="փ"/>
             <when state="beng" next="beng" output="প"/>
             <when state="cyrl" next="cyrl" output="п"/>
+            <when state="cans" next="cans_p"/>
             <when state="cyrl_romanized_grave" output="ԥ"/>
             <when state="deva" next="deva" output="प"/>
             <when state="geez" next="geez_p"/>
@@ -2572,7 +2573,6 @@
             <when state="grek" next="grek" output="π"/>
             <when state="hebr" output="פ"/>
             <when state="hira" next="hira_p"/>
-            <when state="cans" next="cans_p"/>
             <when state="kata" next="kata_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
             <when state="lao" next="lao" output="ປ"/>
@@ -2615,6 +2615,7 @@
             <when state="armn" output="ռ"/>
             <when state="armn_2" output="ր"/>
             <when state="beng" next="beng" output="র"/>
+            <when state="cans" next="cans_r"/>
             <when state="cyrl" next="cyrl" output="р"/>
             <when state="deva" next="deva" output="र"/>
             <when state="geez" next="geez_r"/>
@@ -2622,7 +2623,6 @@
             <when state="grek" next="grek" output="ρ"/>
             <when state="hebr" output="ר"/>
             <when state="hira" next="hira_r"/>
-            <when state="cans" next="cans_r"/>
             <when state="kata" next="kata_r"/>
             <when state="khmr" next="khmr" output="រ"/>
             <when state="lao" next="lao" output="ຣ"/>
@@ -2649,6 +2649,7 @@
             <when state="armn" output="ս"/>
             <when state="armn_2" output="շ"/>
             <when state="beng" next="beng" output="স"/>
+            <when state="cans" next="cans_s"/>
             <when state="cyrl" next="cyrl" output="с"/>
             <when state="cyrl_circumflex" output="щ"/>
             <when state="cyrl_romanized_comma_below" output="ҫ"/>
@@ -2661,7 +2662,6 @@
             <when state="grek" next="grek" output="σ"/>
             <when state="hebr" output="ש"/>
             <when state="hira" next="hira_s"/>
-            <when state="cans" next="cans_s"/>
             <when state="kata" next="kata_s"/>
             <when state="khmr" next="khmr" output="ស"/>
             <when state="lao" next="lao" output="ສ"/>
@@ -2681,9 +2681,6 @@
             <when state="tfng" next="tfng" output="ⵙ"/>
             <when state="thai" next="thai" output="ส"/>
         </action>
-        <action id="cans">
-            <when state="none" next="cans"/>
-        </action>
         <action id="sinh">
             <when state="none" next="sinh"/>
         </action>
@@ -2695,6 +2692,7 @@
             <when state="armn" output="տ"/>
             <when state="armn_2" output="թ"/>
             <when state="beng" next="beng" output="ত"/>
+            <when state="cans" next="cans_t"/>
             <when state="cyrl" next="cyrl" output="т"/>
             <when state="cyrl_romanized_grave" output="ԏ"/>
             <when state="deva" next="deva" output="त"/>
@@ -2703,7 +2701,6 @@
             <when state="grek" next="grek" output="τ"/>
             <when state="hebr" output="ט"/>
             <when state="hira" next="hira_t"/>
-            <when state="cans" next="cans_t"/>
             <when state="kata" next="kata_t"/>
             <when state="khmr" next="khmr" output="ត"/>
             <when state="lao" next="lao" output="ຕ"/>
@@ -2838,7 +2835,7 @@
             <when state="arab" next="arab" output="ظ"/>
             <when state="armn" output="վ"/>
             <when state="beng" next="beng" output="ব"/>
-            <when state="cans" next="cans_w"/>
+            <when state="cans" next="cans_v"/>
             <when state="cyrl" next="cyrl" output="в"/>
             <when state="deva" next="deva" output="व"/>
             <when state="geez" output="ዋ"/>
@@ -2939,7 +2936,6 @@
             <when state="georgian_mkhedruli" output="ყ"/>
             <when state="grek" next="grek" output="ψ"/>
             <when state="hira" next="hira_y"/>
-            <when state="cans" next="cans_y"/>
             <when state="kata" next="kata_y"/>
             <when state="khmr" next="khmr" output="យ"/>
             <when state="lao" next="lao" output="ຢ"/>
@@ -3009,6 +3005,9 @@
         <action id="α">
             <when state="none" next="arab"/>
         </action>
+        <action id="cans">
+            <when state="none" next="cans"/>
+        </action>
     </actions>
     <terminators>
         <when state="arab" output="ا"/>
@@ -3021,6 +3020,19 @@
         <when state="arrows_basic_dvorak" output="→"/>
         <when state="beng" output="অ"/>
         <when state="cans" output="ᐃ"/>
+        <when state="cans_p" output="ᐱ"/>
+        <when state="cans_t" output="ᑎ"/>
+        <when state="cans_k" output="ᑭ"/>
+        <when state="cans_h" output="ᕵ"/>
+        <when state="cans_g" output="ᒋ"/>
+        <when state="cans_m" output="ᒥ"/>
+        <when state="cans_n" output="ᓂ"/>
+        <when state="cans_s" output="ᓯ"/>
+        <when state="cans_l" output="ᓕ"/>
+        <when state="cans_j" output="ᔨ"/>
+        <when state="cans_v" output="ᕕ"/>
+        <when state="cans_r" output="ᕆ"/>
+        <when state="cans_q" output="ᕿ"/>
         <when state="cyrl" output="д"/>
         <when state="cyrl_circumflex" output="ˆ"/>
         <when state="cyrl_romanized_acute" output="´"/>
