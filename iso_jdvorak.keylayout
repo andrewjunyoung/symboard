@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Last edited by AJY on 2023-07-12 at 23:59 (EST)-->
-<!--Last edited by Ukelele version 359 on 2024-08-12 at 00:37 (EDT)-->
-<keyboard group="126" id="-21171" name="JDvorak keyboard (iso)" maxout="4">
+<!--Last edited by Ukelele version 359 on 2024-08-12 at 12:50 (EDT)-->
+<keyboard group="126" id="-24635" name="JDvorak keyboard (iso)" maxout="4">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
     </layouts>
@@ -168,7 +168,7 @@
             <key code="10" output="·"/>
             <key code="11" action="X"/>
             <key code="12" action=":"/>
-            <key code="13" action="! 1"/>
+            <key code="13" action="!"/>
             <key code="14" action="?"/>
             <key code="15" action="P"/>
             <key code="16" action="F"/>
@@ -397,7 +397,14 @@
             <key code="15" action=""/>
             <key code="16" output=""/>
             <key code="17" action=""/>
+            <key code="18" output=""/>
+            <key code="19" output=""/>
+            <key code="20" output=""/>
+            <key code="21" output=""/>
             <key code="22" output="̂"/>
+            <key code="23" output=""/>
+            <key code="24" output=""/>
+            <key code="25" output=""/>
             <key code="26" output="≤"/>
             <key code="27" output="—"/>
             <key code="28" output="≥"/>
@@ -416,9 +423,13 @@
             <key code="41" output=""/>
             <key code="42" output="̏"/>
             <key code="43" action=""/>
+            <key code="44" output=""/>
+            <key code="45" output=""/>
+            <key code="46" output=""/>
             <key code="47" action="action 12"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
+            <key code="50" output=""/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
             <key code="53" output="&#x001B;"/>
@@ -845,13 +856,10 @@
             <when state="none" output="&#x001B;"/>
         </action>
         <action id="!">
-            <when state="none" output=""/>
-            <when state="hira" output="！"/>
-            <when state="latin_extensions" output="¡"/>
-        </action>
-        <action id="! 1">
             <when state="none" output="!"/>
             <when state="deva" next="deva" output="ी"/>
+            <when state="hira" output="！"/>
+            <when state="latin_extensions" output="¡"/>
             <when state="latn_rotated_lower" output="¡"/>
         </action>
         <action id="&#x0022;">
@@ -1093,10 +1101,10 @@
         </action>
         <action id="?">
             <when state="none" output="?"/>
-            <when state="hira" output="？"/>
             <when state="arab" output="؟"/>
-            <when state="latn_rotated_lower" output="¿"/>
+            <when state="hira" output="？"/>
             <when state="latn_extensions" output="¿"/>
+            <when state="latn_rotated_lower" output="¿"/>
         </action>
         <action id="@">
             <when state="none" output="@"/>
@@ -2066,6 +2074,9 @@
             <when state="thai" next="thai" output="ค"/>
             <when state="tibt" next="tibt" output="ག"/>
         </action>
+        <action id="geez">
+            <when state="none" next="geez"/>
+        </action>
         <action id="h">
             <when state="none" output="h"/>
             <when state="arab" next="arab" output="ح"/>
@@ -2709,10 +2720,6 @@
         <action id="α">
             <when state="none" next="arab"/>
         </action>
-        <action id="geez">
-          <when state="none" next="geez"/>
-        </action>
-
     </actions>
     <terminators>
         <when state="arab" output="ا"/>
@@ -2740,8 +2747,8 @@
         <when state="deva" output="अ"/>
         <when state="deva_dot_below" output="."/>
         <when state="deva_line_below" output="_"/>
-        <when state="georgian_mkhedruli" output="&#x000A;რ"/>
         <when state="geez" output="አ"/>
+        <when state="georgian_mkhedruli" output="რ"/>
         <when state="grek" output="α"/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
