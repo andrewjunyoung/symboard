@@ -1,2 +1,2 @@
 install:
-	source scripts/install iso_jdvorak.keylayout
+	source scripts/install
