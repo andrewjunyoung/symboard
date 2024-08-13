@@ -1160,7 +1160,6 @@
             <when state="cyrl_romanized_comma_below" next="cyrl" output="Ҷ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ч"/>
             <when state="cyrl_romanized_macron" next="cyrl" output="Ҵ"/>
-            <when state="cyrl_softened" next="cyrl" output="Ч"/>
             <when state="deva" next="deva" output="छ"/>
             <when state="geor" output="ჩ"/>
             <when state="grek" next="grek" output="Ξ"/>
@@ -1348,7 +1347,6 @@
             <when state="cyrl" next="cyrl" output="Л"/>
             <when state="cyrl_circumflex" next="cyrl" output="Љ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="Ԡ"/>
-            <when state="cyrl_softened" next="cyrl" output="Љ"/>
             <when state="grek" next="grek" output="Λ"/>
             <when state="latn_bar" output="Ƚ"/>
             <when state="latn_circumflex_below" output="Ḽ"/>
@@ -1380,7 +1378,6 @@
             <when state="cyrl_romanized_comma_below" next="cyrl" output="Ң"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="Ԋ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ӈ"/>
-            <when state="cyrl_softened" next="cyrl" output="Њ"/>
             <when state="deva" next="deva" output="ङ"/>
             <when state="grek" next="grek" output="Ν"/>
             <when state="hebr" output="ף"/>
@@ -1480,7 +1477,6 @@
             <when state="cyrl_circumflex" next="cyrl" output="Щ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="Ҫ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ш"/>
-            <when state="cyrl_softened" next="cyrl" output="Ш"/>
             <when state="geor" output="შ"/>
             <when state="grek" next="grek" output="Σ"/>
             <when state="lao" next="lao" output="ຊ"/>
@@ -1608,7 +1604,6 @@
             <when state="cyrl_romanized_acute" next="cyrl" output="Ӡ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="Җ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ж"/>
-            <when state="cyrl_softened" next="cyrl" output="Ж"/>
             <when state="deva" next="deva" output="ढ"/>
             <when state="geor" output="ძ"/>
             <when state="grek" next="grek" output="Ζ"/>
@@ -1935,7 +1930,6 @@
             <when state="cyrl_romanized_comma_below" next="cyrl" output="ҷ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="ч"/>
             <when state="cyrl_romanized_macron" next="cyrl" output="ҵ"/>
-            <when state="cyrl_softened" output="ч"/>
             <when state="deva" next="deva" output="च"/>
             <when state="geez" next="geez_c"/>
             <when state="geor" output="ც"/>
@@ -2389,7 +2383,6 @@
             <when state="cyrl" next="cyrl" output="л"/>
             <when state="cyrl_circumflex" next="cyrl" output="љ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="ԡ"/>
-            <when state="cyrl_softened" next="cyrl" output="љ"/>
             <when state="deva" next="deva" output="ल"/>
             <when state="geez" next="geez_l"/>
             <when state="geor" output="ლ"/>
@@ -2465,7 +2458,6 @@
             <when state="cyrl_romanized_comma_below" next="cyrl" output="ң"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="ԋ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="ӈ"/>
-            <when state="cyrl_softened" next="cyrl" output="њ"/>
             <when state="deva" next="deva" output="न"/>
             <when state="geez" next="geez_n"/>
             <when state="geor" output="ნ"/>
@@ -2668,7 +2660,6 @@
             <when state="cyrl_circumflex" next="cyrl" output="щ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="ҫ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="ш"/>
-            <when state="cyrl_softened" next="cyrl" output="ш"/>
             <when state="deva" next="deva" output="स"/>
             <when state="geez" next="geez_s"/>
             <when state="geor" output="ს"/>
@@ -2981,7 +2972,6 @@
             <when state="cyrl_romanized_acute" next="cyrl" output="ӡ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="җ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="ж"/>
-            <when state="cyrl_softened" next="cyrl" output="ж"/>
             <when state="deva" next="deva" output="ड"/>
             <when state="deva_line_below" output="ॾ"/>
             <when state="geez" next="geez_z"/>
@@ -3057,7 +3047,6 @@
         <when state="cyrl_romanized_grave" output="`"/>
         <when state="cyrl_romanized_hacek" output="ˇ"/>
         <when state="cyrl_romanized_stroke" output=""/>
-        <when state="cyrl_softened" output=""/>
         <when state="deva" output="अ"/>
         <when state="deva_dot_below" output="."/>
         <when state="deva_line_below" output="_"/>
