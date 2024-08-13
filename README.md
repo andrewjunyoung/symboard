@@ -83,7 +83,7 @@ To add support for the following scripts:
 
 It's needlessly hard to type! Symbols like θ, π, and √ are incredibly common in handwriting. And yet, almost impossible to type on a computer. This isn't just a problem in math, but also in linguistics, and for bilingual people.
 
-**This keyboard makes it easy to type.**
+**This keyboard makes it easy to type. Even symbols.**
 
 **If you study math, you can type math symbols. If you're bilingual, you can type in your other language. If you study linguistics, you can type linguistics notation.**
 
