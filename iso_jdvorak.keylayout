@@ -859,7 +859,6 @@
             <when state="deva" next="deva" output="ी"/>
             <when state="hira" output="！"/>
             <when state="kata" output="！"/>
-            <when state="latn_extensions" output="¡"/>
             <when state="latn_rotated_lower" output="¡"/>
         </action>
         <action id="&#x0022;">
@@ -1108,7 +1107,6 @@
             <when state="arab" output="؟"/>
             <when state="hira" output="？"/>
             <when state="kata" output="？"/>
-            <when state="latn_extensions" output="¿"/>
             <when state="latn_rotated_lower" output="¿"/>
         </action>
         <action id="@">
@@ -1158,7 +1156,7 @@
             <when state="armn" output="Ծ"/>
             <when state="armn_2" output="Ճ"/>
             <when state="beng" next="beng" output="ছ"/>
-            <when state="cyrl" next="cyrl" output="Ц"/>
+            <when state="cyrl" next="cyrl" output="Ж"/>
             <when state="cyrl_circumflex" output="Ҹ"/>
             <when state="cyrl_romanized_acute" output="Ћ"/>
             <when state="cyrl_romanized_comma_below" output="Ҷ"/>
@@ -1941,7 +1939,7 @@
             <when state="armn" output="ծ"/>
             <when state="armn_2" output="ճ"/>
             <when state="beng" next="beng" output="চ"/>
-            <when state="cyrl" next="cyrl" output="ц"/>
+            <when state="cyrl" next="cyrl" output="ж"/>
             <when state="cyrl_circumflex" output="ҹ"/>
             <when state="cyrl_romanized_acute" output="ћ"/>
             <when state="cyrl_romanized_comma_below" output="ҷ"/>
