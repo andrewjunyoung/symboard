@@ -1186,7 +1186,6 @@
             <when state="grek" next="grek" output="Δ"/>
             <when state="khmr" next="khmr" output="ធ"/>
             <when state="latn_bar" output="Đ"/>
-            <when state="latn_comma_below" output="D̦"/>
             <when state="latn_rotated_lower" output="P"/>
             <when state="latn_slash" output="Ð"/>
             <when state="latn_small_caps" output="ᴅ"/>
@@ -1392,7 +1391,6 @@
             <when state="latn_bar" output="Ɵ"/>
             <when state="latn_e" output="Œ"/>
             <when state="latn_extensions" output="Ɔ"/>
-            <when state="latn_horn" output="Ơ"/>
             <when state="latn_rotated_lower" output="O"/>
             <when state="latn_rotated_upper" output="O"/>
             <when state="latn_slash" output="Ø"/>
@@ -1466,7 +1464,6 @@
             <when state="geor" output="შ"/>
             <when state="grek" next="grek" output="Σ"/>
             <when state="lao" next="lao" output="ຊ"/>
-            <when state="latn_comma_below" output="Ș"/>
             <when state="latn_extensions" output="ẞ"/>
             <when state="latn_rotated_lower" output="S"/>
             <when state="latn_rotated_upper" output="S"/>
@@ -1489,7 +1486,6 @@
             <when state="grek" next="grek" output="Τ"/>
             <when state="khmr" next="khmr" output="ថ"/>
             <when state="latn_bar" output="Ŧ"/>
-            <when state="latn_comma_below" output="Ț"/>
             <when state="latn_extensions" output="Þ"/>
             <when state="latn_rotated_lower" output="Ʇ"/>
             <when state="latn_rotated_upper" output="⊥"/>
@@ -1510,7 +1506,6 @@
             <when state="grek" next="grek" output="Υ"/>
             <when state="latn_bar" output="Ʉ"/>
             <when state="latn_extensions" output="Ʊ"/>
-            <when state="latn_horn" output="Ư"/>
             <when state="latn_rotated_lower" output="N"/>
             <when state="latn_small_caps" output="ᴜ"/>
             <when state="mong" next="mong" output="ᠦ"/>
@@ -1764,11 +1759,11 @@
             <when state="none" output=""/>
         </action>
         <action id="alt+!">
-            <when state="none" output="̦"/>
+            <when state="none" output=" ̦"/>
             <when state="cyrl" next="cyrl_romanized_comma_below"/>
         </action>
         <action id="alt+,">
-            <when state="none" next="latn_horn"/>
+            <when state="none" output=" ̛"/>
             <when state="cyrl" next="cyrl_romanized_acute"/>
         </action>
         <action id="alt+.">
@@ -1867,12 +1862,10 @@
             <when state="khmr" next="khmr" output="ប"/>
             <when state="lao" next="lao" output="ບ"/>
             <when state="latn_bar" output="ƀ"/>
-            <when state="latn_comma_below" output=""/>
             <when state="latn_e" output=""/>
             <when state="latn_extensions" output=""/>
             <when state="latn_hook_palatal" output="ᶀ"/>
             <when state="latn_hook_retroflex" output=""/>
-            <when state="latn_horn" output=""/>
             <when state="latn_rotated_lower" output="q"/>
             <when state="latn_rotated_upper" output=""/>
             <when state="latn_slash" output=""/>
@@ -1909,12 +1902,10 @@
             <when state="khmr" next="khmr" output="ច"/>
             <when state="lao" next="lao" output="ຈ"/>
             <when state="latn_bar" output="ꞓ"/>
-            <when state="latn_comma_below" output=""/>
             <when state="latn_e" output=""/>
             <when state="latn_extensions" output="ʕ"/>
             <when state="latn_hook_palatal" output=""/>
             <when state="latn_hook_retroflex" output=""/>
-            <when state="latn_horn" output=""/>
             <when state="latn_rotated_lower" output="ɔ"/>
             <when state="latn_rotated_upper" output="ᴐ"/>
             <when state="latn_slash" output="ȼ"/>
@@ -1953,7 +1944,6 @@
             <when state="khmr" next="khmr" output="ទ"/>
             <when state="lao" next="lao" output="ດ"/>
             <when state="latn_bar" output="đ"/>
-            <when state="latn_comma_below" output="d̦"/>
             <when state="latn_hook_palatal" output="ᶁ"/>
             <when state="latn_hook_retroflex" output="ɖ"/>
             <when state="latn_rotated_lower" output="p"/>
@@ -2510,7 +2500,6 @@
             <when state="latn_bar" output="ɵ"/>
             <when state="latn_e" output="œ"/>
             <when state="latn_extensions" output="ɔ"/>
-            <when state="latn_horn" output="ơ"/>
             <when state="latn_rotated_lower" output="o"/>
             <when state="latn_rotated_upper" output="ᴏ"/>
             <when state="latn_slash" output="ø"/>
@@ -2625,7 +2614,6 @@
             <when state="kata" next="kata_s"/>
             <when state="khmr" next="khmr" output="ស"/>
             <when state="lao" next="lao" output="ສ"/>
-            <when state="latn_comma_below" output="ș"/>
             <when state="latn_extensions" output="ß"/>
             <when state="latn_hook_palatal" output="ᶊ"/>
             <when state="latn_hook_retroflex" output="ʂ"/>
@@ -2666,7 +2654,6 @@
             <when state="khmr" next="khmr" output="ត"/>
             <when state="lao" next="lao" output="ຕ"/>
             <when state="latn_bar" output="ŧ"/>
-            <when state="latn_comma_below" output="ț"/>
             <when state="latn_extensions" output="þ"/>
             <when state="latn_hook_palatal" output="ƫ"/>
             <when state="latn_hook_retroflex" output="ʈ"/>
@@ -2778,7 +2765,6 @@
             <when state="latn_bar" output="ʉ"/>
             <when state="latn_extensions" output="ʊ"/>
             <when state="latn_hook_retroflex" output="ᶙ"/>
-            <when state="latn_horn" output="ư"/>
             <when state="latn_rotated_lower" output="n"/>
             <when state="latn_small_caps" output="ᴜ"/>
             <when state="math_operators" output="∪"/>
@@ -2936,7 +2922,6 @@
             <when state="latn_extensions" output="ʒ"/>
             <when state="latn_hook_palatal" output="ᶎ"/>
             <when state="latn_hook_retroflex" output="ʐ"/>
-            <when state="latn_horn" output=""/>
             <when state="latn_rotated_lower" output="z"/>
             <when state="latn_rotated_upper" output="ᴢ"/>
             <when state="latn_slash" output=""/>
@@ -3062,12 +3047,10 @@
         <when state="khmr" output="អ"/>
         <when state="lao" output="ອ"/>
         <when state="latn_bar" output="-"/>
-        <when state="latn_comma_below" output=","/>
         <when state="latn_e" output="æ"/>
         <when state="latn_extensions" output="x"/>
         <when state="latn_hook_palatal" output=" ̡"/>
         <when state="latn_hook_retroflex" output="◌̢"/>
-        <when state="latn_horn" output=" ̛"/>
         <when state="latn_rotated_lower" output="ɐ"/>
         <when state="latn_rotated_upper" output="Ɐ"/>
         <when state="latn_slash" output="/"/>
