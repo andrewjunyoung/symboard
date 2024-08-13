@@ -730,7 +730,7 @@
             <key code="13" output="&#x0017;"/>
             <key code="14" output=""/>
             <key code="15" action="tibt"/>
-            <key code="16" output="&#x001D;"/>
+            <key code="16" action="&#x001D;"/>
             <key code="17" output="&#x0014;"/>
             <key code="18" output=""/>
             <key code="19" output=""/>
@@ -742,7 +742,7 @@
             <key code="25" output="9"/>
             <key code="26" action="taml"/>
             <key code="27" output="&#x001F;"/>
-            <key code="28" output="8"/>
+            <key code="28" action="thaa"/>
             <key code="29" output="0"/>
             <key code="30" output=""/>
             <key code="31" action="&#x000F;"/>
@@ -885,8 +885,12 @@
             <when state="none" output="~"/>
             <when state="armn" next="armn" output="Ց"/>
         </action>
+        <action id="&#x001D;">
+            <when state="none" next="hang"/>
+        </action>
         <action id="&#x0027;">
             <when state="none" output="&#x0027;"/>
+            <when state="thaa" output="އ"/>
             <when state="arab" next="arab" output="ع"/>
             <when state="armn" next="armn" output="չ"/>
             <when state="arrows_basic_dvorak" output="↙"/>
@@ -1115,6 +1119,7 @@
             <when state="none" output="A"/>
             <when state="arab" output="ى"/>
             <when state="armn" output="Ա"/>
+            <when state="thaa" output="ާ"/>
             <when state="cyrl" next="cyrl" output="А"/>
             <when state="cyrl_circumflex" output="Я"/>
             <when state="cyrl_romanized_grave" output="Ӛ"/>
@@ -1219,6 +1224,7 @@
             <when state="latn_small_caps" output="ᴇ"/>
             <when state="latn_tilde_below" output="Ḛ"/>
             <when state="mong" next="mong" output="ᠧ"/>
+            <when state="thaa" next="thaa" output="ޭ"/>
             <when state="tfng" next="tfng" output="ⵄ"/>
         </action>
         <action id="F">
@@ -1273,7 +1279,7 @@
         <action id="I">
             <when state="none" output="I"/>
             <when state="arab" next="arab" output="ی"/>
-            <when state="armn" output="Ի"/>
+            <when state="armn" next="armn" output="Ի"/>
             <when state="cyrl" next="cyrl" output="И"/>
             <when state="cyrl_romanized_grave" output="І"/>
             <when state="cyrl_romanized_hacek" output="І̄"/>
@@ -1286,6 +1292,7 @@
             <when state="latn_rotated_upper" output="I"/>
             <when state="latn_small_caps" output="ɪ"/>
             <when state="latn_tilde_below" output="Ḭ"/>
+            <when state="thaa" next="thaa" output="ީ"/>
         </action>
         <action id="J">
             <when state="none" output="J"/>
@@ -1415,6 +1422,7 @@
             <when state="latn_slash" output="Ø"/>
             <when state="latn_small_caps" output="ᴏ"/>
             <when state="mong" next="mong" output="ᠥ"/>
+            <when state="thaa" next="thaa" output="ޯ"/>
         </action>
         <action id="P">
             <when state="none" output="P"/>
@@ -1537,6 +1545,7 @@
             <when state="latn_small_caps" output="ᴜ"/>
             <when state="latn_tilde_below" output="Ṵ"/>
             <when state="mong" next="mong" output="ᠦ"/>
+            <when state="thaa" next="thaa" output="ޫ"/>
         </action>
         <action id="V">
             <when state="none" output="V"/>
@@ -1544,7 +1553,7 @@
             <when state="cyrl" next="cyrl" output="В"/>
             <when state="grek" next="grek" output="Ϝ"/>
             <when state="latn_extensions" output="Ʋ"/>
-            <when state="latn_rotated_lower" output="Ʌ"/>
+            <when state="latn_rotated_lower" outpt="Ʌ"/>
             <when state="latn_rotated_upper" output="Ʌ"/>
             <when state="latn_slash" output="Ꝟ"/>
             <when state="latn_small_caps" output="ᴠ"/>
@@ -1661,19 +1670,19 @@
             <when state="arrows_basic_dvorak" output="←"/>
             <when state="beng" next="beng" output="অ"/>
             <when state="cans" output="ᐊ"/>
-            <when state="cans_p" output="ᐸ"/>
-            <when state="cans_t" output="ᑕ"/>
-            <when state="cans_k" output="ᑲ"/>
-            <when state="cans_h" output="ᕹ"/>
             <when state="cans_g" output="ᒐ"/>
+            <when state="cans_h" output="ᕹ"/>
+            <when state="cans_j" output="ᔭ"/>
+            <when state="cans_k" output="ᑲ"/>
+            <when state="cans_l" output="ᓚ"/>
             <when state="cans_m" output="ᒪ"/>
             <when state="cans_n" output="ᓇ"/>
-            <when state="cans_s" output="ᓴ"/>
-            <when state="cans_l" output="ᓚ"/>
-            <when state="cans_j" output="ᔭ"/>
-            <when state="cans_v" output="ᕙ"/>
-            <when state="cans_r" output="ᕋ"/>
+            <when state="cans_p" output="ᐸ"/>
             <when state="cans_q" output="ᖃ"/>
+            <when state="cans_r" output="ᕋ"/>
+            <when state="cans_s" output="ᓴ"/>
+            <when state="cans_t" output="ᑕ"/>
+            <when state="cans_v" output="ᕙ"/>
             <when state="cyrl" next="cyrl" output="а"/>
             <when state="cyrl_circumflex" output="я"/>
             <when state="cyrl_romanized_acute" output="а́"/>
@@ -1752,6 +1761,7 @@
             <when state="sinh" next="sinh" output="අ"/>
             <when state="taml" next="taml" output="அ"/>
             <when state="tfng" next="tfng" output="ⴰ"/>
+            <when state="thaa" next="thaa" output="ަ"/>
             <when state="thai" next="thai" output="อ"/>
         </action>
         <action id="action">
@@ -1918,6 +1928,7 @@
             <when state="sinh" next="sinh" output="බ"/>
             <when state="taml" next="taml" output="ப"/>
             <when state="tfng" next="tfng" output="ⴱ"/>
+            <when state="thaa" next="thaa" output="ބ"/>
             <when state="thai" next="thai" output="บ"/>
             <when state="tibt" next="tibt" output="བ"/>
         </action>
@@ -1965,8 +1976,12 @@
             <when state="sinh" next="sinh" output="ච"/>
             <when state="taml" next="taml" output="ச"/>
             <when state="tfng" next="tfng" output="ⵛ"/>
+            <when state="thaa" next="thaa" output="ޗ"/>
             <when state="thai" next="thai" output="จ"/>
             <when state="tibt" next="tibt" output="ཚ"/>
+        </action>
+        <action id="cans">
+            <when state="none" next="cans"/>
         </action>
         <action id="d">
             <when state="none" output="d"/>
@@ -2001,6 +2016,7 @@
             <when state="sinh" next="sinh" output="ද"/>
             <when state="taml" next="taml" output="த"/>
             <when state="tfng" next="tfng" output="ⴷ"/>
+            <when state="thaa" next="thaa" output="ދ"/>
             <when state="thai" next="thai" output="ท"/>
             <when state="tibt" next="tibt" output="ཏ"/>
         </action>
@@ -2015,19 +2031,19 @@
             <when state="arrows_basic_dvorak" output="→"/>
             <when state="beng" next="beng" output="এ"/>
             <when state="cans" output="ᐁ"/>
-            <when state="cans_p" output="ᐯ"/>
-            <when state="cans_t" output="ᑌ"/>
-            <when state="cans_k" output="ᑫ"/>
-            <when state="cans_h" output="ᕴ"/>
             <when state="cans_g" output="ᒉ"/>
+            <when state="cans_h" output="ᕴ"/>
+            <when state="cans_j" output="ᔦ"/>
+            <when state="cans_k" output="ᑫ"/>
+            <when state="cans_l" output="ᓓ"/>
             <when state="cans_m" output="ᒣ"/>
             <when state="cans_n" output="ᓀ"/>
-            <when state="cans_s" output="ᓭ"/>
-            <when state="cans_l" output="ᓓ"/>
-            <when state="cans_j" output="ᔦ"/>
-            <when state="cans_v" output="ᕓ"/>
-            <when state="cans_r" output="ᕃ"/>
+            <when state="cans_p" output="ᐯ"/>
             <when state="cans_q" output="ᖀ"/>
+            <when state="cans_r" output="ᕃ"/>
+            <when state="cans_s" output="ᓭ"/>
+            <when state="cans_t" output="ᑌ"/>
+            <when state="cans_v" output="ᕓ"/>
             <when state="cyrl" next="cyrl" output="е"/>
             <when state="cyrl_circumflex" output="є"/>
             <when state="cyrl_romanized_grave" output="э"/>
@@ -2101,6 +2117,7 @@
             <when state="mymr" next="mymr" output="ဧ"/>
             <when state="sinh" next="sinh" output="ඒ"/>
             <when state="taml" next="taml" output="ஏ"/>
+            <when state="thaa" next="thaa" output="ެ"/>
             <when state="tfng" next="tfng" output="ⴻ"/>
         </action>
         <action id="f">
@@ -2124,8 +2141,9 @@
             <when state="mong" next="mong" output="ᠹ"/>
             <when state="mymr" next="mymr" output="ဖ"/>
             <when state="sinh" next="sinh" output="ෆ"/>
-            <when state="tfng" next="tfng" output="ⴼ"/>
+            <when state="thaa" next="thaa" output="ފ"/>
             <when state="thai" next="thai" output="ฟ"/>
+            <when state="tfng" next="tfng" output="ⴼ"/>
         </action>
         <action id="g">
             <when state="none" output="g"/>
@@ -2160,6 +2178,7 @@
             <when state="sinh" next="sinh" output="ග"/>
             <when state="taml" next="taml" output="க"/>
             <when state="tfng" next="tfng" output="ⴳ"/>
+            <when state="thaa" next="thaa" output="ގ"/>
             <when state="thai" next="thai" output="ค"/>
             <when state="tibt" next="tibt" output="ག"/>
         </action>
@@ -2194,6 +2213,7 @@
             <when state="sinh" next="sinh" output="හ"/>
             <when state="taml" next="taml" output="ஹ"/>
             <when state="tfng" next="tfng" output="ⵀ"/>
+            <when state="thaa" next="thaa" output="ހ"/>
             <when state="thai" next="thai" output="ห"/>
             <when state="tibt" next="tibt" output="ཿ"/>
         </action>
@@ -2207,19 +2227,19 @@
             <when state="armn" output="ի"/>
             <when state="beng" next="beng" output="ই"/>
             <when state="cans" output="ᐃ"/>
-            <when state="cans_p" output="ᐱ"/>
-            <when state="cans_t" output="ᑎ"/>
-            <when state="cans_k" output="ᑭ"/>
-            <when state="cans_h" output="ᕵ"/>
             <when state="cans_g" output="ᒋ"/>
+            <when state="cans_h" output="ᕵ"/>
+            <when state="cans_j" output="ᔨ"/>
+            <when state="cans_k" output="ᑭ"/>
+            <when state="cans_l" output="ᓕ"/>
             <when state="cans_m" output="ᒥ"/>
             <when state="cans_n" output="ᓂ"/>
-            <when state="cans_s" output="ᓯ"/>
-            <when state="cans_l" output="ᓕ"/>
-            <when state="cans_j" output="ᔨ"/>
-            <when state="cans_v" output="ᕕ"/>
-            <when state="cans_r" output="ᕆ"/>
+            <when state="cans_p" output="ᐱ"/>
             <when state="cans_q" output="ᕿ"/>
+            <when state="cans_r" output="ᕆ"/>
+            <when state="cans_s" output="ᓯ"/>
+            <when state="cans_t" output="ᑎ"/>
+            <when state="cans_v" output="ᕕ"/>
             <when state="cyrl" next="cyrl" output="и"/>
             <when state="cyrl_romanized_grave" output="і"/>
             <when state="cyrl_romanized_hacek" output="і̄"/>
@@ -2291,8 +2311,9 @@
             <when state="mymr" next="mymr" output="ဣ"/>
             <when state="sinh" next="sinh" output="ඉ"/>
             <when state="taml" next="taml" output="இ"/>
-            <when state="tfng" next="tfng" output="ⵉ"/>
+            <when state="thaa" next="thaa" output="ި"/>
             <when state="thai" next="thai" output="อิ"/>
+            <when state="tfng" next="tfng" output="ⵉ"/>
         </action>
         <action id="j">
             <when state="none" output="j"/>
@@ -2324,6 +2345,7 @@
             <when state="sinh" next="sinh" output="ජ"/>
             <when state="taml" next="taml" output="ஜ"/>
             <when state="tfng" next="tfng" output="ⵊ"/>
+            <when state="thaa" next="thaa" output="ޖ"/>
             <when state="thai" next="thai" output="ช"/>
             <when state="tibt" next="tibt" output="ཅ"/>
         </action>
@@ -2360,6 +2382,7 @@
             <when state="sinh" next="sinh" output="ක"/>
             <when state="taml" next="taml" output="க"/>
             <when state="tfng" next="tfng" output="ⴽ"/>
+            <when state="thaa" next="thaa" output="ކ"/>
             <when state="thai" next="thai" output="ก"/>
             <when state="tibt" next="tibt" output="ཀ"/>
         </action>
@@ -2401,6 +2424,7 @@
             <when state="sinh" next="sinh" output="ල"/>
             <when state="taml" next="taml" output="ல"/>
             <when state="tfng" next="tfng" output="ⵍ"/>
+            <when state="thaa" next="thaa" output="ލ"/>
             <when state="thai" next="thai" output="ล"/>
             <when state="tibt" next="tibt" output="ལ"/>
         </action>
@@ -2412,9 +2436,9 @@
             <when state="arab" next="arab" output="م"/>
             <when state="armn" output="մ"/>
             <when state="beng" next="beng" output="ম"/>
+            <when state="cans" next="cans_m"/>
             <when state="cyrl" next="cyrl" output="м"/>
             <when state="deva" next="deva" output="म"/>
-            <when state="cans" next="cans_m"/>
             <when state="geez" next="geez_m"/>
             <when state="georgian_mkhedruli" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
@@ -2431,6 +2455,7 @@
             <when state="sinh" next="sinh" output="ම"/>
             <when state="taml" next="taml" output="ம"/>
             <when state="tfng" next="tfng" output="ⵎ"/>
+            <when state="thaa" next="thaa" output="މ"/>
             <when state="thai" next="thai" output="ม"/>
             <when state="tibt" next="tibt" output="མ"/>
         </action>
@@ -2477,6 +2502,7 @@
             <when state="sinh" next="sinh" output="න"/>
             <when state="taml" next="taml" output="ந"/>
             <when state="tfng" next="tfng" output="ⵏ"/>
+            <when state="thaa" next="thaa" output="ނ"/>
             <when state="thai" next="thai" output="น"/>
             <when state="tibt" next="tibt" output="ན"/>
         </action>
@@ -2556,6 +2582,7 @@
             <when state="latn_slash" output="ø"/>
             <when state="latn_small_caps" output="ᴏ"/>
             <when state="mong" next="mong" output="ᠣ"/>
+            <when state="thaa" next="thaa" output="ޮ"/>
             <when state="tfng" next="tfng" output="ⵧ"/>
         </action>
         <action id="p">
@@ -2564,8 +2591,8 @@
             <when state="armn" output="պ"/>
             <when state="armn_2" output="փ"/>
             <when state="beng" next="beng" output="প"/>
-            <when state="cyrl" next="cyrl" output="п"/>
             <when state="cans" next="cans_p"/>
+            <when state="cyrl" next="cyrl" output="п"/>
             <when state="cyrl_romanized_grave" output="ԥ"/>
             <when state="deva" next="deva" output="प"/>
             <when state="geez" next="geez_p"/>
@@ -2587,6 +2614,7 @@
             <when state="tfng" next="tfng" output="ⵒ"/>
             <when state="thai" next="thai" output="ป"/>
             <when state="tibt" next="tibt" output="པ"/>
+            <when state="thaa" next="thaa" output="ޕ"/>
         </action>
         <action id="q">
             <when state="none" output="q"/>
@@ -2640,6 +2668,7 @@
             <when state="sinh" next="sinh" output="ර"/>
             <when state="taml" next="taml" output="ர"/>
             <when state="tfng" next="tfng" output="ⵔ"/>
+            <when state="thaa" next="thaa" output="ރ"/>
             <when state="thai" next="thai" output="ร"/>
             <when state="tibt" next="tibt" output="ར"/>
         </action>
@@ -2679,6 +2708,7 @@
             <when state="sinh" next="sinh" output="ස"/>
             <when state="taml" next="taml" output="ச"/>
             <when state="tfng" next="tfng" output="ⵙ"/>
+            <when state="thaa" next="thaa" output="ސ"/>
             <when state="thai" next="thai" output="ส"/>
         </action>
         <action id="sinh">
@@ -2721,6 +2751,7 @@
             <when state="tfng" next="tfng" output="ⵜ"/>
             <when state="thai" next="thai" output="ต"/>
             <when state="tibt" next="tibt" output="ཋ"/>
+            <when state="thaa" next="thaa" output="ތ"/>
         </action>
         <action id="taml">
             <when state="none" next="taml"/>
@@ -2741,19 +2772,19 @@
             <when state="armn" output="ո"/>
             <when state="beng" next="beng" output="উ"/>
             <when state="cans" output="ᐅ"/>
-            <when state="cans_p" output="ᐳ"/>
-            <when state="cans_t" output="ᑐ"/>
-            <when state="cans_k" output="ᑯ"/>
-            <when state="cans_h" output="ᕷ"/>
             <when state="cans_g" output="ᒍ"/>
+            <when state="cans_h" output="ᕷ"/>
+            <when state="cans_j" output="ᔪ"/>
+            <when state="cans_k" output="ᑯ"/>
+            <when state="cans_l" output="ᓗ"/>
             <when state="cans_m" output="ᒧ"/>
             <when state="cans_n" output="ᓄ"/>
-            <when state="cans_s" output="ᓱ"/>
-            <when state="cans_l" output="ᓗ"/>
-            <when state="cans_j" output="ᔪ"/>
-            <when state="cans_v" output="ᕗ"/>
-            <when state="cans_r" output="ᕈ"/>
+            <when state="cans_p" output="ᐳ"/>
             <when state="cans_q" output="ᖁ"/>
+            <when state="cans_r" output="ᕈ"/>
+            <when state="cans_s" output="ᓱ"/>
+            <when state="cans_t" output="ᑐ"/>
+            <when state="cans_v" output="ᕗ"/>
             <when state="cyrl" next="cyrl" output="у"/>
             <when state="cyrl_circumflex" output="ю"/>
             <when state="cyrl_romanized_grave" output="ү"/>
@@ -2828,6 +2859,7 @@
             <when state="mymr" next="mymr" output="ဥ"/>
             <when state="sinh" next="sinh" output="උ"/>
             <when state="taml" next="taml" output="உ"/>
+            <when state="thaa" next="thaa" output="ު"/>
             <when state="tfng" next="tfng" output="ⵓ"/>
         </action>
         <action id="v">
@@ -2876,6 +2908,7 @@
             <when state="sinh" next="sinh" output="ව"/>
             <when state="taml" next="taml" output="வ"/>
             <when state="tfng" next="tfng" output="ⵠ"/>
+            <when state="thaa" next="thaa" output="ވ"/>
             <when state="thai" next="thai" output="ว"/>
         </action>
         <action id="w">
@@ -2921,6 +2954,7 @@
             <when state="sinh" next="sinh" output="ශ"/>
             <when state="taml" next="taml" output="ஶ"/>
             <when state="tfng" next="tfng" output="ⵅ"/>
+            <when state="thaa" next="thaa" output="ށ"/>
             <when state="thai" next="thai" output="ศ"/>
         </action>
         <action id="y">
@@ -2949,6 +2983,7 @@
             <when state="sinh" next="sinh" output="ය"/>
             <when state="taml" next="taml" output="ய"/>
             <when state="tfng" next="tfng" output="ⵢ"/>
+            <when state="thaa" next="thaa" output="ޔ"/>
             <when state="thai" next="thai" output="ย"/>
             <when state="tibt" next="tibt" output="ཡ"/>
         </action>
@@ -2987,6 +3022,7 @@
             <when state="mymr" next="mymr" output="ဍ"/>
             <when state="sinh" next="sinh" output="ඩ"/>
             <when state="tfng" next="tfng" output="ⵣ"/>
+            <when state="thaa" next="thaa" output="ޒ"/>
             <when state="thai" next="thai" output="ฑ"/>
             <when state="tibt" next="tibt" output="ཙ"/>
         </action>
@@ -2999,14 +3035,11 @@
             <when state="none" output="&#x0026;"/>
             <when state="deva" next="deva" output="ा"/>
         </action>
+        <action id="thaa">
+            <when state="none" next="thaa"/>
+            </action>
         <action id=" ">
             <when state="none" output=" "/>
-        </action>
-        <action id="α">
-            <when state="none" next="arab"/>
-        </action>
-        <action id="cans">
-            <when state="none" next="cans"/>
         </action>
     </actions>
     <terminators>
@@ -3020,19 +3053,19 @@
         <when state="arrows_basic_dvorak" output="→"/>
         <when state="beng" output="অ"/>
         <when state="cans" output="ᐃ"/>
-        <when state="cans_p" output="ᐱ"/>
-        <when state="cans_t" output="ᑎ"/>
-        <when state="cans_k" output="ᑭ"/>
-        <when state="cans_h" output="ᕵ"/>
         <when state="cans_g" output="ᒋ"/>
+        <when state="cans_h" output="ᕵ"/>
+        <when state="cans_j" output="ᔨ"/>
+        <when state="cans_k" output="ᑭ"/>
+        <when state="cans_l" output="ᓕ"/>
         <when state="cans_m" output="ᒥ"/>
         <when state="cans_n" output="ᓂ"/>
-        <when state="cans_s" output="ᓯ"/>
-        <when state="cans_l" output="ᓕ"/>
-        <when state="cans_j" output="ᔨ"/>
-        <when state="cans_v" output="ᕕ"/>
-        <when state="cans_r" output="ᕆ"/>
+        <when state="cans_p" output="ᐱ"/>
         <when state="cans_q" output="ᕿ"/>
+        <when state="cans_r" output="ᕆ"/>
+        <when state="cans_s" output="ᓯ"/>
+        <when state="cans_t" output="ᑎ"/>
+        <when state="cans_v" output="ᕕ"/>
         <when state="cyrl" output="д"/>
         <when state="cyrl_circumflex" output="ˆ"/>
         <when state="cyrl_romanized_acute" output="´"/>
@@ -3072,6 +3105,7 @@
         <when state="geez_z" output="ዘ"/>
         <when state="georgian_mkhedruli" output="რ"/>
         <when state="grek" output="α"/>
+        <when state="hang" output=""/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
         <when state="hira" output="あ"/>
@@ -3126,6 +3160,7 @@
         <when state="sinh" output="අ"/>
         <when state="taml" output="அ"/>
         <when state="tfng" output="ⵥ"/>
+        <when state="thaa" output="ހ"/>
         <when state="thai" output="อ"/>
         <when state="tibt" output="ཨ"/>
     </terminators>
