@@ -1,6 +1,8 @@
 # jDvorak
 
-A custom implementation of Dvorak which relocates certain keys based off a combination of logical grouping and comfort.
+Type anything.
+
+<img src="docs/res/images/symboard_support_current.png" alt="drawing" width="800"/>
 
 ## Why?
 
