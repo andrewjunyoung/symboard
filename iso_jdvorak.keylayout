@@ -714,14 +714,14 @@
             <key code="126" output="&#x001E;"/>
         </keyMap>
         <keyMap index="6">
-            <key code="0" action="arab"/>
+            <key code="0" action="&#x0001;"/>
             <key code="1" output="&#x0013;"/>
-            <key code="2" action="grek"/>
+            <key code="2" action="&#x0009;"/>
             <key code="3" output="&#x0006;"/>
             <key code="4" action="deva"/>
             <key code="5" action="cans"/>
             <key code="6" output="&#x001A;"/>
-            <key code="7" action="geor"/>
+            <key code="7" action="&#x0018;"/>
             <key code="8" action="hira"/>
             <key code="9" action="khmr"/>
             <key code="10" output=""/>
@@ -730,7 +730,7 @@
             <key code="13" output="&#x0017;"/>
             <key code="14" output=""/>
             <key code="15" action="tibt"/>
-            <key code="16" action="&#x001D;"/>
+            <key code="16" output="&#x001D;"/>
             <key code="17" output="&#x0014;"/>
             <key code="18" output=""/>
             <key code="19" output=""/>
@@ -745,14 +745,14 @@
             <key code="28" action="thaa"/>
             <key code="29" output="0"/>
             <key code="30" output=""/>
-            <key code="31" action="armn"/>
+            <key code="31" action="&#x000F;"/>
             <key code="32" action="geez"/>
             <key code="33" output=""/>
-            <key code="34" action="cyrl"/>
+            <key code="34" action="&#x0003;"/>
             <key code="35" action="lao"/>
             <key code="36" output="&#x000D;"/>
             <key code="37" action="kata"/>
-            <key code="38" action="hebr"/>
+            <key code="38" action="&#x0008;"/>
             <key code="39" output=""/>
             <key code="40" action="tfng"/>
             <key code="41" action="sinh"/>
@@ -760,7 +760,7 @@
             <key code="43" output=","/>
             <key code="44" output="/"/>
             <key code="45" action="beng"/>
-            <key code="46" action="mong"/>
+            <key code="46" action="&#x000D;"/>
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
@@ -830,25 +830,25 @@
         <action id="">
             <when state="none" output=" "/>
         </action>
-        <action id="arab">
+        <action id="&#x0001;">
             <when state="none" next="arab"/>
         </action>
-        <action id="cyrl">
+        <action id="&#x0003;">
             <when state="none" next="cyrl"/>
         </action>
-        <action id="hebr">
+        <action id="&#x0008;">
             <when state="none" next="hebr"/>
         </action>
-        <action id="grek">
+        <action id="&#x0009;">
             <when state="none" next="grek"/>
         </action>
-        <action id="mong">
+        <action id="&#x000D;">
             <when state="none" next="mong"/>
         </action>
-        <action id="armn">
+        <action id="&#x000F;">
             <when state="none" next="armn"/>
         </action>
-        <action id="geor">
+        <action id="&#x0018;">
             <when state="none" next="geor"/>
         </action>
         <action id="&#x001B;">
@@ -859,6 +859,7 @@
             <when state="deva" next="deva" output="ी"/>
             <when state="hira" output="！"/>
             <when state="kata" output="！"/>
+            <when state="latn_extensions" output="¡"/>
             <when state="latn_rotated_lower" output="¡"/>
         </action>
         <action id="&#x0022;">
@@ -906,8 +907,6 @@
         <action id="*">
             <when state="none" output="*"/>
             <when state="deva" next="deva" output="ॢ"/>
-            <when state="cyrl_romanized_comma_below" next="cyrl" output="Ң"/>
-            <when state="cyrl_romanized_hacek" next="cyrl" output="Ӈ"/>
         </action>
         <action id="+">
             <when state="none" output="+"/>
@@ -937,8 +936,6 @@
             <when state="none" output="/"/>
             <when state="deva" next="deva" output="ऌ"/>
             <when state="mong" next="mong" output="᠀"/>
-            <when state="cyrl_romanized_comma_below" next="cyrl" output="ң"/>
-            <when state="cyrl_romanized_hacek" next="cyrl" output="ӈ"/>
         </action>
         <action id="0">
             <when state="none" output="0"/>
@@ -1111,6 +1108,7 @@
             <when state="arab" output="؟"/>
             <when state="hira" output="？"/>
             <when state="kata" output="？"/>
+            <when state="latn_extensions" output="¿"/>
             <when state="latn_rotated_lower" output="¿"/>
         </action>
         <action id="@">
@@ -1121,7 +1119,6 @@
             <when state="none" output="A"/>
             <when state="arab" output="ى"/>
             <when state="armn" output="Ա"/>
-            <when state="thaa" output="ާ"/>
             <when state="cyrl" next="cyrl" output="А"/>
             <when state="cyrl_circumflex" next="cyrl" output="Я"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="Ӛ"/>
@@ -1288,6 +1285,7 @@
             <when state="armn_2" output="Ջ"/>
             <when state="beng" next="beng" output="ঝ"/>
             <when state="cyrl" next="cyrl" output="Й"/>
+            <when state="cyrl_romanized_acute" next="cyrl" output="Ј̵"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ј"/>
             <when state="deva" next="deva" output="झ"/>
             <when state="deva_dot_below" output="झ़"/>
@@ -1521,7 +1519,7 @@
             <when state="cyrl" next="cyrl" output="В"/>
             <when state="grek" next="grek" output="Ϝ"/>
             <when state="latn_extensions" output="Ʋ"/>
-            <when state="latn_rotated_lower" outpt="Ʌ"/>
+            <when state="latn_rotated_lower" output="Ʌ"/>
             <when state="latn_rotated_upper" output="Ʌ"/>
             <when state="latn_slash" output="Ꝟ"/>
             <when state="latn_small_caps" output="ᴠ"/>
@@ -1924,9 +1922,6 @@
             <when state="thai" next="thai" output="จ"/>
             <when state="tibt" next="tibt" output="ཚ"/>
         </action>
-        <action id="cans">
-            <when state="none" next="cans"/>
-        </action>
         <action id="d">
             <when state="none" output="d"/>
             <when state="arab" next="arab" output="د"/>
@@ -2080,9 +2075,9 @@
             <when state="mong" next="mong" output="ᠹ"/>
             <when state="mymr" next="mymr" output="ဖ"/>
             <when state="sinh" next="sinh" output="ෆ"/>
+            <when state="tfng" next="tfng" output="ⴼ"/>
             <when state="thaa" next="thaa" output="ފ"/>
             <when state="thai" next="thai" output="ฟ"/>
-            <when state="tfng" next="tfng" output="ⴼ"/>
         </action>
         <action id="g">
             <when state="none" output="g"/>
@@ -2246,9 +2241,9 @@
             <when state="mymr" next="mymr" output="ဣ"/>
             <when state="sinh" next="sinh" output="ඉ"/>
             <when state="taml" next="taml" output="இ"/>
+            <when state="tfng" next="tfng" output="ⵉ"/>
             <when state="thaa" next="thaa" output="ި"/>
             <when state="thai" next="thai" output="อิ"/>
-            <when state="tfng" next="tfng" output="ⵉ"/>
         </action>
         <action id="j">
             <when state="none" output="j"/>
@@ -2259,6 +2254,7 @@
             <when state="beng" next="beng" output="জ"/>
             <when state="cans" next="cans_j"/>
             <when state="cyrl" next="cyrl" output="й"/>
+            <when state="cyrl_romanized_acute" next="cyrl" output="ј̵"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="ј"/>
             <when state="deva" next="deva" output="ज"/>
             <when state="deva_dot_below" output="ज़"/>
@@ -2368,9 +2364,9 @@
             <when state="arab" next="arab" output="م"/>
             <when state="armn" output="մ"/>
             <when state="beng" next="beng" output="ম"/>
-            <when state="cans" next="cans_m"/>
             <when state="cyrl" next="cyrl" output="м"/>
             <when state="deva" next="deva" output="म"/>
+            <when state="cans" next="cans_m"/>
             <when state="geez" next="geez_m"/>
             <when state="geor" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
@@ -2408,8 +2404,8 @@
             <when state="cyrl_circumflex" next="cyrl" output="њ"/>
             <when state="cyrl_romanized_acute" next="cyrl" output="ԣ"/>
             <when state="cyrl_romanized_comma_below" next="cyrl" output="ң"/>
-            <when state="cyrl_romanized_hacek" next="cyrl" output="ӈ"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="ԋ"/>
+            <when state="cyrl_romanized_hacek" next="cyrl" output="ӈ"/>
             <when state="deva" next="deva" output="न"/>
             <when state="geez" next="geez_n"/>
             <when state="geor" output="ნ"/>
@@ -2517,8 +2513,8 @@
             <when state="armn" output="պ"/>
             <when state="armn_2" output="փ"/>
             <when state="beng" next="beng" output="প"/>
-            <when state="cans" next="cans_p"/>
             <when state="cyrl" next="cyrl" output="п"/>
+            <when state="cans" next="cans_p"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="ԥ"/>
             <when state="deva" next="deva" output="प"/>
             <when state="geez" next="geez_p"/>
@@ -2946,11 +2942,14 @@
             <when state="none" output="&#x0026;"/>
             <when state="deva" next="deva" output="ा"/>
         </action>
-        <action id="thaa">
-            <when state="none" next="thaa"/>
-        </action>
         <action id=" ">
             <when state="none" output=" "/>
+        </action>
+        <action id="cans">
+            <when state="none" next="cans"/>
+        </action>
+        <action id="thaa">
+            <when state="none" next="thaa"/>
         </action>
     </actions>
     <terminators>
@@ -2984,6 +2983,7 @@
         <when state="cyrl_romanized_dot_above" output="·"/>
         <when state="cyrl_romanized_grave" output="`"/>
         <when state="cyrl_romanized_hacek" output="ˇ"/>
+        <when state="cyrl_romanized_macron" output="ˉ"/>
         <when state="cyrl_romanized_stroke" output=""/>
         <when state="deva" output="अ"/>
         <when state="deva_dot_below" output="."/>
