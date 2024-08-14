@@ -1,4 +1,4 @@
-# jDvorak
+# Symboard
 
 Type anything.
 
@@ -46,7 +46,7 @@ Pressing the shift and alt keys will provide access to different key sets, inclu
 
 ## Compatibility
 
-Below is a map of the world showing the countries where some or all of the administrative languages can be written using jDvorak.
+Below is a map of the world showing the countries where some or all of the administrative languages can be written using Symboard.
 
 <img src="docs/res/images/symboard_support_current.png" alt="drawing" width="800"/>
 
