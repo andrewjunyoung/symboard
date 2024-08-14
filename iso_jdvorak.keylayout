@@ -849,7 +849,7 @@
             <when state="none" next="armn"/>
         </action>
         <action id="&#x0018;">
-            <when state="none" next="georgian_mkhedruli"/>
+            <when state="none" next="geor"/>
         </action>
         <action id="&#x001B;">
             <when state="none" output="&#x001B;"/>
@@ -1165,7 +1165,7 @@
             <when state="cyrl_romanized_macron" next="cyrl" output="Ҵ"/>
             <when state="cyrl_softened" next="cyrl" output="Ч"/>
             <when state="deva" next="deva" output="छ"/>
-            <when state="georgian_mkhedruli" output="ჩ"/>
+            <when state="geor" output="ჩ"/>
             <when state="grek" next="grek" output="Ξ"/>
             <when state="khmr" next="khmr" output="ឆ"/>
             <when state="latn_bar" output="Ꞓ"/>
@@ -1304,7 +1304,7 @@
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ј"/>
             <when state="deva" next="deva" output="झ"/>
             <when state="deva_dot_below" output="झ़"/>
-            <when state="georgian_mkhedruli" output="ჟ"/>
+            <when state="geor" output="ჟ"/>
             <when state="grek" next="grek" output="Σ"/>
             <when state="hebr" output="ץ"/>
             <when state="khmr" next="khmr" output="ឈ"/>
@@ -1332,7 +1332,7 @@
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ҡ"/>
             <when state="deva" next="deva" output="ख"/>
             <when state="deva_dot_below" output="ख़"/>
-            <when state="georgian_mkhedruli" output="ქ"/>
+            <when state="geor" output="ქ"/>
             <when state="grek" next="grek" output="Κ"/>
             <when state="hebr" output="ך"/>
             <when state="hebr_dagesh" output="ךּ"/>
@@ -1433,7 +1433,7 @@
             <when state="cyrl_romanized_grave" next="cyrl" output="Ԥ"/>
             <when state="deva" next="deva" output="फ"/>
             <when state="deva_dot_below" output="फ़"/>
-            <when state="georgian_mkhedruli" output="ფ"/>
+            <when state="geor" output="ფ"/>
             <when state="grek" next="grek" output="Π"/>
             <when state="hebr" output="ף"/>
             <when state="hebr_dagesh" output="פּ"/>
@@ -1465,7 +1465,7 @@
             <when state="beng" next="beng" output="ঋ"/>
             <when state="cyrl" next="cyrl" output="Р"/>
             <when state="deva" next="deva" output="ऋ"/>
-            <when state="georgian_mkhedruli" output="ღ"/>
+            <when state="geor" output="ღ"/>
             <when state="grek" next="grek" output="Ρ"/>
             <when state="khmr" next="khmr" output="ឫ"/>
             <when state="latn_bar" output="Ɍ"/>
@@ -1488,7 +1488,7 @@
             <when state="cyrl_romanized_comma_below" next="cyrl" output="Ҫ"/>
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ш"/>
             <when state="cyrl_softened" next="cyrl" output="Ш"/>
-            <when state="georgian_mkhedruli" output="შ"/>
+            <when state="geor" output="შ"/>
             <when state="grek" next="grek" output="Σ"/>
             <when state="lao" next="lao" output="ຊ"/>
             <when state="latn_comma_below" output="Ș"/>
@@ -1510,7 +1510,7 @@
             <when state="cyrl" next="cyrl" output="Т"/>
             <when state="cyrl_romanized_grave" next="cyrl" output="Ԏ"/>
             <when state="deva" next="deva" output="थ"/>
-            <when state="georgian_mkhedruli" output="თ"/>
+            <when state="geor" output="თ"/>
             <when state="grek" next="grek" output="Τ"/>
             <when state="khmr" next="khmr" output="ថ"/>
             <when state="latn_bar" output="Ŧ"/>
@@ -1564,7 +1564,7 @@
             <when state="beng" next="beng" output="ঠ"/>
             <when state="cyrl" next="cyrl" output="Ԝ"/>
             <when state="deva" next="deva" output="ठ"/>
-            <when state="georgian_mkhedruli" output="ჭ"/>
+            <when state="geor" output="ჭ"/>
             <when state="grek" next="grek" output="Ω"/>
             <when state="khmr" next="khmr" output="ឋ"/>
             <when state="latn_extensions" output="Ɯ"/>
@@ -1619,7 +1619,7 @@
             <when state="cyrl_romanized_hacek" next="cyrl" output="Ж"/>
             <when state="cyrl_softened" next="cyrl" output="Ж"/>
             <when state="deva" next="deva" output="ढ"/>
-            <when state="georgian_mkhedruli" output="ძ"/>
+            <when state="geor" output="ძ"/>
             <when state="grek" next="grek" output="Ζ"/>
             <when state="khmr" next="khmr" output="ឍ"/>
             <when state="latn_bar" output="Ƶ"/>
@@ -1713,7 +1713,7 @@
             <when state="geez_w" output="ዋ"/>
             <when state="geez_y" output="ያ"/>
             <when state="geez_z" output="ዛ"/>
-            <when state="georgian_mkhedruli" output="ა"/>
+            <when state="geor" output="ა"/>
             <when state="grek" next="grek" output="α"/>
             <when state="hebr" output="א"/>
             <when state="hira" next="hira" output="あ"/>
@@ -1773,7 +1773,7 @@
             <when state="none" output="͓"/>
         </action>
         <action id="action 11">
-            <when state="none" next="georgian_mkhedruli"/>
+            <when state="none" next="geor"/>
         </action>
         <action id="action 12">
             <when state="none" output=""/>
@@ -1900,7 +1900,7 @@
             <when state="deva" next="deva" output="ब"/>
             <when state="deva_line_below" output="ॿ"/>
             <when state="geez" next="geez_b"/>
-            <when state="georgian_mkhedruli" output="ბ"/>
+            <when state="geor" output="ბ"/>
             <when state="grek" next="grek" output="β"/>
             <when state="hebr" output="ב"/>
             <when state="hebr_dagesh" output="בּ"/>
@@ -1950,7 +1950,7 @@
             <when state="cyrl_softened" next="cyrl" output="ч"/>
             <when state="deva" next="deva" output="च"/>
             <when state="geez" next="geez_c"/>
-            <when state="georgian_mkhedruli" output="ც"/>
+            <when state="geor" output="ც"/>
             <when state="grek" next="grek" output="ξ"/>
             <when state="hebr" output="ס"/>
             <when state="khmr" next="khmr" output="ច"/>
@@ -1991,7 +1991,7 @@
             <when state="cyrl_romanized_stroke" next="cyrl" output="ђ"/>
             <when state="deva" next="deva" output="द"/>
             <when state="geez" next="geez_d"/>
-            <when state="georgian_mkhedruli" output="დ"/>
+            <when state="geor" output="დ"/>
             <when state="grek" next="grek" output="δ"/>
             <when state="hebr" output="ד"/>
             <when state="hebr_dagesh" output="דּ"/>
@@ -2069,7 +2069,7 @@
             <when state="geez_w" output="ዌ"/>
             <when state="geez_y" output="ዬ"/>
             <when state="geez_z" output="ዜ"/>
-            <when state="georgian_mkhedruli" output="ე"/>
+            <when state="geor" output="ე"/>
             <when state="grek" next="grek" output="ε"/>
             <when state="hebr" output="ה"/>
             <when state="hira" next="hira" output="え"/>
@@ -2124,7 +2124,7 @@
             <when state="cyrl" next="cyrl" output="ф"/>
             <when state="deva" next="deva" output="फ़"/>
             <when state="geez" next="geez_f"/>
-            <when state="georgian_mkhedruli" output="ფ"/>
+            <when state="geor" output="ფ"/>
             <when state="grek" next="grek" output="φ"/>
             <when state="hebr" output="ת"/>
             <when state="hebr_dagesh" output="תּ"/>
@@ -2155,7 +2155,7 @@
             <when state="deva_dot_below" output="ग़"/>
             <when state="deva_line_below" output="ॻ"/>
             <when state="geez" next="geez_g"/>
-            <when state="georgian_mkhedruli" output="გ"/>
+            <when state="geor" output="გ"/>
             <when state="grek" next="grek" output="γ"/>
             <when state="hebr" output="ג"/>
             <when state="hebr_dagesh" output="גּ"/>
@@ -2191,7 +2191,7 @@
             <when state="cyrl_romanized_comma_below" next="cyrl" output="ҳ"/>
             <when state="deva" next="deva" output="ह"/>
             <when state="geez" next="geez_h"/>
-            <when state="georgian_mkhedruli" output="ჰ"/>
+            <when state="geor" output="ჰ"/>
             <when state="grek" next="grek" output="η"/>
             <when state="hebr" output="ח"/>
             <when state="hira" next="hira_h"/>
@@ -2264,7 +2264,7 @@
             <when state="geez_w" output="ዊ"/>
             <when state="geez_y" output="ዪ"/>
             <when state="geez_z" output="ዚ"/>
-            <when state="georgian_mkhedruli" output="ი"/>
+            <when state="geor" output="ი"/>
             <when state="grek" next="grek" output="ι"/>
             <when state="hebr" output="י"/>
             <when state="hira" next="hira" output="い"/>
@@ -2326,7 +2326,7 @@
             <when state="deva_dot_below" output="ज़"/>
             <when state="deva_line_below" output="ॼ"/>
             <when state="geez" next="geez_j"/>
-            <when state="georgian_mkhedruli" output="ჯ"/>
+            <when state="geor" output="ჯ"/>
             <when state="grek" next="grek" output="ς"/>
             <when state="hebr" output="צ"/>
             <when state="khmr" next="khmr" output="ជ"/>
@@ -2360,7 +2360,7 @@
             <when state="deva" next="deva" output="क"/>
             <when state="deva_dot_below" output="क़"/>
             <when state="geez" next="geez_k"/>
-            <when state="georgian_mkhedruli" output="კ"/>
+            <when state="geor" output="კ"/>
             <when state="grek" next="grek" output="κ"/>
             <when state="hebr" output="כ"/>
             <when state="hebr_dagesh" output="כּ"/>
@@ -2401,7 +2401,7 @@
             <when state="cyrl_softened" next="cyrl" output="љ"/>
             <when state="deva" next="deva" output="ल"/>
             <when state="geez" next="geez_l"/>
-            <when state="georgian_mkhedruli" output="ლ"/>
+            <when state="geor" output="ლ"/>
             <when state="grek" next="grek" output="λ"/>
             <when state="hebr" output="ל"/>
             <when state="hira" next="hira" output="ん"/>
@@ -2436,7 +2436,7 @@
             <when state="deva" next="deva" output="म"/>
             <when state="cans" next="cans_m"/>
             <when state="geez" next="geez_m"/>
-            <when state="georgian_mkhedruli" output="მ"/>
+            <when state="geor" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
             <when state="hebr" output="מ"/>
             <when state="hira" next="hira_m"/>
@@ -2478,7 +2478,7 @@
             <when state="cyrl_softened" next="cyrl" output="њ"/>
             <when state="deva" next="deva" output="न"/>
             <when state="geez" next="geez_n"/>
-            <when state="georgian_mkhedruli" output="ნ"/>
+            <when state="geor" output="ნ"/>
             <when state="grek" next="grek" output="ν"/>
             <when state="hebr" output="נ"/>
             <when state="hira" next="hira_n"/>
@@ -2535,7 +2535,7 @@
             <when state="geez_w" output="ዉ"/>
             <when state="geez_y" output="ዩ"/>
             <when state="geez_z" output="ዙ"/>
-            <when state="georgian_mkhedruli" output="ო"/>
+            <when state="geor" output="ო"/>
             <when state="grek" next="grek" output="ο"/>
             <when state="hebr" output="ע"/>
             <when state="hira" next="hira" output="お"/>
@@ -2592,7 +2592,7 @@
             <when state="cyrl_romanized_grave" next="cyrl" output="ԥ"/>
             <when state="deva" next="deva" output="प"/>
             <when state="geez" next="geez_p"/>
-            <when state="georgian_mkhedruli" output="პ"/>
+            <when state="geor" output="პ"/>
             <when state="grek" next="grek" output="π"/>
             <when state="hebr" output="פ"/>
             <when state="hira" next="hira_p"/>
@@ -2620,7 +2620,7 @@
             <when state="cans" next="cans_q"/>
             <when state="cyrl" next="cyrl" output="ԛ"/>
             <when state="deva" next="deva" output="ै"/>
-            <when state="georgian_mkhedruli" output="ქ"/>
+            <when state="geor" output="ქ"/>
             <when state="grek" next="grek" output="θ"/>
             <when state="hebr" output="ק"/>
             <when state="lao" next="lao" output="ຖ"/>
@@ -2643,7 +2643,7 @@
             <when state="cyrl" next="cyrl" output="р"/>
             <when state="deva" next="deva" output="र"/>
             <when state="geez" next="geez_r"/>
-            <when state="georgian_mkhedruli" output="რ"/>
+            <when state="geor" output="რ"/>
             <when state="grek" next="grek" output="ρ"/>
             <when state="hebr" output="ר"/>
             <when state="hira" next="hira_r"/>
@@ -2683,7 +2683,7 @@
             <when state="cyrl_softened" next="cyrl" output="ш"/>
             <when state="deva" next="deva" output="स"/>
             <when state="geez" next="geez_s"/>
-            <when state="georgian_mkhedruli" output="ს"/>
+            <when state="geor" output="ს"/>
             <when state="grek" next="grek" output="σ"/>
             <when state="hebr" output="ש"/>
             <when state="hira" next="hira_s"/>
@@ -2723,7 +2723,7 @@
             <when state="cyrl_romanized_grave" next="cyrl" output="ԏ"/>
             <when state="deva" next="deva" output="त"/>
             <when state="geez" next="geez_t"/>
-            <when state="georgian_mkhedruli" output="ტ"/>
+            <when state="geor" output="ტ"/>
             <when state="grek" next="grek" output="τ"/>
             <when state="hebr" output="ט"/>
             <when state="hira" next="hira_t"/>
@@ -2809,7 +2809,7 @@
             <when state="geez_w" output="ዉ"/>
             <when state="geez_y" output="ዩ"/>
             <when state="geez_z" output="ዙ"/>
-            <when state="georgian_mkhedruli" output="უ"/>
+            <when state="geor" output="უ"/>
             <when state="grek" next="grek" output="υ"/>
             <when state="hebr" output="ו"/>
             <when state="hira" next="hira" output="う"/>
@@ -2890,7 +2890,7 @@
             <when state="geez_w" output="ዋ"/>
             <when state="geez_y" output="ዯ"/>
             <when state="geez_z" output="ዟ"/>
-            <when state="georgian_mkhedruli" output="ვ"/>
+            <when state="geor" output="ვ"/>
             <when state="grek" next="grek" output="ϝ"/>
             <when state="khmr" next="khmr" output="វ"/>
             <when state="lao" next="lao" output="ວ"/>
@@ -2915,7 +2915,7 @@
             <when state="cyrl" next="cyrl" output="ԝ"/>
             <when state="deva" next="deva" output="ट"/>
             <when state="geez" next="geez_w"/>
-            <when state="georgian_mkhedruli" output="წ"/>
+            <when state="geor" output="წ"/>
             <when state="grek" next="grek" output="ω"/>
             <when state="hira" next="hira_w"/>
             <when state="kata" next="kata_w"/>
@@ -2936,7 +2936,7 @@
             <when state="beng" next="beng" output="শ"/>
             <when state="cyrl" next="cyrl"/>
             <when state="deva" next="deva" output="श"/>
-            <when state="georgian_mkhedruli" next="georgian_mkhedruli" output="ხ"/>
+            <when state="geor" next="geor" output="ხ"/>
             <when state="grek" next="grek" output="χ"/>
             <when state="khmr" next="khmr" output="ឝ"/>
             <when state="lao" next="lao" output="ຜ"/>
@@ -2963,7 +2963,7 @@
             <when state="cyrl_romanized_macron" next="cyrl" output="ы̄"/>
             <when state="deva" next="deva" output="य"/>
             <when state="geez" next="geez_y"/>
-            <when state="georgian_mkhedruli" output="ყ"/>
+            <when state="geor" output="ყ"/>
             <when state="grek" next="grek" output="ψ"/>
             <when state="hira" next="hira_y"/>
             <when state="kata" next="kata_y"/>
@@ -2998,7 +2998,7 @@
             <when state="deva" next="deva" output="ड"/>
             <when state="deva_line_below" output="ॾ"/>
             <when state="geez" next="geez_z"/>
-            <when state="georgian_mkhedruli" output="ზ"/>
+            <when state="geor" output="ზ"/>
             <when state="grek" next="grek" output="ζ"/>
             <when state="hebr" output="ז"/>
             <when state="hira" next="hira_z"/>
@@ -3102,7 +3102,7 @@
         <when state="geez_w" output="ወ"/>
         <when state="geez_y" output="የ"/>
         <when state="geez_z" output="ዘ"/>
-        <when state="georgian_mkhedruli" output="რ"/>
+        <when state="geor" output="რ"/>
         <when state="grek" output="α"/>
         <when state="hang" output=""/>
         <when state="hebr" output="א"/>
