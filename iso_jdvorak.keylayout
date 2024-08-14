@@ -885,6 +885,9 @@
             <when state="none" output="~"/>
             <when state="armn" next="armn" output="Ց"/>
         </action>
+        <action id="&#x001D;">
+            <when state="none" next="hang"/>
+        </action>
         <action id="&#x0027;">
             <when state="none" output="&#x0027;"/>
             <when state="thaa" output="އ"/>
@@ -1276,7 +1279,7 @@
         <action id="I">
             <when state="none" output="I"/>
             <when state="arab" next="arab" output="ی"/>
-            <when state="armn" output="Ի"/>
+            <when state="armn" next="armn" output="Ի"/>
             <when state="cyrl" next="cyrl" output="И"/>
             <when state="cyrl_romanized_grave" output="І"/>
             <when state="cyrl_romanized_hacek" output="І̄"/>
@@ -1667,19 +1670,19 @@
             <when state="arrows_basic_dvorak" output="←"/>
             <when state="beng" next="beng" output="অ"/>
             <when state="cans" output="ᐊ"/>
-            <when state="cans_p" output="ᐸ"/>
-            <when state="cans_t" output="ᑕ"/>
-            <when state="cans_k" output="ᑲ"/>
-            <when state="cans_h" output="ᕹ"/>
             <when state="cans_g" output="ᒐ"/>
+            <when state="cans_h" output="ᕹ"/>
+            <when state="cans_j" output="ᔭ"/>
+            <when state="cans_k" output="ᑲ"/>
+            <when state="cans_l" output="ᓚ"/>
             <when state="cans_m" output="ᒪ"/>
             <when state="cans_n" output="ᓇ"/>
-            <when state="cans_s" output="ᓴ"/>
-            <when state="cans_l" output="ᓚ"/>
-            <when state="cans_j" output="ᔭ"/>
-            <when state="cans_v" output="ᕙ"/>
-            <when state="cans_r" output="ᕋ"/>
+            <when state="cans_p" output="ᐸ"/>
             <when state="cans_q" output="ᖃ"/>
+            <when state="cans_r" output="ᕋ"/>
+            <when state="cans_s" output="ᓴ"/>
+            <when state="cans_t" output="ᑕ"/>
+            <when state="cans_v" output="ᕙ"/>
             <when state="cyrl" next="cyrl" output="а"/>
             <when state="cyrl_circumflex" output="я"/>
             <when state="cyrl_romanized_acute" output="а́"/>
@@ -2025,19 +2028,19 @@
             <when state="arrows_basic_dvorak" output="→"/>
             <when state="beng" next="beng" output="এ"/>
             <when state="cans" output="ᐁ"/>
-            <when state="cans_p" output="ᐯ"/>
-            <when state="cans_t" output="ᑌ"/>
-            <when state="cans_k" output="ᑫ"/>
-            <when state="cans_h" output="ᕴ"/>
             <when state="cans_g" output="ᒉ"/>
+            <when state="cans_h" output="ᕴ"/>
+            <when state="cans_j" output="ᔦ"/>
+            <when state="cans_k" output="ᑫ"/>
+            <when state="cans_l" output="ᓓ"/>
             <when state="cans_m" output="ᒣ"/>
             <when state="cans_n" output="ᓀ"/>
-            <when state="cans_s" output="ᓭ"/>
-            <when state="cans_l" output="ᓓ"/>
-            <when state="cans_j" output="ᔦ"/>
-            <when state="cans_v" output="ᕓ"/>
-            <when state="cans_r" output="ᕃ"/>
+            <when state="cans_p" output="ᐯ"/>
             <when state="cans_q" output="ᖀ"/>
+            <when state="cans_r" output="ᕃ"/>
+            <when state="cans_s" output="ᓭ"/>
+            <when state="cans_t" output="ᑌ"/>
+            <when state="cans_v" output="ᕓ"/>
             <when state="cyrl" next="cyrl" output="е"/>
             <when state="cyrl_circumflex" output="є"/>
             <when state="cyrl_romanized_grave" output="э"/>
@@ -2221,19 +2224,19 @@
             <when state="armn" output="ի"/>
             <when state="beng" next="beng" output="ই"/>
             <when state="cans" output="ᐃ"/>
-            <when state="cans_p" output="ᐱ"/>
-            <when state="cans_t" output="ᑎ"/>
-            <when state="cans_k" output="ᑭ"/>
-            <when state="cans_h" output="ᕵ"/>
             <when state="cans_g" output="ᒋ"/>
+            <when state="cans_h" output="ᕵ"/>
+            <when state="cans_j" output="ᔨ"/>
+            <when state="cans_k" output="ᑭ"/>
+            <when state="cans_l" output="ᓕ"/>
             <when state="cans_m" output="ᒥ"/>
             <when state="cans_n" output="ᓂ"/>
-            <when state="cans_s" output="ᓯ"/>
-            <when state="cans_l" output="ᓕ"/>
-            <when state="cans_j" output="ᔨ"/>
-            <when state="cans_v" output="ᕕ"/>
-            <when state="cans_r" output="ᕆ"/>
+            <when state="cans_p" output="ᐱ"/>
             <when state="cans_q" output="ᕿ"/>
+            <when state="cans_r" output="ᕆ"/>
+            <when state="cans_s" output="ᓯ"/>
+            <when state="cans_t" output="ᑎ"/>
+            <when state="cans_v" output="ᕕ"/>
             <when state="cyrl" next="cyrl" output="и"/>
             <when state="cyrl_romanized_grave" output="і"/>
             <when state="cyrl_romanized_hacek" output="і̄"/>
@@ -2766,19 +2769,19 @@
             <when state="armn" output="ո"/>
             <when state="beng" next="beng" output="উ"/>
             <when state="cans" output="ᐅ"/>
-            <when state="cans_p" output="ᐳ"/>
-            <when state="cans_t" output="ᑐ"/>
-            <when state="cans_k" output="ᑯ"/>
-            <when state="cans_h" output="ᕷ"/>
             <when state="cans_g" output="ᒍ"/>
+            <when state="cans_h" output="ᕷ"/>
+            <when state="cans_j" output="ᔪ"/>
+            <when state="cans_k" output="ᑯ"/>
+            <when state="cans_l" output="ᓗ"/>
             <when state="cans_m" output="ᒧ"/>
             <when state="cans_n" output="ᓄ"/>
-            <when state="cans_s" output="ᓱ"/>
-            <when state="cans_l" output="ᓗ"/>
-            <when state="cans_j" output="ᔪ"/>
-            <when state="cans_v" output="ᕗ"/>
-            <when state="cans_r" output="ᕈ"/>
+            <when state="cans_p" output="ᐳ"/>
             <when state="cans_q" output="ᖁ"/>
+            <when state="cans_r" output="ᕈ"/>
+            <when state="cans_s" output="ᓱ"/>
+            <when state="cans_t" output="ᑐ"/>
+            <when state="cans_v" output="ᕗ"/>
             <when state="cyrl" next="cyrl" output="у"/>
             <when state="cyrl_circumflex" output="ю"/>
             <when state="cyrl_romanized_grave" output="ү"/>
@@ -3032,9 +3035,6 @@
         <action id=" ">
             <when state="none" output=" "/>
         </action>
-        <action id="α">
-            <when state="none" next="arab"/>
-        </action>
         <action id="cans">
             <when state="none" next="cans"/>
         </action>
@@ -3053,19 +3053,19 @@
         <when state="arrows_basic_dvorak" output="→"/>
         <when state="beng" output="অ"/>
         <when state="cans" output="ᐃ"/>
-        <when state="cans_p" output="ᐱ"/>
-        <when state="cans_t" output="ᑎ"/>
-        <when state="cans_k" output="ᑭ"/>
-        <when state="cans_h" output="ᕵ"/>
         <when state="cans_g" output="ᒋ"/>
+        <when state="cans_h" output="ᕵ"/>
+        <when state="cans_j" output="ᔨ"/>
+        <when state="cans_k" output="ᑭ"/>
+        <when state="cans_l" output="ᓕ"/>
         <when state="cans_m" output="ᒥ"/>
         <when state="cans_n" output="ᓂ"/>
-        <when state="cans_s" output="ᓯ"/>
-        <when state="cans_l" output="ᓕ"/>
-        <when state="cans_j" output="ᔨ"/>
-        <when state="cans_v" output="ᕕ"/>
-        <when state="cans_r" output="ᕆ"/>
+        <when state="cans_p" output="ᐱ"/>
         <when state="cans_q" output="ᕿ"/>
+        <when state="cans_r" output="ᕆ"/>
+        <when state="cans_s" output="ᓯ"/>
+        <when state="cans_t" output="ᑎ"/>
+        <when state="cans_v" output="ᕕ"/>
         <when state="cyrl" output="д"/>
         <when state="cyrl_circumflex" output="ˆ"/>
         <when state="cyrl_romanized_acute" output="´"/>
@@ -3105,6 +3105,7 @@
         <when state="geez_z" output="ዘ"/>
         <when state="georgian_mkhedruli" output="რ"/>
         <when state="grek" output="α"/>
+        <when state="hang" output=""/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
         <when state="hira" output="あ"/>
