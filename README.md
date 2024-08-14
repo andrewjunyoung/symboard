@@ -1,4 +1,4 @@
-# ∫ymβoarð
+# Symβoar∂
 
 Type anything.
 
