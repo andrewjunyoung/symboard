@@ -52,9 +52,7 @@ Below is a map of the world showing the countries where some or all of the admin
 
 This keyboard is compatible with (at least) the following scripts:
 
-Albanian, Arabic, romanization (ALA-LC; ISO), Arabic, Asturian, Azerbaijani, Belarusian, Bengali, Bosnian (cyrllic; latin scripts), Breton, Bulgarian, Burmese, Chinese Mandarin (pinyin), Cyrillic (romanization, ISO 9), Czech, Danish, Dutch, Dzongkha, English, Esperanto, Estonian, Faroese, Farsi / Dari / Persian, Filipino, French, Galician, Ge'ez, Georgian (mkhedruli), German, Greenlandic, Hawaiian, Hebrew, Hindi, Hungarian, Icelandic, Irish, Italian, Japanese (romaji; hepburn, nihonshiki, kunrei), Khmer, Kurdish, Kurdish (arabic), Lakota, Lao, Latvian, Lithuanian, Macedonian, Manx, Mongolian (cyrillic; mongolian), Montenegrin, Māori, Nepalese, Norwegian (bokmal, nynorsk), Pashto, Polish, Portuguese, Qazaq (latin script), Romanian, Russian, Scottish Gaelic, Serbian, Slovak, Slovenian, Sinhala, Spanish, Swedish, Tamil, Thai, Tibetan, Tifinagh, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh
-
-We plan to support Korean in future.
+Albanian, Arabic, romanization (ALA-LC; ISO), Arabic, Asturian, Azerbaijani, Belarusian, Bengali, Bosnian (cyrllic; latin scripts), Breton, Bulgarian, Burmese, Chinese (traditional), Chinese (simplified), Chinese (pinyin), Cyrillic (romanization, ISO 9), Czech, Danish, Dutch, Dzongkha, English, Esperanto, Estonian, Faroese, Farsi / Dari / Persian, Filipino, French, Galician, Ge'ez, Georgian (mkhedruli), German, Greenlandic, Hawaiian, Hebrew, Hindi, Hungarian, Icelandic, Irish, Italian, Japanese (romaji; hepburn, nihonshiki, kunrei), Khmer, Korean, Kurdish, Kurdish (arabic), Lakota, Lao, Latvian, Lithuanian, Macedonian, Manx, Mongolian (cyrillic; mongolian), Montenegrin, Māori, Nepalese, Norwegian (bokmal, nynorsk), Pashto, Polish, Portuguese, Qazaq (latin script), Romanian, Russian, Scottish Gaelic, Serbian, Slovak, Slovenian, Sinhala, Spanish, Swedish, Tamil, Thai, Tibetan, Tifinagh, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh
 
 ## FAQ
 
