@@ -288,7 +288,7 @@
             <key code="19" output=""/>
             <key code="20" output=""/>
             <key code="21" output=""/>
-            <key code="22" output="̂"/>
+            <key code="22" output="alt+6"/>
             <key code="23" output=""/>
             <key code="24" output="»"/>
             <key code="25" output=""/>
@@ -956,6 +956,7 @@
             <when state="arab" next="arab" output="١"/>
             <when state="bengali" next="bengali" output="১"/>
             <when state="burmese" next="burmese" output="၁"/>
+            <when state="cyrl" next="cyrl_1"/>
             <when state="deva" next="deva" output="१"/>
             <when state="khmer" next="khmer" output="១"/>
             <when state="lao" next="lao" output="໑"/>
@@ -969,6 +970,7 @@
             <when state="arab" next="arab" output="٢"/>
             <when state="bengali" next="bengali" output="২"/>
             <when state="burmese" next="burmese" output="၂"/>
+            <when state="cyrl" next="cyrl_2"/>
             <when state="deva" next="deva" output="२"/>
             <when state="khmer" next="khmer" output="២"/>
             <when state="lao" next="lao" output="໒"/>
@@ -1759,7 +1761,7 @@
         </action>
         <action id="alt+,">
             <when state="none" output=" ̛"/>
-            <when state="cyrl" next="cyrl_2"/>
+            <when state="cyrl" next="cyrl_descender"/>
         </action>
         <action id="alt+.">
             <when state="none" output="̇"/>
@@ -1767,6 +1769,11 @@
         </action>
         <action id="alt+1">
             <when state="none" next="arrows_basic_dvorak"/>
+            <when state="arab" next="arab_1_above"/>
+        </action>
+        <action id="alt+6">
+          <when state="none" output="̂"/>
+          <when state="arab" next="arab_1_below"/>
         </action>
         <action id="alt+7">
             <when state="none" output="̉"/>
@@ -1837,7 +1844,6 @@
         </action>
         <action id="alt+v">
             <when state="none" output="̌"/>
-            <when state="cyrl" next="cyrl_1"/>
         </action>
         <action id="alt+x">
             <when state="none" next="latn_extensions"/>
@@ -1845,6 +1851,7 @@
         <action id="b">
             <when state="none" output="b"/>
             <when state="arab" next="arab" output="ب"/>
+            <when state="arab_1_below" next="arab" output="ٻ"/>
             <when state="armn" output="բ"/>
             <when state="beng" next="beng" output="ব"/>
             <when state="cyrl" next="cyrl" output="б"/>
@@ -1926,6 +1933,7 @@
         <action id="d">
             <when state="none" output="d"/>
             <when state="arab" next="arab" output="د"/>
+            <when state="arab_1_above" next="arab" output="ذ"/>
             <when state="arab_4_dots" output="ڈ"/>
             <when state="arab_ring_below" output="ډ"/>
             <when state="armn" output="դ"/>
@@ -2628,6 +2636,7 @@
         <action id="t">
             <when state="none" output="t"/>
             <when state="arab" next="arab" output="ت"/>
+            <when state="arab_1_below" next="arab" output="تٜ"/>
             <when state="arab_4_dots" output="ٹ"/>
             <when state="arab_ring_below" output="ټ"/>
             <when state="armn" output="տ"/>
