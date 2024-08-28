@@ -886,6 +886,7 @@
         </action>
         <action id="&#x0026;">
             <when state="none" output="~"/>
+            <when state="math_operators" output="≈"/>
             <when state="armn" next="armn" output="Ց"/>
         </action>
         <action id="&#x0027;">
