@@ -1,0 +1,1 @@
+cat kangxi.txt | sort | uniq > kangxi2.txt

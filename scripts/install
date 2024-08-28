@@ -1,1 +1,1 @@
-sudo cp ./iso_jdvorak.keylayout /Library/Keyboard\ Layouts/iso_jdvorak.keylayout
+sudo cp ./src/iso_jdvorak.keylayout /Library/Keyboard\ Layouts/iso_jdvorak.keylayout
