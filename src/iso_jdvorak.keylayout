@@ -725,7 +725,7 @@
             <key code="8" action="ctrl+j"/>
             <key code="9" action="khmr"/>
             <key code="10" output=""/>
-            <key code="11" output=""/>
+            <key code="11" action="ctrl+x"/>
             <key code="12" output="&#x0011;"/>
             <key code="13" output="&#x0017;"/>
             <key code="14" output=""/>
@@ -733,10 +733,10 @@
             <key code="16" output="&#x001D;"/>
             <key code="17" output="&#x0014;"/>
             <key code="18" output=""/>
-            <key code="19" output=""/>
+            <key code="19" output="mymr"/>
             <key code="20" output="3"/>
             <key code="21" output="4"/>
-            <key code="22" action="mymr"/>
+            <key code="22" action="ctrl+^"/>
             <key code="23" output="5"/>
             <key code="24" output="+"/>
             <key code="25" output="9"/>
@@ -753,7 +753,7 @@
             <key code="36" output="&#x000D;"/>
             <key code="37" action="kata"/>
             <key code="38" action="&#x0008;"/>
-            <key code="39" output=""/>
+            <key code="39" action="ctrl+_"/>
             <key code="40" action="tfng"/>
             <key code="41" action="sinh"/>
             <key code="42" output=""/>
@@ -940,9 +940,10 @@
         </action>
         <action id="0">
             <when state="none" output="0"/>
+            <when state="latn_super" output="⁰"/>
+            <when state="latn_sub" output="₀"/>
             <when state="arab" next="arab" output="٠"/>
             <when state="bengali" next="bengali" output="০"/>
-            <when state="burmese" next="burmese" output="၀"/>
             <when state="deva" next="deva" output="०"/>
             <when state="khmer" next="khmer" output="០"/>
             <when state="lao" next="lao" output="໐"/>
@@ -953,9 +954,10 @@
         </action>
         <action id="1">
             <when state="none" output="1"/>
+            <when state="latn_super" output="¹"/>
+            <when state="latn_sub" output="₁"/>
             <when state="arab" next="arab" output="١"/>
             <when state="bengali" next="bengali" output="১"/>
-            <when state="burmese" next="burmese" output="၁"/>
             <when state="cyrl" next="cyrl_1"/>
             <when state="deva" next="deva" output="१"/>
             <when state="khmer" next="khmer" output="១"/>
@@ -967,9 +969,10 @@
         </action>
         <action id="2">
             <when state="none" output="2"/>
+            <when state="latn_super" output="²"/>
+            <when state="latn_sub" output="₂"/>
             <when state="arab" next="arab" output="٢"/>
             <when state="bengali" next="bengali" output="২"/>
-            <when state="burmese" next="burmese" output="၂"/>
             <when state="cyrl" next="cyrl_2"/>
             <when state="deva" next="deva" output="२"/>
             <when state="khmer" next="khmer" output="២"/>
@@ -982,9 +985,10 @@
         </action>
         <action id="3">
             <when state="none" output="3"/>
+            <when state="latn_super" output="³"/>
+            <when state="latn_sub" output="₃"/>
             <when state="arab" next="arab" output="٣"/>
             <when state="bengali" next="bengali" output="৩"/>
-            <when state="burmese" next="burmese" output="၃"/>
             <when state="deva" next="deva" output="३"/>
             <when state="khmer" next="khmer" output="៣"/>
             <when state="lao" next="lao" output="໓"/>
@@ -997,9 +1001,10 @@
         </action>
         <action id="4">
             <when state="none" output="4"/>
+            <when state="latn_super" output="⁴"/>
+            <when state="latn_sub" output="₄"/>
             <when state="arab" next="arab" output="٤"/>
             <when state="bengali" next="bengali" output="৪"/>
-            <when state="burmese" next="burmese" output="၄"/>
             <when state="deva" next="deva" output="४"/>
             <when state="khmer" next="khmer" output="៤"/>
             <when state="lao" next="lao" output="໔"/>
@@ -1012,9 +1017,10 @@
         </action>
         <action id="5">
             <when state="none" output="5"/>
+            <when state="latn_super" output="⁵"/>
+            <when state="latn_sub" output="₅"/>
             <when state="arab" next="arab" output="٥"/>
             <when state="bengali" next="bengali" output="৫"/>
-            <when state="burmese" next="burmese" output="၅"/>
             <when state="deva" next="deva" output="५"/>
             <when state="khmer" next="khmer" output="៥"/>
             <when state="lao" next="lao" output="໕"/>
@@ -1027,9 +1033,10 @@
         </action>
         <action id="6">
             <when state="none" output="6"/>
+            <when state="latn_super" output="⁶"/>
+            <when state="latn_sub" output="₆"/>
             <when state="arab" next="arab" output="٦"/>
             <when state="bengali" next="bengali" output="৬"/>
-            <when state="burmese" next="burmese" output="၆"/>
             <when state="deva" next="deva" output="६"/>
             <when state="khmer" next="khmer" output="៦"/>
             <when state="lao" next="lao" output="໖"/>
@@ -1041,9 +1048,10 @@
         </action>
         <action id="7">
             <when state="none" output="7"/>
+            <when state="latn_super" output="⁷"/>
+            <when state="latn_sub" output="₇"/>
             <when state="arab" next="arab" output="٧"/>
             <when state="bengali" next="bengali" output="৭"/>
-            <when state="burmese" next="burmese" output="၇"/>
             <when state="deva" next="deva" output="७"/>
             <when state="khmer" next="khmer" output="៧"/>
             <when state="lao" next="lao" output="໗"/>
@@ -1055,9 +1063,10 @@
         </action>
         <action id="8">
             <when state="none" output="8"/>
+            <when state="latn_super" output="⁸"/>
+            <when state="latn_sub" output="₈"/>
             <when state="arab" next="arab" output="٨"/>
             <when state="bengali" next="bengali" output="৮"/>
-            <when state="burmese" next="burmese" output="၈"/>
             <when state="deva" next="deva" output="८"/>
             <when state="khmer" next="khmer" output="៨"/>
             <when state="lao" next="lao" output="໘"/>
@@ -1069,9 +1078,10 @@
         </action>
         <action id="9">
             <when state="none" output="9"/>
+            <when state="latn_super" output="⁹"/>
+            <when state="latn_sub" output="₉"/>
             <when state="arab" next="arab" output="٩"/>
             <when state="bengali" next="bengali" output="৯"/>
-            <when state="burmese" next="burmese" output="၉"/>
             <when state="deva" next="deva" output="९"/>
             <when state="khmer" next="khmer" output="៩"/>
             <when state="lao" next="lao" output="໙"/>
@@ -1624,6 +1634,7 @@
         </action>
         <action id="a">
             <when state="none" output="a"/>
+            <when state="latn_caps_small" output="ᴀ"/>
             <when state="arab" next="arab" output="ا"/>
             <when state="armn" output="ա"/>
             <when state="arrows_basic_dvorak" output="←"/>
@@ -1850,6 +1861,7 @@
         </action>
         <action id="b">
             <when state="none" output="b"/>
+            <when state="latn_caps_small" output="ʙ"/>
             <when state="arab" next="arab" output="ب"/>
             <when state="arab_1_below" next="arab" output="ٻ"/>
             <when state="armn" output="բ"/>
@@ -1932,6 +1944,7 @@
         </action>
         <action id="d">
             <when state="none" output="d"/>
+            <when state="latn_caps_small" output="ᴅ"/>
             <when state="arab" next="arab" output="د"/>
             <when state="arab_1_above" next="arab" output="ذ"/>
             <when state="arab_4_dots" output="ڈ"/>
@@ -1957,6 +1970,7 @@
             <when state="latn_rotated_lower" output="p"/>
             <when state="latn_slash" output="ð"/>
             <when state="latn_small_caps" output="ᴅ"/>
+            <when state="math_operators" output="∂"/>
             <when state="mong" next="mong" output="ᠳ"/>
             <when state="mymr" next="mymr" output="ဒ"/>
             <when state="sinh" next="sinh" output="ද"/>
@@ -1971,6 +1985,7 @@
         </action>
         <action id="e">
             <when state="none" output="e"/>
+            <when state="latn_caps_small" output="ᴇ"/>
             <when state="arab" next="arab" output="خ"/>
             <when state="armn" output="ե"/>
             <when state="armn_2" output="է"/>
@@ -2065,6 +2080,7 @@
         </action>
         <action id="f">
             <when state="none" output="f"/>
+            <when state="latn_caps_small" output="ꜰ"/>
             <when state="arab" next="arab" output="ف"/>
             <when state="armn" output="ֆ"/>
             <when state="beng" next="beng" output="ফ়"/>
@@ -2090,6 +2106,7 @@
         </action>
         <action id="g">
             <when state="none" output="g"/>
+            <when state="latn_caps_small" output="ɢ"/>
             <when state="arab" next="arab" output="غ"/>
             <when state="arab_ring_below" output="ګ"/>
             <when state="armn" output="գ"/>
@@ -2131,6 +2148,7 @@
         </action>
         <action id="h">
             <when state="none" output="h"/>
+            <when state="latn_caps_small" output="ʜ"/>
             <when state="arab" next="arab" output="ح"/>
             <when state="armn" output="հ"/>
             <when state="beng" next="beng" output="হ"/>
@@ -2162,6 +2180,7 @@
         </action>
         <action id="i">
             <when state="none" output="i"/>
+            <when state="latn_caps_small" output="ɪ"/>
             <when state="arab" next="arab" output="ي"/>
             <when state="arab_hacek" output="ێ"/>
             <when state="armn" output="ի"/>
@@ -2254,6 +2273,7 @@
         </action>
         <action id="j">
             <when state="none" output="j"/>
+            <when state="latn_caps_small" output="ᴊ"/>
             <when state="arab" next="arab" output="ج"/>
             <when state="armn" output="ձ"/>
             <when state="armn_2" output="ջ"/>
@@ -2287,6 +2307,7 @@
         </action>
         <action id="k">
             <when state="none" output="k"/>
+            <when state="latn_caps_small" output="ᴋ"/>
             <when state="arab" next="arab" output="ك"/>
             <when state="armn" output="կ"/>
             <when state="armn_2" output="ք"/>
@@ -2329,6 +2350,7 @@
         </action>
         <action id="l">
             <when state="none" output="l"/>
+            <when state="latn_caps_small" output="ʟ"/>
             <when state="arab" next="arab" output="ل"/>
             <when state="arab_hacek" output="ڵ"/>
             <when state="armn" output="լ"/>
@@ -2366,6 +2388,7 @@
         </action>
         <action id="m">
             <when state="none" output="m"/>
+            <when state="latn_caps_small" output="ᴍ"/>
             <when state="arab" next="arab" output="م"/>
             <when state="armn" output="մ"/>
             <when state="beng" next="beng" output="ম"/>
@@ -2395,11 +2418,21 @@
         <action id="math_operators">
             <when state="none" next="math_operators"/>
         </action>
+        <action id="ctrl+x">
+            <when state="none" next="latn_caps_small"/>
+        </action>
+        <action id="ctrl+_">
+            <when state="none" next="latn_sub"/>
+        </action>
+        <action id="ctrl+^">
+            <when state="none" next="latn_super"/>
+        </action>
         <action id="mymr">
             <when state="none" next="mymr"/>
         </action>
         <action id="n">
             <when state="none" output="n"/>
+            <when state="latn_caps_small" output="ɴ"/>
             <when state="arab" next="arab" output="ن"/>
             <when state="arab_ring_below" output="ڼ"/>
             <when state="armn" output="ն"/>
@@ -2512,6 +2545,7 @@
         </action>
         <action id="p">
             <when state="none" output="p"/>
+            <when state="latn_caps_small" output="ᴘ"/>
             <when state="arab" next="arab" output="پ"/>
             <when state="armn" output="պ"/>
             <when state="armn_2" output="փ"/>
@@ -2543,6 +2577,7 @@
         </action>
         <action id="q">
             <when state="none" output="q"/>
+            <when state="latn_caps_small" output="ꞯ"/>
             <when state="arab" next="arab" output="ق"/>
             <when state="armn" output="ղ"/>
             <when state="arrows_basic_dvorak" output="↓"/>
@@ -2561,6 +2596,7 @@
         </action>
         <action id="r">
             <when state="none" output="r"/>
+            <when state="latn_caps_small" output="ʀ"/>
             <when state="arab" next="arab" output="ر"/>
             <when state="arab_4_dots" output="ڑ"/>
             <when state="arab_hacek" output="ڕ"/>
@@ -2635,6 +2671,7 @@
         </action>
         <action id="t">
             <when state="none" output="t"/>
+            <when state="latn_caps_small" output="ᴛ"/>
             <when state="arab" next="arab" output="ت"/>
             <when state="arab_1_below" next="arab" output="تٜ"/>
             <when state="arab_4_dots" output="ٹ"/>
@@ -2687,6 +2724,7 @@
         </action>
         <action id="u">
             <when state="none" output="u"/>
+            <when state="latn_caps_small" output="ᴜ"/>
             <when state="arab" next="arab" output="و"/>
             <when state="arab_hacek" output="ۆ"/>
             <when state="armn" output="ո"/>
@@ -2876,6 +2914,7 @@
         </action>
         <action id="y">
             <when state="none" output="y"/>
+            <when state="latn_caps_small" output="ʏ"/>
             <when state="arab" next="arab" output="ض"/>
             <when state="armn" next="armn" output="յ"/>
             <when state="beng" next="beng" output="য"/>
@@ -2904,6 +2943,7 @@
         </action>
         <action id="z">
             <when state="none" output="z"/>
+            <when state="latn_caps_small" output="ᴢ"/>
             <when state="arab" next="arab" output="ز"/>
             <when state="armn" next="armn" output="զ"/>
             <when state="armn_2" output="ժ"/>
@@ -3045,6 +3085,9 @@
         <when state="lao" output="ອ"/>
         <when state="latn_bar" output="-"/>
         <when state="latn_e" output="æ"/>
+        <when state="latn_caps_small" output="ᴀ"/>
+        <when state="latn_super" output="¹"/>
+        <when state="latn_sub" output="₁"/>
         <when state="latn_extensions" output="x"/>
         <when state="latn_hook_palatal" output=" ̡"/>
         <when state="latn_hook_retroflex" output="◌̢"/>
