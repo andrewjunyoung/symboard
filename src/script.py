@@ -1,7 +1,7 @@
 from collections import defaultdict
 import re
 
-def find_frequent_subsequences(file_path, min_length=8, min_occurrences=10):
+def find_frequent_subsequences(file_path, min_length=7, min_occurrences=10):
     subsequences = defaultdict(int)
     pattern = re.compile(r'[1-5]+')
 
