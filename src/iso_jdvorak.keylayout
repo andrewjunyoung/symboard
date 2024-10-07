@@ -1371,7 +1371,7 @@
             <when state="cyrl_i" next="cyrl" output="Њ"/>
             <when state="deva" next="deva" output="ङ"/>
             <when state="grek" next="grek" output="Ν"/>
-            <when state="hebr" output="ף"/>
+            <when state="hebr" output="ן"/>
             <when state="khmr" next="khmr" output="ង"/>
             <when state="latn_hook_palatal" output="Ŋ"/>
             <when state="latn_slash" output="Ꞥ"/>
