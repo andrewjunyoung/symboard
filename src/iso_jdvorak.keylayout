@@ -2228,15 +2228,15 @@
             <when state="kata_b" next="kata" output="ビ"/>
             <when state="kata_d" next="kata" output="ヂ"/>
             <when state="kata_g" next="kata" output="ギ"/>
-            <when state="kata_h" next="kata" output="ヘ"/>
-            <when state="kata_k" next="kata" output="ケ"/>
-            <when state="kata_m" next="kata" output="メ"/>
-            <when state="kata_n" next="kata" output="ネ"/>
-            <when state="kata_p" next="kata" output="ペ"/>
-            <when state="kata_r" next="kata" output="レ"/>
-            <when state="kata_s" next="kata" output="セ"/>
-            <when state="kata_t" next="kata" output="テ"/>
-            <when state="kata_z" next="kata" output="ゼ"/>
+            <when state="kata_h" next="kata" output="ヒ"/>
+            <when state="kata_k" next="kata" output="キ"/>
+            <when state="kata_m" next="kata" output="ミ"/>
+            <when state="kata_n" next="kata" output="ニ"/>
+            <when state="kata_p" next="kata" output="ピ"/>
+            <when state="kata_r" next="kata" output="リ"/>
+            <when state="kata_s" next="kata" output="シ"/>
+            <when state="kata_t" next="kata" output="チ"/>
+            <when state="kata_z" next="kata" output="ジ"/>
             <when state="khmr" next="khmr" output="ឥ"/>
             <when state="latn_bar" output="ɨ"/>
             <when state="latn_extensions" output="ɪ"/>
