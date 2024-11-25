@@ -1391,6 +1391,13 @@
             <when state="cyrl_stroke" next="cyrl" output="Ө"/>
             <when state="deva" next="deva" output="ू"/>
             <when state="grek" next="grek" output="Ο"/>
+            <when state="hira" next="hira" output="ぉ"/>
+            <when state="hira_y" next="hira" output="ょ"/>
+            <when state="kata" next="kata" output="ォ"/>
+            <when state="kata_h" next="kata" output="ㇹ"/>
+            <when state="kata_r" next="kata" output="ㇿ"/>
+            <when state="kata_t" next="kata" output="ㇳ"/>
+            <when state="kata_y" next="hira" output="ョ"/>
             <when state="latn_bar" output="Ɵ"/>
             <when state="latn_e" output="Œ"/>
             <when state="latn_extensions" output="Ɔ"/>
@@ -1503,6 +1510,17 @@
             <when state="cyrl_1" next="cyrl" output="Ү"/>
             <when state="cyrl_i" next="cyrl" output="Ю"/>
             <when state="grek" next="grek" output="Υ"/>
+            <when state="hira" next="hira" output="ぅ"/>
+            <when state="hira_t" next="hira" output="っ"/>
+            <when state="hira_y" next="hira" output="ゅ"/>
+            <when state="kata" next="kata" output="ゥ"/>
+            <when state="kata_h" next="kata" output="ㇷ"/>
+            <when state="kata_k" next="kata" output="ㇰ"/>
+            <when state="kata_s" next="kata" output="ㇲ"/>
+            <when state="kata_n" next="kata" output="ㇴ"/>
+            <when state="kata_m" next="kata" output="ㇺ"/>
+            <when state="kata_r" next="kata" output="ㇽ"/>
+            <when state="kata_y" next="hira" output="ュ"/>
             <when state="latn_bar" output="Ʉ"/>
             <when state="latn_extensions" output="Ʊ"/>
             <when state="latn_rotated_lower" output="N"/>
