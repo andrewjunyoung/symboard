@@ -832,6 +832,31 @@
         </action>
         <action id=" ">
             <when state="none" output=" "/>
+            <when state="arab" next="arab" output=" "/>
+            <when state="armn" next="armn" output=" "/>
+            <when state="armn_2" next="armn_2" output=" "/>
+            <when state="beng" next="beng" output=" "/>
+            <when state="cans" next="cans" output=" "/>
+            <when state="cyrl" next="cyrl" output=" "/>
+            <when state="deva" next="deva" output=" "/>
+            <when state="geez" next="geez" output=" "/>
+            <when state="geor" next="geor" output=" "/>
+            <when state="grek" next="grek" output=" "/>
+            <when state="hang" next="hang" output=" "/>
+            <when state="hebr" next="hebr" output=" "/>
+            <when state="hira" next="hira" output="　"/>
+            <when state="kata" next="kata" output="　"/>
+            <when state="khmr" next="khmr" output=" "/>
+            <when state="lao" next="lao" output=" "/>
+            <when state="math_operators" next="math_operators" output=" "/>
+            <when state="mong" next="mong" output=" "/>
+            <when state="mymr" next="mymr" output=" "/>
+            <when state="sinh" next="sinh" output=" "/>
+            <when state="taml" next="taml" output=" "/>
+            <when state="tfng" next="tfng" output=" "/>
+            <when state="thaa" next="thaa" output=" "/>
+            <when state="thai" next="thai" output=" "/>
+            <when state="tibt" next="tibt" output=" "/>
         </action>
         <action id="&#x0001;">
             <when state="none" next="arab"/>
