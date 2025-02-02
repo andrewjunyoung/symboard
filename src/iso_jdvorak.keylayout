@@ -2872,7 +2872,7 @@
             <when state="arab" next="arab" output="ش"/>
             <when state="armn" next="armn" output="խ"/>
             <when state="beng" next="beng" output="শ"/>
-            <when state="cyrl" output="ш"/>
+            <when state="cyrl" next="cyrl" output="ш"/>
             <when state="cyrl_descender" output="щ"/>
             <when state="deva" next="deva" output="श"/>
             <when state="geor" next="geor" output="ხ"/>
