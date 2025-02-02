@@ -1294,7 +1294,7 @@
             <when state="deva_dot_below" output="झ़"/>
             <when state="geor" output="ჟ"/>
             <when state="grek" next="grek" output="Σ"/>
-            <when state="hebr" output="ץ"/>
+            <when state="hebr" next="hebr" output="ץ"/>
             <when state="khmr" next="khmr" output="ឈ"/>
             <when state="lao" next="lao" output="ຍ"/>
             <when state="latn_bar" output="Ɉ"/>
@@ -1321,7 +1321,7 @@
             <when state="deva_dot_below" output="ख़"/>
             <when state="geor" output="ქ"/>
             <when state="grek" next="grek" output="Κ"/>
-            <when state="hebr" output="ך"/>
+            <when state="hebr" next="hebr" output="ך"/>
             <when state="hebr_dagesh" output="ךּ"/>
             <when state="khmr" next="khmr" output="ខ"/>
             <when state="latn_bar" output="Ꝁ"/>
@@ -1354,7 +1354,7 @@
             <when state="armn" output="Մ"/>
             <when state="cyrl" next="cyrl" output="М"/>
             <when state="grek" next="grek" output="Μ"/>
-            <when state="hebr" output="ם‎"/>
+            <when state="hebr" next="hebr" output="ם‎"/>
             <when state="latn_hook_palatal" output="Ɱ"/>
             <when state="latn_rotated_lower" output="Ɯ"/>
             <when state="latn_rotated_upper" output="ꟽ"/>
@@ -1371,7 +1371,7 @@
             <when state="cyrl_i" next="cyrl" output="Њ"/>
             <when state="deva" next="deva" output="ङ"/>
             <when state="grek" next="grek" output="Ν"/>
-            <when state="hebr" output="ן"/>
+            <when state="hebr" next="hebr" output="ן"/>
             <when state="khmr" next="khmr" output="ង"/>
             <when state="latn_hook_palatal" output="Ŋ"/>
             <when state="latn_slash" output="Ꞥ"/>
@@ -1419,7 +1419,7 @@
             <when state="deva_dot_below" output="फ़"/>
             <when state="geor" output="ფ"/>
             <when state="grek" next="grek" output="Π"/>
-            <when state="hebr" output="ף"/>
+            <when state="hebr" next="hebr" output="ף"/>
             <when state="hebr_dagesh" output="פּ"/>
             <when state="khmr" next="khmr" output="ផ"/>
             <when state="latn_bar" output="Ᵽ"/>
@@ -1691,7 +1691,7 @@
             <when state="geez_z" output="ዛ"/>
             <when state="geor" output="ა"/>
             <when state="grek" next="grek" output="α"/>
-            <when state="hebr" output="א"/>
+            <when state="hebr" next="hebr" output="א"/>
             <when state="hira" next="hira" output="あ"/>
             <when state="hira_b" next="hira" output="ば"/>
             <when state="hira_d" next="hira" output="だ"/>
@@ -1878,7 +1878,7 @@
             <when state="geez" next="geez_b"/>
             <when state="geor" output="ბ"/>
             <when state="grek" next="grek" output="β"/>
-            <when state="hebr" output="ב"/>
+            <when state="hebr" next="hebr" output="ב"/>
             <when state="hebr_dagesh" output="בּ"/>
             <when state="hira" next="hira_b"/>
             <when state="kata" next="kata_b"/>
@@ -1920,7 +1920,7 @@
             <when state="geez" next="geez_c"/>
             <when state="geor" output="ც"/>
             <when state="grek" next="grek" output="ξ"/>
-            <when state="hebr" output="ס"/>
+            <when state="hebr" next="hebr" output="ס"/>
             <when state="khmr" next="khmr" output="ច"/>
             <when state="lao" next="lao" output="ຈ"/>
             <when state="latn_bar" output="ꞓ"/>
@@ -1963,7 +1963,7 @@
             <when state="geez" next="geez_d"/>
             <when state="geor" output="დ"/>
             <when state="grek" next="grek" output="δ"/>
-            <when state="hebr" output="ד"/>
+            <when state="hebr" next="hebr" output="ד"/>
             <when state="hebr_dagesh" output="דּ"/>
             <when state="hira" next="hira_d"/>
             <when state="kata" next="kata_d"/>
@@ -2039,7 +2039,7 @@
             <when state="geez_z" output="ዜ"/>
             <when state="geor" output="ე"/>
             <when state="grek" next="grek" output="ε"/>
-            <when state="hebr" output="ה"/>
+            <when state="hebr" next="hebr" output="ה"/>
             <when state="hira" next="hira" output="え"/>
             <when state="hira_b" next="hira" output="べ"/>
             <when state="hira_d" next="hira" output="で"/>
@@ -2091,7 +2091,7 @@
             <when state="geez" next="geez_f"/>
             <when state="geor" output="ფ"/>
             <when state="grek" next="grek" output="φ"/>
-            <when state="hebr" output="ת"/>
+            <when state="hebr" next="hebr" output="ת"/>
             <when state="hebr_dagesh" output="תּ"/>
             <when state="khmr" next="khmr" output="ហ្វ"/>
             <when state="latn_extensions" output="ƒ"/>
@@ -2123,7 +2123,7 @@
             <when state="geez" next="geez_g"/>
             <when state="geor" output="გ"/>
             <when state="grek" next="grek" output="γ"/>
-            <when state="hebr" output="ג"/>
+            <when state="hebr" next="hebr" output="ג"/>
             <when state="hebr_dagesh" output="גּ"/>
             <when state="hira" next="hira_g"/>
             <when state="kata" next="kata_g"/>
@@ -2159,7 +2159,7 @@
             <when state="geez" next="geez_h"/>
             <when state="geor" output="ჰ"/>
             <when state="grek" next="grek" output="η"/>
-            <when state="hebr" output="ח"/>
+            <when state="hebr" next="hebr" output="ח"/>
             <when state="hira" next="hira_h"/>
             <when state="kata" next="kata_h"/>
             <when state="khmr" next="khmr" output="ហ"/>
@@ -2228,7 +2228,7 @@
             <when state="geez_z" output="ዚ"/>
             <when state="geor" output="ი"/>
             <when state="grek" next="grek" output="ι"/>
-            <when state="hebr" output="י"/>
+            <when state="hebr" next="hebr" output="י"/>
             <when state="hira" next="hira" output="い"/>
             <when state="hira_b" next="hira" output="び"/>
             <when state="hira_d" next="hira" output="ぢ"/>
@@ -2286,7 +2286,7 @@
             <when state="geez" next="geez_j"/>
             <when state="geor" output="ჯ"/>
             <when state="grek" next="grek" output="ς"/>
-            <when state="hebr" output="צ"/>
+            <when state="hebr" next="hebr" output="צ"/>
             <when state="khmr" next="khmr" output="ជ"/>
             <when state="lao" next="lao" output="ງ"/>
             <when state="latn_bar" output="ɉ"/>
@@ -2319,7 +2319,7 @@
             <when state="geez" next="geez_k"/>
             <when state="geor" output="კ"/>
             <when state="grek" next="grek" output="κ"/>
-            <when state="hebr" output="כ"/>
+            <when state="hebr" next="hebr" output="כ"/>
             <when state="hebr_dagesh" output="כּ"/>
             <when state="hira" next="hira_k"/>
             <when state="kata" next="kata_k"/>
@@ -2359,7 +2359,7 @@
             <when state="geez" next="geez_l"/>
             <when state="geor" output="ლ"/>
             <when state="grek" next="grek" output="λ"/>
-            <when state="hebr" output="ל"/>
+            <when state="hebr" next="hebr" output="ל"/>
             <when state="hira" next="hira" output="ん"/>
             <when state="kata" next="kata" output="ン"/>
             <when state="khmr" next="khmr" output="ល"/>
@@ -2393,7 +2393,7 @@
             <when state="geez" next="geez_m"/>
             <when state="geor" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
-            <when state="hebr" output="מ"/>
+            <when state="hebr" next="hebr" output="מ"/>
             <when state="hira" next="hira_m"/>
             <when state="kata" next="kata_m"/>
             <when state="khmr" next="khmr" output="ម"/>
@@ -2431,7 +2431,7 @@
             <when state="geez" next="geez_n"/>
             <when state="geor" output="ნ"/>
             <when state="grek" next="grek" output="ν"/>
-            <when state="hebr" output="נ"/>
+            <when state="hebr" next="hebr" output="נ"/>
             <when state="hira" next="hira_n"/>
             <when state="kata" next="kata_n"/>
             <when state="khmr" next="khmr" output="ន"/>
@@ -2486,7 +2486,7 @@
             <when state="geez_z" output="ዙ"/>
             <when state="geor" output="ო"/>
             <when state="grek" next="grek" output="ο"/>
-            <when state="hebr" output="ע"/>
+            <when state="hebr" next="hebr" output="ע"/>
             <when state="hira" next="hira" output="お"/>
             <when state="hira_b" next="hira" output="ぼ"/>
             <when state="hira_d" next="hira" output="ど"/>
@@ -2541,7 +2541,7 @@
             <when state="geez" next="geez_p"/>
             <when state="geor" output="პ"/>
             <when state="grek" next="grek" output="π"/>
-            <when state="hebr" output="פ"/>
+            <when state="hebr" next="hebr" output="פ"/>
             <when state="hira" next="hira_p"/>
             <when state="kata" next="kata_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
@@ -2569,7 +2569,7 @@
             <when state="deva" next="deva" output="ै"/>
             <when state="geor" output="ქ"/>
             <when state="grek" next="grek" output="θ"/>
-            <when state="hebr" output="ק"/>
+            <when state="hebr" next="hebr" output="ק"/>
             <when state="lao" next="lao" output="ຖ"/>
             <when state="latn_rotated_lower" output="b"/>
             <when state="latn_small_caps" output="ꞯ"/>
@@ -2592,7 +2592,7 @@
             <when state="geez" next="geez_r"/>
             <when state="geor" output="რ"/>
             <when state="grek" next="grek" output="ρ"/>
-            <when state="hebr" output="ר"/>
+            <when state="hebr" next="hebr" output="ר"/>
             <when state="hira" next="hira_r"/>
             <when state="kata" next="kata_r"/>
             <when state="khmr" next="khmr" output="រ"/>
@@ -2627,7 +2627,7 @@
             <when state="geez" next="geez_s"/>
             <when state="geor" output="ს"/>
             <when state="grek" next="grek" output="σ"/>
-            <when state="hebr" output="ש"/>
+            <when state="hebr" next="hebr" output="ש"/>
             <when state="hira" next="hira_s"/>
             <when state="kata" next="kata_s"/>
             <when state="khmr" next="khmr" output="ស"/>
@@ -2666,7 +2666,7 @@
             <when state="geez" next="geez_t"/>
             <when state="geor" output="ტ"/>
             <when state="grek" next="grek" output="τ"/>
-            <when state="hebr" output="ט"/>
+            <when state="hebr" next="hebr" output="ט"/>
             <when state="hira" next="hira_t"/>
             <when state="kata" next="kata_t"/>
             <when state="khmr" next="khmr" output="ត"/>
@@ -2753,7 +2753,7 @@
             <when state="geez_z" output="ዙ"/>
             <when state="geor" output="უ"/>
             <when state="grek" next="grek" output="υ"/>
-            <when state="hebr" output="ו"/>
+            <when state="hebr" next="hebr" output="ו"/>
             <when state="hira" next="hira" output="う"/>
             <when state="hira_b" next="hira" output="ぶ"/>
             <when state="hira_d" next="hira" output="づ"/>
@@ -2934,7 +2934,7 @@
             <when state="geez" next="geez_z"/>
             <when state="geor" output="ზ"/>
             <when state="grek" next="grek" output="ζ"/>
-            <when state="hebr" output="ז"/>
+            <when state="hebr" next="hebr" output="ז"/>
             <when state="hira" next="hira_z"/>
             <when state="kata" next="kata_z"/>
             <when state="khmr" next="khmr" output="ឌ"/>
