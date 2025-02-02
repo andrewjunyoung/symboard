@@ -203,7 +203,7 @@
             <key code="46" action="M"/>
             <key code="47" action="V"/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=" "/>
+            <key code="49" action=" "/>
             <key code="50" action="&#x0026;"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
@@ -315,7 +315,7 @@
             <key code="46" action=""/>
             <key code="47" action="alt+v"/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=" "/>
+            <key code="49" action=" "/>
             <key code="50" action="alt+`"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
@@ -539,7 +539,7 @@
             <key code="46" action="m"/>
             <key code="47" action="v"/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" action=""/>
+            <key code="49" action=" "/>
             <key code="50" action="`"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
@@ -828,6 +828,9 @@
     </keyMapSet>
     <actions>
         <action id="">
+            <when state="none" output=" "/>
+        </action>
+        <action id=" ">
             <when state="none" output=" "/>
         </action>
         <action id="&#x0001;">
