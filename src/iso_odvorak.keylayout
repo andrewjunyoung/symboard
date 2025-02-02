@@ -1137,7 +1137,7 @@
         </action>
         <action id="?">
             <when state="none" output="?"/>
-            <when state="arab" output="؟"/>
+            <when state="arab" next="arab" output="؟"/>
             <when state="hira" output="？"/>
             <when state="kata" output="？"/>
             <when state="latn_extensions" output="¿"/>
@@ -1149,7 +1149,7 @@
         </action>
         <action id="A">
             <when state="none" output="A"/>
-            <when state="arab" output="ى"/>
+            <when state="arab" next="arab" output="ى"/>
             <when state="armn" output="Ա"/>
             <when state="cyrl" next="cyrl" output="А"/>
             <when state="cyrl_1" next="cyrl" output="Ѫ"/>
@@ -1285,7 +1285,7 @@
         </action>
         <action id="H">
             <when state="none" output="H"/>
-            <when state="arab" output="خ"/>
+            <when state="arab" next="arab" output="خ"/>
             <when state="armn" output="Հ"/>
             <when state="cyrl" next="cyrl" output="Х"/>
             <when state="cyrl_descender" next="cyrl" output="Ҳ"/>
@@ -1413,7 +1413,7 @@
         </action>
         <action id="O">
             <when state="none" output="O"/>
-            <when state="arab" output="ة"/>
+            <when state="arab" next="arab" output="ة"/>
             <when state="armn" output="Օ"/>
             <when state="cyrl" next="cyrl" output="О"/>
             <when state="cyrl_1" next="cyrl" output="Ҩ"/>
@@ -1587,7 +1587,7 @@
         </action>
         <action id="X">
             <when state="none" output="X"/>
-            <when state="arab" output="چ"/>
+            <when state="arab" next="arab" output="چ"/>
             <when state="armn" output="Խ"/>
             <when state="beng" next="beng" output="ষ"/>
             <when state="cyrl" next="cyrl" output="Ш"/>
@@ -2997,7 +2997,7 @@
         </action>
     </actions>
     <terminators>
-        <when state="arab" output="ا"/>
+        <when state="arab" next="arab" output="ا"/>
         <when state="arab_4_dots" output="ط"/>
         <when state="arab_hacek" output="٧"/>
         <when state="arab_hamza_above" output="ء"/>

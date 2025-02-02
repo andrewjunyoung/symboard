@@ -13,11 +13,16 @@ You shouldn't have to learn a new keyboard layout for every new language, or loo
 
 **If you study math, you can type math symbols. If you're bilingual, you can type in your other language. If you study linguistics, you can type linguistics notation.**
 
-There are 2 ways to achieve this:
-1. Type characters by using graphically similar characters
-2. Make users memorize 1 romanization system for all scripts, and have them learn a few exceptions for each script
+## How?
 
-We use a universal romanization scheme based on phonetics, which maps to the letters in every other alphabet. Diacritics can be found near or above graphically similar characters, so that ȧ = a + .
+There are 2 ways to type:
+1. Type-by-shape: Type characters by using visually similar characters
+2. Type-by-sound: Type characters by how they sound
+
+We use a universal sound system (romanization), which maps to the letters in every other alphabet.
+
+Any combining characters, like the accent marks in á and ä, can be found above graphically similar charcters, so that ȧ = a + .
+
 Therefore, if i want to type russian but i don't know how to write it, that i can close my eyes and type russian. I'd type "andrej" and get "андрей".
 
 ### Design tenets
@@ -26,8 +31,8 @@ This keyboard was designed according to the following tenets:
 
 1. *Make typing in english fast, comfortable, and low-effort*
   - The alphabet is arranged in the Dvorak layout. Common English punctuation is all in the lower 3 rows
-2. *Support other common symbols in an intuitive way (EG greek, cyrillic, arrows, math symbols)*
-  - Our universal romanization scheme maps all non-latin characters to similar sounding latin letters. For example, ك = k, к = k, and か = k + a.
+2. *Support other common symbols in an intuitive way (EG greek, cyrillic, arrows, math symbols, japanese)*
+  - Use a universal romanization system that maps all non-latin characters to similar sounding latin letters. For example, ك = k, к = k, and か = k + a.
   - Diacritics are placed near or above graphically similar characters. For example, ȧ = a + .
 
 ## Layout
@@ -57,16 +62,12 @@ Albanian, Arabic, romanization (ALA-LC; ISO), Arabic, Asturian, Azerbaijani, Bel
 ## FAQ
 
 #### Problem 1
-Q: Isn't it slow to type if every language has the same romanization scheme?
-A: To save time typing, if a letter in the basic 26 letters is unused, then we fill that slot with a similar-sounding letter.
-
-#### Problem 1
-Languages have messy writing systems. English has 3 letters that all make the /k/ sound (q; k; c), and many languages also have the same kind of problem. 
-*Solution*: For these cases, we use "t", "t1" and "t2", and which one is which will be sorted alphabetically. So in English, you can imagine that "c" maps to "k", "k" maps "k1", and "q" maps to "k2".
-
-#### Problem 2
 Many non-latin alphabets have letters for sounds that latin doesn't have, especially sounds like "ts", "ch", "zh", and "sh".
 *Solution*: Use the universal romanization scheme, and allow typing of diacritics. To get russian "ц", type "ts". To get "тс", type "t-s". Common sounds like "sh" are simply "x".
+
+#### Problem 2
+Languages have messy writing systems. English has 3 letters that all make the /k/ sound (q; k; c), and many languages also have the same kind of problem. 
+*Solution*: For these cases, we use "t", "t1" and "t2", and which one is which will be sorted alphabetically. So in English, you can imagine that "c" maps to "k", "k" maps "k1", and "q" maps to "k2".
 
 #### Example 1
 - Perso-Arabic script has a /gh/ sound and a /g/ sound.
