@@ -301,7 +301,7 @@
             <key code="32" action="alt+g"/>
             <key code="33" output="́"/>
             <key code="34" output="̨"/>
-            <key code="35" action="!"/>
+            <key code="35" action="alt+l"/>
             <key code="36" output="&#x000D;"/>
             <key code="37" output=""/>
             <key code="38" action="alt+h"/>
@@ -914,6 +914,7 @@
         </action>
         <action id="&#x0026;">
             <when state="none" output="~"/>
+            <when state="math_operators" output="≈"/>
             <when state="armn" next="armn" output="Ց"/>
         </action>
         <action id="&#x0027;">
@@ -988,6 +989,7 @@
             <when state="deva" next="deva" output="१"/>
             <when state="khmer" next="khmer" output="១"/>
             <when state="lao" next="lao" output="໑"/>
+            <when state="latn_tones" output="˩"/>
             <when state="mong" next="mong" output="᠑"/>
             <when state="tamil" next="tamil" output="௧"/>
             <when state="thai" next="thai" output="๑"/>
@@ -1003,6 +1005,7 @@
             <when state="khmer" next="khmer" output="២"/>
             <when state="lao" next="lao" output="໒"/>
             <when state="latn_extensions" output="ƨ"/>
+            <when state="latn_tones" output="˨"/>
             <when state="mong" next="mong" output="᠒"/>
             <when state="tamil" next="tamil" output="௨"/>
             <when state="thai" next="thai" output="๒"/>
@@ -1017,6 +1020,7 @@
             <when state="khmer" next="khmer" output="៣"/>
             <when state="lao" next="lao" output="໓"/>
             <when state="latn_extensions" output="з"/>
+            <when state="latn_tones" output="˧"/>
             <when state="math_operators" output="△"/>
             <when state="mong" next="mong" output="᠓"/>
             <when state="tamil" next="tamil" output="௩"/>
@@ -1032,6 +1036,7 @@
             <when state="khmer" next="khmer" output="៤"/>
             <when state="lao" next="lao" output="໔"/>
             <when state="latn_extensions" output="ч"/>
+            <when state="latn_tones" output="˦"/>
             <when state="math_operators" output="□"/>
             <when state="mong" next="mong" output="᠔"/>
             <when state="tamil" next="tamil" output="௪"/>
@@ -1047,6 +1052,7 @@
             <when state="khmer" next="khmer" output="៥"/>
             <when state="lao" next="lao" output="໕"/>
             <when state="latn_extensions" output="ƽ"/>
+            <when state="latn_tones" output="˥"/>
             <when state="math_operators" output="☆"/>
             <when state="mong" next="mong" output="᠕"/>
             <when state="tamil" next="tamil" output="௫"/>
@@ -1878,6 +1884,9 @@
         </action>
         <action id="alt+j">
             <when state="none" next="latn_hook_palatal"/>
+        </action>
+        <action id="alt+l">
+            <when state="none" next="latn_tones"/>
         </action>
         <action id="alt+r">
             <when state="none" next="latn_rotated_lower"/>
@@ -2997,7 +3006,7 @@
         </action>
     </actions>
     <terminators>
-        <when state="arab" next="arab" output="ا"/>
+        <when state="arab" output="ا"/>
         <when state="arab_4_dots" output="ط"/>
         <when state="arab_hacek" output="٧"/>
         <when state="arab_hamza_above" output="ء"/>
@@ -3093,6 +3102,7 @@
         <when state="latn_bar" output="-"/>
         <when state="latn_e" output="æ"/>
         <when state="latn_extensions" output="x"/>
+        <when state="latn_tones" output="l"/>
         <when state="latn_hook_palatal" output=" ̡"/>
         <when state="latn_hook_retroflex" output="◌̢"/>
         <when state="latn_rotated_lower" output="ɐ"/>
