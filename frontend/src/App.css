@@ -5,14 +5,14 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap");
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  background-color: #050A18;
+  background-color: #050a18;
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(125deg, #0F172A, #1E293B, #0F172A, #070F1F);
+  background: linear-gradient(125deg, #0f172a, #1e293b, #0f172a, #070f1f);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   z-index: 0;
@@ -40,9 +40,15 @@ body {
 }
 
 @keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .greeting-background {
@@ -57,13 +63,14 @@ body {
 
 .greeting {
   position: absolute;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: rgba(255, 255, 255, 0.07);
   z-index: 0;
   pointer-events: none;
   white-space: nowrap;
   animation: floatText 60s linear infinite;
   transform-origin: center;
+  font-weight: 700;
 }
 
 @keyframes floatText {
@@ -90,7 +97,11 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
 }
 
 /* Decorative floating elements */
@@ -106,7 +117,11 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.2) 0%,
+    rgba(99, 102, 241, 0) 70%
+  );
   animation: float 10s ease-in-out infinite;
   z-index: 1;
 }
@@ -134,6 +149,74 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.main-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.highlight {
+  color: #818cf8;
+  font-weight: 700;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 500px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+  color: #818cf8;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.feature-text {
+  font-size: 1rem;
+  text-align: left;
 }
 
 /* Button styling */
@@ -143,17 +226,17 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(99, 102, 241, 0.2);
   color: white;
-  border: 2px solid rgba(99, 102, 241, 0.5);
+  border: 2px solid rgba(99, 102, 241, 0.6);
   border-radius: 16px;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-  min-width: 200px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  min-width: 240px;
   height: 60px;
 }
 
@@ -201,7 +284,9 @@ body {
   width: 24px;
   height: 24px;
   opacity: 0.8;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .download-button:hover .button-icon {
@@ -224,7 +309,7 @@ body {
     font-size: 16px;
     padding: 14px 28px;
   }
-  
+
   .circle {
     width: 80px;
     height: 80px;

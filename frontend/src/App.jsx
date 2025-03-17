@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [isHovering, setIsHovering] = useState(false);
-
   // List of greetings in different languages
   const greetings = [
     { text: "Hello", language: "English" },
@@ -40,8 +38,8 @@ function App() {
     console.log("Download initiated");
   };
 
-  // Generate random positions and styles for the greetings
-  const getRandomGreetingStyle = (index) => {
+  // Generate random positions and styles for the symbols
+  const getRandomSymbolStyle = (index) => {
     const size = 30 + Math.random() * 70; // Font size between 30px and 100px
     const left = Math.random() * 100;
     const top = Math.random() * 100;
@@ -63,9 +61,9 @@ function App() {
       <div className="background-gradient">
         {/* Greeting background */}
         <div className="greeting-background">
-          {greetings.map((greeting, i) => (
-            <div key={i} className="greeting" style={getRandomGreetingStyle(i)}>
-              {greeting.text}
+          {greetings.map((text, i) => (
+            <div key={i} className="greeting" style={getRandomSymbolStyle(i)}>
+              {text.text}
             </div>
           ))}
         </div>
@@ -92,32 +90,60 @@ function App() {
 
       {/* Main content */}
       <div className="content">
-        <button
-          className={`download-button ${isHovering ? "hover" : ""}`}
-          onClick={handleDownload}
-        >
-          <span className="button-text">Download</span>
-          <span className="button-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 16L12 8M12 16L8 12M12 16L16 12"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-            </svg>
-          </span>
-        </button>
+        <div className="content-wrapper">
+          <h1 className="main-heading">Oneβöard</h1>
+          <p className="tagline">
+            Type <span className="highlight">anything</span>. Even π, ʃ, あ,  العربية ᴀɴᴅ 😍 without switching keyboards.
+          </p>
+
+          <div className="features">
+            <div className="feature">
+              <span className="feature-icon">✓</span>
+              <span className="feature-text">
+                Type by shape or sound - intuitive & fast
+              </span>
+            </div>
+            <div className="feature">
+              <span className="feature-icon">✓</span>
+              <span className="feature-text">
+                Universal across 50+ languages & scripts
+              </span>
+            </div>
+            <div className="feature">
+              <span className="feature-icon">✓</span>
+              <span className="feature-text">
+                No more copying & pasting symbols
+              </span>
+            </div>
+          </div>
+
+          <button
+            className={`download-button`}
+            onClick={handleDownload}
+          >
+            <span className="button-text">Download</span>
+            <span className="button-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 16L12 8M12 16L8 12M12 16L16 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );
