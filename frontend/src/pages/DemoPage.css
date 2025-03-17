@@ -1,0 +1,12 @@
+.demo-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: #f5f5f7;
+  display: flex;
+  justify-content: center;
+}
+
+.demo-content {
+  max-width: 800px;
+  padding: 20px;
+}
