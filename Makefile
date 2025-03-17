@@ -1,2 +1,0 @@
-install:
-	source scripts/install
