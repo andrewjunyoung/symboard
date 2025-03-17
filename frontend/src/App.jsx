@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
   // List of greetings in different languages
@@ -29,19 +28,8 @@ function App() {
     { text: "Shalom", language: "Hebrew" },
     { text: "Hallå", language: "Swedish" },
     { text: "Dzień dobry", language: "Polish" },
+    { text: "イランカラプテ", lanugage: "Ainu" },
   ];
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   const handleDownload = () => {
     // Animation will be triggered by CSS
@@ -96,20 +84,13 @@ function App() {
         ))}
       </div>
 
-      {/* Interactive spotlight effect */}
-      <div
-        className="spotlight"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%)`,
-        }}
-      ></div>
+      {/* Static subtle glow effect */}
+      <div className="spotlight"></div>
 
       {/* Main content */}
       <div className="content">
         <button
           className={`download-button ${isHovering ? "hover" : ""}`}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
           onClick={handleDownload}
         >
           <span className="button-text">Download</span>
