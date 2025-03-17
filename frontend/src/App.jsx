@@ -5,6 +5,32 @@ function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
+  // List of greetings in different languages
+  const greetings = [
+    { text: "Hello", language: "English" },
+    { text: "Bonjour", language: "French" },
+    { text: "Hola", language: "Spanish" },
+    { text: "こんにちは", language: "Japanese" },
+    { text: "Ciao", language: "Japanese" },
+    { text: "Namaste", language: "Hindi" },
+    { text: "سلام", language: "Arabic" },
+    { text: "你好", language: "Chinese" },
+    { text: "Guten Tag", language: "German" },
+    { text: "안녕", language: "Korean" },
+    { text: "Здравствуйте", language: "Russian" },
+    { text: "Sawubona", language: "Zulu" },
+    { text: "Olá", language: "Portuguese" },
+    { text: "Merhaba", language: "Turkish" },
+    { text: "Сәлем", language: "Kazakh" },
+    { text: "สวัสดี", language: "Thai" },
+    { text: "Xin chào", language: "Vietnamese" },
+    { text: "Γειά σου", language: "Greek" },
+    { text: "नमस्ते", language: "Hindi" },
+    { text: "Shalom", language: "Hebrew" },
+    { text: "Hallå", language: "Swedish" },
+    { text: "Dzień dobry", language: "Polish" },
+  ];
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -23,10 +49,36 @@ function App() {
     console.log("Download initiated");
   };
 
+  // Generate random positions and styles for the greetings
+  const getRandomGreetingStyle = (index) => {
+    const size = 30 + Math.random() * 70; // Font size between 30px and 100px
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+    const rotate = Math.random() * 20 - 10; // Rotate between -10 and 10 degrees
+    const delay = Math.random() * 10;
+
+    return {
+      fontSize: `${size}px`,
+      left: `${left}%`,
+      top: `${top}%`,
+      transform: `rotate(${rotate}deg)`,
+      animationDelay: `${delay}s`,
+    };
+  };
+
   return (
     <div className="container">
       {/* Animated background gradient */}
-      <div className="background-gradient"></div>
+      <div className="background-gradient">
+        {/* Greeting background */}
+        <div className="greeting-background">
+          {greetings.map((greeting, i) => (
+            <div key={i} className="greeting" style={getRandomGreetingStyle(i)}>
+              {greeting.text}
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Decorative elements */}
       <div className="floating-circles">
