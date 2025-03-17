@@ -17,7 +17,6 @@ function App() {
     { text: "Guten Tag", language: "German" },
     { text: "안녕", language: "Korean" },
     { text: "Здравствуйте", language: "Russian" },
-    { text: "Sawubona", language: "Zulu" },
     { text: "Olá", language: "Portuguese" },
     { text: "Merhaba", language: "Turkish" },
     { text: "Сәлем", language: "Kazakh" },
@@ -25,10 +24,14 @@ function App() {
     { text: "Xin chào", language: "Vietnamese" },
     { text: "Γειά σου", language: "Greek" },
     { text: "नमस्ते", language: "Hindi" },
-    { text: "Shalom", language: "Hebrew" },
+    { text: "שָׁלוֹם", language: "Hebrew" },
     { text: "Hallå", language: "Swedish" },
     { text: "Dzień dobry", language: "Polish" },
     { text: "イランカラプテ", lanugage: "Ainu" },
+    { text: "ðə kwɪk braʊn foks dʒʌmpt", language: "Calculus" },
+    { text: "∫ₐᵇ f(x) dx = lim(n→∞) Σᵢ₌₁ⁿ f(xᵢ*) Δx", lanugage: "Math" },
+    { text: "iℏ∂Ψ/∂t = ĤΨ", language: "Physics" },
+    { text: "N = N₀e⁻ᵏᵗ", language: "Chemistry" },
   ];
 
   const handleDownload = () => {
