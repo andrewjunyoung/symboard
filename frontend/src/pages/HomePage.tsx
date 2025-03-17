@@ -5,13 +5,12 @@ const downloadableName = "oneboard.zip";
 const downloadable = `/${downloadableName}`;
 
 function HomePage() {
-  // List of greetings in different languages
   const greetings = [
     { text: "Hello", language: "English" },
     { text: "Bonjour", language: "French" },
     { text: "Hola", language: "Spanish" },
     { text: "こんにちは", language: "Japanese" },
-    { text: "Ciao", language: "Italian" }, // Fixed: was incorrectly labeled as Japanese
+    { text: "Ciao", language: "Italian" },
     { text: "Namaste", language: "Hindi" },
     { text: "سلام", language: "Arabic" },
     { text: "你好", language: "Chinese" },
@@ -28,9 +27,9 @@ function HomePage() {
     { text: "שָׁלוֹם", language: "Hebrew" },
     { text: "Hallå", language: "Swedish" },
     { text: "Dzień dobry", language: "Polish" },
-    { text: "イランカラプテ", language: "Ainu" }, // Fixed: typo in property name
+    { text: "イランカラプテ", language: "Ainu" },
     { text: "ðə kwɪk braʊn foks dʒʌmpt", language: "Calculus" },
-    { text: "∫ₐᵇ f(x) dx = lim(n→∞) Σᵢ₌₁ⁿ f(xᵢ*) Δx", language: "Math" }, // Fixed: typo in property name
+    { text: "∫ₐᵇ f(x) dx = lim(n→∞) Σᵢ₌₁ⁿ f(xᵢ*) Δx", language: "Math" },
     { text: "iℏ∂Ψ/∂t = ĤΨ", language: "Physics" },
     { text: "N = N₀e⁻ᵏᵗ", language: "Chemistry" },
   ];

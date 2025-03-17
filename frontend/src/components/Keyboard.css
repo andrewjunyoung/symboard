@@ -1,0 +1,120 @@
+.keyboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+}
+
+.keyboard {
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  max-width: 1020px;
+  width: 100%;
+}
+
+.keyboard-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.keyboard-row:last-child {
+  margin-bottom: 0;
+}
+
+.key {
+  background-color: #383838;
+  border-radius: 5px;
+  box-shadow:
+    0 2px 0 #1a1a1a,
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  height: 60px;
+  margin-right: 6px;
+  position: relative;
+  text-align: center;
+  width: 60px;
+  user-select: none;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.key:active,
+.key.pressed {
+  transform: translateY(2px);
+  box-shadow:
+    0 0 0 #1a1a1a,
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.key:last-child {
+  margin-right: 0;
+}
+
+.key-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2;
+  height: 100%;
+  width: 100%;
+}
+
+.function-key {
+  background-color: #2a2a2a;
+  font-size: 12px;
+}
+
+.mod-key {
+  background-color: #333333;
+  font-size: 12px;
+}
+
+.key-spacer {
+  width: 24px;
+}
+
+.key-spacer.small {
+  width: 12px;
+}
+
+/* Add a subtle glow effect to keys when hovered */
+.key:hover {
+  background-color: #424242;
+  box-shadow:
+    0 2px 0 #1a1a1a,
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 5px rgba(66, 134, 244, 0.3);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .keyboard {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 768px) {
+  .keyboard {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .keyboard {
+    transform: scale(0.5);
+  }
+}
