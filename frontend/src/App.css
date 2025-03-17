@@ -315,3 +315,13 @@ body {
     height: 80px;
   }
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  padding-top: 60px; /* Add padding to prevent content from being hidden under the navbar */
+}
