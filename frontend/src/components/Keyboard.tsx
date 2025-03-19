@@ -118,7 +118,7 @@ const Key: React.FC<KeyProps> = ({
 
 const Keyboard: React.FC = () => {
   const [keylayout, setKeylayout] = useState(null);
-  const [layer, setLayer] = useState(0);
+  const [layer, setLayer] = useState(4);
   const [shiftPressed, setShiftPressed] = useState(false);
 
   const getKeyOutput = (code) => {
@@ -129,7 +129,7 @@ const Keyboard: React.FC = () => {
     ) {
       return "X";
     }
-    return keylayout.keyMaps[layer][code].output || "X";
+    return keylayout.keyMaps[layer][code].output || keylayout.keyMaps[layer][code].action || "X";
   };
 
   useEffect(() => {
@@ -155,7 +155,7 @@ const Keyboard: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    setLayer(shiftPressed ? 1 : 0);
+    setLayer(shiftPressed ? 1 : 4);
   }, [shiftPressed]);
 
   useEffect(() => {
@@ -209,8 +209,8 @@ const Keyboard: React.FC = () => {
           <Key>{getKeyOutput(84)}</Key>
           <Key>{getKeyOutput(85)}</Key>
           <Key>{getKeyOutput(82)}</Key>
-          <Key>{getKeyOutput(0)}</Key>
-          <Key>{getKeyOutput(0)}</Key>
+          <Key>{getKeyOutput(27)}</Key>
+          <Key>{getKeyOutput(24)}</Key>
           <Key width={2}>Backspace</Key>
         </div>
 
