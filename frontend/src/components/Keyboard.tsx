@@ -118,6 +118,45 @@ const Key: React.FC<KeyProps> = ({
 
 const Keyboard: React.FC = () => {
   const [keylayout, setKeylayout] = useState(null);
+  const [layer, setLayer] = useState(0);
+  const [shiftPressed, setShiftPressed] = useState(false);
+
+  const getKeyOutput = (code) => {
+    if (
+      !keylayout ||
+      !keylayout.keyMaps[layer] ||
+      !keylayout.keyMaps[layer][code]
+    ) {
+      return "X";
+    }
+    return keylayout.keyMaps[layer][code].output || "X";
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Shift") {
+        setShiftPressed(true);
+      }
+    };
+
+    const handleKeyUp = (event) => {
+      if (event.key === "Shift") {
+        setShiftPressed(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, []);
+
+  useEffect(() => {
+    setLayer(shiftPressed ? 1 : 0);
+  }, [shiftPressed]);
 
   useEffect(() => {
     const fetchKeylayout = async () => {
@@ -126,7 +165,7 @@ const Keyboard: React.FC = () => {
 
       if (result) {
         console.log("Keylayout Object:", result);
-        console.log("Key map for index 0:", result.keyMaps["0"]["0"].output);
+        console.log("Key map for index 0:", result.keyMaps[layer]["0"].output);
         setKeylayout(result);
       }
     };
@@ -140,17 +179,17 @@ const Keyboard: React.FC = () => {
         {/* Function row */}
         <div className="keyboard-row">
           <Key className="function-key">Esc</Key>
-          <div className="key-spacer small"></div>
+          <div className="key-spacer"></div>
           <Key className="function-key">F1</Key>
           <Key className="function-key">F2</Key>
           <Key className="function-key">F3</Key>
           <Key className="function-key">F4</Key>
-          <div className="key-spacer small"></div>
+          <div className="key-spacer"></div>
           <Key className="function-key">F5</Key>
           <Key className="function-key">F6</Key>
           <Key className="function-key">F7</Key>
           <Key className="function-key">F8</Key>
-          <div className="key-spacer small"></div>
+          <div className="key-spacer"></div>
           <Key className="function-key">F9</Key>
           <Key className="function-key">F10</Key>
           <Key className="function-key">F11</Key>
@@ -159,52 +198,38 @@ const Keyboard: React.FC = () => {
 
         {/* Number row */}
         <div className="keyboard-row">
-          <Key>{keylayout ? keylayout.keyMaps["0"]["50"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["89"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["91"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["92"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["86"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["87"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["88"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["83"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["84"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["85"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["82"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["0"].output : "X"}
-          </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["0"].output : "X"}
-          </Key>
+          <Key>{getKeyOutput(50)}</Key>
+          <Key>{getKeyOutput(89)}</Key>
+          <Key>{getKeyOutput(91)}</Key>
+          <Key>{getKeyOutput(92)}</Key>
+          <Key>{getKeyOutput(86)}</Key>
+          <Key>{getKeyOutput(87)}</Key>
+          <Key>{getKeyOutput(88)}</Key>
+          <Key>{getKeyOutput(83)}</Key>
+          <Key>{getKeyOutput(84)}</Key>
+          <Key>{getKeyOutput(85)}</Key>
+          <Key>{getKeyOutput(82)}</Key>
+          <Key>{getKeyOutput(0)}</Key>
+          <Key>{getKeyOutput(0)}</Key>
           <Key width={2}>Backspace</Key>
         </div>
 
         {/* QWERTY row */}
         <div className="keyboard-row">
           <Key width={1.5}>Tab</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["0"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["13"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["14"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["15"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["16"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["17"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["32"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["34"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["31"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["35"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["33"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["30"].output : "X"}</Key>
-          <Key width={1.5}>
-            {keylayout ? keylayout.keyMaps["0"]["42"].output : "X"}
-          </Key>
+          <Key>{getKeyOutput(0)}</Key>
+          <Key>{getKeyOutput(13)}</Key>
+          <Key>{getKeyOutput(14)}</Key>
+          <Key>{getKeyOutput(15)}</Key>
+          <Key>{getKeyOutput(16)}</Key>
+          <Key>{getKeyOutput(17)}</Key>
+          <Key>{getKeyOutput(32)}</Key>
+          <Key>{getKeyOutput(34)}</Key>
+          <Key>{getKeyOutput(31)}</Key>
+          <Key>{getKeyOutput(35)}</Key>
+          <Key>{getKeyOutput(33)}</Key>
+          <Key>{getKeyOutput(30)}</Key>
+          <Key width={1.5}>{getKeyOutput(42)}</Key>
         </div>
 
         {/* ASDF row */}
@@ -212,17 +237,17 @@ const Keyboard: React.FC = () => {
           <Key width={1.75} className="mod-key">
             Caps Lock
           </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["0"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["1"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["2"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["3"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["5"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["4"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["38"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["40"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["37"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["41"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["39"].output : "X"}</Key>
+          <Key>{getKeyOutput(0)}</Key>
+          <Key>{getKeyOutput(1)}</Key>
+          <Key>{getKeyOutput(2)}</Key>
+          <Key>{getKeyOutput(3)}</Key>
+          <Key>{getKeyOutput(5)}</Key>
+          <Key>{getKeyOutput(4)}</Key>
+          <Key>{getKeyOutput(38)}</Key>
+          <Key>{getKeyOutput(40)}</Key>
+          <Key>{getKeyOutput(37)}</Key>
+          <Key>{getKeyOutput(41)}</Key>
+          <Key>{getKeyOutput(39)}</Key>
           <Key width={2.4} className="mod-key">
             Enter
           </Key>
@@ -230,20 +255,26 @@ const Keyboard: React.FC = () => {
 
         {/* ZXCV row */}
         <div className="keyboard-row">
-          <Key width={2.25} className="mod-key">
+          <Key
+            width={2.25}
+            className={`mod-key ${shiftPressed ? "mod-active" : ""}`}
+          >
             Shift
           </Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["6"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["7"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["8"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["9"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["11"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["45"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["46"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["43"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["47"].output : "X"}</Key>
-          <Key>{keylayout ? keylayout.keyMaps["0"]["44"].output : "X"}</Key>
-          <Key width={3} className="mod-key">
+          <Key>{getKeyOutput(6)}</Key>
+          <Key>{getKeyOutput(7)}</Key>
+          <Key>{getKeyOutput(8)}</Key>
+          <Key>{getKeyOutput(9)}</Key>
+          <Key>{getKeyOutput(11)}</Key>
+          <Key>{getKeyOutput(45)}</Key>
+          <Key>{getKeyOutput(46)}</Key>
+          <Key>{getKeyOutput(43)}</Key>
+          <Key>{getKeyOutput(47)}</Key>
+          <Key>{getKeyOutput(44)}</Key>
+          <Key
+            width={3}
+            className={`mod-key ${shiftPressed ? "mod-active" : ""}`}
+          >
             Shift
           </Key>
         </div>
