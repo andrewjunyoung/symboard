@@ -119,6 +119,8 @@ const Key: React.FC<KeyProps> = ({
 const Keyboard: React.FC = () => {
   const [keylayout, setKeylayout] = useState(null);
   const [layer, setLayer] = useState(4);
+  const [altPressed, setAltPressed] = useState(false);
+  const [ctrlPressed, setCtrlPressed] = useState(false);
   const [shiftPressed, setShiftPressed] = useState(false);
 
   const getKeyOutput = (code) => {
@@ -129,19 +131,41 @@ const Keyboard: React.FC = () => {
     ) {
       return "X";
     }
-    return keylayout.keyMaps[layer][code].output || keylayout.keyMaps[layer][code].action || "X";
+    return (
+      keylayout.keyMaps[layer][code].output ||
+      keylayout.keyMaps[layer][code].action ||
+      "X"
+    );
   };
 
   useEffect(() => {
     const handleKeyDown = (event) => {
+      if (event.key === "Alt") {
+        setAltPressed(true);
+        return;
+      }
+      if (event.key === "Control") {
+        setCtrlPressed(true);
+        return;
+      }
       if (event.key === "Shift") {
         setShiftPressed(true);
+        return;
       }
     };
 
     const handleKeyUp = (event) => {
+      if (event.key === "Alt") {
+        setAltPressed(false);
+        return;
+      }
+      if (event.key === "Control") {
+        setCtrlPressed(false);
+        return;
+      }
       if (event.key === "Shift") {
         setShiftPressed(false);
+        return;
       }
     };
 
@@ -155,8 +179,18 @@ const Keyboard: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    setLayer(shiftPressed ? 1 : 4);
-  }, [shiftPressed]);
+    var layer = 4;
+    if (altPressed) {
+      layer = 1;
+    }
+    if (ctrlPressed) {
+      layer = 1;
+    }
+    if (shiftPressed) {
+      layer = 1;
+    }
+    setLayer(layer);
+  }, [altPressed, ctrlPressed, shiftPressed]);
 
   useEffect(() => {
     const fetchKeylayout = async () => {
@@ -281,17 +315,26 @@ const Keyboard: React.FC = () => {
 
         {/* Bottom row */}
         <div className="keyboard-row">
-          <Key width={1.5} className="mod-key">
+          <Key
+            width={1.5}
+            className={`mod-key ${ctrlPressed ? "mod-active" : ""}`}
+          >
             Ctrl
           </Key>
           <Key width={1.25} className="mod-key">
             Win
           </Key>
-          <Key width={1.25} className="mod-key">
+          <Key
+            width={1.25}
+            className={`mod-key ${altPressed ? "mod-active" : ""}`}
+          >
             Alt
           </Key>
           <Key width={6.25}>Space</Key>
-          <Key width={1.25} className="mod-key">
+          <Key
+            width={1.25}
+            className={`mod-key ${altPressed ? "mod-active" : ""}`}
+          >
             Alt
           </Key>
           <Key width={1.25} className="mod-key">
@@ -300,7 +343,10 @@ const Keyboard: React.FC = () => {
           <Key width={1.25} className="mod-key">
             Menu
           </Key>
-          <Key width={1.6} className="mod-key">
+          <Key
+            width={1.6}
+            className={`mod-key ${ctrlPressed ? "mod-active" : ""}`}
+          >
             Ctrl
           </Key>
         </div>
