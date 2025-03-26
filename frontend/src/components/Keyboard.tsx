@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import "./Keyboard.css";
 
 interface KeyProps {
@@ -6,6 +6,10 @@ interface KeyProps {
   width?: number;
   height?: number;
   className?: string;
+}
+
+interface KeyboardHandle {
+  searchKeyOutput: (query: string) => void;
 }
 
 export async function loadKeylayoutFile(filePath) {
@@ -116,12 +120,95 @@ const Key: React.FC<KeyProps> = ({
   );
 };
 
-const Keyboard: React.FC = () => {
+const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
+  // Keyboard display properties
   const [keylayout, setKeylayout] = useState(null);
   const [layer, setLayer] = useState(4);
+  // Key presses
   const [altPressed, setAltPressed] = useState(false);
   const [ctrlPressed, setCtrlPressed] = useState(false);
   const [shiftPressed, setShiftPressed] = useState(false);
+
+  // Search bar properties
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResult, setSearchResult] = useState(null);
+
+  useImperativeHandle(ref, () => ({
+    searchKeyOutput: (query: string) => {
+      if (!keylayout) return;
+
+      const result = findKeyByOutput(keylayout, query);
+      setSearchResult(result);
+
+      if (result) {
+        console.log("Found key:", result);
+        // You could also highlight the key here
+      } else {
+        console.log("No results found for:", query);
+      }
+    },
+  }));
+
+  const handleSearch = () => {
+    if (!searchQuery.trim() || !keylayout) return;
+
+    const result = findKeyByOutput(keylayout, searchQuery);
+    setSearchResult(result);
+
+    // Highlight the found key if available
+    if (result) {
+      // Implementation depends on how you want to highlight
+      console.log("Found key:", result);
+    }
+  };
+
+  function findKeyByOutput(keylayout, searchOutput) {
+    // Search through all keyMaps
+    console.log("maps", keylayout);
+    for (const indexKey in keylayout.keyMaps) {
+      const keyMap = keylayout.keyMaps[indexKey];
+
+      for (const codeKey in keyMap) {
+        const keyData = keyMap[codeKey];
+
+        // Check if output matches search term
+        if (
+          keyData.output === searchOutput ||
+          keyData.action === searchOutput
+        ) {
+          return {
+            index: indexKey,
+            code: codeKey,
+          };
+        }
+      }
+    }
+
+    return results;
+  }
+
+  const scriptSamples = {
+    arab: "ابجد",
+    grek: "αβγδ",
+    deva: "अआइई",
+    cans: "ᐁᐯᑕᑫ",
+    hira: "あいうえ",
+    khmr: "កខគឃ",
+    tibt: "ཀཁགང",
+    mymr: "ကခဂဃ",
+    taml: "அஆஇஈ",
+    thaa: "ހށނރ",
+    geez: "ሀለሐመ",
+    cyrl: "АБВГ",
+    kata: "アイウエ",
+    hebr: "אבגד",
+    tfng: "ⴰⴱⴲⴳ",
+    sinh: "අආඇඈ",
+    beng: "অআইঈ",
+    mong: "ᠠᠡᠢᠣ",
+    thai: "กขฃค",
+    laoo: "ກຂຄງ",
+  };
 
   const getKeyOutput = (code) => {
     if (
@@ -131,11 +218,16 @@ const Keyboard: React.FC = () => {
     ) {
       return "X";
     }
-    return (
+    var text =
       keylayout.keyMaps[layer][code].output ||
       keylayout.keyMaps[layer][code].action ||
-      "X"
-    );
+      "X";
+
+    if (text in scriptSamples) {
+      text += "\n" + scriptSamples[text];
+    }
+
+    return text;
   };
 
   useEffect(() => {
@@ -180,14 +272,19 @@ const Keyboard: React.FC = () => {
 
   useEffect(() => {
     var layer = 4;
-    if (altPressed) {
-      layer = 1;
-    }
-    if (ctrlPressed) {
-      layer = 1;
-    }
     if (shiftPressed) {
       layer = 1;
+      if (altPressed) {
+        layer = 3;
+      }
+    } else {
+      if (altPressed) {
+        layer = 2;
+      }
+    }
+    // Ctrl overrides all other keys
+    if (ctrlPressed) {
+      layer = 6;
     }
     setLayer(layer);
   }, [altPressed, ctrlPressed, shiftPressed]);
@@ -353,6 +450,6 @@ const Keyboard: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Keyboard;
