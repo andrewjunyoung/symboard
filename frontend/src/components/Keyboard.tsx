@@ -187,6 +187,29 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     return results;
   }
 
+  const scriptFlags = {
+    arab: "🇸🇦",
+    grek: "🇬🇷",
+    deva: "🇮🇳",
+    cans: "🇨🇦",
+    hira: "🇯🇵",
+    khmr: "🇰🇭",
+    tibt: "🇨🇳",
+    mymr: "🇲🇲",
+    taml: "🇱🇰",
+    thaa: "🇲🇻",
+    geez: "🇪🇹",
+    cyrl: "🇧🇬",
+    kata: "🇯🇵",
+    hebr: "🇮🇱",
+    tfng: "🇲🇦",
+    sinh: "🇱🇰",
+    beng: "🇧🇩",
+    mong: "🇲🇳",
+    thai: "🇹🇭",
+    laoo: "🇱🇦",
+  };
+
   const scriptSamples = {
     arab: "ابجد",
     grek: "αβγδ",
@@ -224,7 +247,10 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       "X";
 
     if (text in scriptSamples) {
-      text += "\n" + scriptSamples[text];
+      text += "\n" 
+      + scriptFlags[text]
+      + "\n"
+      + scriptSamples[text];
     }
 
     return text;
