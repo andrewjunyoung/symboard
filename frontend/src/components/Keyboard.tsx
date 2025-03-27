@@ -186,7 +186,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
               keyPress = "";
               break;
             case "6":
-              keyPress = "ctrl";
+              keyPress = "control";
               break;
             default:
               keyPress = null
@@ -202,64 +202,26 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     return null;
   }
 
-  const scriptFlags = {
-    arab: "🇸🇦",
-    grek: "🇬🇷",
-    deva: "🇮🇳",
-    cans: "🇨🇦",
-    hira: "🇯🇵",
-    khmr: "🇰🇭",
-    tibt: "🇨🇳",
-    mymr: "🇲🇲",
-    taml: "🇱🇰",
-    thaa: "🇲🇻",
-    geez: "🇪🇹",
-    cyrl: "🇧🇬",
-    kata: "🇯🇵",
-    hebr: "🇮🇱",
-    tfng: "🇲🇦",
-    sinh: "🇱🇰",
-    beng: "🇧🇩",
-    mong: "🇲🇳",
-    thai: "🇹🇭",
-    laoo: "🇱🇦",
-  };
-
-  const scriptSamples = {
-    arab: "ابجد",
-    grek: "αβγδ",
-    deva: "अआइई",
-    cans: "ᐁᐯᑕᑫ",
-    hira: "あいうえ",
-    khmr: "កខគឃ",
-    tibt: "ཀཁགང",
-    mymr: "ကခဂဃ",
-    taml: "அஆஇஈ",
-    thaa: "ހށނރ",
-    geez: "ሀለሐመ",
-    cyrl: "АБВГ",
-    kata: "アイウエ",
-    hebr: "אבגד",
-    tfng: "ⴰⴱⴲⴳ",
-    sinh: "අආඇඈ",
-    beng: "অআইঈ",
-    mong: "ᠠᠡᠢᠣ",
-    thai: "กขฃค",
-    laoo: "ກຂຄງ",
-  };
-
   const getKeyOutput = (code) => {
     if (
       !keylayout ||
       !keylayout.keyMaps[layer] ||
       !keylayout.keyMaps[layer][code]
     ) {
-      return "X";
+      return "";
     }
     var text =
       keylayout.keyMaps[layer][code].output ||
       keylayout.keyMaps[layer][code].action ||
-      "X";
+      "";
+
+    if ((code > 83) && (code < 92)) {
+      console.log("layer", layer)
+      console.log("code", code)
+      console.log(keylayout.keyMaps[layer][code].output)
+      console.log("text", text)
+    }
+
 
     switch ( text ) {
       case "U+0022;":
@@ -275,7 +237,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
         break;
     }
 
-    if (text in scriptSamples) {
+    if (text in scriptMap) {
       return scriptMap[text].getKeyDisplayText();
     }
     return text;
@@ -379,16 +341,16 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
         {/* Number row */}
         <div className="keyboard-row">
           <Key>{getKeyOutput(50)}</Key>
-          <Key>{getKeyOutput(89)}</Key>
-          <Key>{getKeyOutput(91)}</Key>
-          <Key>{getKeyOutput(92)}</Key>
-          <Key>{getKeyOutput(86)}</Key>
-          <Key>{getKeyOutput(87)}</Key>
-          <Key>{getKeyOutput(88)}</Key>
-          <Key>{getKeyOutput(83)}</Key>
-          <Key>{getKeyOutput(84)}</Key>
-          <Key>{getKeyOutput(85)}</Key>
-          <Key>{getKeyOutput(82)}</Key>
+          <Key>{getKeyOutput(18)}</Key>
+          <Key>{getKeyOutput(19)}</Key>
+          <Key>{getKeyOutput(20)}</Key>
+          <Key>{getKeyOutput(21)}</Key>
+          <Key>{getKeyOutput(23)}</Key>
+          <Key>{getKeyOutput(22)}</Key>
+          <Key>{getKeyOutput(26)}</Key>
+          <Key>{getKeyOutput(28)}</Key>
+          <Key>{getKeyOutput(25)}</Key>
+          <Key>{getKeyOutput(29)}</Key>
           <Key>{getKeyOutput(27)}</Key>
           <Key>{getKeyOutput(24)}</Key>
           <Key width={2}>Backspace</Key>
