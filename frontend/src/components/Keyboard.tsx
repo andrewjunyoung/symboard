@@ -1,4 +1,10 @@
-import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
+import { scriptMap } from "../types/Script";
 import "./Keyboard.css";
 
 interface KeyProps {
@@ -140,12 +146,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       const result = findKeyByOutput(keylayout, query);
       setSearchResult(result);
 
-      if (result) {
-        console.log("Found key:", result);
-        // You could also highlight the key here
-      } else {
-        console.log("No results found for:", query);
-      }
+      return result;
     },
   }));
 
@@ -154,17 +155,9 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
     const result = findKeyByOutput(keylayout, searchQuery);
     setSearchResult(result);
-
-    // Highlight the found key if available
-    if (result) {
-      // Implementation depends on how you want to highlight
-      console.log("Found key:", result);
-    }
   };
 
   function findKeyByOutput(keylayout, searchOutput) {
-    // Search through all keyMaps
-    console.log("maps", keylayout);
     for (const indexKey in keylayout.keyMaps) {
       const keyMap = keylayout.keyMaps[indexKey];
 
@@ -176,15 +169,37 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           keyData.output === searchOutput ||
           keyData.action === searchOutput
         ) {
+
+          var keyPress;
+          console.log(indexKey);
+          switch (indexKey) {
+            case "1":
+              keyPress = "shift";
+              break;
+            case "2":
+              keyPress = "alt";
+              break;
+            case "3":
+              keyPress = "alt + shift";
+              break;
+            case "4":
+              keyPress = "";
+              break;
+            case "6":
+              keyPress = "ctrl";
+              break;
+            default:
+              keyPress = null
+          }
           return {
-            index: indexKey,
-            code: codeKey,
+            keyPress: keyPress,
+            code: getKeyOutput(Number(codeKey)),
           };
         }
       }
     }
 
-    return results;
+    return null;
   }
 
   const scriptFlags = {
@@ -247,12 +262,8 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       "X";
 
     if (text in scriptSamples) {
-      text += "\n" 
-      + scriptFlags[text]
-      + "\n"
-      + scriptSamples[text];
+      return scriptMap[text].getKeyDisplayText();
     }
-
     return text;
   };
 
