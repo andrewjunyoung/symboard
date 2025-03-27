@@ -281,8 +281,8 @@
             <key code="13" action="alt+,"/>
             <key code="14" action="alt+."/>
             <key code="15" action=""/>
-            <key code="16" action="action 2"/>
-            <key code="17" action="action 1"/>
+            <key code="16" action="alt+f"/>
+            <key code="17" action="alt+y"/>
             <key code="18" action="alt+1"/>
             <key code="19" output=""/>
             <key code="20" output=""/>
@@ -379,16 +379,16 @@
         <keyMap index="3">
             <key code="0" action="alt+A"/>
             <key code="1" output="̥"/>
-            <key code="2" action="action 5"/>
+            <key code="2" action="alt+E"/>
             <key code="3" output="̑"/>
             <key code="4" action=""/>
             <key code="5" output=""/>
             <key code="6" action="action"/>
-            <key code="7" action="action 8"/>
+            <key code="7" action="alt+Q"/>
             <key code="8" action="alt+J"/>
-            <key code="9" action="action 9"/>
+            <key code="9" action="alt+K"/>
             <key code="10" output=""/>
-            <key code="11" action="action 10"/>
+            <key code="11" action="alt+X"/>
             <key code="12" action=""/>
             <key code="13" action="alt+!"/>
             <key code="14" output="̣"/>
@@ -424,7 +424,7 @@
             <key code="44" output=""/>
             <key code="45" output=""/>
             <key code="46" output=""/>
-            <key code="47" action="action 12"/>
+            <key code="47" action="alt+V"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
             <key code="50" output=" ̰"/>
@@ -1775,34 +1775,28 @@
         <action id="action">
             <when state="none" output=""/>
         </action>
-        <action id="action 1">
+        <action id="alt+y">
             <when state="none" output=""/>
         </action>
-        <action id="action 10">
+        <action id="alt+X">
             <when state="none" output="͓"/>
         </action>
-        <action id="action 11">
-            <when state="none" next="geor"/>
-        </action>
-        <action id="action 12">
+        <action id="alt+V">
             <when state="none" output=""/>
         </action>
         <action id="action 13">
             <when state="none" output="tfng"/>
         </action>
-        <action id="action 2">
+        <action id="alt+f">
             <when state="none" output=""/>
         </action>
-        <action id="action 5">
+        <action id="alt+E">
             <when state="none" output=""/>
         </action>
-        <action id="action 7">
-            <when state="none" next="hebr"/>
-        </action>
-        <action id="action 8">
+        <action id="alt+Q">
             <when state="none" output=""/>
         </action>
-        <action id="action 9">
+        <action id="alt+K">
             <when state="none" output=""/>
         </action>
         <action id="acute">
