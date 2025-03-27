@@ -748,7 +748,7 @@
             <key code="32" action="geez"/>
             <key code="33" output=""/>
             <key code="34" action="&#x0003;"/>
-            <key code="35" action="lao"/>
+            <key code="35" action="laoo"/>
             <key code="36" output="&#x000D;"/>
             <key code="37" action="kata"/>
             <key code="38" action="&#x0008;"/>
@@ -846,7 +846,7 @@
             <when state="hira" next="hira" output="　"/>
             <when state="kata" next="kata" output="　"/>
             <when state="khmr" next="khmr" output=" "/>
-            <when state="lao" next="lao" output=" "/>
+            <when state="laoo" next="laoo" output=" "/>
             <when state="math_operators" next="math_operators" output=" "/>
             <when state="mong" next="mong" output=" "/>
             <when state="mymr" next="mymr" output=" "/>
@@ -923,7 +923,7 @@
             <when state="arrows_basic_dvorak" output="↙"/>
             <when state="cyrl" next="cyrl" output="ь"/>
             <when state="deva" next="deva" output="े"/>
-            <when state="lao" next="lao" output="ອ"/>
+            <when state="laoo" next="laoo" output="ອ"/>
             <when state="thaa" next="thaa" output="އ"/>
             <when state="tibt" next="tibt" output="ང"/>
         </action>
@@ -973,7 +973,7 @@
             <when state="burmese" next="burmese" output="၀"/>
             <when state="deva" next="deva" output="०"/>
             <when state="khmer" next="khmer" output="០"/>
-            <when state="lao" next="lao" output="໐"/>
+            <when state="laoo" next="laoo" output="໐"/>
             <when state="mong" next="mong" output="᠐"/>
             <when state="tamil" next="tamil" output="௦"/>
             <when state="thai" next="thai" output="๐"/>
@@ -987,7 +987,7 @@
             <when state="cyrl" next="cyrl_1"/>
             <when state="deva" next="deva" output="१"/>
             <when state="khmer" next="khmer" output="១"/>
-            <when state="lao" next="lao" output="໑"/>
+            <when state="laoo" next="laoo" output="໑"/>
             <when state="latn_tones" output="˩"/>
             <when state="mong" next="mong" output="᠑"/>
             <when state="tamil" next="tamil" output="௧"/>
@@ -1002,7 +1002,7 @@
             <when state="cyrl" next="cyrl_2"/>
             <when state="deva" next="deva" output="२"/>
             <when state="khmer" next="khmer" output="២"/>
-            <when state="lao" next="lao" output="໒"/>
+            <when state="laoo" next="laoo" output="໒"/>
             <when state="latn_extensions" output="ƨ"/>
             <when state="latn_tones" output="˨"/>
             <when state="mong" next="mong" output="᠒"/>
@@ -1017,7 +1017,7 @@
             <when state="burmese" next="burmese" output="၃"/>
             <when state="deva" next="deva" output="३"/>
             <when state="khmer" next="khmer" output="៣"/>
-            <when state="lao" next="lao" output="໓"/>
+            <when state="laoo" next="laoo" output="໓"/>
             <when state="latn_extensions" output="з"/>
             <when state="latn_tones" output="˧"/>
             <when state="math_operators" output="△"/>
@@ -1033,7 +1033,7 @@
             <when state="burmese" next="burmese" output="၄"/>
             <when state="deva" next="deva" output="४"/>
             <when state="khmer" next="khmer" output="៤"/>
-            <when state="lao" next="lao" output="໔"/>
+            <when state="laoo" next="laoo" output="໔"/>
             <when state="latn_extensions" output="ч"/>
             <when state="latn_tones" output="˦"/>
             <when state="math_operators" output="□"/>
@@ -1049,7 +1049,7 @@
             <when state="burmese" next="burmese" output="၅"/>
             <when state="deva" next="deva" output="५"/>
             <when state="khmer" next="khmer" output="៥"/>
-            <when state="lao" next="lao" output="໕"/>
+            <when state="laoo" next="laoo" output="໕"/>
             <when state="latn_extensions" output="ƽ"/>
             <when state="latn_tones" output="˥"/>
             <when state="math_operators" output="☆"/>
@@ -1065,7 +1065,7 @@
             <when state="burmese" next="burmese" output="၆"/>
             <when state="deva" next="deva" output="६"/>
             <when state="khmer" next="khmer" output="៦"/>
-            <when state="lao" next="lao" output="໖"/>
+            <when state="laoo" next="laoo" output="໖"/>
             <when state="latn_extensions" output="ƅ"/>
             <when state="mong" next="mong" output="᠖"/>
             <when state="tamil" next="tamil" output="௬"/>
@@ -1079,7 +1079,7 @@
             <when state="burmese" next="burmese" output="၇"/>
             <when state="deva" next="deva" output="७"/>
             <when state="khmer" next="khmer" output="៧"/>
-            <when state="lao" next="lao" output="໗"/>
+            <when state="laoo" next="laoo" output="໗"/>
             <when state="latn_extensions" output="ʔ"/>
             <when state="mong" next="mong" output="᠗"/>
             <when state="tamil" next="tamil" output="௭"/>
@@ -1093,7 +1093,7 @@
             <when state="burmese" next="burmese" output="၈"/>
             <when state="deva" next="deva" output="८"/>
             <when state="khmer" next="khmer" output="៨"/>
-            <when state="lao" next="lao" output="໘"/>
+            <when state="laoo" next="laoo" output="໘"/>
             <when state="math_operators" output="∞"/>
             <when state="mong" next="mong" output="᠘"/>
             <when state="tamil" next="tamil" output="௮"/>
@@ -1107,7 +1107,7 @@
             <when state="burmese" next="burmese" output="၉"/>
             <when state="deva" next="deva" output="९"/>
             <when state="khmer" next="khmer" output="៩"/>
-            <when state="lao" next="lao" output="໙"/>
+            <when state="laoo" next="laoo" output="໙"/>
             <when state="mong" next="mong" output="᠙"/>
             <when state="tamil" next="tamil" output="௯"/>
             <when state="thai" next="thai" output="๙"/>
@@ -1259,7 +1259,7 @@
             <when state="armn" output="Ֆ"/>
             <when state="cyrl" next="cyrl" output="Ф"/>
             <when state="grek" next="grek" output="Φ"/>
-            <when state="lao" next="lao" output="ຟ"/>
+            <when state="laoo" next="laoo" output="ຟ"/>
             <when state="latn_extensions" output="Ƒ"/>
             <when state="latn_hook_palatal" output="Ƒ"/>
             <when state="latn_rotated_upper" output="Ⅎ"/>
@@ -1277,7 +1277,7 @@
             <when state="deva" next="deva" output="घ"/>
             <when state="grek" next="grek" output="Γ"/>
             <when state="khmr" next="khmr" output="ឃ"/>
-            <when state="lao" next="lao" output="ຄ"/>
+            <when state="laoo" next="laoo" output="ຄ"/>
             <when state="latn_bar" output="Ǥ"/>
             <when state="latn_extensions" output="Ɣ"/>
             <when state="latn_rotated_upper" output="⅁"/>
@@ -1330,7 +1330,7 @@
             <when state="grek" next="grek" output="Σ"/>
             <when state="hebr" next="hebr" output="ץ"/>
             <when state="khmr" next="khmr" output="ឈ"/>
-            <when state="lao" next="lao" output="ຍ"/>
+            <when state="laoo" next="laoo" output="ຍ"/>
             <when state="latn_bar" output="Ɉ"/>
             <when state="latn_hook_palatal" output="Ʝ"/>
             <when state="latn_rotated_lower" output="Ṣ"/>
@@ -1472,7 +1472,7 @@
             <when state="cyrl" next="cyrl" output="Ԛ"/>
             <when state="deva" next="deva" output="ौ"/>
             <when state="grek" next="grek" output="Θ"/>
-            <when state="lao" next="lao" output="ທ"/>
+            <when state="laoo" next="laoo" output="ທ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ꞯ"/>
         </action>
         <action id="R">
@@ -1504,7 +1504,7 @@
             <when state="cyrl_1" next="cyrl" output="Ҫ"/>
             <when state="geor" output="შ"/>
             <when state="grek" next="grek" output="Σ"/>
-            <when state="lao" next="lao" output="ຊ"/>
+            <when state="laoo" next="laoo" output="ຊ"/>
             <when state="latn_extensions" output="ẞ"/>
             <when state="latn_rotated_lower" output="S"/>
             <when state="latn_rotated_upper" output="S"/>
@@ -1600,7 +1600,7 @@
             <when state="deva" next="deva" output="ष"/>
             <when state="grek" next="grek" output="Χ"/>
             <when state="khmr" next="khmr" output="ឞ"/>
-            <when state="lao" next="lao" output="ພ"/>
+            <when state="laoo" next="laoo" output="ພ"/>
             <when state="latn_extensions" output="Ʃ"/>
             <when state="latn_rotated_lower" output="X"/>
             <when state="latn_small_caps" next="latn_small_caps" output="x"/>
@@ -1917,7 +1917,7 @@
             <when state="hira" next="hira_b"/>
             <when state="kata" next="kata_b"/>
             <when state="khmr" next="khmr" output="ប"/>
-            <when state="lao" next="lao" output="ບ"/>
+            <when state="laoo" next="laoo" output="ບ"/>
             <when state="latn_bar" output="ƀ"/>
             <when state="latn_e" output=""/>
             <when state="latn_extensions" output=""/>
@@ -1956,7 +1956,7 @@
             <when state="grek" next="grek" output="ξ"/>
             <when state="hebr" next="hebr" output="ס"/>
             <when state="khmr" next="khmr" output="ច"/>
-            <when state="lao" next="lao" output="ຈ"/>
+            <when state="laoo" next="laoo" output="ຈ"/>
             <when state="latn_bar" output="ꞓ"/>
             <when state="latn_e" output=""/>
             <when state="latn_extensions" output="ʕ"/>
@@ -2002,7 +2002,7 @@
             <when state="hira" next="hira_d"/>
             <when state="kata" next="kata_d"/>
             <when state="khmr" next="khmr" output="ទ"/>
-            <when state="lao" next="lao" output="ດ"/>
+            <when state="laoo" next="laoo" output="ດ"/>
             <when state="latn_bar" output="đ"/>
             <when state="latn_hook_palatal" output="ᶁ"/>
             <when state="latn_hook_retroflex" output="ɖ"/>
@@ -2162,7 +2162,7 @@
             <when state="hira" next="hira_g"/>
             <when state="kata" next="kata_g"/>
             <when state="khmr" next="khmr" output="គ"/>
-            <when state="lao" next="lao" output="ຂ"/>
+            <when state="laoo" next="laoo" output="ຂ"/>
             <when state="latn_bar" output="ǥ"/>
             <when state="latn_extensions" output="ɣ"/>
             <when state="latn_hook_palatal" output="ᶃ"/>
@@ -2197,7 +2197,7 @@
             <when state="hira" next="hira_h"/>
             <when state="kata" next="kata_h"/>
             <when state="khmr" next="khmr" output="ហ"/>
-            <when state="lao" next="lao" output="ຫ໌"/>
+            <when state="laoo" next="laoo" output="ຫ໌"/>
             <when state="latn_bar" output="ħ"/>
             <when state="latn_extensions" output="ƕ"/>
             <when state="latn_rotated_lower" output="ɥ"/>
@@ -2322,7 +2322,7 @@
             <when state="grek" next="grek" output="ς"/>
             <when state="hebr" next="hebr" output="צ"/>
             <when state="khmr" next="khmr" output="ជ"/>
-            <when state="lao" next="lao" output="ງ"/>
+            <when state="laoo" next="laoo" output="ງ"/>
             <when state="latn_bar" output="ɉ"/>
             <when state="latn_hook_palatal" output="ʝ"/>
             <when state="latn_rotated_lower" output="ſ̣"/>
@@ -2358,7 +2358,7 @@
             <when state="hira" next="hira_k"/>
             <when state="kata" next="kata_k"/>
             <when state="khmr" next="khmr" output="ក"/>
-            <when state="lao" next="lao" output="ກ"/>
+            <when state="laoo" next="laoo" output="ກ"/>
             <when state="latn_bar" output="ꝁ"/>
             <when state="latn_hook_palatal" output="ᶄ"/>
             <when state="latn_rotated_lower" output="ʞ"/>
@@ -2397,7 +2397,7 @@
             <when state="hira" next="hira" output="ん"/>
             <when state="kata" next="kata" output="ン"/>
             <when state="khmr" next="khmr" output="ល"/>
-            <when state="lao" next="lao" output="ລ"/>
+            <when state="laoo" next="laoo" output="ລ"/>
             <when state="latn_bar" output="ƚ"/>
             <when state="latn_hook_palatal" output="ᶅ"/>
             <when state="latn_hook_retroflex" output="ɭ"/>
@@ -2413,8 +2413,8 @@
             <when state="thai" next="thai" output="ล"/>
             <when state="tibt" next="tibt" output="ལ"/>
         </action>
-        <action id="lao">
-            <when state="none" next="lao"/>
+        <action id="laoo">
+            <when state="none" next="laoo"/>
         </action>
         <action id="m">
             <when state="none" output="m"/>
@@ -2431,7 +2431,7 @@
             <when state="hira" next="hira_m"/>
             <when state="kata" next="kata_m"/>
             <when state="khmr" next="khmr" output="ម"/>
-            <when state="lao" next="lao" output="ມ"/>
+            <when state="laoo" next="laoo" output="ມ"/>
             <when state="latn_hook_palatal" output="ɱ"/>
             <when state="latn_rotated_lower" output="ɯ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴍ"/>
@@ -2469,7 +2469,7 @@
             <when state="hira" next="hira_n"/>
             <when state="kata" next="kata_n"/>
             <when state="khmr" next="khmr" output="ន"/>
-            <when state="lao" next="lao" output="ນ"/>
+            <when state="laoo" next="laoo" output="ນ"/>
             <when state="latn_hook_palatal" output="ŋ"/>
             <when state="latn_hook_retroflex" output="ɳ"/>
             <when state="latn_rotated_lower" output="u"/>
@@ -2579,7 +2579,7 @@
             <when state="hira" next="hira_p"/>
             <when state="kata" next="kata_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
-            <when state="lao" next="lao" output="ປ"/>
+            <when state="laoo" next="laoo" output="ປ"/>
             <when state="latn_bar" output="ᵽ"/>
             <when state="latn_hook_palatal" output="ᶈ"/>
             <when state="latn_rotated_lower" output="d"/>
@@ -2604,7 +2604,7 @@
             <when state="geor" output="ქ"/>
             <when state="grek" next="grek" output="θ"/>
             <when state="hebr" next="hebr" output="ק"/>
-            <when state="lao" next="lao" output="ຖ"/>
+            <when state="laoo" next="laoo" output="ຖ"/>
             <when state="latn_rotated_lower" output="b"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ꞯ"/>
             <when state="mong" next="mong" output="ᡂ"/>
@@ -2630,7 +2630,7 @@
             <when state="hira" next="hira_r"/>
             <when state="kata" next="kata_r"/>
             <when state="khmr" next="khmr" output="រ"/>
-            <when state="lao" next="lao" output="ຣ"/>
+            <when state="laoo" next="laoo" output="ຣ"/>
             <when state="latn_bar" output="ɍ"/>
             <when state="latn_extensions" output="ɾ"/>
             <when state="latn_hook_palatal" output="ᶉ"/>
@@ -2665,7 +2665,7 @@
             <when state="hira" next="hira_s"/>
             <when state="kata" next="kata_s"/>
             <when state="khmr" next="khmr" output="ស"/>
-            <when state="lao" next="lao" output="ສ"/>
+            <when state="laoo" next="laoo" output="ສ"/>
             <when state="latn_extensions" output="ß"/>
             <when state="latn_hook_palatal" output="ᶊ"/>
             <when state="latn_hook_retroflex" output="ʂ"/>
@@ -2704,7 +2704,7 @@
             <when state="hira" next="hira_t"/>
             <when state="kata" next="kata_t"/>
             <when state="khmr" next="khmr" output="ត"/>
-            <when state="lao" next="lao" output="ຕ"/>
+            <when state="laoo" next="laoo" output="ຕ"/>
             <when state="latn_bar" output="ŧ"/>
             <when state="latn_extensions" output="þ"/>
             <when state="latn_hook_palatal" output="ƫ"/>
@@ -2865,7 +2865,7 @@
             <when state="geor" output="ვ"/>
             <when state="grek" next="grek" output="ϝ"/>
             <when state="khmr" next="khmr" output="វ"/>
-            <when state="lao" next="lao" output="ວ"/>
+            <when state="laoo" next="laoo" output="ວ"/>
             <when state="latn_extensions" output="ʋ"/>
             <when state="latn_hook_palatal" output="ᶌ"/>
             <when state="latn_rotated_lower" output="ʌ"/>
@@ -2912,7 +2912,7 @@
             <when state="geor" next="geor" output="ხ"/>
             <when state="grek" next="grek" output="χ"/>
             <when state="khmr" next="khmr" output="ឝ"/>
-            <when state="lao" next="lao" output="ຜ"/>
+            <when state="laoo" next="laoo" output="ຜ"/>
             <when state="latn_extensions" output="ʃ"/>
             <when state="latn_hook_palatal" output="ᶍ"/>
             <when state="latn_rotated_lower" output="x"/>
@@ -2940,7 +2940,7 @@
             <when state="hira" next="hira_y"/>
             <when state="kata" next="kata_y"/>
             <when state="khmr" next="khmr" output="យ"/>
-            <when state="lao" next="lao" output="ຢ"/>
+            <when state="laoo" next="laoo" output="ຢ"/>
             <when state="latn_bar" output="ɏ"/>
             <when state="latn_extensions" output="ƴ"/>
             <when state="latn_rotated_lower" output="ʎ"/>
@@ -3094,7 +3094,7 @@
         <when state="kata_y" output="ユ"/>
         <when state="kata_z" output="ズ"/>
         <when state="khmr" output="អ"/>
-        <when state="lao" output="ອ"/>
+        <when state="laoo" output="ອ"/>
         <when state="latn_bar" output="-"/>
         <when state="latn_e" output="æ"/>
         <when state="latn_extensions" output="x"/>

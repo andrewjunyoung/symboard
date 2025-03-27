@@ -132,7 +132,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   const [layer, setLayer] = useState(4);
   // Key presses
   const [altPressed, setAltPressed] = useState(false);
-  const [ctrlPressed, setCtrlPressed] = useState(false);
+  const [controlPressed, setControlPressed] = useState(false);
   const [shiftPressed, setShiftPressed] = useState(false);
 
   // Search bar properties
@@ -261,6 +261,20 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       keylayout.keyMaps[layer][code].action ||
       "X";
 
+    switch ( text ) {
+      case "U+0022;":
+        text = "\""
+        break;
+      case "U+0027;":
+        text = "'"
+        break;
+      case "U+0026;":
+        text = "~"
+        break;
+      default:
+        break;
+    }
+
     if (text in scriptSamples) {
       return scriptMap[text].getKeyDisplayText();
     }
@@ -269,32 +283,30 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "Alt") {
-        setAltPressed(true);
-        return;
-      }
-      if (event.key === "Control") {
-        setCtrlPressed(true);
-        return;
-      }
-      if (event.key === "Shift") {
-        setShiftPressed(true);
-        return;
+      switch ( event.key ) {
+        case "Alt":
+          setAltPressed(true);
+          return
+        case "Control":
+          setControlPressed(true);
+          return
+        case "Shift":
+          setShiftPressed(true);
+          return
       }
     };
 
     const handleKeyUp = (event) => {
-      if (event.key === "Alt") {
-        setAltPressed(false);
-        return;
-      }
-      if (event.key === "Control") {
-        setCtrlPressed(false);
-        return;
-      }
-      if (event.key === "Shift") {
-        setShiftPressed(false);
-        return;
+      switch ( event.key ) {
+        case "Alt":
+          setAltPressed(false);
+          return
+        case "Control":
+          setControlPressed(false);
+          return
+        case "Shift":
+          setShiftPressed(false);
+          return
       }
     };
 
@@ -319,12 +331,12 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
         layer = 2;
       }
     }
-    // Ctrl overrides all other keys
-    if (ctrlPressed) {
+    // Control overrides all other keys
+    if (controlPressed) {
       layer = 6;
     }
     setLayer(layer);
-  }, [altPressed, ctrlPressed, shiftPressed]);
+  }, [altPressed, controlPressed, shiftPressed]);
 
   useEffect(() => {
     const fetchKeylayout = async () => {
@@ -382,10 +394,10 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           <Key width={2}>Backspace</Key>
         </div>
 
-        {/* QWERTY row */}
+        {/* Top row */}
         <div className="keyboard-row">
           <Key width={1.5}>Tab</Key>
-          <Key>{getKeyOutput(0)}</Key>
+          <Key>{getKeyOutput(12)}</Key>
           <Key>{getKeyOutput(13)}</Key>
           <Key>{getKeyOutput(14)}</Key>
           <Key>{getKeyOutput(15)}</Key>
@@ -400,7 +412,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           <Key width={1.5}>{getKeyOutput(42)}</Key>
         </div>
 
-        {/* ASDF row */}
+        {/* Home row */}
         <div className="keyboard-row">
           <Key width={1.75} className="mod-key">
             Caps Lock
@@ -421,7 +433,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           </Key>
         </div>
 
-        {/* ZXCV row */}
+        {/* Bottom Row */}
         <div className="keyboard-row">
           <Key
             width={2.25}
@@ -447,13 +459,13 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           </Key>
         </div>
 
-        {/* Bottom row */}
+        {/* Space Row */}
         <div className="keyboard-row">
           <Key
             width={1.5}
-            className={`mod-key ${ctrlPressed ? "mod-active" : ""}`}
+            className={`mod-key ${controlPressed ? "mod-active" : ""}`}
           >
-            Ctrl
+            Control
           </Key>
           <Key width={1.25} className="mod-key">
             Win
@@ -479,9 +491,9 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           </Key>
           <Key
             width={1.6}
-            className={`mod-key ${ctrlPressed ? "mod-active" : ""}`}
+            className={`mod-key ${controlPressed ? "mod-active" : ""}`}
           >
-            Ctrl
+            Control
           </Key>
         </div>
       </div>
