@@ -15,9 +15,17 @@ interface KeyProps {
 }
 
 interface KeyboardHandle {
-  searchKeyOutput: (query: string) => void;
+  searchKeyOutput: (query: string) => any;
 }
 
+interface SearchResult {
+  keyPress: string;
+  code: string;
+  isDead: boolean;
+  states?: string[];
+}
+
+// Keep original loading and parsing functions
 export async function loadKeylayoutFile(filePath) {
   try {
     const response = await fetch(filePath);
@@ -26,7 +34,6 @@ export async function loadKeylayoutFile(filePath) {
     }
 
     const xmlText = await response.text();
-
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 
@@ -35,7 +42,6 @@ export async function loadKeylayoutFile(filePath) {
     }
 
     const keylayoutObject = parseKeylayoutXML(xmlDoc);
-
     return keylayoutObject;
   } catch (error) {
     console.error("Error loading keylayout file:", error);
@@ -100,6 +106,7 @@ function parseKeylayoutXML(xmlDoc) {
       keylayout.actions[id].push({
         state: when.getAttribute("state"),
         output: when.getAttribute("output"),
+        nextAction: when.getAttribute("next"),
       });
     }
   }
@@ -137,64 +144,160 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
   // Search bar properties
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResult, setSearchResult] = useState(null);
+  const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
+  const [formattedResult, setFormattedResult] = useState("");
 
-  useImperativeHandle(ref, () => ({
-    searchKeyOutput: (query: string) => {
-      if (!keylayout) return;
+  function getKeyPressString(indexKey) {
+    switch (indexKey) {
+      case "1":
+        return "shift";
+      case "2":
+        return "alt";
+      case "3":
+        return "alt + shift";
+      case "4":
+        return "";
+      case "6":
+        return "ctrl";
+      default:
+        return null;
+    }
+  }
 
-      const result = findKeyByOutput(keylayout, query);
-      setSearchResult(result);
-
-      return result;
-    },
-  }));
-
-  const handleSearch = () => {
-    if (!searchQuery.trim() || !keylayout) return;
-
-    const result = findKeyByOutput(keylayout, searchQuery);
-    setSearchResult(result);
-  };
-
-  function findKeyByOutput(keylayout, searchOutput) {
+  // Function to search for a character in direct output keys
+  function findDirectKeyForOutput(keylayout, searchOutput) {
     for (const indexKey in keylayout.keyMaps) {
       const keyMap = keylayout.keyMaps[indexKey];
 
       for (const codeKey in keyMap) {
         const keyData = keyMap[codeKey];
 
-        // Check if output matches search term
-        if (
-          keyData.output === searchOutput ||
-          keyData.action === searchOutput
-        ) {
-
-          var keyPress;
-          console.log(indexKey);
-          switch (indexKey) {
-            case "1":
-              keyPress = "shift";
-              break;
-            case "2":
-              keyPress = "alt";
-              break;
-            case "3":
-              keyPress = "alt + shift";
-              break;
-            case "4":
-              keyPress = "";
-              break;
-            case "6":
-              keyPress = "control";
-              break;
-            default:
-              keyPress = null
-          }
+        if (keyData.output === searchOutput) {
+          const keyPress = getKeyPressString(indexKey);
           return {
             keyPress: keyPress,
             code: getKeyOutput(Number(codeKey)),
+            isDead: false,
           };
+        }
+      }
+    }
+    return null;
+  }
+
+  // Function to find a character in dead key states
+  function findKeyForDeadKeyOutput(keylayout, searchOutput) {
+    // Step 1: Find actions that produce the desired output
+    const matchingStates = [];
+
+    for (const actionId in keylayout.actions) {
+      const states = keylayout.actions[actionId];
+
+      for (const state of states) {
+        if (state.output === searchOutput) {
+          matchingStates.push({
+            actionId,
+            state: state.state,
+          });
+        }
+      }
+    }
+
+    if (matchingStates.length === 0) {
+      return null;
+    }
+
+    // Step 2: For each matching state, find the keys that trigger that action
+    const results = [];
+
+    for (const match of matchingStates) {
+      // Find all keys that use this action
+      for (const indexKey in keylayout.keyMaps) {
+        const keyMap = keylayout.keyMaps[indexKey];
+
+        for (const codeKey in keyMap) {
+          const keyData = keyMap[codeKey];
+
+          if (keyData.action === match.actionId) {
+            // We found a key that triggers this action
+            const keyPress = getKeyPressString(indexKey);
+            const keySymbol = getKeyOutput(Number(codeKey)) || keyData.action;
+
+            // Step 3: Find how to produce the state
+            const stateChain = findStateProducers(keylayout, match.state);
+
+            results.push({
+              keyPress: keyPress,
+              code: keySymbol,
+              isDead: true,
+              state: match.state,
+              stateChain: stateChain,
+            });
+          }
+        }
+      }
+    }
+
+    return results.length > 0 ? results : null;
+  }
+
+  // Find keypresses that can produce a given state
+  function findStateProducers(keylayout, targetState) {
+    const producers = [];
+
+    // Check all keymaps, looking for keys that output the target state
+    for (const indexKey in keylayout.keyMaps) {
+      const keyMap = keylayout.keyMaps[indexKey];
+
+      for (const codeKey in keyMap) {
+        const keyData = keyMap[codeKey];
+
+        if (keyData.output === targetState) {
+          const keyPress = getKeyPressString(indexKey);
+          const keySymbol = getKeyOutput(Number(codeKey));
+
+          producers.push({
+            keyPress: keyPress,
+            key: keySymbol,
+          });
+        }
+      }
+    }
+
+    return producers;
+  }
+
+  // Recursive function to build a chain of keypresses to produce a state
+  function buildStateKeyChain(keylayout, targetState, visited = new Set()) {
+    if (visited.has(targetState)) {
+      return null; // Prevent infinite recursion
+    }
+
+    visited.add(targetState);
+
+    // First, check if the state can be directly produced by a key
+    const directProducers = findStateProducers(keylayout, targetState);
+    if (directProducers.length > 0) {
+      return directProducers[0]; // Return the first found producer
+    }
+
+    // Otherwise, check for states that might lead to this state via an action
+    for (const actionId in keylayout.actions) {
+      const states = keylayout.actions[actionId];
+
+      for (const state of states) {
+        if (state.nextAction && state.nextAction === targetState) {
+          const parentProducer = buildStateKeyChain(
+            keylayout,
+            state.state,
+            visited
+          );
+          if (parentProducer) {
+            return {
+              ...parentProducer,
+              next: targetState,
+            };
+          }
         }
       }
     }
@@ -202,7 +305,78 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     return null;
   }
 
-  const getKeyOutput = (code) => {
+  // Format the search result for display
+  function formatResult(result) {
+    if (!result) return "Character not found";
+
+    if (!result.isDead) {
+      // Regular key
+      return result.keyPress
+        ? `${result.keyPress} + ${result.code}`
+        : result.code;
+    } else {
+      // Dead key with state
+      const modifierText = result.keyPress ? `${result.keyPress} + ` : "";
+
+      // Format as requested: "ctrl + i → k → a"
+      if (result.stateChain && result.stateChain.length > 0) {
+        const stateKeys = result.stateChain.map((sc) => {
+          const modifier = sc.keyPress ? `${sc.keyPress} + ` : "";
+          return `${modifier}${sc.key}`;
+        });
+
+        return `${modifierText}${result.code} → ${stateKeys.join(" → ")} → ${result.state}`;
+      } else {
+        return `${modifierText}${result.code} → ${result.state}`;
+      }
+    }
+  }
+
+  // Main search function
+  function searchKeyOutput(query) {
+    if (!keylayout || !query.trim()) return null;
+
+    // First, try direct key search
+    const directResult = findDirectKeyForOutput(keylayout, query);
+    if (directResult) {
+      console.log("direct", directResult)
+      setSearchResult(directResult);
+      setFormattedResult(formatResult(directResult));
+      return directResult;
+    }
+
+    // Then, try dead key search
+    const deadKeyResults = findKeyForDeadKeyOutput(keylayout, query);
+    if (deadKeyResults && deadKeyResults.length > 0) {
+      const bestResult = deadKeyResults[0];
+      console.log("best", bestResult)
+      setSearchResult(bestResult);
+
+      // Format results as requested
+      const formattedResults = deadKeyResults.map(formatResult);
+      setFormattedResult(formattedResults.join("\n"));
+
+      return bestResult;
+    }
+
+    // No results found
+    setSearchResult(null);
+    setFormattedResult("Character not found");
+    return null;
+  }
+
+  // Expose the search function via ref
+  useImperativeHandle(ref, () => ({
+    searchKeyOutput,
+  }));
+
+  // Handle UI search
+  const handleSearch = () => {
+    if (!searchQuery.trim() || !keylayout) return;
+    searchKeyOutput(searchQuery);
+  };
+
+  function getKeyOutput(code) {
     if (
       !keylayout ||
       !keylayout.keyMaps[layer] ||
@@ -215,29 +389,21 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       keylayout.keyMaps[layer][code].action ||
       "";
 
-    if ((code > 83) && (code < 92)) {
-      console.log("layer", layer)
-      console.log("code", code)
-      console.log(keylayout.keyMaps[layer][code].output)
-      console.log("text", text)
-    }
-
-
-    switch ( text ) {
+    switch (text) {
       case "U+0022;":
-        text = "\""
+        text = '"';
         break;
       case "U+0026;":
-        text = "~"
+        text = "~";
         break;
       case "U+0027;":
-        text = "'"
+        text = "'";
         break;
       case "U+003C;":
-        text = "<"
+        text = "<";
         break;
       case "U+003E;":
-        text = ">"
+        text = ">";
         break;
       default:
         break;
@@ -247,34 +413,34 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       return scriptMap[text].getKeyDisplayText();
     }
     return text;
-  };
+  }
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      switch ( event.key ) {
+      switch (event.key) {
         case "Alt":
           setAltPressed(true);
-          return
+          return;
         case "Control":
           setControlPressed(true);
-          return
+          return;
         case "Shift":
           setShiftPressed(true);
-          return
+          return;
       }
     };
 
     const handleKeyUp = (event) => {
-      switch ( event.key ) {
+      switch (event.key) {
         case "Alt":
           setAltPressed(false);
-          return
+          return;
         case "Control":
           setControlPressed(false);
-          return
+          return;
         case "Shift":
           setShiftPressed(false);
-          return
+          return;
       }
     };
 
@@ -313,16 +479,15 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
       if (result) {
         console.log("Keylayout Object:", result);
-        console.log("Key map for index 0:", result.keyMaps[layer]["0"].output);
         setKeylayout(result);
       }
     };
 
     fetchKeylayout();
   }, []);
-
   return (
     <div className="keyboard-container">
+      {/* Keyboard */}
       <div className="keyboard">
         {/* Function row */}
         <div className="keyboard-row">
