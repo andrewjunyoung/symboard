@@ -227,11 +227,17 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       case "U+0022;":
         text = "\""
         break;
+      case "U+0026;":
+        text = "~"
+        break;
       case "U+0027;":
         text = "'"
         break;
-      case "U+0026;":
-        text = "~"
+      case "U+003C;":
+        text = "<"
+        break;
+      case "U+003E;":
+        text = ">"
         break;
       default:
         break;
