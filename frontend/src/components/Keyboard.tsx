@@ -12,6 +12,7 @@ interface KeyProps {
   width?: number;
   height?: number;
   className?: string;
+  isDeadKey?: boolean; // Added property to identify dead keys
 }
 
 interface KeyboardHandle {
@@ -113,10 +114,14 @@ const Key: React.FC<KeyProps> = ({
   width = 1,
   height = 1,
   className = "",
+  isDeadKey = false, // Default to false
 }) => {
+  // Add the 'dead-key' class if isDeadKey is true
+  const keyClassName = `key ${className} ${isDeadKey ? "dead-key" : ""}`;
+
   return (
     <div
-      className={`key ${className}`}
+      className={keyClassName}
       style={{
         width: `${width * 60}px`,
         height: `${height * 60}px`,
@@ -176,7 +181,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   }
 
   function findKeyForState(keylayout, targetState) {
-
     for (const indexKey in keylayout.keyMaps) {
       const keyMap = keylayout.keyMaps[indexKey];
       for (const keyCode in keyMap) {
@@ -256,6 +260,30 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
     return findDeadKeySequence(keylayout, searchOutput);
   }
+
+  const isDeadKey = (code) => {
+    if (
+      !keylayout ||
+      !keylayout.keyMaps[layer] ||
+      !keylayout.keyMaps[layer][code]
+    ) {
+      return false;
+    }
+
+    const keyData = keylayout.keyMaps[layer][code];
+
+    // If the key has an action and that action exists in the actions map
+    if (keyData.action && keylayout.actions[keyData.action]) {
+      // Check if any of the action's conditions have state="none" and output is null/empty
+      return keylayout.actions[keyData.action].some(
+        (condition) =>
+          condition.state === "none" &&
+          (!condition.output || condition.output === "")
+      );
+    }
+
+    return false;
+  };
 
   const getKeyOutput = (code) => {
     if (
@@ -396,38 +424,40 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
         {/* Number row */}
         <div className="keyboard-row">
-          <Key>{getKeyOutput(50)}</Key>
-          <Key>{getKeyOutput(18)}</Key>
-          <Key>{getKeyOutput(19)}</Key>
-          <Key>{getKeyOutput(20)}</Key>
-          <Key>{getKeyOutput(21)}</Key>
-          <Key>{getKeyOutput(23)}</Key>
-          <Key>{getKeyOutput(22)}</Key>
-          <Key>{getKeyOutput(26)}</Key>
-          <Key>{getKeyOutput(28)}</Key>
-          <Key>{getKeyOutput(25)}</Key>
-          <Key>{getKeyOutput(29)}</Key>
-          <Key>{getKeyOutput(27)}</Key>
-          <Key>{getKeyOutput(24)}</Key>
+          <Key isDeadKey={isDeadKey(50)}>{getKeyOutput(50)}</Key>
+          <Key isDeadKey={isDeadKey(18)}>{getKeyOutput(18)}</Key>
+          <Key isDeadKey={isDeadKey(19)}>{getKeyOutput(19)}</Key>
+          <Key isDeadKey={isDeadKey(20)}>{getKeyOutput(20)}</Key>
+          <Key isDeadKey={isDeadKey(21)}>{getKeyOutput(21)}</Key>
+          <Key isDeadKey={isDeadKey(23)}>{getKeyOutput(23)}</Key>
+          <Key isDeadKey={isDeadKey(22)}>{getKeyOutput(22)}</Key>
+          <Key isDeadKey={isDeadKey(26)}>{getKeyOutput(26)}</Key>
+          <Key isDeadKey={isDeadKey(28)}>{getKeyOutput(28)}</Key>
+          <Key isDeadKey={isDeadKey(25)}>{getKeyOutput(25)}</Key>
+          <Key isDeadKey={isDeadKey(29)}>{getKeyOutput(29)}</Key>
+          <Key isDeadKey={isDeadKey(27)}>{getKeyOutput(27)}</Key>
+          <Key isDeadKey={isDeadKey(24)}>{getKeyOutput(24)}</Key>
           <Key width={2}>Backspace</Key>
         </div>
 
         {/* Top row */}
         <div className="keyboard-row">
           <Key width={1.5}>Tab</Key>
-          <Key>{getKeyOutput(12)}</Key>
-          <Key>{getKeyOutput(13)}</Key>
-          <Key>{getKeyOutput(14)}</Key>
-          <Key>{getKeyOutput(15)}</Key>
-          <Key>{getKeyOutput(16)}</Key>
-          <Key>{getKeyOutput(17)}</Key>
-          <Key>{getKeyOutput(32)}</Key>
-          <Key>{getKeyOutput(34)}</Key>
-          <Key>{getKeyOutput(31)}</Key>
-          <Key>{getKeyOutput(35)}</Key>
-          <Key>{getKeyOutput(33)}</Key>
-          <Key>{getKeyOutput(30)}</Key>
-          <Key width={1.5}>{getKeyOutput(42)}</Key>
+          <Key isDeadKey={isDeadKey(12)}>{getKeyOutput(12)}</Key>
+          <Key isDeadKey={isDeadKey(13)}>{getKeyOutput(13)}</Key>
+          <Key isDeadKey={isDeadKey(14)}>{getKeyOutput(14)}</Key>
+          <Key isDeadKey={isDeadKey(15)}>{getKeyOutput(15)}</Key>
+          <Key isDeadKey={isDeadKey(16)}>{getKeyOutput(16)}</Key>
+          <Key isDeadKey={isDeadKey(17)}>{getKeyOutput(17)}</Key>
+          <Key isDeadKey={isDeadKey(32)}>{getKeyOutput(32)}</Key>
+          <Key isDeadKey={isDeadKey(34)}>{getKeyOutput(34)}</Key>
+          <Key isDeadKey={isDeadKey(31)}>{getKeyOutput(31)}</Key>
+          <Key isDeadKey={isDeadKey(35)}>{getKeyOutput(35)}</Key>
+          <Key isDeadKey={isDeadKey(33)}>{getKeyOutput(33)}</Key>
+          <Key isDeadKey={isDeadKey(30)}>{getKeyOutput(30)}</Key>
+          <Key width={1.5} isDeadKey={isDeadKey(42)}>
+            {getKeyOutput(42)}
+          </Key>
         </div>
 
         {/* Home row */}
@@ -435,17 +465,17 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           <Key width={1.75} className="mod-key">
             Caps Lock
           </Key>
-          <Key>{getKeyOutput(0)}</Key>
-          <Key>{getKeyOutput(1)}</Key>
-          <Key>{getKeyOutput(2)}</Key>
-          <Key>{getKeyOutput(3)}</Key>
-          <Key>{getKeyOutput(5)}</Key>
-          <Key>{getKeyOutput(4)}</Key>
-          <Key>{getKeyOutput(38)}</Key>
-          <Key>{getKeyOutput(40)}</Key>
-          <Key>{getKeyOutput(37)}</Key>
-          <Key>{getKeyOutput(41)}</Key>
-          <Key>{getKeyOutput(39)}</Key>
+          <Key isDeadKey={isDeadKey(0)}>{getKeyOutput(0)}</Key>
+          <Key isDeadKey={isDeadKey(1)}>{getKeyOutput(1)}</Key>
+          <Key isDeadKey={isDeadKey(2)}>{getKeyOutput(2)}</Key>
+          <Key isDeadKey={isDeadKey(3)}>{getKeyOutput(3)}</Key>
+          <Key isDeadKey={isDeadKey(5)}>{getKeyOutput(5)}</Key>
+          <Key isDeadKey={isDeadKey(4)}>{getKeyOutput(4)}</Key>
+          <Key isDeadKey={isDeadKey(38)}>{getKeyOutput(38)}</Key>
+          <Key isDeadKey={isDeadKey(40)}>{getKeyOutput(40)}</Key>
+          <Key isDeadKey={isDeadKey(37)}>{getKeyOutput(37)}</Key>
+          <Key isDeadKey={isDeadKey(41)}>{getKeyOutput(41)}</Key>
+          <Key isDeadKey={isDeadKey(39)}>{getKeyOutput(39)}</Key>
           <Key width={2.4} className="mod-key">
             Enter
           </Key>
@@ -459,16 +489,16 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           >
             Shift
           </Key>
-          <Key>{getKeyOutput(6)}</Key>
-          <Key>{getKeyOutput(7)}</Key>
-          <Key>{getKeyOutput(8)}</Key>
-          <Key>{getKeyOutput(9)}</Key>
-          <Key>{getKeyOutput(11)}</Key>
-          <Key>{getKeyOutput(45)}</Key>
-          <Key>{getKeyOutput(46)}</Key>
-          <Key>{getKeyOutput(43)}</Key>
-          <Key>{getKeyOutput(47)}</Key>
-          <Key>{getKeyOutput(44)}</Key>
+          <Key isDeadKey={isDeadKey(6)}>{getKeyOutput(6)}</Key>
+          <Key isDeadKey={isDeadKey(7)}>{getKeyOutput(7)}</Key>
+          <Key isDeadKey={isDeadKey(8)}>{getKeyOutput(8)}</Key>
+          <Key isDeadKey={isDeadKey(9)}>{getKeyOutput(9)}</Key>
+          <Key isDeadKey={isDeadKey(11)}>{getKeyOutput(11)}</Key>
+          <Key isDeadKey={isDeadKey(45)}>{getKeyOutput(45)}</Key>
+          <Key isDeadKey={isDeadKey(46)}>{getKeyOutput(46)}</Key>
+          <Key isDeadKey={isDeadKey(43)}>{getKeyOutput(43)}</Key>
+          <Key isDeadKey={isDeadKey(47)}>{getKeyOutput(47)}</Key>
+          <Key isDeadKey={isDeadKey(44)}>{getKeyOutput(44)}</Key>
           <Key
             width={3}
             className={`mod-key ${shiftPressed ? "mod-active" : ""}`}
