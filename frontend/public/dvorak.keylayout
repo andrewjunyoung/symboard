@@ -269,7 +269,7 @@
             <key code="3" action="alt+u"/>
             <key code="4" output=""/>
             <key code="5" action="alt+i"/>
-            <key code="6" action="acute"/>
+            <key code="6" output=""/>
             <key code="7" output=""/>
             <key code="8" action="alt+j"/>
             <key code="9" output=""/>
@@ -377,14 +377,14 @@
         <keyMap index="3">
             <key code="0" action="alt+A"/>
             <key code="1" output="̥"/>
-            <key code="2" action="alt+E"/>
+            <key code="2" output=""/>
             <key code="3" output="̑"/>
             <key code="4" output=""/>
             <key code="5" output=""/>
-            <key code="6" action="action"/>
-            <key code="7" action="alt+Q"/>
+            <key code="6" output=""/>
+            <key code="7" output=""/>
             <key code="8" action="alt+J"/>
-            <key code="9" action="alt+K"/>
+            <key code="9" output=""/>
             <key code="10" output=""/>
             <key code="11" action="alt+X"/>
             <key code="12" output=""/>
@@ -1761,26 +1761,11 @@
             <when state="thaa" next="thaa" output="ަ"/>
             <when state="thai" next="thai" output="อ"/>
         </action>
-        <action id="action">
-            <when state="none" output=""/>
-        </action>
         <action id="alt+X">
             <when state="none" output="͓"/>
         </action>
         <action id="action 13">
             <when state="none" output="tfng"/>
-        </action>
-        <action id="alt+E">
-            <when state="none" output=""/>
-        </action>
-        <action id="alt+Q">
-            <when state="none" output=""/>
-        </action>
-        <action id="alt+K">
-            <when state="none" output=""/>
-        </action>
-        <action id="acute">
-            <when state="none" output=""/>
         </action>
         <action id="alt+!">
             <when state="none" output=" ̦"/>

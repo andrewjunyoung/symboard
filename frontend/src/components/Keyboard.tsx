@@ -8,11 +8,12 @@ import { scriptMap } from "../types/Script";
 import "./Keyboard.css";
 
 interface KeyProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   width?: number;
   height?: number;
   className?: string;
   isDeadKey?: boolean;
+  code?: number;
 }
 
 interface KeyboardHandle {
@@ -45,6 +46,7 @@ export async function loadKeylayoutFile(filePath) {
 }
 
 function parseKeylayoutXML(xmlDoc) {
+  // Existing implementation
   const keylayout = {
     layouts: [],
     keyMapSets: {},
@@ -121,194 +123,65 @@ function parseKeylayoutXML(xmlDoc) {
   return keylayout;
 }
 
-const Key: React.FC<KeyProps> = ({
-  children,
-  width = 1,
-  height = 1,
-  className = "",
-  isDeadKey = false,
-}) => {
-  const keyClassName = `key ${className} ${isDeadKey ? "dead-key" : ""}`;
-
-  return (
-    <div
-      className={keyClassName}
-      style={{
-        width: `${width * 60}px`,
-        height: `${height * 60}px`,
-      }}
-    >
-      <div className="key-content">{children}</div>
-    </div>
-  );
-};
+// Process special character codes
+function processSpecialCharacter(text) {
+  switch (text) {
+    case "U+0022;":
+      return '"';
+    case "U+0026;":
+      return "&";
+    case "~":
+      return "~"; // TODO: Special case
+    case "U+0027;":
+      return "'";
+    case "U+003C;":
+      return "<";
+    case "U+003E;":
+      return ">";
+    default:
+      return text;
+  }
+}
 
 const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   // Keyboard display properties
-  const [keylayout, setKeylayout] = useState(null);
+  const [keylayout, setKeylayout] = useState<any>(null);
   const [layer, setLayer] = useState(4);
   // Key presses
   const [altPressed, setAltPressed] = useState(false);
   const [controlPressed, setControlPressed] = useState(false);
   const [shiftPressed, setShiftPressed] = useState(false);
+  // See everything checkbox
+  const [seeEverything, setSeeEverything] = useState(false);
 
   // Search bar properties
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState(null);
 
-  useImperativeHandle(ref, () => ({
-    searchKeyOutput: (query: string) => {
-      if (!keylayout) return;
-
-      const result = findKeyByOutput(keylayout, query);
-      setSearchResult(result);
-
-      return result;
-    },
-  }));
-
-  const handleSearch = () => {
-    if (!searchQuery.trim() || !keylayout) return;
-
-    const result = findKeyByOutput(keylayout, searchQuery);
-    setSearchResult(result);
-  };
-
-  function getModifierString(indexKey) {
-    switch (indexKey) {
-      case "1":
-        return "shift";
-      case "2":
-        return "alt";
-      case "3":
-        return "alt + shift";
-      case "4":
-        return "";
-      case "6":
-        return "control";
-      default:
-        return null;
-    }
-  }
-
-  function findKeyForState(keylayout, targetState) {
-    for (const indexKey in keylayout.keyMaps) {
-      const keyMap = keylayout.keyMaps[indexKey];
-      for (const keyCode in keyMap) {
-        const keyData = keyMap[keyCode];
-        const action = keylayout.actions[keyData.action];
-
-        for (const i in action) {
-          const condition = action[i];
-          if (
-            condition.state === "none" &&
-            condition.output === null &&
-            condition.next === targetState
-          ) {
-            return {
-              keyPress: getModifierString(indexKey),
-              code: getKeyOutput(Number(keyCode)),
-            };
-          }
-        }
-      }
-    }
-
-    return null;
-  }
-
-  function findDeadKeySequence(keylayout, searchOutput) {
-    for (const indexKey in keylayout.keyMaps) {
-      const keyMap = keylayout.keyMaps[indexKey];
-
-      for (const codeKey in keyMap) {
-        const keyData = keyMap[codeKey];
-
-        if (keyData.action && keylayout.actions[keyData.action]) {
-          for (const state of keylayout.actions[keyData.action]) {
-            if (state.output === searchOutput) {
-              const stateKeyInfo = findKeyForState(keylayout, state.state);
-
-              return {
-                keyPress: getModifierString(indexKey),
-                code: getKeyOutput(Number(codeKey)),
-                deadKey: {
-                  state: state.state,
-                  press: stateKeyInfo ? stateKeyInfo.keyPress : null,
-                  code: stateKeyInfo ? stateKeyInfo.code : null,
-                },
-              };
-            }
-          }
-        }
-      }
-    }
-
-    return null;
-  }
-
-  function findKeyByOutput(keylayout, searchOutput) {
-    for (const indexKey in keylayout.keyMaps) {
-      const keyMap = keylayout.keyMaps[indexKey];
-
-      for (const codeKey in keyMap) {
-        const keyData = keyMap[codeKey];
-
-        if (
-          keyData.output === searchOutput ||
-          keyData.action === searchOutput
-        ) {
-          return {
-            keyPress: getModifierString(indexKey),
-            code: getKeyOutput(Number(codeKey)),
-            deadKey: null,
-          };
-        }
-      }
-    }
-
-    return findDeadKeySequence(keylayout, searchOutput);
-  }
-
-  const isDeadKey = (code) => {
+  // Function to get key output for a specific layer and code
+  const getKeyOutputForLayer = (layerNum, code) => {
     if (
       !keylayout ||
-      !keylayout.keyMaps[layer] ||
-      !keylayout.keyMaps[layer][code]
-    ) {
-      return false;
-    }
-
-    const keyData = keylayout.keyMaps[layer][code];
-
-    // If the key has an action and that action exists in the actions map
-    if (keyData.action && keylayout.actions[keyData.action]) {
-      // Check if any of the action's conditions have state="none" and output is null/empty
-      return keylayout.actions[keyData.action].some(
-        (condition) =>
-          condition.state === "none" &&
-          (!condition.output || condition.output === "")
-      );
-    }
-
-    return false;
-  };
-
-  const getKeyOutput = (code) => {
-    if (
-      !keylayout ||
-      !keylayout.keyMaps[layer] ||
-      !keylayout.keyMaps[layer][code]
+      !keylayout.keyMaps[layerNum] ||
+      !keylayout.keyMaps[layerNum][code]
     ) {
       return "";
     }
 
-    const keyData = keylayout.keyMaps[layer][code];
+    const keyData = keylayout.keyMaps[layerNum][code];
     let text = keyData.output || "";
 
     // If it has an action, check what to display
     if (keyData.action && keylayout.actions[keyData.action]) {
-      if (isDeadKey(code)) {
+      // Check if it's a dead key
+      const isDeadKeyAction = keylayout.actions[keyData.action].some(
+        (condition) =>
+          condition.state === "none" &&
+          (!condition.output || condition.output === "") &&
+          condition.next
+      );
+
+      if (isDeadKeyAction) {
         const noneStateAction = keylayout.actions[keyData.action].find(
           (condition) =>
             condition.state === "none" &&
@@ -325,7 +198,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           if (text in scriptMap) {
             return `${scriptMap[text].getKeyDisplayText()}`;
           }
-          return `${terminatorOutput}`; // ${text}`;
+          return `${terminatorOutput}`;
         }
       } else {
         // Find the output for the "none" state
@@ -343,30 +216,237 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       text = keyData.action || "";
     }
 
-    switch (text) {
-      case "U+0022;":
-        text = '"';
-        break;
-      case "U+0026;":
-        text = "~";
-        break;
-      case "~": // TODO: I don't know why this is true
-        text = "&";
-        break;
-      case "U+0027;":
-        text = "'";
-        break;
-      case "U+003C;":
-        text = "<";
-        break;
-      case "U+003E;":
-        text = ">";
-        break;
-      default:
-        break;
+    return processSpecialCharacter(text);
+  };
+
+  // Check if a key is a dead key
+  const isKeyDead = (layerNum, code) => {
+    if (
+      !keylayout ||
+      !keylayout.keyMaps[layerNum] ||
+      !keylayout.keyMaps[layerNum][code]
+    ) {
+      return false;
     }
 
-    return text;
+    const keyData = keylayout.keyMaps[layerNum][code];
+
+    // If the key has an action and that action exists in the actions map
+    if (keyData.action && keylayout.actions[keyData.action]) {
+      // Check if any of the action's conditions have state="none" and output is null/empty
+      return keylayout.actions[keyData.action].some(
+        (condition) =>
+          condition.state === "none" &&
+          (!condition.output || condition.output === "") &&
+          condition.next
+      );
+    }
+
+    return false;
+  };
+
+  // Get key output for the current layer
+  const getKeyOutput = (code) => {
+    return getKeyOutputForLayer(layer, code);
+  };
+
+  // Check if key is a dead key in the current layer
+  const checkIsDeadKey = (code) => {
+    return isKeyDead(layer, code);
+  };
+
+  // Shared key component
+  const KeyboardKey = ({ code, width = 1, height = 1, className = "" }) => {
+    const isDead = checkIsDeadKey(code);
+    const keyClassName = `key ${className} ${!seeEverything && isDead ? "dead-key" : ""}`;
+
+    if (seeEverything) {
+      // Detailed view with all layers
+      const isDeadInLayer1 = isKeyDead(1, code);
+      const isDeadInLayer2 = isKeyDead(2, code);
+      const isDeadInLayer3 = isKeyDead(3, code);
+      const isDeadInLayer4 = isKeyDead(4, code);
+
+      return (
+        <div
+          className={keyClassName}
+          style={{
+            width: `${width * 60}px`,
+            height: `${height * 60}px`,
+          }}
+        >
+          <div
+            className={`key-region key-region-nw ${isDeadInLayer1 ? "dead-region" : ""}`}
+          >
+            <span>{getKeyOutputForLayer(1, code)}</span>
+          </div>
+          <div
+            className={`key-region key-region-ne ${isDeadInLayer3 ? "dead-region" : ""}`}
+          >
+            <span>{getKeyOutputForLayer(3, code)}</span>
+          </div>
+          <div
+            className={`key-region key-region-sw ${isDeadInLayer4 ? "dead-region" : ""}`}
+          >
+            <span>{getKeyOutputForLayer(4, code)}</span>
+          </div>
+          <div
+            className={`key-region key-region-se ${isDeadInLayer2 ? "dead-region" : ""}`}
+          >
+            <span>{getKeyOutputForLayer(2, code)}</span>
+          </div>
+        </div>
+      );
+    }
+
+    // Regular key rendering
+    return (
+      <div
+        className={keyClassName}
+        style={{
+          width: `${width * 60}px`,
+          height: `${height * 60}px`,
+        }}
+      >
+        <div className="key-content">{getKeyOutput(code)}</div>
+      </div>
+    );
+  };
+
+  // Fixed key component for function keys, etc.
+  const FixedKey = ({ children, width = 1, height = 1, className = "" }) => (
+    <div
+      className={`key ${className}`}
+      style={{
+        width: `${width * 60}px`,
+        height: `${height * 60}px`,
+      }}
+    >
+      <div className="key-content">{children}</div>
+    </div>
+  );
+
+  // Search implementation
+  function getModifierString(indexKey) {
+    switch (indexKey) {
+      case "1":
+        return "shift";
+      case "2":
+        return "alt";
+      case "3":
+        return "alt + shift";
+      case "4":
+        return "";
+      case "6":
+        return "control";
+      default:
+        return null;
+    }
+  }
+
+  function findKeyForState(targetState) {
+    if (!keylayout) return null;
+
+    for (const indexKey in keylayout.keyMaps) {
+      const keyMap = keylayout.keyMaps[indexKey];
+      for (const keyCode in keyMap) {
+        const keyData = keyMap[keyCode];
+        const action = keylayout.actions[keyData.action];
+
+        if (!action) continue;
+
+        for (const i in action) {
+          const condition = action[i];
+          if (
+            condition.state === "none" &&
+            condition.output === null &&
+            condition.next === targetState
+          ) {
+            return {
+              keyPress: getModifierString(indexKey),
+              code: getKeyOutputForLayer(Number(indexKey), Number(keyCode)),
+            };
+          }
+        }
+      }
+    }
+
+    return null;
+  }
+
+  function findDeadKeySequence(searchOutput) {
+    if (!keylayout) return null;
+
+    for (const indexKey in keylayout.keyMaps) {
+      const keyMap = keylayout.keyMaps[indexKey];
+
+      for (const codeKey in keyMap) {
+        const keyData = keyMap[codeKey];
+
+        if (keyData.action && keylayout.actions[keyData.action]) {
+          for (const state of keylayout.actions[keyData.action]) {
+            if (state.output === searchOutput) {
+              const stateKeyInfo = findKeyForState(state.state);
+
+              return {
+                keyPress: getModifierString(indexKey),
+                code: getKeyOutputForLayer(Number(indexKey), Number(codeKey)),
+                deadKey: {
+                  state: state.state,
+                  press: stateKeyInfo ? stateKeyInfo.keyPress : null,
+                  code: stateKeyInfo ? stateKeyInfo.code : null,
+                },
+              };
+            }
+          }
+        }
+      }
+    }
+
+    return null;
+  }
+
+  function findKeyByOutput(searchOutput) {
+    if (!keylayout) return null;
+
+    for (const indexKey in keylayout.keyMaps) {
+      const keyMap = keylayout.keyMaps[indexKey];
+
+      for (const codeKey in keyMap) {
+        const keyData = keyMap[codeKey];
+
+        if (
+          keyData.output === searchOutput ||
+          keyData.action === searchOutput
+        ) {
+          return {
+            keyPress: getModifierString(indexKey),
+            code: getKeyOutputForLayer(Number(indexKey), Number(codeKey)),
+            deadKey: null,
+          };
+        }
+      }
+    }
+
+    return findDeadKeySequence(searchOutput);
+  }
+
+  useImperativeHandle(ref, () => ({
+    searchKeyOutput: (query: string) => {
+      if (!keylayout) return null;
+
+      const result = findKeyByOutput(query);
+      setSearchResult(result);
+
+      return result;
+    },
+  }));
+
+  const handleSearch = () => {
+    if (!searchQuery.trim() || !keylayout) return;
+
+    const result = findKeyByOutput(searchQuery);
+    setSearchResult(result);
   };
 
   useEffect(() => {
@@ -433,7 +513,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
       if (result) {
         console.log("Keylayout Object:", result);
-        console.log("Key map for index 0:", result.keyMaps[layer]["0"].output);
         setKeylayout(result);
       }
     };
@@ -444,147 +523,180 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   return (
     <div className="keyboard-container">
       <div className="keyboard">
+        <div className="keyboard-options">
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              checked={seeEverything}
+              onChange={(e) => setSeeEverything(e.target.checked)}
+            />
+            See everything
+          </label>
+          {seeEverything && (
+            <div className="key-legend">
+              <div className="legend-item">
+                <div className="legend-color nw"></div>
+                <span>Shift</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-color ne"></div>
+                <span>Alt+Shift</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-color sw"></div>
+                <span>Normal</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-color se"></div>
+                <span>Alt</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-color dead-region"></div>
+                <span>Dead Key</span>
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* Function row */}
         <div className="keyboard-row">
-          <Key className="function-key">Esc</Key>
+          <FixedKey className="function-key">Esc</FixedKey>
           <div className="key-spacer"></div>
-          <Key className="function-key">F1</Key>
-          <Key className="function-key">F2</Key>
-          <Key className="function-key">F3</Key>
-          <Key className="function-key">F4</Key>
+          <FixedKey className="function-key">F1</FixedKey>
+          <FixedKey className="function-key">F2</FixedKey>
+          <FixedKey className="function-key">F3</FixedKey>
+          <FixedKey className="function-key">F4</FixedKey>
           <div className="key-spacer"></div>
-          <Key className="function-key">F5</Key>
-          <Key className="function-key">F6</Key>
-          <Key className="function-key">F7</Key>
-          <Key className="function-key">F8</Key>
+          <FixedKey className="function-key">F5</FixedKey>
+          <FixedKey className="function-key">F6</FixedKey>
+          <FixedKey className="function-key">F7</FixedKey>
+          <FixedKey className="function-key">F8</FixedKey>
           <div className="key-spacer"></div>
-          <Key className="function-key">F9</Key>
-          <Key className="function-key">F10</Key>
-          <Key className="function-key">F11</Key>
-          <Key className="function-key">F12</Key>
+          <FixedKey className="function-key">F9</FixedKey>
+          <FixedKey className="function-key">F10</FixedKey>
+          <FixedKey className="function-key">F11</FixedKey>
+          <FixedKey className="function-key">F12</FixedKey>
         </div>
 
         {/* Number row */}
         <div className="keyboard-row">
-          <Key isDeadKey={isDeadKey(50)}>{getKeyOutput(50)}</Key>
-          <Key isDeadKey={isDeadKey(18)}>{getKeyOutput(18)}</Key>
-          <Key isDeadKey={isDeadKey(19)}>{getKeyOutput(19)}</Key>
-          <Key isDeadKey={isDeadKey(20)}>{getKeyOutput(20)}</Key>
-          <Key isDeadKey={isDeadKey(21)}>{getKeyOutput(21)}</Key>
-          <Key isDeadKey={isDeadKey(23)}>{getKeyOutput(23)}</Key>
-          <Key isDeadKey={isDeadKey(22)}>{getKeyOutput(22)}</Key>
-          <Key isDeadKey={isDeadKey(26)}>{getKeyOutput(26)}</Key>
-          <Key isDeadKey={isDeadKey(28)}>{getKeyOutput(28)}</Key>
-          <Key isDeadKey={isDeadKey(25)}>{getKeyOutput(25)}</Key>
-          <Key isDeadKey={isDeadKey(29)}>{getKeyOutput(29)}</Key>
-          <Key isDeadKey={isDeadKey(27)}>{getKeyOutput(27)}</Key>
-          <Key isDeadKey={isDeadKey(24)}>{getKeyOutput(24)}</Key>
-          <Key width={2}>Backspace</Key>
+          <KeyboardKey code={50} />
+          <KeyboardKey code={18} />
+          <KeyboardKey code={19} />
+          <KeyboardKey code={20} />
+          <KeyboardKey code={21} />
+          <KeyboardKey code={23} />
+          <KeyboardKey code={22} />
+          <KeyboardKey code={26} />
+          <KeyboardKey code={28} />
+          <KeyboardKey code={25} />
+          <KeyboardKey code={29} />
+          <KeyboardKey code={27} />
+          <KeyboardKey code={24} />
+          <FixedKey width={2}>Backspace</FixedKey>
         </div>
 
         {/* Top row */}
         <div className="keyboard-row">
-          <Key width={1.5}>Tab</Key>
-          <Key isDeadKey={isDeadKey(12)}>{getKeyOutput(12)}</Key>
-          <Key isDeadKey={isDeadKey(13)}>{getKeyOutput(13)}</Key>
-          <Key isDeadKey={isDeadKey(14)}>{getKeyOutput(14)}</Key>
-          <Key isDeadKey={isDeadKey(15)}>{getKeyOutput(15)}</Key>
-          <Key isDeadKey={isDeadKey(16)}>{getKeyOutput(16)}</Key>
-          <Key isDeadKey={isDeadKey(17)}>{getKeyOutput(17)}</Key>
-          <Key isDeadKey={isDeadKey(32)}>{getKeyOutput(32)}</Key>
-          <Key isDeadKey={isDeadKey(34)}>{getKeyOutput(34)}</Key>
-          <Key isDeadKey={isDeadKey(31)}>{getKeyOutput(31)}</Key>
-          <Key isDeadKey={isDeadKey(35)}>{getKeyOutput(35)}</Key>
-          <Key isDeadKey={isDeadKey(33)}>{getKeyOutput(33)}</Key>
-          <Key isDeadKey={isDeadKey(30)}>{getKeyOutput(30)}</Key>
-          <Key width={1.5} isDeadKey={isDeadKey(42)}>
-            {getKeyOutput(42)}
-          </Key>
+          <FixedKey width={1.5}>Tab</FixedKey>
+          <KeyboardKey code={12} />
+          <KeyboardKey code={13} />
+          <KeyboardKey code={14} />
+          <KeyboardKey code={15} />
+          <KeyboardKey code={16} />
+          <KeyboardKey code={17} />
+          <KeyboardKey code={32} />
+          <KeyboardKey code={34} />
+          <KeyboardKey code={31} />
+          <KeyboardKey code={35} />
+          <KeyboardKey code={33} />
+          <KeyboardKey code={30} />
+          <KeyboardKey code={42} width={1.5} />
         </div>
 
         {/* Home row */}
         <div className="keyboard-row">
-          <Key width={1.75} className="mod-key">
+          <FixedKey width={1.75} className="mod-key">
             Caps Lock
-          </Key>
-          <Key isDeadKey={isDeadKey(0)}>{getKeyOutput(0)}</Key>
-          <Key isDeadKey={isDeadKey(1)}>{getKeyOutput(1)}</Key>
-          <Key isDeadKey={isDeadKey(2)}>{getKeyOutput(2)}</Key>
-          <Key isDeadKey={isDeadKey(3)}>{getKeyOutput(3)}</Key>
-          <Key isDeadKey={isDeadKey(5)}>{getKeyOutput(5)}</Key>
-          <Key isDeadKey={isDeadKey(4)}>{getKeyOutput(4)}</Key>
-          <Key isDeadKey={isDeadKey(38)}>{getKeyOutput(38)}</Key>
-          <Key isDeadKey={isDeadKey(40)}>{getKeyOutput(40)}</Key>
-          <Key isDeadKey={isDeadKey(37)}>{getKeyOutput(37)}</Key>
-          <Key isDeadKey={isDeadKey(41)}>{getKeyOutput(41)}</Key>
-          <Key isDeadKey={isDeadKey(39)}>{getKeyOutput(39)}</Key>
-          <Key width={2.4} className="mod-key">
+          </FixedKey>
+          <KeyboardKey code={0} />
+          <KeyboardKey code={1} />
+          <KeyboardKey code={2} />
+          <KeyboardKey code={3} />
+          <KeyboardKey code={5} />
+          <KeyboardKey code={4} />
+          <KeyboardKey code={38} />
+          <KeyboardKey code={40} />
+          <KeyboardKey code={37} />
+          <KeyboardKey code={41} />
+          <KeyboardKey code={39} />
+          <FixedKey width={2.4} className="mod-key">
             Enter
-          </Key>
+          </FixedKey>
         </div>
 
         {/* Bottom Row */}
         <div className="keyboard-row">
-          <Key
+          <FixedKey
             width={2.25}
             className={`mod-key ${shiftPressed ? "mod-active" : ""}`}
           >
             Shift
-          </Key>
-          <Key isDeadKey={isDeadKey(6)}>{getKeyOutput(6)}</Key>
-          <Key isDeadKey={isDeadKey(7)}>{getKeyOutput(7)}</Key>
-          <Key isDeadKey={isDeadKey(8)}>{getKeyOutput(8)}</Key>
-          <Key isDeadKey={isDeadKey(9)}>{getKeyOutput(9)}</Key>
-          <Key isDeadKey={isDeadKey(11)}>{getKeyOutput(11)}</Key>
-          <Key isDeadKey={isDeadKey(45)}>{getKeyOutput(45)}</Key>
-          <Key isDeadKey={isDeadKey(46)}>{getKeyOutput(46)}</Key>
-          <Key isDeadKey={isDeadKey(43)}>{getKeyOutput(43)}</Key>
-          <Key isDeadKey={isDeadKey(47)}>{getKeyOutput(47)}</Key>
-          <Key isDeadKey={isDeadKey(44)}>{getKeyOutput(44)}</Key>
-          <Key
+          </FixedKey>
+          <KeyboardKey code={6} />
+          <KeyboardKey code={7} />
+          <KeyboardKey code={8} />
+          <KeyboardKey code={9} />
+          <KeyboardKey code={11} />
+          <KeyboardKey code={45} />
+          <KeyboardKey code={46} />
+          <KeyboardKey code={43} />
+          <KeyboardKey code={47} />
+          <KeyboardKey code={44} />
+          <FixedKey
             width={3}
             className={`mod-key ${shiftPressed ? "mod-active" : ""}`}
           >
             Shift
-          </Key>
+          </FixedKey>
         </div>
 
         {/* Space Row */}
         <div className="keyboard-row">
-          <Key
+          <FixedKey
             width={1.5}
             className={`mod-key ${controlPressed ? "mod-active" : ""}`}
           >
             Control
-          </Key>
-          <Key width={1.25} className="mod-key">
+          </FixedKey>
+          <FixedKey width={1.25} className="mod-key">
             Win
-          </Key>
-          <Key
+          </FixedKey>
+          <FixedKey
             width={1.25}
             className={`mod-key ${altPressed ? "mod-active" : ""}`}
           >
             Alt
-          </Key>
-          <Key width={6.25}>Space</Key>
-          <Key
+          </FixedKey>
+          <FixedKey width={6.25}>Space</FixedKey>
+          <FixedKey
             width={1.25}
             className={`mod-key ${altPressed ? "mod-active" : ""}`}
           >
             Alt
-          </Key>
-          <Key width={1.25} className="mod-key">
+          </FixedKey>
+          <FixedKey width={1.25} className="mod-key">
             Win
-          </Key>
-          <Key width={1.25} className="mod-key">
+          </FixedKey>
+          <FixedKey width={1.25} className="mod-key">
             Menu
-          </Key>
-          <Key
+          </FixedKey>
+          <FixedKey
             width={1.6}
             className={`mod-key ${controlPressed ? "mod-active" : ""}`}
           >
             Control
-          </Key>
+          </FixedKey>
         </div>
       </div>
     </div>
