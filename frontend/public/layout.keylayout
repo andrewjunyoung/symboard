@@ -707,10 +707,10 @@
             <key code="28" action="thaa"/>
             <key code="29" output="0"/>
             <key code="30" output=""/>
-            <key code="31" action="U+000F;"/>
+            <key code="31" action="armn"/>
             <key code="32" action="geez"/>
             <key code="33" output=""/>
-            <key code="34" action="U+0003;"/>
+            <key code="34" action="cyrl"/>
             <key code="35" action="laoo"/>
             <key code="36" output="U+000D;"/>
             <key code="37" action="kata"/>
@@ -823,7 +823,7 @@
         <action id="U+0001;">
             <when state="none" next="arab"/>
         </action>
-        <action id="U+0003;">
+        <action id="cyrl">
             <when state="none" next="cyrl"/>
         </action>
         <action id="U+0008;">
@@ -835,7 +835,7 @@
         <action id="U+000D;">
             <when state="none" next="mong"/>
         </action>
-        <action id="U+000F;">
+        <action id="armn">
             <when state="none" next="armn"/>
         </action>
         <action id="U+0018;">

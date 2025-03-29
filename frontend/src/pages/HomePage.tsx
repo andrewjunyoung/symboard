@@ -99,7 +99,7 @@ function HomePage() {
       {/* Main content */}
       <div className="content">
         <div className="content-wrapper">
-          <h1 className="main-heading">Oneβöard</h1>
+          <h1 className="main-heading">Oneβóard</h1>
           <p className="tagline">
             Type <span className="highlight">anything</span>. Even π, ʃ, あ,
             العربية ᴀɴᴅ 😍 without switching keyboards.

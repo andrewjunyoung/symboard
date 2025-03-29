@@ -277,6 +277,9 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       case "U+0026;":
         text = "~";
         break;
+      case "~": // TODO: I don't know why this is true
+        text = "&";
+        break;
       case "U+0027;":
         text = "'";
         break;

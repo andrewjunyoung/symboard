@@ -17,6 +17,7 @@ export class Script {
 // Create languages directly as a map
 export const scriptMap = {
   arab: new Script("arab", "🇸🇦", "ابجد", "arabic", "العربية"),
+  armn: new Script("armn", "🇦🇲", "աբգդ", "armenian", "հայերեն"),
   beng: new Script("beng", "🇧🇩", "অআইঈ", "bengali", "বাংলা"),
   cans: new Script("cans", "🇨🇦", "ᐁᐯᑕᑫ", "syllabics", "ᓀᐦᐃᔭᐍᐏᐣ"),
   cyrl: new Script("cyrl", "🇧🇬", "АБВГ", "cyrillic", "Кирилица"),
