@@ -267,20 +267,20 @@
             <key code="1" output="̊"/>
             <key code="2" action="alt+e"/>
             <key code="3" action="alt+u"/>
-            <key code="4" action=""/>
+            <key code="4" output=""/>
             <key code="5" action="alt+i"/>
             <key code="6" action="acute"/>
-            <key code="7" action=""/>
+            <key code="7" output=""/>
             <key code="8" action="alt+j"/>
-            <key code="9" action=""/>
+            <key code="9" output=""/>
             <key code="10" output="□"/>
             <key code="11" action="alt+x"/>
             <key code="12" action="alt+;"/>
             <key code="13" action="alt+,"/>
             <key code="14" action="alt+."/>
-            <key code="15" action=""/>
-            <key code="16" action=""/>
-            <key code="17" action=""/>
+            <key code="15" output=""/>
+            <key code="16" output=""/>
+            <key code="17" output=""/>
             <key code="18" action="alt+1"/>
             <key code="19" output=""/>
             <key code="20" output=""/>
@@ -295,7 +295,7 @@
             <key code="29" output=""/>
             <key code="30" action="math"/>
             <key code="31" action="alt+r"/>
-            <key code="32" action=""/>
+            <key code="32" output=""/>
             <key code="33" output="́"/>
             <key code="34" output="̨"/>
             <key code="35" action="alt+l"/>
@@ -306,10 +306,10 @@
             <key code="40" action="alt+t"/>
             <key code="41" action="alt+s"/>
             <key code="42" output="̀"/>
-            <key code="43" action=""/>
+            <key code="43" output=""/>
             <key code="44" output="̧"/>
-            <key code="45" action=""/>
-            <key code="46" action=""/>
+            <key code="45" output=""/>
+            <key code="46" output=""/>
             <key code="47" action="alt+v"/>
             <key code="48" output="U+0009;"/>
             <key code="49" action=" "/>
@@ -379,7 +379,7 @@
             <key code="1" output="̥"/>
             <key code="2" action="alt+E"/>
             <key code="3" output="̑"/>
-            <key code="4" action=""/>
+            <key code="4" output=""/>
             <key code="5" output=""/>
             <key code="6" action="action"/>
             <key code="7" action="alt+Q"/>
@@ -387,12 +387,12 @@
             <key code="9" action="alt+K"/>
             <key code="10" output=""/>
             <key code="11" action="alt+X"/>
-            <key code="12" action=""/>
+            <key code="12" output=""/>
             <key code="13" action="alt+!"/>
             <key code="14" output="̣"/>
-            <key code="15" action=""/>
+            <key code="15" output=""/>
             <key code="16" output=""/>
-            <key code="17" action=""/>
+            <key code="17" output=""/>
             <key code="18" output=""/>
             <key code="19" output=""/>
             <key code="20" output=""/>
@@ -412,17 +412,17 @@
             <key code="34" output="̉"/>
             <key code="35" output=""/>
             <key code="36" output="U+000D;"/>
-            <key code="37" action=""/>
+            <key code="37" output=""/>
             <key code="38" output=""/>
             <key code="39" output="̱"/>
             <key code="40" action="alt+T"/>
             <key code="41" output=""/>
             <key code="42" output="̏"/>
-            <key code="43" action=""/>
+            <key code="43" output=""/>
             <key code="44" output=""/>
             <key code="45" output=""/>
             <key code="46" output=""/>
-            <key code="47" action="alt+V"/>
+            <key code="47" output=""/>
             <key code="48" output="U+0009;"/>
             <key code="49" action=" "/>
             <key code="50" output=" ̰"/>
@@ -824,9 +824,6 @@
         </keyMap>
     </keyMapSet>
     <actions>
-        <action id="">
-            <when state="none" output=" "/>
-        </action>
         <action id=" ">
             <when state="none" output=" "/>
             <when state="arab" next="arab" output=" "/>
@@ -1769,9 +1766,6 @@
         </action>
         <action id="alt+X">
             <when state="none" output="͓"/>
-        </action>
-        <action id="alt+V">
-            <when state="none" output=""/>
         </action>
         <action id="action 13">
             <when state="none" output="tfng"/>
