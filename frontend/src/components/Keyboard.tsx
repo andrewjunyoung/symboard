@@ -84,8 +84,8 @@ function parseKeylayoutXML(xmlDoc) {
       const keys = map.getElementsByTagName("key");
       for (let key of keys) {
         keylayout.keyMaps[index][key.getAttribute("code")] = {
-          output: key.getAttribute("output"),
           action: key.getAttribute("action"),
+          output: key.getAttribute("output"),
         };
       }
     }
@@ -98,8 +98,9 @@ function parseKeylayoutXML(xmlDoc) {
     const whens = action.getElementsByTagName("when");
     for (let when of whens) {
       keylayout.actions[id].push({
-        state: when.getAttribute("state"),
+        next: when.getAttribute("next"),
         output: when.getAttribute("output"),
+        state: when.getAttribute("state"),
       });
     }
   }
@@ -174,26 +175,25 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     }
   }
 
-  // Helper function to find what key needs to be pressed to enter a specific state
   function findKeyForState(keylayout, targetState) {
+
     for (const indexKey in keylayout.keyMaps) {
       const keyMap = keylayout.keyMaps[indexKey];
+      for (const keyCode in keyMap) {
+        const keyData = keyMap[keyCode];
+        const action = keylayout.actions[keyData.action];
 
-      for (const codeKey in keyMap) {
-        const keyData = keyMap[codeKey];
-
-        // Check if this key has an action that can produce the target state
-        if (keyData.action && keylayout.actions[keyData.action]) {
-          // Search through the action's states to see if any can enter our target state
-          for (const actionState of keylayout.actions[keyData.action]) {
-            // If we find a state that leads to our target state
-            if (actionState.state && actionState.state === targetState) {
-              return {
-                keyPress: getModifierString(indexKey),
-                code: getKeyOutput(Number(codeKey)),
-                deadKey: null,
-              };
-            }
+        for (const i in action) {
+          const condition = action[i];
+          if (
+            condition.state === "none" &&
+            condition.output === null &&
+            condition.next === targetState
+          ) {
+            return {
+              keyPress: getModifierString(indexKey),
+              code: getKeyOutput(Number(keyCode)),
+            };
           }
         }
       }
@@ -214,7 +214,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
             if (state.output === searchOutput) {
               const stateKeyInfo = findKeyForState(keylayout, state.state);
 
-              const r = {
+              return {
                 keyPress: getModifierString(indexKey),
                 code: getKeyOutput(Number(codeKey)),
                 deadKey: {
@@ -223,8 +223,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
                   code: stateKeyInfo ? stateKeyInfo.code : null,
                 },
               };
-              console.log(r);
-              return r;
             }
           }
         }
@@ -256,13 +254,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       }
     }
 
-    // Then search for dead key sequences
-    const deadKeyResult = findDeadKeySequence(keylayout, searchOutput);
-    if (deadKeyResult) {
-      return deadKeyResult;
-    }
-
-    return null;
+    return findDeadKeySequence(keylayout, searchOutput);
   }
 
   const getKeyOutput = (code) => {
@@ -277,13 +269,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       keylayout.keyMaps[layer][code].output ||
       keylayout.keyMaps[layer][code].action ||
       "";
-
-    if (code > 83 && code < 92) {
-      console.log("layer", layer);
-      console.log("code", code);
-      console.log(keylayout.keyMaps[layer][code].output);
-      console.log("text", text);
-    }
 
     switch (text) {
       case "U+0022;":

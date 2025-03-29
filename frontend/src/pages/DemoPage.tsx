@@ -15,13 +15,15 @@ const DemoPage: React.FC = () => {
       const result = keyboardRef.current.searchKeyOutput(query);
 
       if (result) {
-        const keyPressText = result.keyPress ? `${result.keyPress} + ` : " "
-        const text = `Press ${keyPressText}${result.code}`;
+        const deadKeyText = result.deadKey
+          ? `${result.deadKey.press} + ${result.deadKey.code} → `
+          : "";
+        const keyPressText = result.keyPress ? `${result.keyPress} + ` : " ";
+        const text = `Press ${deadKeyText}${keyPressText}${result.code}`;
         setSearchResult({
           complete: true,
-          message: text
-        }
-                       );
+          message: text,
+        });
       } else {
         setSearchResult({
           complete: true,
