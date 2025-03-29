@@ -269,7 +269,7 @@
             <key code="1" output="̊"/>
             <key code="2" action="alt+e"/>
             <key code="3" action="alt+u"/>
-            <key code="4" action="alt+d"/>
+            <key code="4" action=""/>
             <key code="5" action="alt+i"/>
             <key code="6" action="acute"/>
             <key code="7" action=""/>
@@ -281,8 +281,8 @@
             <key code="13" action="alt+,"/>
             <key code="14" action="alt+."/>
             <key code="15" action=""/>
-            <key code="16" action="alt+f"/>
-            <key code="17" action="alt+y"/>
+            <key code="16" action=""/>
+            <key code="17" action=""/>
             <key code="18" action="alt+1"/>
             <key code="19" output=""/>
             <key code="20" output=""/>
@@ -295,9 +295,9 @@
             <key code="27" output="«"/>
             <key code="28" output=""/>
             <key code="29" output=""/>
-            <key code="30" action="math_operators"/>
+            <key code="30" action="math"/>
             <key code="31" action="alt+r"/>
-            <key code="32" action="alt+g"/>
+            <key code="32" action=""/>
             <key code="33" output="́"/>
             <key code="34" output="̨"/>
             <key code="35" action="alt+l"/>
@@ -407,7 +407,7 @@
             <key code="27" output="—"/>
             <key code="28" output="≥"/>
             <key code="29" output="∞"/>
-            <key code="30" output="≠"/>
+            <key code="30" output=""/>
             <key code="31" action="alt+R"/>
             <key code="32" output=""/>
             <key code="33" output="̋"/>
@@ -542,7 +542,7 @@
             <key code="50" action="`"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
-            <key code="53" action="&#x001B;"/>
+            <key code="53" output="&#x001B;"/>
             <key code="64" output="&#x0010;"/>
             <key code="65" output=","/>
             <key code="66" output="&#x001D;"/>
@@ -713,14 +713,14 @@
             <key code="126" output="&#x001E;"/>
         </keyMap>
         <keyMap index="6">
-            <key code="0" action="&#x0001;"/>
+            <key code="0" action="arab"/>
             <key code="1" output=""/>
-            <key code="2" action="&#x0009;"/>
+            <key code="2" action="grek"/>
             <key code="3" output=""/>
             <key code="4" action="deva"/>
             <key code="5" action="ctrl+i"/>
             <key code="6" output=""/>
-            <key code="7" action="&#x0018;"/>
+            <key code="7" action="geor"/>
             <key code="8" action="ctrl+j"/>
             <key code="9" action="khmr"/>
             <key code="10" output=""/>
@@ -751,7 +751,7 @@
             <key code="35" action="laoo"/>
             <key code="36" output="&#x000D;"/>
             <key code="37" action="kata"/>
-            <key code="38" action="&#x0008;"/>
+            <key code="38" action="hebr"/>
             <key code="39" output=""/>
             <key code="40" action="tfng"/>
             <key code="41" action="sinh"/>
@@ -759,7 +759,7 @@
             <key code="43" output=""/>
             <key code="44" output=""/>
             <key code="45" action="beng"/>
-            <key code="46" action="&#x000D;"/>
+            <key code="46" action="mong"/>
             <key code="47" output=""/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
@@ -841,13 +841,12 @@
             <when state="geez" next="geez" output=" "/>
             <when state="geor" next="geor" output=" "/>
             <when state="grek" next="grek" output=" "/>
-            <when state="hang" next="hang" output=" "/>
             <when state="hebr" next="hebr" output=" "/>
             <when state="hira" next="hira" output="　"/>
             <when state="kata" next="kata" output="　"/>
             <when state="khmr" next="khmr" output=" "/>
             <when state="laoo" next="laoo" output=" "/>
-            <when state="math_operators" next="math_operators" output=" "/>
+            <when state="math" next="math" output=" "/>
             <when state="mong" next="mong" output=" "/>
             <when state="mymr" next="mymr" output=" "/>
             <when state="sinh" next="sinh" output=" "/>
@@ -857,32 +856,26 @@
             <when state="thai" next="thai" output=" "/>
             <when state="tibt" next="tibt" output=" "/>
         </action>
-        <action id="&#x0001;">
+        <action id="arab">
             <when state="none" next="arab"/>
         </action>
         <action id="cyrl">
             <when state="none" next="cyrl"/>
         </action>
-        <action id="&#x0008;">
+        <action id="hebr">
             <when state="none" next="hebr"/>
         </action>
-        <action id="&#x0009;">
+        <action id="grek">
             <when state="none" next="grek"/>
         </action>
-        <action id="&#x000D;">
+        <action id="mong">
             <when state="none" next="mong"/>
         </action>
         <action id="armn">
             <when state="none" next="armn"/>
         </action>
-        <action id="&#x0018;">
+        <action id="geor">
             <when state="none" next="geor"/>
-        </action>
-        <action id="&#x001B;">
-            <when state="none" output="&#x001B;"/>
-        </action>
-        <action id="&#x001D;">
-            <when state="none" next="hang"/>
         </action>
         <action id="!">
             <when state="none" output="!"/>
@@ -913,7 +906,7 @@
         </action>
         <action id="&#x0026;">
             <when state="none" output="~"/>
-            <when state="math_operators" output="≈"/>
+            <when state="math" output="≈"/>
             <when state="armn" next="armn" output="Ց"/>
         </action>
         <action id="&#x0027;">
@@ -940,7 +933,7 @@
             <when state="none" output="+"/>
             <when state="armn" next="armn" output="և"/>
             <when state="deva" next="deva" output="ॄ"/>
-            <when state="math_operators" output="±"/>
+            <when state="math" output="±"/>
         </action>
         <action id=",">
             <when state="none" output=","/>
@@ -965,6 +958,7 @@
             <when state="none" output="/"/>
             <when state="deva" next="deva" output="ऌ"/>
             <when state="mong" next="mong" output="᠀"/>
+            <when state="math" output="≠"/>
         </action>
         <action id="0">
             <when state="none" output="0"/>
@@ -1020,7 +1014,7 @@
             <when state="laoo" next="laoo" output="໓"/>
             <when state="latn_extensions" output="з"/>
             <when state="latn_tones" output="˧"/>
-            <when state="math_operators" output="△"/>
+            <when state="math" output="△"/>
             <when state="mong" next="mong" output="᠓"/>
             <when state="tamil" next="tamil" output="௩"/>
             <when state="thai" next="thai" output="๓"/>
@@ -1036,7 +1030,7 @@
             <when state="laoo" next="laoo" output="໔"/>
             <when state="latn_extensions" output="ч"/>
             <when state="latn_tones" output="˦"/>
-            <when state="math_operators" output="□"/>
+            <when state="math" output="□"/>
             <when state="mong" next="mong" output="᠔"/>
             <when state="tamil" next="tamil" output="௪"/>
             <when state="thai" next="thai" output="๔"/>
@@ -1052,7 +1046,7 @@
             <when state="laoo" next="laoo" output="໕"/>
             <when state="latn_extensions" output="ƽ"/>
             <when state="latn_tones" output="˥"/>
-            <when state="math_operators" output="☆"/>
+            <when state="math" output="☆"/>
             <when state="mong" next="mong" output="᠕"/>
             <when state="tamil" next="tamil" output="௫"/>
             <when state="thai" next="thai" output="๕"/>
@@ -1094,7 +1088,7 @@
             <when state="deva" next="deva" output="८"/>
             <when state="khmer" next="khmer" output="៨"/>
             <when state="laoo" next="laoo" output="໘"/>
-            <when state="math_operators" output="∞"/>
+            <when state="math" output="∞"/>
             <when state="mong" next="mong" output="᠘"/>
             <when state="tamil" next="tamil" output="௮"/>
             <when state="thai" next="thai" output="๘"/>
@@ -1133,12 +1127,12 @@
         <action id="=">
             <when state="none" output="="/>
             <when state="deva" next="deva" output="ळ"/>
-            <when state="math_operators" output="≒"/>
+            <when state="math" output="≒"/>
         </action>
         <action id="&#x003E;">
             <when state="none" output="&#x003E;"/>
             <when state="deva" next="deva" output="ु"/>
-            <when state="math_operators" output="×"/>
+            <when state="math" output="×"/>
         </action>
         <action id="?">
             <when state="none" output="?"/>
@@ -1227,7 +1221,7 @@
             <when state="latn_rotated_lower" output="P"/>
             <when state="latn_slash" output="Ð"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴅ"/>
-            <when state="math_operators" output="∇"/>
+            <when state="math" output="∇"/>
             <when state="mymr" next="mymr" output="ဓ"/>
             <when state="sinh" next="sinh" output="ධ"/>
             <when state="taml" next="taml" output="த"/>
@@ -1510,7 +1504,7 @@
             <when state="latn_rotated_upper" output="S"/>
             <when state="latn_slash" output="Ꞩ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ꜱ"/>
-            <when state="math_operators" output="∮"/>
+            <when state="math" output="∮"/>
             <when state="mong" next="mong" output="ᠱ"/>
             <when state="tfng" next="tfng" output="ⵚ"/>
         </action>
@@ -1763,7 +1757,7 @@
             <when state="latn_rotated_lower" output="ɐ"/>
             <when state="latn_slash" output="ⱥ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴀ"/>
-            <when state="math_operators" output="∝"/>
+            <when state="math" output="∝"/>
             <when state="mong" next="mong" output="ᠠ"/>
             <when state="mymr" next="mymr" output="အ"/>
             <when state="sinh" next="sinh" output="අ"/>
@@ -1775,9 +1769,6 @@
         <action id="action">
             <when state="none" output=""/>
         </action>
-        <action id="alt+y">
-            <when state="none" output=""/>
-        </action>
         <action id="alt+X">
             <when state="none" output="͓"/>
         </action>
@@ -1786,9 +1777,6 @@
         </action>
         <action id="action 13">
             <when state="none" output="tfng"/>
-        </action>
-        <action id="alt+f">
-            <when state="none" output=""/>
         </action>
         <action id="alt+E">
             <when state="none" output=""/>
@@ -1857,14 +1845,8 @@
         <action id="alt+A">
             <when state="none" next="latn_small_caps"/>
         </action>
-        <action id="alt+d">
-            <when state="none" output=""/>
-        </action>
         <action id="alt+e">
             <when state="none" next="latn_e"/>
-        </action>
-        <action id="alt+g">
-            <when state="none" output=""/>
         </action>
         <action id="alt+h">
             <when state="none" output=""/>
@@ -1966,7 +1948,7 @@
             <when state="latn_rotated_upper" output="ᴐ"/>
             <when state="latn_slash" output="ȼ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴄ"/>
-            <when state="math_operators" output="⊂"/>
+            <when state="math" output="⊂"/>
             <when state="mong" next="mong" output="ᠴ"/>
             <when state="mymr" next="mymr" output="စ"/>
             <when state="sinh" next="sinh" output="ච"/>
@@ -2107,7 +2089,7 @@
             <when state="latn_rotated_upper" output="ⱻ"/>
             <when state="latn_slash" output="ɇ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴇ"/>
-            <when state="math_operators" output="∈"/>
+            <when state="math" output="∈"/>
             <when state="mong" next="mong" output="ᠡ"/>
             <when state="mymr" next="mymr" output="ဧ"/>
             <when state="sinh" next="sinh" output="ඒ"/>
@@ -2444,8 +2426,8 @@
             <when state="thai" next="thai" output="ม"/>
             <when state="tibt" next="tibt" output="མ"/>
         </action>
-        <action id="math_operators">
-            <when state="none" next="math_operators"/>
+        <action id="math">
+            <when state="none" next="math"/>
         </action>
         <action id="mymr">
             <when state="none" next="mymr"/>
@@ -2476,7 +2458,7 @@
             <when state="latn_rotated_upper" output="ɴ"/>
             <when state="latn_slash" output="ꞥ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ɴ"/>
-            <when state="math_operators" output="∩"/>
+            <when state="math" output="∩"/>
             <when state="mong" next="mong" output="ᠨ"/>
             <when state="mymr" next="mymr" output="န"/>
             <when state="sinh" next="sinh" output="න"/>
@@ -2673,7 +2655,7 @@
             <when state="latn_rotated_upper" output="ꜱ"/>
             <when state="latn_slash" output="ꞩ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ꜱ"/>
-            <when state="math_operators" output="∫"/>
+            <when state="math" output="∫"/>
             <when state="mong" next="mong" output="ᠰ"/>
             <when state="mymr" next="mymr" output="သ"/>
             <when state="sinh" next="sinh" output="ස"/>
@@ -2712,7 +2694,7 @@
             <when state="latn_rotated_lower" output="ʇ"/>
             <when state="latn_slash" output="ⱦ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴛ"/>
-            <when state="math_operators" output="⊥"/>
+            <when state="math" output="⊥"/>
             <when state="mong" next="mong" output="ᠲ"/>
             <when state="mymr" next="mymr" output="တ"/>
             <when state="sinh" next="sinh" output="ත"/>
@@ -2822,7 +2804,7 @@
             <when state="latn_hook_retroflex" output="ᶙ"/>
             <when state="latn_rotated_lower" output="n"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴜ"/>
-            <when state="math_operators" output="∪"/>
+            <when state="math" output="∪"/>
             <when state="mong" next="mong" output="ᠤ"/>
             <when state="mymr" next="mymr" output="ဥ"/>
             <when state="sinh" next="sinh" output="උ"/>
@@ -2871,7 +2853,7 @@
             <when state="latn_rotated_lower" output="ʌ"/>
             <when state="latn_slash" output="ꝟ"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴠ"/>
-            <when state="math_operators" output="√"/>
+            <when state="math" output="√"/>
             <when state="mymr" next="mymr" output="ဝ"/>
             <when state="sinh" next="sinh" output="ව"/>
             <when state="taml" next="taml" output="வ"/>
@@ -2917,7 +2899,7 @@
             <when state="latn_hook_palatal" output="ᶍ"/>
             <when state="latn_rotated_lower" output="x"/>
             <when state="latn_small_caps" next="latn_small_caps" output="x"/>
-            <when state="math_operators" output="×"/>
+            <when state="math" output="×"/>
             <when state="mong" next="mong" output="ᠱ"/>
             <when state="mymr" next="mymr" output="ဆ"/>
             <when state="sinh" next="sinh" output="ශ"/>
@@ -3060,7 +3042,6 @@
         <when state="geez_z" output="ዘ"/>
         <when state="geor" output="რ"/>
         <when state="grek" output="α"/>
-        <when state="hang" output=""/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
         <when state="hira" output="あ"/>
@@ -3105,7 +3086,7 @@
         <when state="latn_rotated_upper" output="Ɐ"/>
         <when state="latn_slash" output="/"/>
         <when state="latn_small_caps" output="ᴀ"/>
-        <when state="math_operators" output="="/>
+        <when state="math" output="="/>
         <when state="mong" output="ᠪ"/>
         <when state="mymr" output="အ"/>
         <when state="sinh" output="අ"/>

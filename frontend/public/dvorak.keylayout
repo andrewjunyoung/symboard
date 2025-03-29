@@ -2,6 +2,41 @@
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
     </layouts>
+    <modifierMap id="commonModifiers" defaultIndex="4">
+        <keyMapSelect mapIndex="0">
+            <modifier keys="anyShift? caps? command"/>
+        </keyMapSelect>
+        <keyMapSelect mapIndex="1">
+            <modifier keys="anyShift caps?"/>
+            <modifier keys="anyShift? caps"/>
+        </keyMapSelect>
+        <keyMapSelect mapIndex="2">
+            <modifier keys="anyOption"/>
+            <modifier keys="caps anyOption command?"/>
+            <modifier keys="caps? anyOption command"/>
+        </keyMapSelect>
+        <keyMapSelect mapIndex="3">
+            <modifier keys="anyShift caps? anyOption command?"/>
+        </keyMapSelect>
+        <keyMapSelect mapIndex="4">
+            <modifier keys=""/>
+            <modifier keys="caps anyOption? command?"/>
+        </keyMapSelect>
+        <keyMapSelect mapIndex="5">
+            <modifier keys="anyOption? command"/>
+        </keyMapSelect>
+        <keyMapSelect mapIndex="6">
+            <modifier keys="anyShift? caps? anyOption? anyControl"/>
+            <modifier keys="anyShift? anyOption? command? anyControl"/>
+            <modifier keys="anyShift caps anyOption command"/>
+            <modifier keys="anyShift caps command anyControl"/>
+            <modifier keys="caps anyOption command anyControl"/>
+            <modifier keys="anyShift caps anyOption command anyControl"/>
+            <modifier keys="anyShift caps anyOption? command anyControl"/>
+            <modifier keys="anyShift? caps anyOption command anyControl"/>
+            <modifier keys="caps? anyOption? command? anyControl"/>
+        </keyMapSelect>
+    </modifierMap>
     <keyMapSet id="ANSI">
         <keyMap index="0">
             <key code="0" output="a"/>
@@ -228,11 +263,11 @@
             <key code="126" output="U+001E;"/>
         </keyMap>
         <keyMap index="2">
-            <key code="0" output="alt+a"/>
+            <key code="0" output=""/>
             <key code="1" output="̊"/>
             <key code="2" action="alt+e"/>
             <key code="3" action="alt+u"/>
-            <key code="4" action="alt+d"/>
+            <key code="4" action=""/>
             <key code="5" action="alt+i"/>
             <key code="6" action="acute"/>
             <key code="7" action=""/>
@@ -244,8 +279,8 @@
             <key code="13" action="alt+,"/>
             <key code="14" action="alt+."/>
             <key code="15" action=""/>
-            <key code="16" action="alt+f"/>
-            <key code="17" action="alt+y"/>
+            <key code="16" action=""/>
+            <key code="17" action=""/>
             <key code="18" action="alt+1"/>
             <key code="19" output=""/>
             <key code="20" output=""/>
@@ -260,7 +295,7 @@
             <key code="29" output=""/>
             <key code="30" action="math"/>
             <key code="31" action="alt+r"/>
-            <key code="32" action="alt+g"/>
+            <key code="32" action=""/>
             <key code="33" output="́"/>
             <key code="34" output="̨"/>
             <key code="35" action="alt+l"/>
@@ -370,7 +405,7 @@
             <key code="27" output="—"/>
             <key code="28" output="≥"/>
             <key code="29" output="∞"/>
-            <key code="30" output="≠"/>
+            <key code="30" output=""/>
             <key code="31" action="alt+R"/>
             <key code="32" output=""/>
             <key code="33" output="̋"/>
@@ -505,7 +540,7 @@
             <key code="50" action="`"/>
             <key code="51" output="U+0008;"/>
             <key code="52" output="U+0003;"/>
-            <key code="53" action="U+001B;"/>
+            <key code="53" output="U+001B;"/>
             <key code="64" output="U+0010;"/>
             <key code="65" output=","/>
             <key code="66" output="U+001D;"/>
@@ -676,36 +711,36 @@
             <key code="126" output="U+001E;"/>
         </keyMap>
         <keyMap index="6">
-            <key code="0" action="U+0001;"/>
-            <key code="1" output="U+0013;"/>
-            <key code="2" action="U+0009;"/>
-            <key code="3" output="U+0006;"/>
+            <key code="0" action="arab"/>
+            <key code="1" output=""/>
+            <key code="2" action="grek"/>
+            <key code="3" output=""/>
             <key code="4" action="deva"/>
             <key code="5" action="ctrl+i"/>
-            <key code="6" output="U+001A;"/>
-            <key code="7" action="U+0018;"/>
+            <key code="6" output=""/>
+            <key code="7" action="geor"/>
             <key code="8" action="ctrl+j"/>
             <key code="9" action="khmr"/>
             <key code="10" output=""/>
             <key code="11" output=""/>
-            <key code="12" output="U+0011;"/>
-            <key code="13" output="U+0017;"/>
+            <key code="12" output=""/>
+            <key code="13" output=""/>
             <key code="14" output=""/>
             <key code="15" action="tibt"/>
-            <key code="16" output="U+001D;"/>
-            <key code="17" output="U+0014;"/>
+            <key code="16" output=""/>
+            <key code="17" output=""/>
             <key code="18" output=""/>
             <key code="19" output=""/>
-            <key code="20" output="3"/>
-            <key code="21" output="4"/>
+            <key code="20" output=""/>
+            <key code="21" output=""/>
             <key code="22" action="mymr"/>
-            <key code="23" output="5"/>
-            <key code="24" output="+"/>
-            <key code="25" output="9"/>
+            <key code="23" output=""/>
+            <key code="24" output=""/>
+            <key code="25" output=""/>
             <key code="26" action="taml"/>
             <key code="27" output="U+001F;"/>
             <key code="28" action="thaa"/>
-            <key code="29" output="0"/>
+            <key code="29" output=""/>
             <key code="30" output=""/>
             <key code="31" action="armn"/>
             <key code="32" action="geez"/>
@@ -714,16 +749,16 @@
             <key code="35" action="laoo"/>
             <key code="36" output="U+000D;"/>
             <key code="37" action="kata"/>
-            <key code="38" action="U+0008;"/>
+            <key code="38" action="hebr"/>
             <key code="39" output=""/>
             <key code="40" action="tfng"/>
             <key code="41" action="sinh"/>
             <key code="42" output=""/>
-            <key code="43" output=","/>
-            <key code="44" output="/"/>
+            <key code="43" output=""/>
+            <key code="44" output=""/>
             <key code="45" action="beng"/>
-            <key code="46" action="U+000D;"/>
-            <key code="47" output="."/>
+            <key code="46" action="mong"/>
+            <key code="47" output=""/>
             <key code="48" output="U+0009;"/>
             <key code="49" output=" "/>
             <key code="50" output=""/>
@@ -731,10 +766,10 @@
             <key code="52" output="U+0003;"/>
             <key code="53" output="U+001B;"/>
             <key code="64" output="U+0010;"/>
-            <key code="65" output=","/>
+            <key code="65" output=""/>
             <key code="66" output="U+001D;"/>
-            <key code="67" output="*"/>
-            <key code="69" output="+"/>
+            <key code="67" output=""/>
+            <key code="69" output=""/>
             <key code="70" output="U+001C;"/>
             <key code="71" output="U+001B;"/>
             <key code="72" output="U+001F;"/>
@@ -744,17 +779,17 @@
             <key code="78" output="-"/>
             <key code="79" output="U+0010;"/>
             <key code="80" output="U+0010;"/>
-            <key code="81" output="="/>
-            <key code="82" output="0"/>
-            <key code="83" output="7"/>
+            <key code="81" output=""/>
+            <key code="82" output=""/>
+            <key code="83" output=""/>
             <key code="84" action="thai"/>
-            <key code="85" output="9"/>
-            <key code="86" output="4"/>
-            <key code="87" output="5"/>
-            <key code="88" output="6"/>
-            <key code="89" output="1"/>
-            <key code="91" output="2"/>
-            <key code="92" output="3"/>
+            <key code="85" output=""/>
+            <key code="86" output=""/>
+            <key code="87" output=""/>
+            <key code="88" output=""/>
+            <key code="89" output=""/>
+            <key code="91" output=""/>
+            <key code="92" output=""/>
             <key code="96" output="U+0010;"/>
             <key code="97" output="U+0010;"/>
             <key code="98" output="U+0010;"/>
@@ -804,7 +839,6 @@
             <when state="geez" next="geez" output=" "/>
             <when state="geor" next="geor" output=" "/>
             <when state="grek" next="grek" output=" "/>
-            <when state="hang" next="hang" output=" "/>
             <when state="hebr" next="hebr" output=" "/>
             <when state="hira" next="hira" output="　"/>
             <when state="kata" next="kata" output="　"/>
@@ -820,32 +854,26 @@
             <when state="thai" next="thai" output=" "/>
             <when state="tibt" next="tibt" output=" "/>
         </action>
-        <action id="U+0001;">
+        <action id="arab">
             <when state="none" next="arab"/>
         </action>
         <action id="cyrl">
             <when state="none" next="cyrl"/>
         </action>
-        <action id="U+0008;">
+        <action id="hebr">
             <when state="none" next="hebr"/>
         </action>
-        <action id="U+0009;">
+        <action id="grek">
             <when state="none" next="grek"/>
         </action>
-        <action id="U+000D;">
+        <action id="mong">
             <when state="none" next="mong"/>
         </action>
         <action id="armn">
             <when state="none" next="armn"/>
         </action>
-        <action id="U+0018;">
+        <action id="geor">
             <when state="none" next="geor"/>
-        </action>
-        <action id="U+001B;">
-            <when state="none" output="U+001B;"/>
-        </action>
-        <action id="U+001D;">
-            <when state="none" next="hang"/>
         </action>
         <action id="!">
             <when state="none" output="!"/>
@@ -928,6 +956,7 @@
             <when state="none" output="/"/>
             <when state="deva" next="deva" output="ऌ"/>
             <when state="mong" next="mong" output="᠀"/>
+            <when state="math" output="≠"/>
         </action>
         <action id="0">
             <when state="none" output="0"/>
@@ -1738,9 +1767,6 @@
         <action id="action">
             <when state="none" output=""/>
         </action>
-        <action id="alt+y">
-            <when state="none" output=""/>
-        </action>
         <action id="alt+X">
             <when state="none" output="͓"/>
         </action>
@@ -1749,9 +1775,6 @@
         </action>
         <action id="action 13">
             <when state="none" output="tfng"/>
-        </action>
-        <action id="alt+f">
-            <when state="none" output=""/>
         </action>
         <action id="alt+E">
             <when state="none" output=""/>
@@ -1820,14 +1843,8 @@
         <action id="alt+A">
             <when state="none" next="latn_small_caps"/>
         </action>
-        <action id="alt+d">
-            <when state="none" output=""/>
-        </action>
         <action id="alt+e">
             <when state="none" next="latn_e"/>
-        </action>
-        <action id="alt+g">
-            <when state="none" output=""/>
         </action>
         <action id="alt+h">
             <when state="none" output=""/>
@@ -3023,7 +3040,6 @@
         <when state="geez_z" output="ዘ"/>
         <when state="geor" output="რ"/>
         <when state="grek" output="α"/>
-        <when state="hang" output=""/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
         <when state="hira" output="あ"/>
