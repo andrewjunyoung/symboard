@@ -23,6 +23,7 @@ export const scriptMap = {
   cyrl: new Script("cyrl", "🇧🇬", "АБВГ", "cyrillic", "Кирилица"),
   deva: new Script("deva", "🇮🇳", "अआइई", "devanagari", "देवनागरी"),
   geez: new Script("geez", "🇪🇹", "ሀለሐመ", "ge'ez", "ግዕዝ"),
+  geor: new Script("geor", "🇬🇪", "აბგდ", "georgian", "მხედრული"),
   grek: new Script("grek", "🇬🇷", "αβγδ", "greek", "Ελληνικά"),
   hebr: new Script("hebr", "🇮🇱", "אבגד", "hebrew", "עברית"),
   hira: new Script("hira", "🇯🇵", "あいうえ", "hiragana", "ひらがな"),
