@@ -7,10 +7,12 @@ export class Script {
     public nativeName: string
   ) {}
 
-  getKeyDisplayText(): string {
-    return (
-      this.id + " " + this.flag + "\n" + this.sampleText
-    );
+  getLongDisplayText(): string {
+    return this.id + " " + this.flag + "\n" + this.sampleText;
+  }
+
+  getShortDisplayText(): string {
+    return this.sampleText[0];
   }
 }
 

@@ -196,7 +196,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           const terminatorOutput = terminator ? terminator.output : "";
 
           if (text in scriptMap) {
-            return `${scriptMap[text].getKeyDisplayText()}`;
+            return `${scriptMap[text].getShortDisplayText()}`;
           }
           return `${terminatorOutput}`;
         }
@@ -275,25 +275,27 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
             height: `${height * 60}px`,
           }}
         >
-          <div
-            className={`key-region key-region-nw ${isDeadInLayer1 ? "dead-region" : ""}`}
-          >
-            <span>{getKeyOutputForLayer(1, code)}</span>
-          </div>
-          <div
-            className={`key-region key-region-ne ${isDeadInLayer3 ? "dead-region" : ""}`}
-          >
-            <span>{getKeyOutputForLayer(3, code)}</span>
-          </div>
-          <div
-            className={`key-region key-region-sw ${isDeadInLayer4 ? "dead-region" : ""}`}
-          >
-            <span>{getKeyOutputForLayer(4, code)}</span>
-          </div>
-          <div
-            className={`key-region key-region-se ${isDeadInLayer2 ? "dead-region" : ""}`}
-          >
-            <span>{getKeyOutputForLayer(2, code)}</span>
+          <div className="detailed-key">
+            <div
+              className={`key-region key-region-nw ${isDeadInLayer1 ? "dead-region" : ""}`}
+            >
+              <span>{getKeyOutputForLayer(1, code)}</span>
+            </div>
+            <div
+              className={`key-region key-region-ne ${isDeadInLayer3 ? "dead-region" : ""}`}
+            >
+              <span>{getKeyOutputForLayer(3, code)}</span>
+            </div>
+            <div
+              className={`key-region key-region-sw ${isDeadInLayer4 ? "dead-region" : ""}`}
+            >
+              <span>{getKeyOutputForLayer(4, code)}</span>
+            </div>
+            <div
+              className={`key-region key-region-se ${isDeadInLayer2 ? "dead-region" : ""}`}
+            >
+              <span>{getKeyOutputForLayer(2, code)}</span>
+            </div>
           </div>
         </div>
       );
@@ -535,24 +537,20 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           {seeEverything && (
             <div className="key-legend">
               <div className="legend-item">
-                <div className="legend-color nw"></div>
-                <span>Shift</span>
-              </div>
-              <div className="legend-item">
-                <div className="legend-color ne"></div>
-                <span>Alt+Shift</span>
-              </div>
-              <div className="legend-item">
                 <div className="legend-color sw"></div>
                 <span>Normal</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-color nw"></div>
+                <span>Shift</span>
               </div>
               <div className="legend-item">
                 <div className="legend-color se"></div>
                 <span>Alt</span>
               </div>
               <div className="legend-item">
-                <div className="legend-color dead-region"></div>
-                <span>Dead Key</span>
+                <div className="legend-color ne"></div>
+                <span>Alt+Shift</span>
               </div>
             </div>
           )}
