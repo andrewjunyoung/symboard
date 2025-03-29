@@ -51,6 +51,7 @@ function parseKeylayoutXML(xmlDoc) {
     keyMaps: {},
     actions: {},
     modifiers: {},
+    terminators: [],
   };
 
   const keyboard = xmlDoc.getElementsByTagName("keyboard")[0];
@@ -102,6 +103,17 @@ function parseKeylayoutXML(xmlDoc) {
         next: when.getAttribute("next"),
         output: when.getAttribute("output"),
         state: when.getAttribute("state"),
+      });
+    }
+  }
+
+  const terminators = xmlDoc.getElementsByTagName("terminators")[0];
+  if (terminators) {
+    const whens = terminators.getElementsByTagName("when");
+    for (let when of whens) {
+      keylayout.terminators.push({
+        state: when.getAttribute("state"),
+        output: when.getAttribute("output"),
       });
     }
   }
@@ -296,7 +308,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
     // If it has an action, check what to display
     if (keyData.action && keylayout.actions[keyData.action]) {
-      // If it's a dead key, show the state it transitions to
       if (isDeadKey(code)) {
         const noneStateAction = keylayout.actions[keyData.action].find(
           (condition) =>
@@ -306,14 +317,17 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
         if (noneStateAction && noneStateAction.next) {
           text = noneStateAction.next;
+          const terminator = keylayout.terminators.find(
+            (term) => term.state === text
+          );
+          const terminatorOutput = terminator ? terminator.output : "";
+
           if (text in scriptMap) {
-            return scriptMap[text].getKeyDisplayText();
+            return `${scriptMap[text].getKeyDisplayText()}`;
           }
-          return text
+          return `${terminatorOutput}`; // ${text}`;
         }
-      }
-      // If it's an action but not a dead key, show the output in the none state
-      else {
+      } else {
         // Find the output for the "none" state
         const noneStateAction = keylayout.actions[keyData.action].find(
           (condition) => condition.state === "none"
