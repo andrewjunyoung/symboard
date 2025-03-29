@@ -12,7 +12,7 @@ interface KeyProps {
   width?: number;
   height?: number;
   className?: string;
-  isDeadKey?: boolean; // Added property to identify dead keys
+  isDeadKey?: boolean;
 }
 
 interface KeyboardHandle {
@@ -114,9 +114,8 @@ const Key: React.FC<KeyProps> = ({
   width = 1,
   height = 1,
   className = "",
-  isDeadKey = false, // Default to false
+  isDeadKey = false,
 }) => {
-  // Add the 'dead-key' class if isDeadKey is true
   const keyClassName = `key ${className} ${isDeadKey ? "dead-key" : ""}`;
 
   return (
@@ -237,14 +236,12 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   }
 
   function findKeyByOutput(keylayout, searchOutput) {
-    // First search through regular key mappings
     for (const indexKey in keylayout.keyMaps) {
       const keyMap = keylayout.keyMaps[indexKey];
 
       for (const codeKey in keyMap) {
         const keyData = keyMap[codeKey];
 
-        // Check if output matches search term
         if (
           keyData.output === searchOutput ||
           keyData.action === searchOutput
@@ -293,10 +290,44 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     ) {
       return "";
     }
-    var text =
-      keylayout.keyMaps[layer][code].output ||
-      keylayout.keyMaps[layer][code].action ||
-      "";
+
+    const keyData = keylayout.keyMaps[layer][code];
+    let text = keyData.output || "";
+
+    // If it has an action, check what to display
+    if (keyData.action && keylayout.actions[keyData.action]) {
+      // If it's a dead key, show the state it transitions to
+      if (isDeadKey(code)) {
+        const noneStateAction = keylayout.actions[keyData.action].find(
+          (condition) =>
+            condition.state === "none" &&
+            (!condition.output || condition.output === "")
+        );
+
+        if (noneStateAction && noneStateAction.next) {
+          text = noneStateAction.next;
+          if (text in scriptMap) {
+            return scriptMap[text].getKeyDisplayText();
+          }
+          return text
+        }
+      }
+      // If it's an action but not a dead key, show the output in the none state
+      else {
+        // Find the output for the "none" state
+        const noneStateAction = keylayout.actions[keyData.action].find(
+          (condition) => condition.state === "none"
+        );
+
+        if (noneStateAction && noneStateAction.output) {
+          text = noneStateAction.output;
+        } else {
+          text = keyData.action || "";
+        }
+      }
+    } else if (!text) {
+      text = keyData.action || "";
+    }
 
     switch (text) {
       case "U+0022;":
@@ -321,9 +352,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
         break;
     }
 
-    if (text in scriptMap) {
-      return scriptMap[text].getKeyDisplayText();
-    }
     return text;
   };
 
