@@ -414,7 +414,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
   useEffect(() => {
     const fetchKeylayout = async () => {
-      const filePath = "/layout.keylayout";
+      const filePath = "/dvorak.keylayout";
       const result = await loadKeylayoutFile(filePath);
 
       if (result) {
