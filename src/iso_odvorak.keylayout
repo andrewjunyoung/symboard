@@ -265,7 +265,7 @@
             <key code="126" output="&#x001E;"/>
         </keyMap>
         <keyMap index="2">
-            <key code="0" output="alt+a"/>
+            <key code="0" output=""/>
             <key code="1" output="̊"/>
             <key code="2" action="alt+e"/>
             <key code="3" action="alt+u"/>
