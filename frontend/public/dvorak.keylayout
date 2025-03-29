@@ -401,9 +401,9 @@
             <key code="23" output=""/>
             <key code="24" output=""/>
             <key code="25" output=""/>
-            <key code="26" output="≤"/>
+            <key code="26" output=""/>
             <key code="27" output="—"/>
-            <key code="28" output="≥"/>
+            <key code="28" output=""/>
             <key code="29" output="∞"/>
             <key code="30" output=""/>
             <key code="31" action="alt+R"/>
@@ -1117,6 +1117,7 @@
         </action>
         <action id="U+003C;">
             <when state="none" output="U+003C;"/>
+            <when state="math" output="≤"/>
             <when state="deva" next="deva" output="ौ"/>
         </action>
         <action id="=">
@@ -1126,6 +1127,7 @@
         </action>
         <action id="U+003E;">
             <when state="none" output="U+003E;"/>
+            <when state="math" output="≥"/>
             <when state="deva" next="deva" output="ु"/>
             <when state="math" output="×"/>
         </action>
@@ -1826,7 +1828,7 @@
             <when state="none" next="latn_e"/>
         </action>
         <action id="alt+h">
-            <when state="none" output=""/>
+            <when state="none" output=" "/>
             <when state="arab" next="arab_ring_below"/>
         </action>
         <action id="alt+u">
@@ -1834,7 +1836,7 @@
             <when state="cyrl" next="cyrl_i"/>
         </action>
         <action id="alt+i">
-            <when state="none" output=""/>
+            <when state="none" output=" "/>
             <when state="cyrl" next="cyrl_i"/>
         </action>
         <action id="alt+j">
@@ -1847,7 +1849,7 @@
             <when state="none" next="latn_rotated_lower"/>
         </action>
         <action id="alt+s">
-            <when state="none" output=""/>
+            <when state="none" output=" "/>
             <when state="cyrl" next="cyrl_stroke"/>
         </action>
         <action id="alt+t">
