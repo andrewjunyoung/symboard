@@ -35,11 +35,11 @@ const KeyboardLegend = () => {
           style={{
             width: "12px",
             height: "12px",
-            backgroundColor: "#0066a0",
+            backgroundColor: "#920",
             borderRadius: "2px",
           }}
         ></div>
-        Mode<sup>(?)</sup>
+        State key<sup>(?)</sup>
         <div
           className="tooltip"
           style={{
@@ -59,9 +59,13 @@ const KeyboardLegend = () => {
             boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
           }}
         >
-          A mode (or dead key) allows you to type special characters by pressing
-          a sequence of keys. Press the mode key first, then the target key to
-          produce a modified character.
+          A state key lets you enter a new state of the keyboard to type special
+          characters.
+          <br />
+          Press the state key followed by target key to type a modified
+          character.
+          <br />
+          For example, enter the "math" state and type ~ to produce ≈
         </div>
       </span>
 
@@ -87,7 +91,7 @@ const KeyboardLegend = () => {
           style={{
             width: "12px",
             height: "12px",
-            backgroundColor: "#0088cc",
+            backgroundColor: "#0066a0",
             borderRadius: "2px",
           }}
         ></div>
@@ -111,9 +115,11 @@ const KeyboardLegend = () => {
             boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
           }}
         >
-          A diacritic is a mark added to a letter that modifies its
-          pronunciation or meaning, such as accents (é), umlauts (ü), or
-          cedillas (ç). These are accessed using mode keys.
+          A diacritic is a mark added to a letter, such as accents (é) or
+          umlauts (ü).
+          <br />
+          Press the diacritic key followed by target key to type a modified
+          character.
         </div>
       </span>
     </div>

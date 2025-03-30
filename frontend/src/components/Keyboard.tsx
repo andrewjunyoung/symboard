@@ -49,11 +49,9 @@ function isCombiningCharacter(text) {
   if (!text || text.length === 0) return false;
   const codePoint = text.codePointAt(0);
   if (!codePoint) return false;
-  console.log("codePoint", codePoint);
 
   for (const [start, end] of ranges) {
     if (codePoint >= start && codePoint <= end) {
-      console.log("true");
       return true;
     }
   }
