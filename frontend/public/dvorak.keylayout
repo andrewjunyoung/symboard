@@ -397,14 +397,14 @@
             <key code="19" output=""/>
             <key code="20" output=""/>
             <key code="21" output=""/>
-            <key code="22" output=" ̭"/>
+            <key code="22" output="̭"/>
             <key code="23" output=""/>
             <key code="24" output=""/>
             <key code="25" output=""/>
             <key code="26" output=""/>
             <key code="27" output="—"/>
             <key code="28" output=""/>
-            <key code="29" output=""/>
+            <key code="29" output="∞"/>
             <key code="30" output=""/>
             <key code="31" action="alt+R"/>
             <key code="32" output=""/>
@@ -425,7 +425,7 @@
             <key code="47" output=""/>
             <key code="48" output="U+0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output=" ̰"/>
+            <key code="50" output="̰"/>
             <key code="51" output="U+0008;"/>
             <key code="52" output="U+0003;"/>
             <key code="53" output="U+001B;"/>
@@ -938,7 +938,6 @@
         </action>
         <action id="-">
             <when state="none" output="_"/>
-            <when state="math" output="∓"/>
             <when state="cyrl_i" output="й"/>
             <when state="armn" output="Ը"/>
             <when state="mong" next="mong" output="᠊"/>
@@ -1771,10 +1770,10 @@
             <when state="none" output="tfng"/>
         </action>
         <action id="alt+!">
-            <when state="none" output=" ̦"/>
+          <when state="none" output="̦"/>
         </action>
         <action id="alt+,">
-            <when state="none" output=" ̛"/>
+            <when state="none" output="̛"/>
             <when state="cyrl" next="cyrl_descender"/>
         </action>
         <action id="alt+.">
@@ -2520,7 +2519,6 @@
             <when state="latn_rotated_upper" output="ᴏ"/>
             <when state="latn_slash" output="ø"/>
             <when state="latn_small_caps" next="latn_small_caps" output="ᴏ"/>
-            <when state="math" output="°"/>
             <when state="mong" next="mong" output="ᠣ"/>
             <when state="tfng" next="tfng" output="ⵧ"/>
             <when state="thaa" next="thaa" output="ޮ"/>

@@ -399,7 +399,7 @@
             <key code="19" output=""/>
             <key code="20" output=""/>
             <key code="21" output=""/>
-            <key code="22" output=" ̭"/>
+            <key code="22" output="̭"/>
             <key code="23" output=""/>
             <key code="24" output=""/>
             <key code="25" output=""/>
@@ -427,7 +427,7 @@
             <key code="47" output=""/>
             <key code="48" output="&#x0009;"/>
             <key code="49" action=" "/>
-            <key code="50" output=" ̰"/>
+            <key code="50" output="̰"/>
             <key code="51" output="&#x0008;"/>
             <key code="52" output="&#x0003;"/>
             <key code="53" output="&#x001B;"/>
@@ -1772,10 +1772,10 @@
             <when state="none" output="tfng"/>
         </action>
         <action id="alt+!">
-            <when state="none" output=" ̦"/>
+          <when state="none" output="̦"/>
         </action>
         <action id="alt+,">
-            <when state="none" output=" ̛"/>
+            <when state="none" output="̛"/>
             <when state="cyrl" next="cyrl_descender"/>
         </action>
         <action id="alt+.">
