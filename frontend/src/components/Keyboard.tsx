@@ -280,7 +280,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     }
   };
 
-  // Check if a key is a dead key
+  // Check if a key is a dead key (in the current state if one is selected)
   const isKeyDead = (layerNum, code) => {
     if (
       !keylayout ||
@@ -294,13 +294,28 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
     // If the key has an action and that action exists in the actions map
     if (keyData.action && keylayout.actions[keyData.action]) {
-      // Check if any of the action's conditions have state="none" and output is null/empty
-      return keylayout.actions[keyData.action].some(
-        (condition) =>
-          condition.state === "none" &&
-          (!condition.output || condition.output === "") &&
-          condition.next
-      );
+      // If we have a selected state (not "default" or empty), check if it's dead in that state
+      if (
+        selectedState &&
+        selectedState !== "default" &&
+        selectedState !== ""
+      ) {
+        // Check if this state leads to a next state (making it a dead key)
+        return keylayout.actions[keyData.action].some(
+          (condition) =>
+            condition.state === selectedState &&
+            (!condition.output || condition.output === "") &&
+            condition.next
+        );
+      } else {
+        // Default behavior - check the "none" state
+        return keylayout.actions[keyData.action].some(
+          (condition) =>
+            condition.state === "none" &&
+            (!condition.output || condition.output === "") &&
+            condition.next
+        );
+      }
     }
 
     return false;
