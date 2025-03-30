@@ -1,9 +1,5 @@
-import React, {
-  useState,
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
-} from "react";
+import KeyboardLegend from "../components/KeyboardLegend";
+import { useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import { scriptMap } from "../types/Script";
 import "./Keyboard.css";
 
@@ -554,6 +550,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
               </div>
             </div>
           )}
+          <KeyboardLegend />
         </div>
 
         {/* Function row */}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Keyboard from "../components/Keyboard";
 import SearchBar from "../components/SearchBar";
 import "./DemoPage.css";
@@ -13,7 +13,6 @@ const DemoPage: React.FC = () => {
   const handleSearch = (query: string) => {
     if (keyboardRef.current) {
       const result = keyboardRef.current.searchKeyOutput(query);
-
       if (result) {
         const deadKeyText = result.deadKey
           ? `${result.deadKey.press} + ${result.deadKey.code} → `
@@ -46,7 +45,7 @@ const DemoPage: React.FC = () => {
         <SearchBar onSearch={handleSearch} />
         {searchResult && (
           <div
-            className={`search-response ${searchResult.success ? "success" : "error"}`}
+            className={`search-response ${searchResult.complete ? "success" : "error"}`}
           >
             {searchResult.message}
           </div>
