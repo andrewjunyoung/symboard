@@ -43,7 +43,10 @@ export async function loadKeylayoutFile(filePath) {
 
 function isCombiningCharacter(text) {
   const ranges = [
-    [0x0300, 0x036f], // Combining Diacritical Marks (covers most Latin diacritics)
+    [0x0300, 0x036f], // Combining Diacritical Marks
+    [0x1ab0, 0x1aff], // Combining Diacritical Marks Extended
+    [0x1dc0, 0x1dff], // Combining Diacritical Marks Supplement
+    [0x20d0, 0x20ff], // Combining Diacritical Marks for Symbols
   ];
 
   if (!text || text.length === 0) return false;
@@ -158,21 +161,44 @@ function processSpecialCharacter(text) {
 }
 
 const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
-  // Keyboard display properties
+  // Keyboard display properties.
   const [keylayout, setKeylayout] = useState<any>(null);
+  const [availableStates, setAvailableStates] = useState<string[]>([]);
   const [layer, setLayer] = useState(4);
-  // Key presses
+  // Options the user can configure.
+  const [seeEverything, setSeeEverything] = useState(false);
+  const [selectedState, setSelectedState] = useState<string>("");
+  // Key presses.
   const [altPressed, setAltPressed] = useState(false);
   const [controlPressed, setControlPressed] = useState(false);
   const [shiftPressed, setShiftPressed] = useState(false);
-  // See everything checkbox
-  const [seeEverything, setSeeEverything] = useState(false);
 
   // Search bar properties
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState(null);
 
-  // Function to get key output for a specific layer and code
+  const collectStates = (keylayout) => {
+    if (!keylayout) return [];
+
+    const states = new Set<string>();
+
+    // Add states from actions
+    Object.values(keylayout.actions).forEach((action: any) => {
+      action.forEach((condition) => {
+        if (condition.next) states.add(condition.next);
+        if (condition.state && condition.state !== "none")
+          states.add(condition.state);
+      });
+    });
+
+    // Add states from terminators
+    keylayout.terminators.forEach((terminator) => {
+      if (terminator.state) states.add(terminator.state);
+    });
+
+    return Array.from(states).sort();
+  };
+
   const getKeyOutputForLayer = (layerNum, code) => {
     if (
       !keylayout ||
@@ -541,6 +567,9 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       if (result) {
         console.log("Keylayout Object:", result);
         setKeylayout(result);
+        const states = ["default"].concat(collectStates(result));
+
+        setAvailableStates(states);
       }
     };
 
@@ -559,6 +588,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
             />
             See everything
           </label>
+
           {seeEverything && (
             <div className="key-legend">
               <div className="legend-item">
@@ -580,6 +610,21 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
             </div>
           )}
           <KeyboardLegend />
+
+          <div className="state-selector">
+            <select
+              value={selectedState}
+              onChange={(e) => setSelectedState(e.target.value)}
+              className="state-dropdown"
+            >
+              <option value="">Select a state...</option>
+              {availableStates.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Function row */}
