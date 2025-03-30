@@ -211,52 +211,73 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     const keyData = keylayout.keyMaps[layerNum][code];
     let text = keyData.output || "";
 
-    // If it has an action, check what to display
-    if (keyData.action && keylayout.actions[keyData.action]) {
-      // Check if it's a dead key
-      const isDeadKeyAction = keylayout.actions[keyData.action].some(
-        (condition) =>
-          condition.state === "none" &&
-          (!condition.output || condition.output === "") &&
-          condition.next
-      );
-
-      if (isDeadKeyAction) {
-        const noneStateAction = keylayout.actions[keyData.action].find(
-          (condition) =>
-            condition.state === "none" &&
-            (!condition.output || condition.output === "")
+    // If we have a selected state (not "default" or empty), only show keys that produce output in that state
+    if (selectedState && selectedState !== "default" && selectedState !== "") {
+      // If the key has an action, check if it produces output in the selected state
+      if (keyData.action && keylayout.actions[keyData.action]) {
+        const stateAction = keylayout.actions[keyData.action].find(
+          (condition) => condition.state === selectedState
         );
 
-        if (noneStateAction && noneStateAction.next) {
-          text = noneStateAction.next;
-          const terminator = keylayout.terminators.find(
-            (term) => term.state === text
-          );
-          const terminatorOutput = terminator ? terminator.output : "";
-
-          if (text in scriptMap) {
-            return `${scriptMap[text].getShortDisplayText()}`;
-          }
-          return `${terminatorOutput}`;
+        if (stateAction && stateAction.output) {
+          return processSpecialCharacter(stateAction.output);
+        } else {
+          // This key doesn't produce output in the selected state
+          return "";
         }
       } else {
-        // Find the output for the "none" state
-        const noneStateAction = keylayout.actions[keyData.action].find(
-          (condition) => condition.state === "none"
+        // Key doesn't have an action, so it can't produce state-specific output
+        return "";
+      }
+    } else {
+      // Regular behavior for default/none state
+      // If it has an action, check what to display
+      if (keyData.action && keylayout.actions[keyData.action]) {
+        // Check if it's a dead key
+        const isDeadKeyAction = keylayout.actions[keyData.action].some(
+          (condition) =>
+            condition.state === "none" &&
+            (!condition.output || condition.output === "") &&
+            condition.next
         );
 
-        if (noneStateAction && noneStateAction.output) {
-          text = noneStateAction.output;
-        } else {
-          text = keyData.action || "";
-        }
-      }
-    } else if (!text) {
-      text = keyData.action || "";
-    }
+        if (isDeadKeyAction) {
+          const noneStateAction = keylayout.actions[keyData.action].find(
+            (condition) =>
+              condition.state === "none" &&
+              (!condition.output || condition.output === "")
+          );
 
-    return processSpecialCharacter(text);
+          if (noneStateAction && noneStateAction.next) {
+            text = noneStateAction.next;
+            const terminator = keylayout.terminators.find(
+              (term) => term.state === text
+            );
+            const terminatorOutput = terminator ? terminator.output : "";
+
+            if (text in scriptMap) {
+              return `${scriptMap[text].getShortDisplayText()}`;
+            }
+            return `${terminatorOutput}`;
+          }
+        } else {
+          // Find the output for the "none" state
+          const noneStateAction = keylayout.actions[keyData.action].find(
+            (condition) => condition.state === "none"
+          );
+
+          if (noneStateAction && noneStateAction.output) {
+            text = noneStateAction.output;
+          } else {
+            text = keyData.action || "";
+          }
+        }
+      } else if (!text) {
+        text = keyData.action || "";
+      }
+
+      return processSpecialCharacter(text);
+    }
   };
 
   // Check if a key is a dead key

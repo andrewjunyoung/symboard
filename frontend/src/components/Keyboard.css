@@ -264,3 +264,24 @@
 .combining-region {
   background-color: rgba(0, 102, 160, 0.4);
 }
+
+.state-selector {
+  margin: 0.5rem 0;
+}
+
+.state-dropdown {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 200px;
+}
+
+.state-active-key {
+  background-color: #d4f4ff;
+  border: 2px solid #4db8ff;
+}
+
+.state-inactive-key {
+  opacity: 0.3;
+}
