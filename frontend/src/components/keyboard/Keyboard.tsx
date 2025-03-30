@@ -7,6 +7,7 @@ import {
   findDeadKeySequence,
   isKeyDead,
 } from "./Keylayout";
+import { isCombiningCharacter } from "./Key";
 import "./Keyboard.css";
 
 interface KeyProps {
@@ -22,27 +23,6 @@ interface KeyboardHandle {
   searchKeyOutput: (query: string) => void;
 }
 
-function isCombiningCharacter(text) {
-  const ranges = [
-    [0x0300, 0x036f], // Combining Diacritical Marks
-    [0x1ab0, 0x1aff], // Combining Diacritical Marks Extended
-    [0x1dc0, 0x1dff], // Combining Diacritical Marks Supplement
-    [0x20d0, 0x20ff], // Combining Diacritical Marks for Symbols
-  ];
-
-  if (!text || text.length === 0) return false;
-  const codePoint = text.codePointAt(0);
-  if (!codePoint) return false;
-
-  for (const [start, end] of ranges) {
-    if (codePoint >= start && codePoint <= end) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
 const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   // Keyboard display properties.
   const [keylayout, setKeylayout] = useState<any>(null);
@@ -55,10 +35,31 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   const [altPressed, setAltPressed] = useState(false);
   const [controlPressed, setControlPressed] = useState(false);
   const [shiftPressed, setShiftPressed] = useState(false);
-
   // Search bar properties
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState(null);
+
+  // Uninteresting wrapper functions
+  const getKeyOutput = (code) => {
+    return getKeyOutputForLayer(keylayout, currState, layer, code);
+  };
+  const checkIsDeadKey = (code) => {
+    return isKeyDead(keylayout, currState, layer, code);
+  };
+  const handleKeyDown = (event) => {
+    handleKeyPress(event, true);
+  };
+  const handleKeyUp = (event) => {
+    handleKeyPress(event, false);
+  };
+
+  // Actual constants
+  const keyboardLayout = {
+    numberRow: [50, 18, 19, 20, 21, 23, 22, 26, 28, 25, 29, 27, 24],
+    topRow: [12, 13, 14, 15, 16, 17, 32, 34, 31, 35, 33, 30],
+    homeRow: [0, 1, 2, 3, 5, 4, 38, 40, 37, 41, 39],
+    bottomRow: [6, 7, 8, 9, 11, 45, 46, 43, 47, 44],
+  };
 
   const collectStates = (keylayout) => {
     if (!keylayout) return [];
@@ -82,85 +83,65 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     return Array.from(states).sort();
   };
 
-  const getKeyOutput = (code) => {
-    return getKeyOutputForLayer(keylayout, currState, layer, code);
-  };
-
-  const checkIsDeadKey = (code) => {
-    return isKeyDead(keylayout, currState, layer, code);
-  };
-
   const KeyboardKey = ({ code, width = 1, height = 1, className = "" }) => {
-    const isDead = checkIsDeadKey(code);
     const keyOutput = getKeyOutput(code);
+    const isDead = checkIsDeadKey(code);
     const isCombining = isCombiningCharacter(keyOutput);
 
+    const keyStyle = {
+      width: `${width * 60}px`,
+      height: `${height * 60}px`,
+    };
+
     const keyClassName = `key ${className} ${
-      !seeEverything && isDead ? "dead-key" : ""
-    } ${!seeEverything && isCombining ? "combining-key" : ""}`;
+      !seeEverything &&
+      (isDead ? "dead-key" : "") + (isCombining ? "combining-key" : "")
+    }`.trim();
 
-    if (seeEverything) {
-      const isDeadInLayer1 = isKeyDead(1, code);
-      const isDeadInLayer2 = isKeyDead(2, code);
-      const isDeadInLayer3 = isKeyDead(3, code);
-      const isDeadInLayer4 = isKeyDead(4, code);
-
-      const isCombiningInLayer1 = isCombiningCharacter(
-        getKeyOutputForLayer(1, code)
-      );
-      const isCombiningInLayer2 = isCombiningCharacter(
-        getKeyOutputForLayer(2, code)
-      );
-      const isCombiningInLayer3 = isCombiningCharacter(
-        getKeyOutputForLayer(3, code)
-      );
-      const isCombiningInLayer4 = isCombiningCharacter(
-        getKeyOutputForLayer(4, code)
-      );
-
+    if (!seeEverything) {
       return (
-        <div
-          className={keyClassName}
-          style={{
-            width: `${width * 60}px`,
-            height: `${height * 60}px`,
-          }}
-        >
-          <div className="detailed-key">
-            <div
-              className={`key-region key-region-nw ${isDeadInLayer1 ? "dead-region" : ""} ${isCombiningInLayer1 ? "combining-region" : ""}`}
-            >
-              <span>{getKeyOutputForLayer(1, code)}</span>
-            </div>
-            <div
-              className={`key-region key-region-ne ${isDeadInLayer3 ? "dead-region" : ""} ${isCombiningInLayer3 ? "combining-region" : ""}`}
-            >
-              <span>{getKeyOutputForLayer(3, code)}</span>
-            </div>
-            <div
-              className={`key-region key-region-sw ${isDeadInLayer4 ? "dead-region" : ""} ${isCombiningInLayer4 ? "combining-region" : ""}`}
-            >
-              <span>{getKeyOutputForLayer(4, code)}</span>
-            </div>
-            <div
-              className={`key-region key-region-se ${isDeadInLayer2 ? "dead-region" : ""} ${isCombiningInLayer2 ? "combining-region" : ""}`}
-            >
-              <span>{getKeyOutputForLayer(2, code)}</span>
-            </div>
-          </div>
+        <div className={keyClassName} style={keyStyle}>
+          <div className="key-content">{keyOutput}</div>
         </div>
       );
     }
 
+    // For seeEverything mode
+    const layers = [1, 2, 3, 4];
+    const keyIsDeadLayers = layers.map((layer) =>
+      isKeyDead(keylayout, currState, layer, code)
+    );
+
+    const keyOutputLayers = layers.map((layer) =>
+      getKeyOutputForLayer(keylayout, currState, layer, code)
+    );
+
+    // Map of layer index to position class. Note the 1-offset.
+    const regionPositions = {
+      0: "nw", // Layer 1
+      1: "se", // Layer 2
+      2: "ne", // Layer 3
+      3: "sw", // Layer 4
+    };
+
     return (
-      <div
-        className={keyClassName}
-        style={{
-          width: `${width * 60}px`,
-          height: `${height * 60}px`,
-        }}
-      >
-        <div className="key-content">{keyOutput}</div>
+      <div className={keyClassName} style={keyStyle}>
+        <div className="detailed-key">
+          {layers.map((layer, i) => (
+            <div
+              key={layer}
+              className={`key-region key-region-${regionPositions[i]} ${
+                keyIsDeadLayers[i] ? "dead-region" : ""
+              } ${
+                isCombiningCharacter(keyOutputLayers[i])
+                  ? "combining-region"
+                  : ""
+              }`}
+            >
+              <span>{keyOutputLayers[i]}</span>
+            </div>
+          ))}
+        </div>
       </div>
     );
   };
@@ -225,38 +206,23 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     setSearchResult(result);
   };
 
+  function handleKeyPress(event, isDown) {
+    switch (event.key) {
+      case "Alt":
+        setAltPressed(isDown);
+        return;
+      case "Control":
+        setControlPressed(isDown);
+        return;
+      case "Shift":
+        setShiftPressed(isDown);
+        return;
+    }
+  }
+
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      switch (event.key) {
-        case "Alt":
-          setAltPressed(true);
-          return;
-        case "Control":
-          setControlPressed(true);
-          return;
-        case "Shift":
-          setShiftPressed(true);
-          return;
-      }
-    };
-
-    const handleKeyUp = (event) => {
-      switch (event.key) {
-        case "Alt":
-          setAltPressed(false);
-          return;
-        case "Control":
-          setControlPressed(false);
-          return;
-        case "Shift":
-          setShiftPressed(false);
-          return;
-      }
-    };
-
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
-
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
@@ -284,8 +250,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
   useEffect(() => {
     const fetchKeylayout = async () => {
-      const filePath = "/dvorak.keylayout";
-      const result = await loadKeylayoutFile(filePath);
+      const result = await loadKeylayoutFile("/dvorak.keylayout");
 
       if (result) {
         console.log("Keylayout Object:", result);
@@ -370,64 +335,33 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           <FixedKey className="function-key">F12</FixedKey>
         </div>
 
-        {/* Number row */}
         <div className="keyboard-row">
-          <KeyboardKey code={50} />
-          <KeyboardKey code={18} />
-          <KeyboardKey code={19} />
-          <KeyboardKey code={20} />
-          <KeyboardKey code={21} />
-          <KeyboardKey code={23} />
-          <KeyboardKey code={22} />
-          <KeyboardKey code={26} />
-          <KeyboardKey code={28} />
-          <KeyboardKey code={25} />
-          <KeyboardKey code={29} />
-          <KeyboardKey code={27} />
-          <KeyboardKey code={24} />
+          {keyboardLayout.numberRow.map((code) => (
+            <KeyboardKey key={`key-${code}`} code={code} />
+          ))}
           <FixedKey width={2}>Backspace</FixedKey>
         </div>
 
-        {/* Top row */}
         <div className="keyboard-row">
           <FixedKey width={1.5}>Tab</FixedKey>
-          <KeyboardKey code={12} />
-          <KeyboardKey code={13} />
-          <KeyboardKey code={14} />
-          <KeyboardKey code={15} />
-          <KeyboardKey code={16} />
-          <KeyboardKey code={17} />
-          <KeyboardKey code={32} />
-          <KeyboardKey code={34} />
-          <KeyboardKey code={31} />
-          <KeyboardKey code={35} />
-          <KeyboardKey code={33} />
-          <KeyboardKey code={30} />
+          {keyboardLayout.topRow.map((code) => (
+            <KeyboardKey key={`key-${code}`} code={code} />
+          ))}
           <KeyboardKey code={42} width={1.5} />
         </div>
 
-        {/* Home row */}
         <div className="keyboard-row">
           <FixedKey width={1.75} className="mod-key">
             Caps Lock
           </FixedKey>
-          <KeyboardKey code={0} />
-          <KeyboardKey code={1} />
-          <KeyboardKey code={2} />
-          <KeyboardKey code={3} />
-          <KeyboardKey code={5} />
-          <KeyboardKey code={4} />
-          <KeyboardKey code={38} />
-          <KeyboardKey code={40} />
-          <KeyboardKey code={37} />
-          <KeyboardKey code={41} />
-          <KeyboardKey code={39} />
+          {keyboardLayout.homeRow.map((code) => (
+            <KeyboardKey key={`key-${code}`} code={code} />
+          ))}
           <FixedKey width={2.4} className="mod-key">
             Enter
           </FixedKey>
         </div>
 
-        {/* Bottom Row */}
         <div className="keyboard-row">
           <FixedKey
             width={2.25}
@@ -435,16 +369,9 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           >
             Shift
           </FixedKey>
-          <KeyboardKey code={6} />
-          <KeyboardKey code={7} />
-          <KeyboardKey code={8} />
-          <KeyboardKey code={9} />
-          <KeyboardKey code={11} />
-          <KeyboardKey code={45} />
-          <KeyboardKey code={46} />
-          <KeyboardKey code={43} />
-          <KeyboardKey code={47} />
-          <KeyboardKey code={44} />
+          {keyboardLayout.bottomRow.map((code) => (
+            <KeyboardKey key={`key-${code}`} code={code} />
+          ))}
           <FixedKey
             width={3}
             className={`mod-key ${shiftPressed ? "mod-active" : ""}`}
