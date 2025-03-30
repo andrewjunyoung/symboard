@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import Keyboard from "../components/Keyboard";
+import Keyboard from "../components/keyboard/Keyboard";
 import SearchBar from "../components/SearchBar";
 import "./DemoPage.css";
 

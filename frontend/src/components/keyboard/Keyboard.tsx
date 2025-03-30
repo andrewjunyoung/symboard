@@ -1,6 +1,12 @@
-import KeyboardLegend from "../components/KeyboardLegend";
 import { useState, useEffect, forwardRef, useImperativeHandle } from "react";
-import { scriptMap } from "../types/Script";
+import KeyboardLegend from "./KeyboardLegend";
+import { loadKeylayoutFile } from "./parser";
+import {
+  getKeyOutputForLayer,
+  getModifierString,
+  findDeadKeySequence,
+  isKeyDead,
+} from "./Keylayout";
 import "./Keyboard.css";
 
 interface KeyProps {
@@ -14,31 +20,6 @@ interface KeyProps {
 
 interface KeyboardHandle {
   searchKeyOutput: (query: string) => void;
-}
-
-export async function loadKeylayoutFile(filePath) {
-  try {
-    const response = await fetch(filePath);
-    if (!response.ok) {
-      throw new Error(`Failed to load file: ${response.statusText}`);
-    }
-
-    const xmlText = await response.text();
-
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-
-    if (xmlDoc.getElementsByTagName("parsererror").length > 0) {
-      throw new Error("Error parsing XML");
-    }
-
-    const keylayoutObject = parseKeylayoutXML(xmlDoc);
-
-    return keylayoutObject;
-  } catch (error) {
-    console.error("Error loading keylayout file:", error);
-    return null;
-  }
 }
 
 function isCombiningCharacter(text) {
@@ -62,104 +43,6 @@ function isCombiningCharacter(text) {
   return false;
 }
 
-function parseKeylayoutXML(xmlDoc) {
-  // Existing implementation
-  const keylayout = {
-    layouts: [],
-    keyMapSets: {},
-    keyMaps: {},
-    actions: {},
-    modifiers: {},
-    terminators: [],
-  };
-
-  const keyboard = xmlDoc.getElementsByTagName("keyboard")[0];
-  if (keyboard) {
-    keylayout.name = keyboard.getAttribute("name");
-    keylayout.group = keyboard.getAttribute("group");
-    keylayout.id = keyboard.getAttribute("id");
-  }
-
-  const modifierMaps = xmlDoc.getElementsByTagName("modifierMap");
-  for (let map of modifierMaps) {
-    const id = map.getAttribute("id");
-    keylayout.modifiers[id] = [];
-    const keys = map.getElementsByTagName("key");
-    for (let key of keys) {
-      keylayout.modifiers[id].push({
-        code: key.getAttribute("code"),
-        modifiers: key.getAttribute("modifiers"),
-      });
-    }
-  }
-
-  const keyMapSets = xmlDoc.getElementsByTagName("keyMapSet");
-  for (let set of keyMapSets) {
-    const id = set.getAttribute("id");
-    keylayout.keyMapSets[id] = [];
-    const keyMaps = set.getElementsByTagName("keyMap");
-    for (let map of keyMaps) {
-      const index = map.getAttribute("index");
-      keylayout.keyMapSets[id].push(index);
-      keylayout.keyMaps[index] = {};
-      const keys = map.getElementsByTagName("key");
-      for (let key of keys) {
-        keylayout.keyMaps[index][key.getAttribute("code")] = {
-          action: key.getAttribute("action"),
-          output: key.getAttribute("output"),
-        };
-      }
-    }
-  }
-
-  const actions = xmlDoc.getElementsByTagName("action");
-  for (let action of actions) {
-    const id = action.getAttribute("id");
-    keylayout.actions[id] = [];
-    const whens = action.getElementsByTagName("when");
-    for (let when of whens) {
-      keylayout.actions[id].push({
-        next: when.getAttribute("next"),
-        output: when.getAttribute("output"),
-        state: when.getAttribute("state"),
-      });
-    }
-  }
-
-  const terminators = xmlDoc.getElementsByTagName("terminators")[0];
-  if (terminators) {
-    const whens = terminators.getElementsByTagName("when");
-    for (let when of whens) {
-      keylayout.terminators.push({
-        state: when.getAttribute("state"),
-        output: when.getAttribute("output"),
-      });
-    }
-  }
-
-  return keylayout;
-}
-
-// Process special character codes
-function processSpecialCharacter(text) {
-  switch (text) {
-    case "U+0022;":
-      return '"';
-    case "U+0026;":
-      return "&";
-    case "~":
-      return "~"; // TODO: Special case
-    case "U+0027;":
-      return "'";
-    case "U+003C;":
-      return "<";
-    case "U+003E;":
-      return ">";
-    default:
-      return text;
-  }
-}
-
 const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   // Keyboard display properties.
   const [keylayout, setKeylayout] = useState<any>(null);
@@ -167,7 +50,7 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
   const [layer, setLayer] = useState(4);
   // Options the user can configure.
   const [seeEverything, setSeeEverything] = useState(false);
-  const [selectedState, setSelectedState] = useState<string>("");
+  const [currState, setCurrState] = useState<string>("");
   // Key presses.
   const [altPressed, setAltPressed] = useState(false);
   const [controlPressed, setControlPressed] = useState(false);
@@ -199,134 +82,12 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     return Array.from(states).sort();
   };
 
-  const getKeyOutputForLayer = (layerNum, code) => {
-    if (
-      !keylayout ||
-      !keylayout.keyMaps[layerNum] ||
-      !keylayout.keyMaps[layerNum][code]
-    ) {
-      return "";
-    }
-
-    const keyData = keylayout.keyMaps[layerNum][code];
-    let text = keyData.output || "";
-
-    // If we have a selected state (not "default" or empty), only show keys that produce output in that state
-    if (selectedState && selectedState !== "default" && selectedState !== "") {
-      // If the key has an action, check if it produces output in the selected state
-      if (keyData.action && keylayout.actions[keyData.action]) {
-        const stateAction = keylayout.actions[keyData.action].find(
-          (condition) => condition.state === selectedState
-        );
-
-        if (stateAction && stateAction.output) {
-          return processSpecialCharacter(stateAction.output);
-        } else {
-          // This key doesn't produce output in the selected state
-          return "";
-        }
-      } else {
-        // Key doesn't have an action, so it can't produce state-specific output
-        return "";
-      }
-    } else {
-      // Regular behavior for default/none state
-      // If it has an action, check what to display
-      if (keyData.action && keylayout.actions[keyData.action]) {
-        // Check if it's a dead key
-        const isDeadKeyAction = keylayout.actions[keyData.action].some(
-          (condition) =>
-            condition.state === "none" &&
-            (!condition.output || condition.output === "") &&
-            condition.next
-        );
-
-        if (isDeadKeyAction) {
-          const noneStateAction = keylayout.actions[keyData.action].find(
-            (condition) =>
-              condition.state === "none" &&
-              (!condition.output || condition.output === "")
-          );
-
-          if (noneStateAction && noneStateAction.next) {
-            text = noneStateAction.next;
-            const terminator = keylayout.terminators.find(
-              (term) => term.state === text
-            );
-            const terminatorOutput = terminator ? terminator.output : "";
-
-            if (text in scriptMap) {
-              return `${scriptMap[text].getShortDisplayText()}`;
-            }
-            return `${terminatorOutput}`;
-          }
-        } else {
-          // Find the output for the "none" state
-          const noneStateAction = keylayout.actions[keyData.action].find(
-            (condition) => condition.state === "none"
-          );
-
-          if (noneStateAction && noneStateAction.output) {
-            text = noneStateAction.output;
-          } else {
-            text = keyData.action || "";
-          }
-        }
-      } else if (!text) {
-        text = keyData.action || "";
-      }
-
-      return processSpecialCharacter(text);
-    }
-  };
-
-  // Check if a key is a dead key (in the current state if one is selected)
-  const isKeyDead = (layerNum, code) => {
-    if (
-      !keylayout ||
-      !keylayout.keyMaps[layerNum] ||
-      !keylayout.keyMaps[layerNum][code]
-    ) {
-      return false;
-    }
-
-    const keyData = keylayout.keyMaps[layerNum][code];
-
-    // If the key has an action and that action exists in the actions map
-    if (keyData.action && keylayout.actions[keyData.action]) {
-      // If we have a selected state (not "default" or empty), check if it's dead in that state
-      if (
-        selectedState &&
-        selectedState !== "default" &&
-        selectedState !== ""
-      ) {
-        // Check if this state leads to a next state (making it a dead key)
-        return keylayout.actions[keyData.action].some(
-          (condition) =>
-            condition.state === selectedState &&
-            (!condition.output || condition.output === "") &&
-            condition.next
-        );
-      } else {
-        // Default behavior - check the "none" state
-        return keylayout.actions[keyData.action].some(
-          (condition) =>
-            condition.state === "none" &&
-            (!condition.output || condition.output === "") &&
-            condition.next
-        );
-      }
-    }
-
-    return false;
-  };
-
   const getKeyOutput = (code) => {
-    return getKeyOutputForLayer(layer, code);
+    return getKeyOutputForLayer(keylayout, currState, layer, code);
   };
 
   const checkIsDeadKey = (code) => {
-    return isKeyDead(layer, code);
+    return isKeyDead(keylayout, currState, layer, code);
   };
 
   const KeyboardKey = ({ code, width = 1, height = 1, className = "" }) => {
@@ -416,85 +177,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     </div>
   );
 
-  function getModifierString(indexKey) {
-    switch (indexKey) {
-      case "1":
-        return "shift";
-      case "2":
-        return "alt";
-      case "3":
-        return "alt + shift";
-      case "4":
-        return "";
-      case "6":
-        return "control";
-      default:
-        return null;
-    }
-  }
-
-  function findKeyForState(targetState) {
-    if (!keylayout) return null;
-
-    for (const indexKey in keylayout.keyMaps) {
-      const keyMap = keylayout.keyMaps[indexKey];
-      for (const keyCode in keyMap) {
-        const keyData = keyMap[keyCode];
-        const action = keylayout.actions[keyData.action];
-
-        if (!action) continue;
-
-        for (const i in action) {
-          const condition = action[i];
-          if (
-            condition.state === "none" &&
-            condition.output === null &&
-            condition.next === targetState
-          ) {
-            return {
-              keyPress: getModifierString(indexKey),
-              code: getKeyOutputForLayer(Number(indexKey), Number(keyCode)),
-            };
-          }
-        }
-      }
-    }
-
-    return null;
-  }
-
-  function findDeadKeySequence(searchOutput) {
-    if (!keylayout) return null;
-
-    for (const indexKey in keylayout.keyMaps) {
-      const keyMap = keylayout.keyMaps[indexKey];
-
-      for (const codeKey in keyMap) {
-        const keyData = keyMap[codeKey];
-
-        if (keyData.action && keylayout.actions[keyData.action]) {
-          for (const state of keylayout.actions[keyData.action]) {
-            if (state.output === searchOutput) {
-              const stateKeyInfo = findKeyForState(state.state);
-
-              return {
-                keyPress: getModifierString(indexKey),
-                code: getKeyOutputForLayer(Number(indexKey), Number(codeKey)),
-                deadKey: {
-                  state: state.state,
-                  press: stateKeyInfo ? stateKeyInfo.keyPress : null,
-                  code: stateKeyInfo ? stateKeyInfo.code : null,
-                },
-              };
-            }
-          }
-        }
-      }
-    }
-
-    return null;
-  }
-
   function findKeyByOutput(searchOutput) {
     if (!keylayout) return null;
 
@@ -510,14 +192,19 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
         ) {
           return {
             keyPress: getModifierString(indexKey),
-            code: getKeyOutputForLayer(Number(indexKey), Number(codeKey)),
+            code: getKeyOutputForLayer(
+              keylayout,
+              currState,
+              Number(indexKey),
+              Number(codeKey)
+            ),
             deadKey: null,
           };
         }
       }
     }
 
-    return findDeadKeySequence(searchOutput);
+    return findDeadKeySequence(keylayout, currState, searchOutput);
   }
 
   useImperativeHandle(ref, () => ({
@@ -649,8 +336,8 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
 
           <div className="state-selector">
             <select
-              value={selectedState}
-              onChange={(e) => setSelectedState(e.target.value)}
+              value={currState}
+              onChange={(e) => setCurrState(e.target.value)}
               className="state-dropdown"
             >
               <option value="">Select a state...</option>
