@@ -4,6 +4,8 @@
   "states": [
     {
       "name": "arab",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "a",
       "a-z": "ابثدخفغحيجكلمنهپقرستوظطشضز",
       "A-Z": "ى چضےڤگخیژخا ںةڅږصط. ښچا ظ",
       "0-9": "٠١٢٣٤٥٦٧٨٩",
@@ -11,81 +13,88 @@
       "terminator": "ا"
     },
     {
-      "name": "greek",
-      "a-z": "αβψδεφγηιξκλμνοπθρστυωχζς",
-      "A-Z": "ΑΒΨΔΕΦΓΗΙΞΚΛΜΝΟΠΘΡΣΤΥΩΧΖΣ",
-      "0-9": "0123456789",
+      "name": "grek",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "e",
+      "a-z": "αβξδεφγηιςκλμνοπθρστυϝωχψζ",
+      "A-Z": "ΑΒΞΔΕΦΓΗΙΣΚΛΜΝΟΠΘΡΣΤΥϜΩΧΨΖ",
       "continuous": true,
       "terminator": "ω"
     },
     {
       "name": "cyrl",
-      "a-z": "абвгдеёжзийклмнопрстуфхцчшщъыьэюя",
-      "A-Z": "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
-      "0-9": "0123456789",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "c",
+      "a-z": "абчдефгхижклмноп рстувԝшыз",
+      "A-Z": "АБЧДЕФГХИЖКЛМНОП РСТУВԜШЫЗ",
       "continuous": true,
       "terminator": "д"
     },
     {
       "name": "hebr",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "h",
       "a-z": "אבגדהוזחטיכלמנסעפצקרשת",
       "A-Z": "ךםןףץ",
-      "0-9": "0123456789",
       "continuous": true,
       "terminator": "א"
     },
     {
       "name": "tfng",
-      "a-z": "ⴰⴱⴳⴷⴹⴻⴼⵄⵅⵇⵉⵊⵍⵎⵏⵓⵔⵕⵙⵚⵛⵜⵟⵡⵢⵣⵥⵯ",
-      "A-Z": "ⴰⴱⴳⴷⴹⴻⴼⵄⵅⵇⵉⵊⵍⵎⵏⵓⵔⵕⵙⵚⵛⵜⵟⵡⵢⵣⵥⵯ",
-      "0-9": "0123456789",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "t",
+      "a-z": "ⴰⴱⵛⴷⴻⴼⴳⵀⵉⵊⴽⵍⵎⵏⵧⵒⵇⵔⵙⵜⵓⵠⵡⵅⵒⵢⵣ",
       "continuous": true,
       "terminator": "ⵥ"
     },
     {
       "name": "mong",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "m",
       "a-z": "ᠠᠡᠢᠣᠤᠥᠦᠧᠨᠩᠪᠬᠭᠮᠯᠰᠱᠲᠳᠴᠵᠶᠷᠸᠹᠺᠻᠼᠽᠾᠿ",
-      "A-Z": "ᠠᠡᠢᠣᠤᠥᠦᠧᠨᠩᠪᠬᠭᠮᠯᠰᠱᠲᠳᠴᠵᠶᠷᠸᠹᠺᠻᠼᠽᠾᠿ",
       "0-9": "᠐᠑᠒᠓᠔᠕᠖᠗᠘᠙",
       "continuous": true,
       "terminator": "ᠪ"
     },
     {
       "name": "geor",
-      "a-z": "აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ",
-      "A-Z": "აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ",
-      "0-9": "0123456789",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "q",
+      "a-z": "ᲐᲑᲒᲓᲔᲕᲖᲗᲘᲙᲚᲛᲜᲝᲞᲟᲠᲡᲢᲣᲤᲥᲦᲧᲨᲩᲪᲫᲬᲭᲮᲯᲰ",
       "continuous": true,
       "terminator": "რ"
     },
     {
       "name": "deva",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "d",
       "a-z": "अआइईउऊएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह",
-      "A-Z": "ऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहऽ",
       "0-9": "०१२३४५६७८९",
       "continuous": true,
       "terminator": "अ"
     },
     {
       "name": "sinh",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "s",
       "a-z": "අආඇඈඉඊඋඌඍඎඏඐඑඒඓඔඕඖකඛගඝඞඟචඡජඣඤඥඦටඨඩඪණඬතථදධනඳපඵබභමඹයරලවශෂසහළෆ",
-      "A-Z": "අආඇඈඉඊඋඌඍඎඏඐඑඒඓඔඕඖකඛගඝඞඟචඡජඣඤඥඦටඨඩඪණඬතථදධනඳපඵබභමඹයරලවශෂසහළෆ",
-      "0-9": "0123456789",
       "continuous": true,
       "terminator": "අ"
     },
     {
       "name": "khmr",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "k",
       "a-z": "កខគឃងចឆជឈញដឋឌឍណតថទធនបផពភមយរលវឝឞសហឡអឣឤឥឦឧឨឩឪឫឬឭឮឯឰឱឲឳ",
-      "A-Z": "កខគឃងចឆជឈញដឋឌឍណតថទធនបផពភមយរលវឝឞសហឡអឣឤឥឦឧឨឩឪឫឬឭឮឯឰឱឲឳ",
       "0-9": "០១២៣៤៥៦៧៨៩",
       "continuous": true,
       "terminator": "អ"
     },
     {
       "name": "beng",
+      "triggerState": "ctrl",
+      "qwertyTriggerKey": "b",
       "a-z": "অআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহ",
-      "A-Z": "অআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহ",
       "0-9": "০১২৩৪৫৬৭৮৯",
       "continuous": true,
       "terminator": "অ"
