@@ -41,6 +41,26 @@ export async function loadKeylayoutFile(filePath) {
   }
 }
 
+function isCombiningCharacter(text) {
+  const ranges = [
+    [0x0300, 0x036f], // Combining Diacritical Marks (covers most Latin diacritics)
+  ];
+
+  if (!text || text.length === 0) return false;
+  const codePoint = text.codePointAt(0);
+  if (!codePoint) return false;
+  console.log("codePoint", codePoint);
+
+  for (const [start, end] of ranges) {
+    if (codePoint >= start && codePoint <= end) {
+      console.log("true");
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function parseKeylayoutXML(xmlDoc) {
   // Existing implementation
   const keylayout = {
@@ -241,27 +261,41 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     return false;
   };
 
-  // Get key output for the current layer
   const getKeyOutput = (code) => {
     return getKeyOutputForLayer(layer, code);
   };
 
-  // Check if key is a dead key in the current layer
   const checkIsDeadKey = (code) => {
     return isKeyDead(layer, code);
   };
 
-  // Shared key component
   const KeyboardKey = ({ code, width = 1, height = 1, className = "" }) => {
     const isDead = checkIsDeadKey(code);
-    const keyClassName = `key ${className} ${!seeEverything && isDead ? "dead-key" : ""}`;
+    const keyOutput = getKeyOutput(code);
+    const isCombining = isCombiningCharacter(keyOutput);
+
+    const keyClassName = `key ${className} ${
+      !seeEverything && isDead ? "dead-key" : ""
+    } ${!seeEverything && isCombining ? "combining-key" : ""}`;
 
     if (seeEverything) {
-      // Detailed view with all layers
       const isDeadInLayer1 = isKeyDead(1, code);
       const isDeadInLayer2 = isKeyDead(2, code);
       const isDeadInLayer3 = isKeyDead(3, code);
       const isDeadInLayer4 = isKeyDead(4, code);
+
+      const isCombiningInLayer1 = isCombiningCharacter(
+        getKeyOutputForLayer(1, code)
+      );
+      const isCombiningInLayer2 = isCombiningCharacter(
+        getKeyOutputForLayer(2, code)
+      );
+      const isCombiningInLayer3 = isCombiningCharacter(
+        getKeyOutputForLayer(3, code)
+      );
+      const isCombiningInLayer4 = isCombiningCharacter(
+        getKeyOutputForLayer(4, code)
+      );
 
       return (
         <div
@@ -273,22 +307,22 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
         >
           <div className="detailed-key">
             <div
-              className={`key-region key-region-nw ${isDeadInLayer1 ? "dead-region" : ""}`}
+              className={`key-region key-region-nw ${isDeadInLayer1 ? "dead-region" : ""} ${isCombiningInLayer1 ? "combining-region" : ""}`}
             >
               <span>{getKeyOutputForLayer(1, code)}</span>
             </div>
             <div
-              className={`key-region key-region-ne ${isDeadInLayer3 ? "dead-region" : ""}`}
+              className={`key-region key-region-ne ${isDeadInLayer3 ? "dead-region" : ""} ${isCombiningInLayer3 ? "combining-region" : ""}`}
             >
               <span>{getKeyOutputForLayer(3, code)}</span>
             </div>
             <div
-              className={`key-region key-region-sw ${isDeadInLayer4 ? "dead-region" : ""}`}
+              className={`key-region key-region-sw ${isDeadInLayer4 ? "dead-region" : ""} ${isCombiningInLayer4 ? "combining-region" : ""}`}
             >
               <span>{getKeyOutputForLayer(4, code)}</span>
             </div>
             <div
-              className={`key-region key-region-se ${isDeadInLayer2 ? "dead-region" : ""}`}
+              className={`key-region key-region-se ${isDeadInLayer2 ? "dead-region" : ""} ${isCombiningInLayer2 ? "combining-region" : ""}`}
             >
               <span>{getKeyOutputForLayer(2, code)}</span>
             </div>
@@ -297,7 +331,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
       );
     }
 
-    // Regular key rendering
     return (
       <div
         className={keyClassName}
@@ -306,12 +339,11 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
           height: `${height * 60}px`,
         }}
       >
-        <div className="key-content">{getKeyOutput(code)}</div>
+        <div className="key-content">{keyOutput}</div>
       </div>
     );
   };
 
-  // Fixed key component for function keys, etc.
   const FixedKey = ({ children, width = 1, height = 1, className = "" }) => (
     <div
       className={`key ${className}`}
@@ -324,7 +356,6 @@ const Keyboard = forwardRef<KeyboardHandle, {}>((props, ref) => {
     </div>
   );
 
-  // Search implementation
   function getModifierString(indexKey) {
     switch (indexKey) {
       case "1":

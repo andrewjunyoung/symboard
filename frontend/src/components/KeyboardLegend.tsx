@@ -15,7 +15,13 @@ const KeyboardLegend = () => {
     >
       <span
         className="legend-item"
-        style={{ position: "relative", cursor: "help" }}
+        style={{
+          position: "relative",
+          cursor: "help",
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
+        }}
         onMouseEnter={(e) => {
           const tooltip = e.currentTarget.querySelector(".tooltip");
           if (tooltip) tooltip.style.display = "block";
@@ -25,9 +31,15 @@ const KeyboardLegend = () => {
           if (tooltip) tooltip.style.display = "none";
         }}
       >
-        <u>
-          Mode<sup>(?)</sup>
-        </u>
+        <div
+          style={{
+            width: "12px",
+            height: "12px",
+            backgroundColor: "#0066a0",
+            borderRadius: "2px",
+          }}
+        ></div>
+        Mode<sup>(?)</sup>
         <div
           className="tooltip"
           style={{
@@ -55,7 +67,13 @@ const KeyboardLegend = () => {
 
       <span
         className="legend-item"
-        style={{ position: "relative", cursor: "help" }}
+        style={{
+          position: "relative",
+          cursor: "help",
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
+        }}
         onMouseEnter={(e) => {
           const tooltip = e.currentTarget.querySelector(".tooltip");
           if (tooltip) tooltip.style.display = "block";
@@ -65,9 +83,15 @@ const KeyboardLegend = () => {
           if (tooltip) tooltip.style.display = "none";
         }}
       >
-        <u>
-          Diacritic<sup>(?)</sup>
-        </u>
+        <div
+          style={{
+            width: "12px",
+            height: "12px",
+            backgroundColor: "#0088cc",
+            borderRadius: "2px",
+          }}
+        ></div>
+        Diacritic<sup>(?)</sup>
         <div
           className="tooltip"
           style={{
