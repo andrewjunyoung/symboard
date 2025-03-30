@@ -17,7 +17,7 @@
   },
   "build": {
     "appId": "com.o.oneboard",
-    "productName": "Oneβóard Installer",
+    "productName": "Oneboard Installer",
     "mac": {
       "category": "public.app-category.utilities",
       "target": "dmg",

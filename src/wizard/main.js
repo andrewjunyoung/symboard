@@ -15,7 +15,7 @@ function createWindow() {
       contextIsolation: false,
     },
     resizable: false,
-    title: "Oneβóard Installer",
+    title: "Oneboard Installer",
   });
 
   mainWindow.loadFile("index.html");
