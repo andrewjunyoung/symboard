@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oneboard Installer</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f9fc;
+        color: #333;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .header h1 {
+        margin: 0;
+        color: #2c3e50;
+      }
+
+      .step {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      .step.active {
+        display: block;
+      }
+
+      .step-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .step-content {
+        margin-bottom: 20px;
+      }
+
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+
+      button.primary {
+        background-color: #3498db;
+        color: white;
+      }
+
+      button.primary:hover {
+        background-color: #2980b9;
+      }
+
+      button.secondary {
+        background-color: #ecf0f1;
+        color: #7f8c8d;
+      }
+
+      button.secondary:hover {
+        background-color: #dfe6e9;
+      }
+
+      .file-input {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .file-path {
+        margin-left: 10px;
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #f9f9f9;
+        color: #555;
+        font-size: 14px;
+      }
+
+      .success-icon {
+        font-size: 48px;
+        color: #2ecc71;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .error-icon {
+        font-size: 48px;
+        color: #e74c3c;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .instructions {
+        background-color: #f8f9fa;
+        border-left: 4px solid #3498db;
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Oneboard Installer</h1>
+      </div>
+
+      <!-- Step 1: Welcome -->
+      <div class="step active" id="step-welcome">
+        <div class="step-title">Welcome to the Oneβóard Installer</div>
+        <div class="step-content">
+          <p>
+            This wizard will help you install a custom keyboard layout on your
+            computer.
+          </p>
+          <p>
+            Follow the simple steps to get started with your new keyboard
+            layout.
+          </p>
+
+          <div class="instructions">
+            <strong>Note:</strong> This installer currently only works for
+            macOS.
+          </div>
+        </div>
+        <div class="button-group">
+          <div></div>
+          <button
+            class="primary"
+            onclick="nextStep('step-welcome', 'step-select-file')"
+          >
+            Start
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Installation Options -->
+      <div class="step" id="step-select-file">
+        <div class="step-title">Choose Installation Option</div>
+        <div class="step-content">
+          <p>Your keyboard layout is included with this installer.</p>
+
+          <div class="instructions">
+            <p>
+              <strong>Default Keyboard Layout:</strong> This installer includes
+              a custom keyboard layout ready to install.
+            </p>
+          </div>
+
+          <div class="option-container">
+            <input
+              type="radio"
+              id="use-bundled"
+              name="layout-option"
+              value="bundled"
+              checked
+            />
+            <label for="use-bundled">Use included keyboard layout</label>
+          </div>
+
+          <div class="option-container">
+            <input
+              type="radio"
+              id="use-custom"
+              name="layout-option"
+              value="custom"
+            />
+            <label for="use-custom">Use a different keyboard layout file</label>
+          </div>
+
+          <div
+            class="file-input"
+            id="custom-file-input"
+            style="display: none; margin-top: 15px"
+          >
+            <button class="secondary" onclick="selectFile()">Browse...</button>
+            <div class="file-path" id="selected-file-path">
+              No file selected
+            </div>
+          </div>
+        </div>
+        <div class="button-group">
+          <button
+            class="secondary"
+            onclick="nextStep('step-select-file', 'step-welcome')"
+          >
+            Back
+          </button>
+          <button
+            class="primary"
+            id="next-button"
+            onclick="nextStep('step-select-file', 'step-install')"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Installation -->
+      <div class="step" id="step-install">
+        <div class="step-title">Install Keyboard Layout</div>
+        <div class="step-content">
+          <p>Ready to install your keyboard layout.</p>
+          <p>Click "Install" to proceed with the installation.</p>
+
+          <div class="instructions">
+            <strong>Note:</strong> After installation, you may need to log out
+            and log back in for the changes to take effect.
+          </div>
+        </div>
+        <div class="button-group">
+          <button
+            class="secondary"
+            onclick="nextStep('step-install', 'step-select-file')"
+          >
+            Back
+          </button>
+          <button class="primary" onclick="installKeyboard()">Install</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Completion -->
+      <div class="step" id="step-complete">
+        <div class="step-title">Installation Complete</div>
+        <div class="step-content" id="completion-content">
+          <!-- Content will be filled dynamically -->
+        </div>
+        <div class="button-group">
+          <button
+            class="secondary"
+            onclick="nextStep('step-complete', 'step-install')"
+          >
+            Back
+          </button>
+          <button class="primary" onclick="window.close()">Finish</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const { ipcRenderer } = require("electron");
+      let selectedFilePath = null;
+
+      function nextStep(currentStepId, nextStepId) {
+        document.getElementById(currentStepId).classList.remove("active");
+        document.getElementById(nextStepId).classList.add("active");
+      }
+
+      async function selectFile() {
+        const filePath = await ipcRenderer.invoke("select-layout-file");
+        if (filePath) {
+          selectedFilePath = filePath;
+          document.getElementById("selected-file-path").textContent = filePath;
+        }
+      }
+
+      // Toggle file input visibility based on selected option
+      document.addEventListener("DOMContentLoaded", () => {
+        const bundledOption = document.getElementById("use-bundled");
+        const customOption = document.getElementById("use-custom");
+        const fileInput = document.getElementById("custom-file-input");
+
+        bundledOption.addEventListener("change", () => {
+          fileInput.style.display = "none";
+          selectedFilePath = null; // Reset selected file
+        });
+
+        customOption.addEventListener("change", () => {
+          fileInput.style.display = "flex";
+        });
+      });
+
+      function installKeyboard() {
+        // If bundled option is selected, use bundled layout, otherwise use selected file
+        const useBundled = document.getElementById("use-bundled").checked;
+
+        if (!useBundled && !selectedFilePath) {
+          alert("Please select a keyboard layout file first.");
+          return;
+        }
+
+        const platform = process.platform;
+        if (platform === "darwin") {
+          ipcRenderer.send("install-keyboard-mac", selectedFilePath);
+        } else if (platform === "win32") {
+          ipcRenderer.send("install-keyboard-windows", selectedFilePath);
+        } else {
+          displayResult({
+            success: false,
+            message:
+              "Your operating system is not currently supported. This installer works best on macOS.",
+          });
+        }
+      }
+
+      function displayResult(result) {
+        const contentElement = document.getElementById("completion-content");
+
+        if (result.success) {
+          contentElement.innerHTML = `
+          <div class="success-icon">✓</div>
+          <p>${result.message}</p>
+          <div class="instructions">
+            <p><strong>Next steps:</strong></p>
+            <ol>
+              <li>Log out of your account</li>
+              <li>Log back in</li>
+              <li>Go to System Preferences > Keyboard > Input Sources</li>
+              <li>Click the + button and find your keyboard layout</li>
+              <li>Select it and click Add</li>
+            </ol>
+          </div>
+        `;
+        } else {
+          contentElement.innerHTML = `
+          <div class="error-icon">✗</div>
+          <p>${result.message}</p>
+          <div class="instructions">
+            <p><strong>Manual installation instructions:</strong></p>
+            <ol>
+              <li>Copy your .keylayout file</li>
+              <li>Navigate to ~/Library/Keyboard Layouts/ (create this folder if it doesn't exist)</li>
+              <li>Paste the file there</li>
+              <li>Log out and log back in</li>
+              <li>Go to System Preferences > Keyboard > Input Sources</li>
+              <li>Click the + button and find your keyboard layout</li>
+              <li>Select it and click Add</li>
+            </ol>
+          </div>
+        `;
+        }
+
+        nextStep("step-install", "step-complete");
+      }
+
+      ipcRenderer.on("installation-result", (event, result) => {
+        displayResult(result);
+      });
+    </script>
+  </body>
+</html>
