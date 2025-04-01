@@ -52,9 +52,8 @@
     "files": ["**/*", "src/wizard/assets/oneboard.keylayout"],
     "extraResources": [
       {
-        "from": "src/wizard/assets/",
-        "to": "assets",
-        "filter": ["**/*"]
+        "from": "src/static",
+        "to": "static"
       }
     ]
   }

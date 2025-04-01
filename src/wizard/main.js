@@ -1,12 +1,28 @@
-// main.js - Electron main process
-const { app, BrowserWindow, ipcMain, dialog } = require("electron");
-const path = require("path");
-const fs = require("fs");
-const { exec } = require("child_process");
+import { app, BrowserWindow, ipcMain, dialog } from "electron";
+import path from "path";
+import fs from "fs";
+import { exec } from "child_process";
+import { fileURLToPath } from "url";
+
+// Get __dirname equivalent in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let mainWindow;
+let bundledLayoutPath;
 
 function createWindow() {
+  // Set path to bundled layout file
+  bundledLayoutPath = path.join(__dirname, "../static/iso_odvorak.keylayout");
+
+  // If packaged:
+  if (app.isPackaged) {
+    bundledLayoutPath = path.join(
+      process.resourcesPath,
+      "static/iso_odvorak.keylayout"
+    );
+  }
+
   mainWindow = new BrowserWindow({
     width: 700,
     height: 500,
@@ -18,7 +34,7 @@ function createWindow() {
     title: "Oneboard Installer",
   });
 
-  mainWindow.loadFile("index.html");
+  mainWindow.loadFile(path.join(__dirname, "index.html"));
   // mainWindow.webContents.openDevTools(); // Uncomment for debugging
 }
 
@@ -47,6 +63,7 @@ ipcMain.on("install-keyboard-mac", (event, layoutPath) => {
       app.getPath("home"),
       "Library/Keyboard Layouts"
     );
+
     if (!fs.existsSync(userKeyboardDir)) {
       fs.mkdirSync(userKeyboardDir, { recursive: true });
     }
@@ -54,6 +71,7 @@ ipcMain.on("install-keyboard-mac", (event, layoutPath) => {
     // Copy the .keylayout file to the user's Keyboard Layouts directory
     const layoutFileName = path.basename(sourcePath);
     const destPath = path.join(userKeyboardDir, layoutFileName);
+
     fs.copyFileSync(sourcePath, destPath);
 
     event.reply("installation-result", {
@@ -72,9 +90,6 @@ ipcMain.on("install-keyboard-mac", (event, layoutPath) => {
 // Handle installation for Windows
 ipcMain.on("install-keyboard-windows", (event, layoutPath) => {
   // For Windows, we would need to register the layout with Windows
-  // This is more complex and would require a separate installer or registry modifications
-  // For now, we'll just show a message with manual instructions
-
   event.reply("installation-result", {
     success: false,
     message:

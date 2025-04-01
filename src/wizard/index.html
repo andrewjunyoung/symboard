@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <title>Oneboard Installer</title>
     <style>
       body {
@@ -125,6 +126,10 @@
         font-size: 14px;
         line-height: 1.5;
       }
+      
+      .option-container {
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -135,7 +140,7 @@
 
       <!-- Step 1: Welcome -->
       <div class="step active" id="step-welcome">
-        <div class="step-title">Welcome to the Oneβóard Installer</div>
+        <div class="step-title">Welcome to the Oneboard Installer</div>
         <div class="step-content">
           <p>
             This wizard will help you install a custom keyboard layout on your
