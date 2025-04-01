@@ -281,7 +281,7 @@ function main() {
 
     const xmlOutput = generateKeyboardLayoutXML(keyboardConfig);
 
-    const outputFilename = `${keyboardConfig.name.replace(/\s+/g, "_")}.keylayout`;
+    const outputFilename = `output/${keyboardConfig.name.replace(/\s+/g, "_")}.keylayout`;
     fs.writeFileSync(outputFilename, xmlOutput);
 
     console.log(

@@ -1,5 +1,5 @@
 {
-  "name": "MultiLang Keyboard",
+  "name": "Oneboard Keyboard",
   "id": "-29012",
   "states": [
     {
@@ -68,7 +68,8 @@
       "name": "deva",
       "triggerState": "ctrl",
       "qwertyTriggerKey": "d",
-      "a-z": "अआइईउऊएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह",
+      "a-z": "अबचदए गहइजकलमन प रसतउवशयड",
+      "A-Z": " भछध  घ  झख    फ ऋ थ  ष ढ",
       "0-9": "०१२३४५६७८९",
       "continuous": true,
       "terminator": "अ"
@@ -77,7 +78,8 @@
       "name": "sinh",
       "triggerState": "ctrl",
       "qwertyTriggerKey": "s",
-      "a-z": "අආඇඈඉඊඋඌඍඎඏඐඑඒඓඔඕඖකඛගඝඞඟචඡජඣඤඥඦටඨඩඪණඬතථදධනඳපඵබභමඹයරලවශෂසහළෆ",
+      "a-z": "අආඇඈඉ ඊඋඌඍඎඑ ඒඓඔඕක ඛගඝඞචඡජ",
+      "A-Z": " ඣඤ  ඨ  ඩඪ    ණ ථ  ධ  ෂ ෆ",
       "continuous": true,
       "terminator": "අ"
     },
@@ -85,7 +87,8 @@
       "name": "khmr",
       "triggerState": "ctrl",
       "qwertyTriggerKey": "k",
-      "a-z": "កខគឃងចឆជឈញដឋឌឍណតថទធនបផពភមយរលវឝឞសហឡអឣឤឥឦឧឨឩឪឫឬឭឮឯឰឱឲឳ",
+      "a-z": "កខគឃង ចឆជឈញ ដឋឌឍណ តថទធន បផពភម យរលវឝ សហឡអ",
+      "A-Z": "    ច        ញ         ណ         ន            ឝ     ",
       "0-9": "០១២៣៤៥៦៧៨៩",
       "continuous": true,
       "terminator": "អ"
@@ -94,7 +97,8 @@
       "name": "beng",
       "triggerState": "ctrl",
       "qwertyTriggerKey": "b",
-      "a-z": "অআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহ",
+      "a-z": "অবচদএ গহইজকলমন প রসতউভশযড",
+      "A-Z": " ভছধ  ঘ  ঝখ    ফ ঋ থ  ষ ঢ",
       "0-9": "০১২৩৪৫৬৭৮৯",
       "continuous": true,
       "terminator": "অ"
