@@ -1,7 +1,7 @@
 import React from "react";
-import "./HomePage.css";
+import styles from "./HomePage.module.css";
 
-const downloadableName = "oneboard.zip";
+const downloadableName = "Oneboard Installer-1.0.0-arm64.dmg";
 const downloadable = `/${downloadableName}`;
 
 function HomePage() {
@@ -64,13 +64,13 @@ function HomePage() {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       {/* Animated background gradient */}
-      <div className="background-gradient">
+      <div className={styles.backgroundGradient}>
         {/* Greeting background */}
-        <div className="greeting-background">
+        <div className={styles.greetingBackground}>
           {greetings.map((greeting, i) => (
-            <div key={i} className="greeting" style={getRandomSymbolStyle(i)}>
+            <div key={i} className={styles.greeting} style={getRandomSymbolStyle(i)}>
               {greeting.text}
             </div>
           ))}
@@ -78,11 +78,11 @@ function HomePage() {
       </div>
 
       {/* Decorative elements */}
-      <div className="floating-circles">
+      <div className={styles.floatingCircles}>
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="circle"
+            className={styles.circle}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -94,41 +94,41 @@ function HomePage() {
       </div>
 
       {/* Static subtle glow effect */}
-      <div className="spotlight"></div>
+      <div className={styles.spotlight}></div>
 
       {/* Main content */}
-      <div className="content">
-        <div className="content-wrapper">
-          <h1 className="main-heading">Oneβóard</h1>
-          <p className="tagline">
-            Type <span className="highlight">anything</span>. Even π, ʃ, あ,
+      <div className={styles.content}>
+        <div className={styles.contentWrapper}>
+          <h1 className={styles.mainHeading}>Oneβóard</h1>
+          <p className={styles.tagline}>
+            Type <span className={styles.highlight}>anything</span>. Even π, ʃ, あ,
             العربية ᴀɴᴅ 😍 without switching keyboards.
           </p>
 
-          <div className="features">
-            <div className="feature">
-              <span className="feature-icon">✓</span>
-              <span className="feature-text">
+          <div className={styles.features}>
+            <div className={styles.feature}>
+              <span className={styles.featureIcon}>✓</span>
+              <span className={styles.featureText}>
                 Type by shape or sound - intuitive & fast
               </span>
             </div>
-            <div className="feature">
-              <span className="feature-icon">✓</span>
-              <span className="feature-text">
+            <div className={styles.feature}>
+              <span className={styles.featureIcon}>✓</span>
+              <span className={styles.featureText}>
                 Universal across 50+ languages & scripts
               </span>
             </div>
-            <div className="feature">
-              <span className="feature-icon">✓</span>
-              <span className="feature-text">
+            <div className={styles.feature}>
+              <span className={styles.featureIcon}>✓</span>
+              <span className={styles.featureText}>
                 No more copying & pasting symbols
               </span>
             </div>
           </div>
 
-          <button className="download-button" onClick={handleDownload}>
-            <span className="button-text">Download</span>
-            <span className="button-icon">
+          <button className={styles.downloadButton} onClick={handleDownload}>
+            <span className={styles.buttonText}>Download</span>
+            <span className={styles.buttonIcon}>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"

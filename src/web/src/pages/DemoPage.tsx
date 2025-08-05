@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Keyboard from "../components/keyboard/Keyboard";
 import SearchBar from "../components/SearchBar";
-import "./DemoPage.css";
+import styles from "./DemoPage.module.css";
 
 const DemoPage: React.FC = () => {
   const keyboardRef = useRef(null);
@@ -38,14 +38,14 @@ const DemoPage: React.FC = () => {
   };
 
   return (
-    <div className="demo-page">
-      <div className="demo-content">
+    <div className={styles.demoPage}>
+      <div className={styles.demoContent}>
         <h1>Oneboard Demo</h1>
         <p>Experience our universal keyboard layout</p>
         <SearchBar onSearch={handleSearch} />
         {searchResult && (
           <div
-            className={`search-response ${searchResult.complete ? "success" : "error"}`}
+            className={`styles.searchResponse ${searchResult.complete ? "success" : "error"}`}
           >
             {searchResult.message}
           </div>

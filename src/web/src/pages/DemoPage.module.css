@@ -1,4 +1,4 @@
-.demo-page {
+.demoPage {
   padding-top: 80px;
   min-height: 100vh;
   background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.demo-content {
+.demoContent {
   width: 100%;
   max-width: 1200px;
   padding: 20px;
@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.demo-content h1 {
+.demoContent h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   background: linear-gradient(90deg, #4286f4, #42f4a1);
@@ -23,18 +23,18 @@
   background-clip: text;
 }
 
-.demo-content p {
+.demoContent p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.8;
 }
 
 @media (max-width: 768px) {
-  .demo-content h1 {
+  .demoContent h1 {
     font-size: 2rem;
   }
 
-  .demo-content p {
+  .demoContent p {
     font-size: 1rem;
   }
 }

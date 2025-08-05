@@ -9,7 +9,6 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
   height: 100vh;
   width: 100vw;
   background-color: #050A18;
@@ -22,7 +21,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 /* Animated background gradient */
@@ -49,7 +47,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   pointer-events: none;
   z-index: 1;
@@ -58,14 +55,12 @@ body {
 /* Decorative floating elements */
 .floating-circles {
   position: absolute;
-  width: 100%;
   height: 100%;
   z-index: 1;
 }
 
 .circle {
   position: absolute;
-  width: 120px;
   height: 120px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0) 70%);
@@ -112,10 +107,8 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-  min-width: 200px;
   height: 60px;
 }
 
@@ -124,7 +117,6 @@ body {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
   height: 100%;
   background: linear-gradient(
     90deg,
@@ -160,7 +152,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
   height: 24px;
   opacity: 0.8;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -176,7 +167,6 @@ body {
 }
 
 .download-button svg {
-  width: 100%;
   height: 100%;
 }
 
