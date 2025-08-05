@@ -12,6 +12,9 @@ const NavBar: React.FC = () => {
         <div className="nav-links">
           <Link to="/demo" className="nav-link">Demo</Link>
         </div>
+        <div className="nav-links">
+          <Link to="/cjkv" className="nav-link">Asian Languages</Link>
+        </div>
       </div>
     </nav>
   );
