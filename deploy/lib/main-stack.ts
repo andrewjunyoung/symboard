@@ -1,5 +1,6 @@
 import * as path from "path";
 import { NodejsBuild } from "deploy-time-build";
+import { aws_iam as iam } from "aws-cdk-lib";
 import * as cdk from "aws-cdk-lib";
 import {
   CloudFrontToS3,
@@ -13,7 +14,7 @@ import {
   aws_wafv2 as wafv2,
   aws_certificatemanager as acm,
 } from "aws-cdk-lib";
-import { Construct } from 'constructs';
+import { Construct } from "constructs";
 
 export class MainStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -84,9 +85,15 @@ export class MainStack extends cdk.Stack {
         },
       ],
       destinationBucket: s3Bucket!,
+      // memoryLimit=1024,  // Increase from default 128MB to 1024MB
+      // timeout=Duration.minutes(15)  // Increase timeout from default 5 minutes
       distribution: cloudFrontWebDistribution!,
-      outputSourceDirectory: "./frontend/dist",
-      buildCommands: ["cd frontend", "npm ci", "npm run build"],
+      outputSourceDirectory: "./src/web/dist",
+      buildCommands: [
+        "npm ci",
+        "npm run build -- --debug",
+        "ls -la ./src/web/dist",
+      ],
       nodejsVersion: 20,
       buildEnvironment: {
         NODE_OPTIONS: "--max-old-space-size=4096",
