@@ -52,6 +52,7 @@ def main(input_path, output_path, restructure=False):
     for n, line in enumerate(lines):
         splits = line.split("\t")
         if splits[0] in ["裏", "䦟"]:
+            output_lines.append(f"skip: {line}")
             continue
         try:
             reanalysis = splits[3].strip("\n")
@@ -60,6 +61,7 @@ def main(input_path, output_path, restructure=False):
             for sub in subs.keys():
                 if (sub, subs[sub]) in overrides:
                     print("sub", n)
+                    output_lines.append(f"sub: {line}")
                     continue
                 reanalysis = reanalysis.replace(sub, subs[sub])
             for sub in composition.keys():
@@ -67,6 +69,7 @@ def main(input_path, output_path, restructure=False):
 
             if " /" in reanalysis or "(" in reanalysis:
                 print("/(", n, reanalysis)
+                output_lines.append(f"/(: {line}")
                 continue
             if restructure:
                 line = [reanalysis.strip(" "), splits[0]]
@@ -81,6 +84,8 @@ def main(input_path, output_path, restructure=False):
             output_lines.append(new_line)
         except:
             print("no changes:", line)
+            output_lines.append(f"no changes: {line}")
+
     with open(output_path, "w") as file:
         for output_line in output_lines:
             file.write(output_line + "\n")
