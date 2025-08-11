@@ -99,6 +99,16 @@ export class MainStack extends cdk.Stack {
         NODE_OPTIONS: "--max-old-space-size=4096",
       },
     });
+
+    // Add explicit IAM permissions to ensure the Lambda function can start CodeBuild
+    const customResourceHandler = build.node.findChild('CustomResourceHandler') as any;
+    if (customResourceHandler && customResourceHandler.role) {
+      customResourceHandler.role.addToPrincipalPolicy(new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: ['codebuild:StartBuild', 'codebuild:BatchGetBuilds'],
+        resources: ['*'], // We need wildcard since the project ARN is created dynamically
+      }));
+    }
   }
 }
 
