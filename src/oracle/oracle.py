@@ -10,7 +10,7 @@ def load_char_db():
     return pd.read_csv("data/char_db.csv")
 
 
-def retokenize(tokens_path, use_strokes=False):
+def update_encoding(tokens_path, use_strokes=False):
     char_df = load_char_db()
     tokens_df = pd.read_csv(tokens_path)
 
@@ -27,6 +27,13 @@ def retokenize(tokens_path, use_strokes=False):
         return result
 
     char_df["retokenized"] = char_df["composition"].apply(replace_chars)
+    
+    # Update encoding column with retokenized values when retokenized is not null/NaN
+    mask = ~pd.isna(char_df["retokenized"])
+    char_df.loc[mask, "encoding"] = char_df.loc[mask, "retokenized"]
+    
+    # Save the updated dataframe back to CSV
+    char_df.to_csv("data/char_db.csv", index=False)
 
     return char_df
 
@@ -70,8 +77,8 @@ def main():
 
     if args.command == "gen-dict":
         gen_dict()
-    elif args.command == "retokenize":
-        result_df = retokenize(args.t, args.use_strokes)
+    elif args.command == "update-encoding":
+        result_df = update_encoding(args.t, args.use_strokes)
         print(result_df[["character", "composition", "retokenized"]].head(20))
         return result_df
     else:
