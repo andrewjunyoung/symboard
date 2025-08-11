@@ -126,7 +126,7 @@ function HomePage() {
             </div>
           </div>
 
-          <button className={styles.downloadButton} onClick={handleDownload}>
+          <button className="download-button" onClick={handleDownload}>
             <span className={styles.buttonText}>Download</span>
             <span className={styles.buttonIcon}>
               <svg

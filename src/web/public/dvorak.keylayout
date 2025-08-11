@@ -837,8 +837,7 @@
             <when state="geor" next="geor" output=" "/>
             <when state="grek" next="grek" output=" "/>
             <when state="hebr" next="hebr" output=" "/>
-            <when state="hira" next="hira" output="　"/>
-            <when state="kata" next="kata" output="　"/>
+            <when state="hrkt" next="hrkt" output="　"/>
             <when state="khmr" next="khmr" output=" "/>
             <when state="laoo" next="laoo" output=" "/>
             <when state="math" next="math" output=" "/>
@@ -875,8 +874,7 @@
         <action id="!">
             <when state="none" output="!"/>
             <when state="deva" next="deva" output="ी"/>
-            <when state="hira" output="！"/>
-            <when state="kata" output="！"/>
+            <when state="hrkt" output="！"/>
             <when state="latn_extensions" output="¡"/>
             <when state="latn_rotated_lower" output="¡"/>
         </action>
@@ -946,6 +944,7 @@
             <when state="none" output="."/>
             <when state="arrows_basic_dvorak" output="↗"/>
             <when state="deva" next="deva" output="ं"/>
+            <when state="hrkt" next="hrkt" output="。"/>
             <when state="hebr" next="hebr_dagesh"/>
             <when state="mong" next="mong" output="᠃"/>
         </action>
@@ -1123,6 +1122,7 @@
         <action id="=">
             <when state="none" output="="/>
             <when state="deva" next="deva" output="ळ"/>
+            <when state="hrkt" next="hrkt" output="＝"/>
             <when state="math" output="≒"/>
         </action>
         <action id="U+003E;">
@@ -1134,8 +1134,7 @@
         <action id="?">
             <when state="none" output="?"/>
             <when state="arab" next="arab" output="؟"/>
-            <when state="hira" output="？"/>
-            <when state="kata" output="？"/>
+            <when state="hrkt" output="？"/>
             <when state="latn_extensions" output="¿"/>
             <when state="latn_rotated_lower" output="¿"/>
         </action>
@@ -1153,6 +1152,21 @@
             <when state="cyrl_i" next="cyrl" output="Я"/>
             <when state="deva" next="deva" output="ा"/>
             <when state="grek" next="grek" output="Α"/>
+            <when state="hrkt" next="hrkt" output="ア"/>
+            <when state="hrkt_b" next="hrkt" output="バ"/>
+            <when state="hrkt_d" next="hrkt" output="ダ"/>
+            <when state="hrkt_g" next="hrkt" output="ガ"/>
+            <when state="hrkt_h" next="hrkt" output="ハ"/>
+            <when state="hrkt_k" next="hrkt" output="カ"/>
+            <when state="hrkt_m" next="hrkt" output="マ"/>
+            <when state="hrkt_n" next="hrkt" output="ナ"/>
+            <when state="hrkt_p" next="hrkt" output="パ"/>
+            <when state="hrkt_r" next="hrkt" output="ラ"/>
+            <when state="hrkt_s" next="hrkt" output="サ"/>
+            <when state="hrkt_t" next="hrkt" output="タ"/>
+            <when state="hrkt_w" next="hrkt" output="ワ"/>
+            <when state="hrkt_y" next="hrkt" output="ヤ"/>
+            <when state="hrkt_z" next="hrkt" output="ザ"/>
             <when state="latn_e" output="Æ"/>
             <when state="latn_extensions" output="Ɑ"/>
             <when state="latn_rotated_lower" output="Ɐ"/>
@@ -1168,6 +1182,7 @@
             <when state="cyrl" next="cyrl" output="Б"/>
             <when state="deva" next="deva" output="भ"/>
             <when state="grek" next="grek" output="Β"/>
+            <when state="hrkt" next="kata_b"/>
             <when state="khmr" next="khmr" output="ភ"/>
             <when state="latn_bar" output="Ƀ"/>
             <when state="latn_rotated_lower" output="Q"/>
@@ -1213,6 +1228,7 @@
             <when state="cyrl_stroke" next="cyrl" output="Ђ"/>
             <when state="deva" next="deva" output="ध"/>
             <when state="grek" next="grek" output="Δ"/>
+            <when state="hrkt" next="kata_d"/>
             <when state="khmr" next="khmr" output="ធ"/>
             <when state="latn_bar" output="Đ"/>
             <when state="latn_rotated_lower" output="P"/>
@@ -1235,6 +1251,19 @@
             <when state="cyrl_2" next="cyrl" output="Ѣ"/>
             <when state="cyrl_i" next="cyrl" output="Є"/>
             <when state="grek" next="grek" output="Ε"/>
+            <when state="hrkt" next="hrkt" output="エ"/>
+            <when state="kata_b" next="hrkt" output="ベ"/>
+            <when state="kata_d" next="hrkt" output="デ"/>
+            <when state="kata_g" next="hrkt" output="ゲ"/>
+            <when state="kata_h" next="hrkt" output="ヘ"/>
+            <when state="kata_k" next="hrkt" output="ケ"/>
+            <when state="kata_m" next="hrkt" output="メ"/>
+            <when state="kata_n" next="hrkt" output="ネ"/>
+            <when state="kata_p" next="hrkt" output="ペ"/>
+            <when state="kata_r" next="hrkt" output="レ"/>
+            <when state="kata_s" next="hrkt" output="セ"/>
+            <when state="kata_t" next="hrkt" output="テ"/>
+            <when state="kata_z" next="hrkt" output="ゼ"/>
             <when state="latn_extensions" output="Ɛ"/>
             <when state="latn_rotated_lower" output="Ə"/>
             <when state="latn_rotated_upper" output="Ǝ"/>
@@ -1267,6 +1296,7 @@
             <when state="cyrl_stroke" next="cyrl" output="Ғ"/>
             <when state="deva" next="deva" output="घ"/>
             <when state="grek" next="grek" output="Γ"/>
+            <when state="hrkt" next="kata_g"/>
             <when state="khmr" next="khmr" output="ឃ"/>
             <when state="laoo" next="laoo" output="ຄ"/>
             <when state="latn_bar" output="Ǥ"/>
@@ -1286,6 +1316,7 @@
             <when state="cyrl" next="cyrl" output="Х"/>
             <when state="cyrl_descender" next="cyrl" output="Ҳ"/>
             <when state="grek" next="grek" output="Η"/>
+            <when state="hrkt" next="kata_h"/>
             <when state="latn_bar" output="Ħ"/>
             <when state="latn_extensions" output="Ƕ"/>
             <when state="latn_rotated_lower" output="Ɥ"/>
@@ -1301,6 +1332,19 @@
             <when state="cyrl_1" next="cyrl" output="І"/>
             <when state="cyrl_2" next="cyrl" output="Ј"/>
             <when state="grek" next="grek" output="Ι"/>
+            <when state="hrkt" next="hrkt" output="イ"/>
+            <when state="kata_b" next="hrkt" output="ビ"/>
+            <when state="kata_d" next="hrkt" output="ヂ"/>
+            <when state="kata_g" next="hrkt" output="ギ"/>
+            <when state="kata_h" next="hrkt" output="ヒ"/>
+            <when state="kata_k" next="hrkt" output="キ"/>
+            <when state="kata_m" next="hrkt" output="ミ"/>
+            <when state="kata_n" next="hrkt" output="ニ"/>
+            <when state="kata_p" next="hrkt" output="ピ"/>
+            <when state="kata_r" next="hrkt" output="リ"/>
+            <when state="kata_s" next="hrkt" output="シ"/>
+            <when state="kata_t" next="hrkt" output="チ"/>
+            <when state="kata_z" next="hrkt" output="ジ"/>
             <when state="latn_bar" output="Ɨ"/>
             <when state="latn_extensions" output="Ɪ"/>
             <when state="latn_rotated_upper" output="I"/>
@@ -1347,6 +1391,7 @@
             <when state="geor" output="ქ"/>
             <when state="grek" next="grek" output="Κ"/>
             <when state="hebr" next="hebr" output="ך"/>
+            <when state="hrkt" next="kata_k"/>
             <when state="hebr_dagesh" output="ךּ"/>
             <when state="khmr" next="khmr" output="ខ"/>
             <when state="latn_bar" output="Ꝁ"/>
@@ -1367,6 +1412,7 @@
             <when state="cyrl_hook" next="cyrl" output="Ԡ"/>
             <when state="cyrl_i" next="cyrl" output="Љ"/>
             <when state="grek" next="grek" output="Λ"/>
+            <when state="hrkt" next="hrkt" output="ン"/>
             <when state="latn_bar" output="Ƚ"/>
             <when state="latn_rotated_lower" output="Ꞁ"/>
             <when state="latn_rotated_upper" output="⅂"/>
@@ -1380,6 +1426,7 @@
             <when state="cyrl" next="cyrl" output="М"/>
             <when state="grek" next="grek" output="Μ"/>
             <when state="hebr" next="hebr" output="ם‎"/>
+            <when state="hrkt" next="kata_m"/>
             <when state="latn_hook_palatal" output="Ɱ"/>
             <when state="latn_rotated_lower" output="Ɯ"/>
             <when state="latn_rotated_upper" output="ꟽ"/>
@@ -1397,6 +1444,7 @@
             <when state="deva" next="deva" output="ङ"/>
             <when state="grek" next="grek" output="Ν"/>
             <when state="hebr" next="hebr" output="ן"/>
+            <when state="hrkt" next="kata_n"/>
             <when state="khmr" next="khmr" output="ង"/>
             <when state="latn_hook_palatal" output="Ŋ"/>
             <when state="latn_slash" output="Ꞥ"/>
@@ -1416,13 +1464,22 @@
             <when state="cyrl_stroke" next="cyrl" output="Ө"/>
             <when state="deva" next="deva" output="ू"/>
             <when state="grek" next="grek" output="Ο"/>
-            <when state="hira" next="hira" output="ぉ"/>
-            <when state="hira_y" next="hira" output="ょ"/>
-            <when state="kata" next="kata" output="ォ"/>
-            <when state="kata_h" next="kata" output="ㇹ"/>
-            <when state="kata_r" next="kata" output="ㇿ"/>
-            <when state="kata_t" next="kata" output="ㇳ"/>
-            <when state="kata_y" next="hira" output="ョ"/>
+            <when state="hrkt" next="hrkt" output="オ"/>
+            <when state="kata_b" next="hrkt" output="ボ"/>
+            <when state="kata_d" next="hrkt" output="ド"/>
+            <when state="kata_g" next="hrkt" output="ゴ"/>
+            <when state="kata_h" next="hrkt" output="ホ"/>
+            <when state="kata_k" next="hrkt" output="コ"/>
+            <when state="kata_m" next="hrkt" output="モ"/>
+            <when state="kata_n" next="hrkt" output="ノ"/>
+            <when state="kata_p" next="hrkt" output="ポ"/>
+            <when state="kata_r" next="hrkt" output="ロ"/>
+            <when state="kata_s" next="hrkt" output="ソ"/>
+            <when state="kata_t" next="hrkt" output="ト"/>
+            <when state="kata_w" next="hrkt" output="ヲ"/>
+            <when state="kata_y" next="hrkt" output="ヨ"/>
+            <when state="kata_z" next="hrkt" output="ゾ"/>
+            <when state="kata_l" next="hrkt" output="ォ"/>
             <when state="latn_bar" output="Ɵ"/>
             <when state="latn_e" output="Œ"/>
             <when state="latn_extensions" output="Ɔ"/>
@@ -1446,6 +1503,7 @@
             <when state="grek" next="grek" output="Π"/>
             <when state="hebr" next="hebr" output="ף"/>
             <when state="hebr_dagesh" output="פּ"/>
+            <when state="hrkt" next="kata_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
             <when state="latn_bar" output="Ᵽ"/>
             <when state="latn_rotated_lower" output="d"/>
@@ -1476,15 +1534,16 @@
             <when state="deva" next="deva" output="ऋ"/>
             <when state="geor" output="ღ"/>
             <when state="grek" next="grek" output="Ρ"/>
-            <when state="khmr" next="khmr" output="ឫ"/>
-            <when state="latn_bar" output="Ɍ"/>
-            <when state="latn_rotated_lower" output="ᴚ"/>
-            <when state="latn_slash" output="Ꞧ"/>
-            <when state="latn_small_caps" next="latn_small_caps" output="ʀ"/>
-            <when state="mymr" next="mymr" output="ရိ"/>
-            <when state="sinh" next="sinh" output="ඍ"/>
-            <when state="tfng" next="tfng" output="ⵕ"/>
-            <when state="thai" next="thai" output="ฤ"/>
+            <when state="khmr" next="khmr" output="ផ"/>
+            <when state="hrkt" next="kata_r"/>
+            <when state="latn_bar" output="Ᵽ"/>
+            <when state="latn_rotated_lower" output="d"/>
+            <when state="latn_rotated_upper" output="d"/>
+            <when state="latn_small_caps" next="latn_small_caps" output="ᴘ"/>
+            <when state="mymr" next="mymr" output="ဖ"/>
+            <when state="sinh" next="sinh" output="ඵ"/>
+            <when state="taml" next="taml" output="ப"/>
+            <when state="thai" next="thai" output="พ"/>
         </action>
         <action id="S">
             <when state="none" output="S"/>
@@ -1495,6 +1554,7 @@
             <when state="cyrl_1" next="cyrl" output="Ҫ"/>
             <when state="geor" output="შ"/>
             <when state="grek" next="grek" output="Σ"/>
+            <when state="hrkt" next="kata_s"/>
             <when state="laoo" next="laoo" output="ຊ"/>
             <when state="latn_extensions" output="ẞ"/>
             <when state="latn_rotated_lower" output="S"/>
@@ -1516,6 +1576,7 @@
             <when state="geor" output="თ"/>
             <when state="grek" next="grek" output="Τ"/>
             <when state="khmr" next="khmr" output="ថ"/>
+            <when state="hrkt" next="kata_t"/>
             <when state="latn_bar" output="Ŧ"/>
             <when state="latn_extensions" output="Þ"/>
             <when state="latn_rotated_lower" output="Ʇ"/>
@@ -1535,17 +1596,20 @@
             <when state="cyrl_1" next="cyrl" output="Ү"/>
             <when state="cyrl_i" next="cyrl" output="Ю"/>
             <when state="grek" next="grek" output="Υ"/>
-            <when state="hira" next="hira" output="ぅ"/>
-            <when state="hira_t" next="hira" output="っ"/>
-            <when state="hira_y" next="hira" output="ゅ"/>
-            <when state="kata" next="kata" output="ゥ"/>
-            <when state="kata_h" next="kata" output="ㇷ"/>
-            <when state="kata_k" next="kata" output="ㇰ"/>
-            <when state="kata_s" next="kata" output="ㇲ"/>
-            <when state="kata_n" next="kata" output="ㇴ"/>
-            <when state="kata_m" next="kata" output="ㇺ"/>
-            <when state="kata_r" next="kata" output="ㇽ"/>
-            <when state="kata_y" next="hira" output="ュ"/>
+            <when state="hrkt" next="hrkt" output="ウ"/>
+            <when state="kata_b" next="hrkt" output="ブ"/>
+            <when state="kata_d" next="hrkt" output="ヅ"/>
+            <when state="kata_g" next="hrkt" output="グ"/>
+            <when state="kata_h" next="hrkt" output="フ"/>
+            <when state="kata_k" next="hrkt" output="ク"/>
+            <when state="kata_m" next="hrkt" output="ム"/>
+            <when state="kata_n" next="hrkt" output="ヌ"/>
+            <when state="kata_p" next="hrkt" output="プ"/>
+            <when state="kata_r" next="hrkt" output="ル"/>
+            <when state="kata_s" next="hrkt" output="ス"/>
+            <when state="kata_t" next="hrkt" output="ツ"/>
+            <when state="kata_y" next="hrkt" output="ユ"/>
+            <when state="kata_z" next="hrkt" output="ズ"/>
             <when state="latn_bar" output="Ʉ"/>
             <when state="latn_extensions" output="Ʊ"/>
             <when state="latn_rotated_lower" output="N"/>
@@ -1654,8 +1718,7 @@
             <when state="arab" next="arab" output="ذ"/>
             <when state="armn" next="armn" output="ը"/>
             <when state="deva" next="deva" output="ञ"/>
-            <when state="hira" next="hira" output="ー"/>
-            <when state="kata" next="kata" output="ー"/>
+            <when state="hrkt" next="hrkt" output="ー"/>
             <when state="mong" next="mong" output="᠆"/>
         </action>
         <action id="`">
@@ -1717,36 +1780,21 @@
             <when state="geor" output="ა"/>
             <when state="grek" next="grek" output="α"/>
             <when state="hebr" next="hebr" output="א"/>
-            <when state="hira" next="hira" output="あ"/>
-            <when state="hira_b" next="hira" output="ば"/>
-            <when state="hira_d" next="hira" output="だ"/>
-            <when state="hira_g" next="hira" output="が"/>
-            <when state="hira_h" next="hira" output="は"/>
-            <when state="hira_k" next="hira" output="か"/>
-            <when state="hira_m" next="hira" output="ま"/>
-            <when state="hira_n" next="hira" output="な"/>
-            <when state="hira_p" next="hira" output="ぱ"/>
-            <when state="hira_r" next="hira" output="ら"/>
-            <when state="hira_s" next="hira" output="さ"/>
-            <when state="hira_t" next="hira" output="た"/>
-            <when state="hira_w" next="hira" output="わ"/>
-            <when state="hira_y" next="hira" output="や"/>
-            <when state="hira_z" next="hira" output="ざ"/>
-            <when state="kata" next="kata" output="ア"/>
-            <when state="kata_b" next="kata" output="バ"/>
-            <when state="kata_d" next="kata" output="ダ"/>
-            <when state="kata_g" next="kata" output="ガ"/>
-            <when state="kata_h" next="kata" output="ハ"/>
-            <when state="kata_k" next="kata" output="カ"/>
-            <when state="kata_m" next="kata" output="マ"/>
-            <when state="kata_n" next="kata" output="ナ"/>
-            <when state="kata_p" next="kata" output="パ"/>
-            <when state="kata_r" next="kata" output="ラ"/>
-            <when state="kata_s" next="kata" output="サ"/>
-            <when state="kata_t" next="kata" output="タ"/>
-            <when state="kata_w" next="kata" output="ワ"/>
-            <when state="kata_y" next="kata" output="ヤ"/>
-            <when state="kata_z" next="kata" output="ザ"/>
+            <when state="hrkt" next="hrkt" output="あ"/>
+            <when state="hrkt_b" next="hrkt" output="ば"/>
+            <when state="hrkt_d" next="hrkt" output="だ"/>
+            <when state="hrkt_g" next="hrkt" output="が"/>
+            <when state="hrkt_h" next="hrkt" output="は"/>
+            <when state="hrkt_k" next="hrkt" output="か"/>
+            <when state="hrkt_m" next="hrkt" output="ま"/>
+            <when state="hrkt_n" next="hrkt" output="な"/>
+            <when state="hrkt_p" next="hrkt" output="ぱ"/>
+            <when state="hrkt_r" next="hrkt" output="ら"/>
+            <when state="hrkt_s" next="hrkt" output="さ"/>
+            <when state="hrkt_t" next="hrkt" output="た"/>
+            <when state="hrkt_w" next="hrkt" output="わ"/>
+            <when state="hrkt_y" next="hrkt" output="や"/>
+            <when state="hrkt_z" next="hrkt" output="ざ"/>
             <when state="khmr" next="khmr" output="អ"/>
             <when state="latn_e" output="æ"/>
             <when state="latn_extensions" output="ɑ"/>
@@ -1875,8 +1923,7 @@
             <when state="grek" next="grek" output="β"/>
             <when state="hebr" next="hebr" output="ב"/>
             <when state="hebr_dagesh" output="בּ"/>
-            <when state="hira" next="hira_b"/>
-            <when state="kata" next="kata_b"/>
+            <when state="hrkt" next="hrkt_b"/>
             <when state="khmr" next="khmr" output="ប"/>
             <when state="laoo" next="laoo" output="ບ"/>
             <when state="latn_bar" output="ƀ"/>
@@ -1941,7 +1988,7 @@
             <when state="none" next="cans"/>
         </action>
         <action id="ctrl+j">
-            <when state="none" next="hira"/>
+            <when state="none" next="hrkt"/>
         </action>
         <action id="d">
             <when state="none" output="d"/>
@@ -1960,8 +2007,7 @@
             <when state="grek" next="grek" output="δ"/>
             <when state="hebr" next="hebr" output="ד"/>
             <when state="hebr_dagesh" output="דּ"/>
-            <when state="hira" next="hira_d"/>
-            <when state="kata" next="kata_d"/>
+            <when state="hrkt" next="hrkt_d"/>
             <when state="khmr" next="khmr" output="ទ"/>
             <when state="laoo" next="laoo" output="ດ"/>
             <when state="latn_bar" output="đ"/>
@@ -2035,32 +2081,19 @@
             <when state="geor" output="ე"/>
             <when state="grek" next="grek" output="ε"/>
             <when state="hebr" next="hebr" output="ה"/>
-            <when state="hira" next="hira" output="え"/>
-            <when state="hira_b" next="hira" output="べ"/>
-            <when state="hira_d" next="hira" output="で"/>
-            <when state="hira_g" next="hira" output="げ"/>
-            <when state="hira_h" next="hira" output="へ"/>
-            <when state="hira_k" next="hira" output="け"/>
-            <when state="hira_m" next="hira" output="め"/>
-            <when state="hira_n" next="hira" output="ね"/>
-            <when state="hira_p" next="hira" output="ぺ"/>
-            <when state="hira_r" next="hira" output="れ"/>
-            <when state="hira_s" next="hira" output="せ"/>
-            <when state="hira_t" next="hira" output="て"/>
-            <when state="hira_z" next="hira" output="ぜ"/>
-            <when state="kata" next="kata" output="エ"/>
-            <when state="kata_b" next="kata" output="ベ"/>
-            <when state="kata_d" next="kata" output="デ"/>
-            <when state="kata_g" next="kata" output="ゲ"/>
-            <when state="kata_h" next="kata" output="ヘ"/>
-            <when state="kata_k" next="kata" output="ケ"/>
-            <when state="kata_m" next="kata" output="メ"/>
-            <when state="kata_n" next="kata" output="ネ"/>
-            <when state="kata_p" next="kata" output="ペ"/>
-            <when state="kata_r" next="kata" output="レ"/>
-            <when state="kata_s" next="kata" output="セ"/>
-            <when state="kata_t" next="kata" output="テ"/>
-            <when state="kata_z" next="kata" output="ゼ"/>
+            <when state="hrkt" next="hrkt" output="え"/>
+            <when state="hrkt_b" next="hrkt" output="べ"/>
+            <when state="hrkt_d" next="hrkt" output="で"/>
+            <when state="hrkt_g" next="hrkt" output="げ"/>
+            <when state="hrkt_h" next="hrkt" output="へ"/>
+            <when state="hrkt_k" next="hrkt" output="け"/>
+            <when state="hrkt_m" next="hrkt" output="め"/>
+            <when state="hrkt_n" next="hrkt" output="ね"/>
+            <when state="hrkt_p" next="hrkt" output="ぺ"/>
+            <when state="hrkt_r" next="hrkt" output="れ"/>
+            <when state="hrkt_s" next="hrkt" output="せ"/>
+            <when state="hrkt_t" next="hrkt" output="て"/>
+            <when state="hrkt_z" next="hrkt" output="ぜ"/>
             <when state="khmr" next="khmr" output="ឯ"/>
             <when state="latn_extensions" output="ɛ"/>
             <when state="latn_hook_retroflex" output="ᶒ"/>
@@ -2120,8 +2153,7 @@
             <when state="grek" next="grek" output="γ"/>
             <when state="hebr" next="hebr" output="ג"/>
             <when state="hebr_dagesh" output="גּ"/>
-            <when state="hira" next="hira_g"/>
-            <when state="kata" next="kata_g"/>
+            <when state="hrkt" next="hrkt_g"/>
             <when state="khmr" next="khmr" output="គ"/>
             <when state="laoo" next="laoo" output="ຂ"/>
             <when state="latn_bar" output="ǥ"/>
@@ -2155,8 +2187,7 @@
             <when state="geor" output="ჰ"/>
             <when state="grek" next="grek" output="η"/>
             <when state="hebr" next="hebr" output="ח"/>
-            <when state="hira" next="hira_h"/>
-            <when state="kata" next="kata_h"/>
+            <when state="hrkt" next="hrkt_h"/>
             <when state="khmr" next="khmr" output="ហ"/>
             <when state="laoo" next="laoo" output="ຫ໌"/>
             <when state="latn_bar" output="ħ"/>
@@ -2224,32 +2255,19 @@
             <when state="geor" output="ი"/>
             <when state="grek" next="grek" output="ι"/>
             <when state="hebr" next="hebr" output="י"/>
-            <when state="hira" next="hira" output="い"/>
-            <when state="hira_b" next="hira" output="び"/>
-            <when state="hira_d" next="hira" output="ぢ"/>
-            <when state="hira_g" next="hira" output="ぎ"/>
-            <when state="hira_h" next="hira" output="ひ"/>
-            <when state="hira_k" next="hira" output="き"/>
-            <when state="hira_m" next="hira" output="み"/>
-            <when state="hira_n" next="hira" output="に"/>
-            <when state="hira_p" next="hira" output="ぴ"/>
-            <when state="hira_r" next="hira" output="り"/>
-            <when state="hira_s" next="hira" output="し"/>
-            <when state="hira_t" next="hira" output="ち"/>
-            <when state="hira_z" next="hira" output="じ"/>
-            <when state="kata" next="kata" output="イ"/>
-            <when state="kata_b" next="kata" output="ビ"/>
-            <when state="kata_d" next="kata" output="ヂ"/>
-            <when state="kata_g" next="kata" output="ギ"/>
-            <when state="kata_h" next="kata" output="ヒ"/>
-            <when state="kata_k" next="kata" output="キ"/>
-            <when state="kata_m" next="kata" output="ミ"/>
-            <when state="kata_n" next="kata" output="ニ"/>
-            <when state="kata_p" next="kata" output="ピ"/>
-            <when state="kata_r" next="kata" output="リ"/>
-            <when state="kata_s" next="kata" output="シ"/>
-            <when state="kata_t" next="kata" output="チ"/>
-            <when state="kata_z" next="kata" output="ジ"/>
+            <when state="hrkt" next="hrkt" output="い"/>
+            <when state="hrkt_b" next="hrkt" output="び"/>
+            <when state="hrkt_d" next="hrkt" output="ぢ"/>
+            <when state="hrkt_g" next="hrkt" output="ぎ"/>
+            <when state="hrkt_h" next="hrkt" output="ひ"/>
+            <when state="hrkt_k" next="hrkt" output="き"/>
+            <when state="hrkt_m" next="hrkt" output="み"/>
+            <when state="hrkt_n" next="hrkt" output="に"/>
+            <when state="hrkt_p" next="hrkt" output="ぴ"/>
+            <when state="hrkt_r" next="hrkt" output="り"/>
+            <when state="hrkt_s" next="hrkt" output="し"/>
+            <when state="hrkt_t" next="hrkt" output="ち"/>
+            <when state="hrkt_z" next="hrkt" output="じ"/>
             <when state="khmr" next="khmr" output="ឥ"/>
             <when state="latn_bar" output="ɨ"/>
             <when state="latn_extensions" output="ɪ"/>
@@ -2316,8 +2334,7 @@
             <when state="grek" next="grek" output="κ"/>
             <when state="hebr" next="hebr" output="כ"/>
             <when state="hebr_dagesh" output="כּ"/>
-            <when state="hira" next="hira_k"/>
-            <when state="kata" next="kata_k"/>
+            <when state="hrkt" next="hrkt_k"/>
             <when state="khmr" next="khmr" output="ក"/>
             <when state="laoo" next="laoo" output="ກ"/>
             <when state="latn_bar" output="ꝁ"/>
@@ -2333,9 +2350,6 @@
             <when state="thaa" next="thaa" output="ކ"/>
             <when state="thai" next="thai" output="ก"/>
             <when state="tibt" next="tibt" output="ཀ"/>
-        </action>
-        <action id="kata">
-            <when state="none" next="kata"/>
         </action>
         <action id="khmr">
             <when state="none" next="khmr"/>
@@ -2355,8 +2369,7 @@
             <when state="geor" output="ლ"/>
             <when state="grek" next="grek" output="λ"/>
             <when state="hebr" next="hebr" output="ל"/>
-            <when state="hira" next="hira" output="ん"/>
-            <when state="kata" next="kata" output="ン"/>
+            <when state="hrkt" next="hrkt" output="ん"/>
             <when state="khmr" next="khmr" output="ល"/>
             <when state="laoo" next="laoo" output="ລ"/>
             <when state="latn_bar" output="ƚ"/>
@@ -2389,8 +2402,7 @@
             <when state="geor" output="მ"/>
             <when state="grek" next="grek" output="μ"/>
             <when state="hebr" next="hebr" output="מ"/>
-            <when state="hira" next="hira_m"/>
-            <when state="kata" next="kata_m"/>
+            <when state="hrkt" next="hrkt_m"/>
             <when state="khmr" next="khmr" output="ម"/>
             <when state="laoo" next="laoo" output="ມ"/>
             <when state="latn_hook_palatal" output="ɱ"/>
@@ -2427,8 +2439,7 @@
             <when state="geor" output="ნ"/>
             <when state="grek" next="grek" output="ν"/>
             <when state="hebr" next="hebr" output="נ"/>
-            <when state="hira" next="hira_n"/>
-            <when state="kata" next="kata_n"/>
+            <when state="hrkt" next="hrkt_n"/>
             <when state="khmr" next="khmr" output="ន"/>
             <when state="laoo" next="laoo" output="ນ"/>
             <when state="latn_hook_palatal" output="ŋ"/>
@@ -2482,36 +2493,21 @@
             <when state="geor" output="ო"/>
             <when state="grek" next="grek" output="ο"/>
             <when state="hebr" next="hebr" output="ע"/>
-            <when state="hira" next="hira" output="お"/>
-            <when state="hira_b" next="hira" output="ぼ"/>
-            <when state="hira_d" next="hira" output="ど"/>
-            <when state="hira_g" next="hira" output="ご"/>
-            <when state="hira_h" next="hira" output="ほ"/>
-            <when state="hira_k" next="hira" output="こ"/>
-            <when state="hira_m" next="hira" output="も"/>
-            <when state="hira_n" next="hira" output="の"/>
-            <when state="hira_p" next="hira" output="ぽ"/>
-            <when state="hira_r" next="hira" output="ろ"/>
-            <when state="hira_s" next="hira" output="そ"/>
-            <when state="hira_t" next="hira" output="と"/>
-            <when state="hira_w" next="hira" output="を"/>
-            <when state="hira_y" next="hira" output="よ"/>
-            <when state="hira_z" next="hira" output="ぞ"/>
-            <when state="kata" next="kata" output="オ"/>
-            <when state="kata_b" next="kata" output="ボ"/>
-            <when state="kata_d" next="kata" output="ド"/>
-            <when state="kata_g" next="kata" output="ゴ"/>
-            <when state="kata_h" next="kata" output="ホ"/>
-            <when state="kata_k" next="kata" output="コ"/>
-            <when state="kata_m" next="kata" output="モ"/>
-            <when state="kata_n" next="kata" output="ノ"/>
-            <when state="kata_p" next="kata" output="ポ"/>
-            <when state="kata_r" next="kata" output="ロ"/>
-            <when state="kata_s" next="kata" output="ソ"/>
-            <when state="kata_t" next="kata" output="ト"/>
-            <when state="kata_w" next="kata" output="ヲ"/>
-            <when state="kata_y" next="kata" output="ヨ"/>
-            <when state="kata_z" next="kata" output="ゾ"/>
+            <when state="hrkt" next="hrkt" output="お"/>
+            <when state="hrkt_b" next="hrkt" output="ぼ"/>
+            <when state="hrkt_d" next="hrkt" output="ど"/>
+            <when state="hrkt_g" next="hrkt" output="ご"/>
+            <when state="hrkt_h" next="hrkt" output="ほ"/>
+            <when state="hrkt_k" next="hrkt" output="こ"/>
+            <when state="hrkt_m" next="hrkt" output="も"/>
+            <when state="hrkt_n" next="hrkt" output="の"/>
+            <when state="hrkt_p" next="hrkt" output="ぽ"/>
+            <when state="hrkt_r" next="hrkt" output="ろ"/>
+            <when state="hrkt_s" next="hrkt" output="そ"/>
+            <when state="hrkt_t" next="hrkt" output="と"/>
+            <when state="hrkt_w" next="hrkt" output="を"/>
+            <when state="hrkt_y" next="hrkt" output="よ"/>
+            <when state="hrkt_z" next="hrkt" output="ぞ"/>
             <when state="latn_bar" output="ɵ"/>
             <when state="latn_e" output="œ"/>
             <when state="latn_extensions" output="ɔ"/>
@@ -2537,7 +2533,7 @@
             <when state="geor" output="პ"/>
             <when state="grek" next="grek" output="π"/>
             <when state="hebr" next="hebr" output="פ"/>
-            <when state="hira" next="hira_p"/>
+            <when state="hrkt" next="hrkt_p"/>
             <when state="kata" next="kata_p"/>
             <when state="khmr" next="khmr" output="ផ"/>
             <when state="laoo" next="laoo" output="ປ"/>
@@ -2588,7 +2584,7 @@
             <when state="geor" output="რ"/>
             <when state="grek" next="grek" output="ρ"/>
             <when state="hebr" next="hebr" output="ר"/>
-            <when state="hira" next="hira_r"/>
+            <when state="hrkt" next="hrkt_r"/>
             <when state="kata" next="kata_r"/>
             <when state="khmr" next="khmr" output="រ"/>
             <when state="laoo" next="laoo" output="ຣ"/>
@@ -2623,7 +2619,7 @@
             <when state="geor" output="ს"/>
             <when state="grek" next="grek" output="σ"/>
             <when state="hebr" next="hebr" output="ש"/>
-            <when state="hira" next="hira_s"/>
+            <when state="hrkt" next="hrkt_s"/>
             <when state="kata" next="kata_s"/>
             <when state="khmr" next="khmr" output="ស"/>
             <when state="laoo" next="laoo" output="ສ"/>
@@ -2662,8 +2658,7 @@
             <when state="geor" output="ტ"/>
             <when state="grek" next="grek" output="τ"/>
             <when state="hebr" next="hebr" output="ט"/>
-            <when state="hira" next="hira_t"/>
-            <when state="kata" next="kata_t"/>
+            <when state="hrkt" next="hrkt_t"/>
             <when state="khmr" next="khmr" output="ត"/>
             <when state="laoo" next="laoo" output="ຕ"/>
             <when state="latn_bar" output="ŧ"/>
@@ -2749,34 +2744,20 @@
             <when state="geor" output="უ"/>
             <when state="grek" next="grek" output="υ"/>
             <when state="hebr" next="hebr" output="ו"/>
-            <when state="hira" next="hira" output="う"/>
-            <when state="hira_b" next="hira" output="ぶ"/>
-            <when state="hira_d" next="hira" output="づ"/>
-            <when state="hira_g" next="hira" output="ぐ"/>
-            <when state="hira_h" next="hira" output="ふ"/>
-            <when state="hira_k" next="hira" output="く"/>
-            <when state="hira_m" next="hira" output="む"/>
-            <when state="hira_n" next="hira" output="ぬ"/>
-            <when state="hira_p" next="hira" output="ぷ"/>
-            <when state="hira_r" next="hira" output="る"/>
-            <when state="hira_s" next="hira" output="す"/>
-            <when state="hira_t" next="hira" output="つ"/>
-            <when state="hira_y" next="hira" output="ゆ"/>
-            <when state="hira_z" next="hira" output="ず"/>
-            <when state="kata" next="kata" output="ウ"/>
-            <when state="kata_b" next="kata" output="ブ"/>
-            <when state="kata_d" next="kata" output="ヅ"/>
-            <when state="kata_g" next="kata" output="グ"/>
-            <when state="kata_h" next="kata" output="フ"/>
-            <when state="kata_k" next="kata" output="ク"/>
-            <when state="kata_m" next="kata" output="ム"/>
-            <when state="kata_n" next="kata" output="ヌ"/>
-            <when state="kata_p" next="kata" output="プ"/>
-            <when state="kata_r" next="kata" output="ル"/>
-            <when state="kata_s" next="kata" output="ス"/>
-            <when state="kata_t" next="kata" output="ツ"/>
-            <when state="kata_y" next="kata" output="ユ"/>
-            <when state="kata_z" next="kata" output="ズ"/>
+            <when state="hrkt" next="hrkt" output="う"/>
+            <when state="hrkt_b" next="hrkt" output="ぶ"/>
+            <when state="hrkt_d" next="hrkt" output="づ"/>
+            <when state="hrkt_g" next="hrkt" output="ぐ"/>
+            <when state="hrkt_h" next="hrkt" output="ふ"/>
+            <when state="hrkt_k" next="hrkt" output="く"/>
+            <when state="hrkt_m" next="hrkt" output="む"/>
+            <when state="hrkt_n" next="hrkt" output="ぬ"/>
+            <when state="hrkt_p" next="hrkt" output="ぷ"/>
+            <when state="hrkt_r" next="hrkt" output="る"/>
+            <when state="hrkt_s" next="hrkt" output="す"/>
+            <when state="hrkt_t" next="hrkt" output="つ"/>
+            <when state="hrkt_y" next="hrkt" output="ゆ"/>
+            <when state="hrkt_z" next="hrkt" output="ず"/>
             <when state="khmr" next="khmr" output="ឧ"/>
             <when state="latn_bar" output="ʉ"/>
             <when state="latn_extensions" output="ʊ"/>
@@ -2850,7 +2831,7 @@
             <when state="geez" next="geez_w"/>
             <when state="geor" output="წ"/>
             <when state="grek" next="grek" output="ω"/>
-            <when state="hira" next="hira_w"/>
+            <when state="hrkt" next="hrkt_w"/>
             <when state="kata" next="kata_w"/>
             <when state="khmr" next="khmr" output="ដ"/>
             <when state="latn_extensions" output="ɯ"/>
@@ -2898,7 +2879,7 @@
             <when state="geez" next="geez_y"/>
             <when state="geor" output="ყ"/>
             <when state="grek" next="grek" output="ψ"/>
-            <when state="hira" next="hira_y"/>
+            <when state="hrkt" next="hrkt_y"/>
             <when state="kata" next="kata_y"/>
             <when state="khmr" next="khmr" output="យ"/>
             <when state="laoo" next="laoo" output="ຢ"/>
@@ -2930,8 +2911,7 @@
             <when state="geor" output="ზ"/>
             <when state="grek" next="grek" output="ζ"/>
             <when state="hebr" next="hebr" output="ז"/>
-            <when state="hira" next="hira_z"/>
-            <when state="kata" next="kata_z"/>
+            <when state="hrkt" next="hrkt_z"/>
             <when state="khmr" next="khmr" output="ឌ"/>
             <when state="latn_bar" output="ƶ"/>
             <when state="latn_extensions" output="ʒ"/>
@@ -3023,22 +3003,21 @@
         <when state="grek" output="α"/>
         <when state="hebr" output="א"/>
         <when state="hebr_dagesh" output=""/>
-        <when state="hira" output="あ"/>
-        <when state="hira_b" output="ぶ"/>
-        <when state="hira_d" output="ど"/>
-        <when state="hira_g" output="ぐ"/>
-        <when state="hira_h" output="ふ"/>
-        <when state="hira_k" output="く"/>
-        <when state="hira_m" output="む"/>
-        <when state="hira_n" output="の"/>
-        <when state="hira_p" output="ぷ"/>
-        <when state="hira_r" output="る"/>
-        <when state="hira_s" output="す"/>
-        <when state="hira_t" output="と"/>
-        <when state="hira_w" output="を"/>
-        <when state="hira_y" output="ゆ"/>
-        <when state="hira_z" output="ず"/>
-        <when state="kata" output="ア"/>
+        <when state="hrkt" output="あ"/>
+        <when state="hrkt_b" output="ぶ"/>
+        <when state="hrkt_d" output="ど"/>
+        <when state="hrkt_g" output="ぐ"/>
+        <when state="hrkt_h" output="ふ"/>
+        <when state="hrkt_k" output="く"/>
+        <when state="hrkt_m" output="む"/>
+        <when state="hrkt_n" output="の"/>
+        <when state="hrkt_p" output="ぷ"/>
+        <when state="hrkt_r" output="る"/>
+        <when state="hrkt_s" output="す"/>
+        <when state="hrkt_t" output="と"/>
+        <when state="hrkt_w" output="を"/>
+        <when state="hrkt_y" output="ゆ"/>
+        <when state="hrkt_z" output="ず"/>
         <when state="kata_b" output="ブ"/>
         <when state="kata_d" output="ド"/>
         <when state="kata_g" output="グ"/>

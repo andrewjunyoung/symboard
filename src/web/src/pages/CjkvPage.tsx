@@ -1,8 +1,26 @@
 import { useState } from "react";
 import styles from "./CjkvPage.module.css";
 
+const downloadableName = "CjkvDict";
+const downloadable = `/${downloadableName}`;
+
 export default function CjkvPage() {
   const [inputValue, setInputValue] = useState("");
+
+  const handleDownload = () => {
+    fetch(downloadable)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = downloadableName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+  };
 
   const mapping = {
     "a--d": "会",
@@ -10,7 +28,7 @@ export default function CjkvPage() {
     "a--dl": "刽",
     "ha--d": "荟",
     "ma--d": "桧",
-    "a--": "亽一",
+    "a--": "仒",
     "a-": "亽",
     "--": "二",
     "--d": "云",
@@ -52,11 +70,11 @@ export default function CjkvPage() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div>
-            <h1 className={styles.heroTitle}>Type Chinese at the Speed of Thought</h1>
-            <p className={styles.heroSubtitle}>
-              Finally, an input method that doesn't make you wait. Break free
-              from the frustrating hunt-and-peck of traditional Chinese typing.
-            </p>
+            <h1 className={styles.heroTitle}>
+              Type Chinese Characters
+              <br/>
+              at the Speed of Thought
+            </h1>
           </div>
 
           <div className={styles.painPoint}>
@@ -102,12 +120,6 @@ export default function CjkvPage() {
         </div>
       </section>
 
-      <section className={styles.ctaSection}>
-        <h2 className={styles.ctaTitle}>Ready to Transform Your Chinese Typing?</h2>
-
-        <button className={styles.btnPrimary}>Download App</button>
-      </section>
-
       <section className={styles.demoSection}>
         <div className={styles.interactiveDemo}>
           <h3 className={styles.demoInteractiveTitle}>Try It Right Here</h3>
@@ -119,12 +131,25 @@ export default function CjkvPage() {
               onChange={(e) => setInputValue(e.target.value)}
               className={styles.demoInput}
             />
-            <span className={styles.demoOutput} style={{ color: getOutputColor() }}>
+            <span
+              className={styles.demoOutput}
+              style={{ color: getOutputColor() }}
+            >
               {getOutputChar()}
             </span>
           </div>
-          <p className={styles.demoHint}>Try typing different stroke patterns</p>
+          <p className={styles.demoHint}>
+            Try typing different stroke patterns
+          </p>
         </div>
+      </section>
+
+      <section className="content">
+        <h2 className={styles.ctaTitle}>
+          Ready to Transform Your Chinese Typing?
+        </h2>
+
+        <button className="download-button">Download App</button>
       </section>
     </div>
   );
