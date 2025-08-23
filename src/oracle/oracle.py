@@ -89,6 +89,8 @@ def gen_dict():
                 filtered_rows.append(row)
 
     # First pass: Create initial dict with minimal cleaning (preserve composition chars)
+    seen_compositionless_encodings = set()
+    compositionless_encodings_with_duplicates = set()
     initial_dict = {}
     for row in filtered_rows:
         encoding = row['encoding']\
@@ -99,26 +101,27 @@ def gen_dict():
                 .replace("B", "")\
                 .replace(".", "")
 
+        # Remove composition chars that occur after the first char
+        if len(encoding) > 1:
+            encoding = encoding[0] + encoding[1:]\
+                    .replace(")", "")\
+                    .replace("|", "")\
+                    .replace("_", "")
+            if encoding[1:] in seen_compositionless_encodings:
+                compositionless_encodings_with_duplicates.add(encoding[1:])
+                print(encoding)
+            else:
+                seen_compositionless_encodings.add(encoding[1:])
+
         initial_dict[encoding] = row['character']
 
-    # Second pass: Check if we can remove composition characters without conflicts
+    # Second pass: Check if we can safely remove the prefixing composition char.
     final_dict = {}
     for encoding, character in initial_dict.items():
-        # Remove composition characters from the entire encoding
-        shortened_encoding = encoding.replace("(", "").replace(")", "").replace("|", "").replace("_", "")
-        
-        # Check if this shortened encoding would conflict with any other entry
-        conflicts = False
-        for other_encoding in initial_dict.keys():
-            if other_encoding != encoding:
-                other_shortened = other_encoding.replace("(", "").replace(")", "").replace("|", "").replace("_", "")
-                if other_shortened == shortened_encoding:
-                    conflicts = True
-                    break
-
-        # Use shortened encoding if no conflicts, otherwise keep original
-        final_encoding = encoding if conflicts else shortened_encoding
-        final_dict[final_encoding] = character
+        if encoding[1:] in compositionless_encodings_with_duplicates:
+            final_dict[encoding] = character
+        else:
+            final_dict[encoding[1:]] = character
 
     # Write final dictionary
     with open('dict.txt', 'w', encoding='utf-8') as f:
