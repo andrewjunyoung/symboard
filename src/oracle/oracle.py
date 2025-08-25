@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-
 import pandas as pd
 import argparse
 import sys
 import csv
-
 
 def load_char_db():
     return pd.read_csv("data/char_db.csv")
@@ -45,7 +43,7 @@ def update_encoding(tokens_path, use_strokes=False):
     return char_df
 
 
-def list_dupes(dict_path):
+def list_dupes(dict_path, ignore_variants=False):
     encoding_to_chars = {}
 
     try:
@@ -113,22 +111,31 @@ def gen_dict():
             else:
                 seen_compositionless_encodings.add(encoding[1:])
 
-        initial_dict[encoding] = row['character']
+        # Use list to handle multiple characters per encoding
+        if encoding not in initial_dict:
+            initial_dict[encoding] = []
+        initial_dict[encoding].append(row['character'])
 
     # Second pass: Check if we can safely remove the prefixing composition char.
     final_dict = {}
-    for encoding, character in initial_dict.items():
-        if encoding[1:] in compositionless_encodings_with_duplicates:
-            final_dict[encoding] = character
-        else:
-            final_dict[encoding[1:]] = character
+    for encoding, characters in initial_dict.items():
+        final_encoding = encoding
+        if len(encoding) > 1 and encoding[1:] not in compositionless_encodings_with_duplicates:
+            final_encoding = encoding[1:]
 
-    # Write final dictionary
+        if final_encoding not in final_dict:
+            final_dict[final_encoding] = []
+        final_dict[final_encoding].extend(characters)
+
+    # Write final dictionary with one row per character
     with open('dict.txt', 'w', encoding='utf-8') as f:
-        for encoding, character in final_dict.items():
-            f.write(f"{encoding}\t{character}\t名詞\n")
+        total_entries = 0
+        for encoding, characters in final_dict.items():
+            for character in characters:
+                f.write(f"{encoding}\t{character}\t名詞\n")
+                total_entries += 1
 
-    print(f"Generated dict.txt with {len(final_dict)} entries")
+    print(f"Generated dict.txt with {total_entries} entries")
 
 
 def main():
@@ -137,13 +144,14 @@ def main():
     parser.add_argument("-t", help="Path to tokens.csv", default="data/tokens.csv")
     parser.add_argument("--use-strokes", help="Use the character's strokes as the code")
     parser.add_argument("-d", "--dict", help="Path to dictionary file", default="dict.txt")
+    parser.add_argument("--ignore-variants", action="store_true", help="Ignore traditional/simplified variants when listing duplicates")
 
     args = parser.parse_args()
 
     if args.command == "gen-dict":
         gen_dict()
     elif args.command == "list-dupes":
-        list_dupes(args.dict)
+        list_dupes(args.dict, args.ignore_variants)
     elif args.command == "update-encoding":
         result_df = update_encoding(args.t, args.use_strokes)
         print(result_df[["character", "composition", "retokenized"]].head(20))
