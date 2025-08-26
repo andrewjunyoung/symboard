@@ -8,11 +8,160 @@ def load_char_db():
     return pd.read_csv("data/char_db.csv")
 
 
+def load_stroke_encodings():
+    """Load stroke encodings mapping from strokes to latin char"""
+    encodings = {}
+    with open('data/stroke_encodings.csv', 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            strokes = row['strokes'].strip()
+            char = row['char'].strip()
+            if strokes and char:
+                if strokes not in encodings:
+                    encodings[strokes] = []
+                encodings[strokes].append(char)
+    return encodings
+
+
+def apply_character_swaps(encoding):
+    """Apply character swaps: i → l, l → \, j → /"""
+    return encoding.replace('l', '\\').replace('i', 'l').replace('j', '/')
+
+
+def prompt_user_choice(char, current_encoding, new_encoding_options):
+    """Prompt user to choose between encoding options when there's a clash"""
+    print(f"\n🔥 CLASH DETECTED for char: '{char}'")
+    print(f"Current encoding: '{current_encoding}'")
+    print("New encoding options:")
+
+    # Create numbered list of options
+    options = []
+    for i, option in enumerate(new_encoding_options, 1):
+        print(f"  {i}. {option}")
+        options.append(option)
+
+    while True:
+        try:
+            user_input = input("\nChoose option number (1-{}) or enter custom encoding in quotes: ".format(len(options))).strip()
+
+            # Check if it's a quoted custom string
+            if user_input.startswith('"') and user_input.endswith('"'):
+                return user_input[1:-1]  # Remove quotes
+            elif user_input.startswith("'") and user_input.endswith("'"):
+                return user_input[1:-1]  # Remove quotes
+
+            # Check if it's a valid number
+            choice_num = int(user_input)
+            if 1 <= choice_num <= len(options):
+                return options[choice_num - 1]
+            else:
+                print(f"Please enter a number between 1 and {len(options)}, or a quoted string.")
+        except ValueError:
+            print("Please enter a valid number or quoted string.")
+
+
+def greedy_encode(strokes, encodings, char="", current_encoding="", interactive=False):
+    """Greedily recreate encoding from strokes using available encodings"""
+    if not strokes:
+        return ""
+
+    # Try to find longest matching prefix
+    result = ""
+    i = 0
+    strokes = apply_character_swaps(strokes)
+    while i < len(strokes):
+        found_match = False
+        # Try longest matches first (greedy approach)
+        for length in range(len(strokes) - i, 0, -1):
+            substring = strokes[i:i+length]
+            if substring in encodings:
+                matches = encodings[substring]
+                if len(matches) == 1:
+                    result += matches[0]
+                else:
+                    # Multiple options - handle based on interactive mode
+                    unique_matches = list(set(matches))
+                    if len(unique_matches) == 1:
+                        result += unique_matches[0]
+                    else:
+                        if interactive and char and current_encoding:
+                            # Prompt user for choice
+                            chosen_encoding = prompt_user_choice(char, current_encoding, unique_matches)
+                            result += chosen_encoding
+                        else:
+                            # Default behavior - bracket options
+                            result += "(" + "/".join(unique_matches) + ")"
+                i += length
+                found_match = True
+                break
+
+        if not found_match:
+            # If no match found, add the character as-is and move forward
+            result += strokes[i]
+            i += 1
+
+    return result
+
+
+def gen_tokens(interactive=False):
+    """Generate tokens by recreating encodings from strokes"""
+    # Load stroke encodings
+    encodings = load_stroke_encodings()
+    print(f"Loaded {len(encodings)} stroke encodings")
+
+    # Load tokens
+    tokens_df = pd.read_csv('data/tokens.csv')
+
+    # Create new encoding column and track mismatches
+    new_encodings = []
+    mismatches = []
+    for idx, row in tokens_df.iterrows():
+        strokes = str(row['strokes']) if pd.notna(row['strokes']) else ""
+        old_encoding = str(row['encoding']) if pd.notna(row['encoding']) else ""
+        char = str(row['character']) if 'character' in row and pd.notna(row['character']) else f"Row {idx}"
+
+        # First pass - check if there would be a clash
+        temp_encoding = greedy_encode(strokes, encodings)
+
+        # If interactive mode and there's a potential clash with parentheses, handle it
+        if interactive and "(" in temp_encoding and ")" in temp_encoding and old_encoding != temp_encoding:
+            new_encoding = greedy_encode(strokes, encodings, char, current_encoding=old_encoding, interactive=True)
+        else:
+            new_encoding = temp_encoding
+
+        new_encodings.append(new_encoding)
+        if old_encoding != new_encoding:
+            mismatches.append(old_encoding)
+        else:
+            mismatches.append("")
+
+    # Replace existing encoding column and add mismatch column
+    tokens_df['encoding'] = new_encodings
+    tokens_df['mismatch'] = mismatches
+
+    # Save to show_me.csv
+    tokens_df.to_csv('show_me.csv', index=False)
+    print(f"\nSaved results to show_me.csv with {len(tokens_df)} rows")
+
+    # Show comparison stats and differences
+    mismatch_count = sum(1 for m in mismatches if m != "")
+    matches = len(tokens_df) - mismatch_count
+    print(f"Exact matches: {matches}/{len(tokens_df)} ({matches/len(tokens_df)*100:.1f}%)")
+
+    # Print differences
+    print("\nDifferences:")
+    for i, mismatch in enumerate(mismatches):
+        if mismatch != "":
+            print(f"Row {i}: Expected '{mismatch}' -> Actual '{new_encodings[i]}'")
+
+    return tokens_df
+
+
 def update_encoding(tokens_path, use_strokes=False):
     char_df = load_char_db()
     tokens_df = pd.read_csv(tokens_path)
 
-    column_name = "strokes" if use_strokes == "true" else "code"
+    column_name = "strokes" if use_strokes == "true" else "encoding"
     char_to_code = dict(zip(tokens_df["character"], tokens_df[column_name]))
 
     def replace_chars(composition):
@@ -93,7 +242,6 @@ def gen_dict():
     for row in filtered_rows:
         encoding = row['encoding']\
                 .strip()\
-                .replace("S", "")\
                 .replace("V", "")\
                 .replace("A", "")\
                 .replace("B", "")\
@@ -140,11 +288,12 @@ def gen_dict():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", nargs="?", help="Command to run (gen-dict, list-dupes)")
+    parser.add_argument("command", nargs="?", help="Command to run (gen-dict, list-dupes, gen-tokens)")
     parser.add_argument("-t", help="Path to tokens.csv", default="data/tokens.csv")
     parser.add_argument("--use-strokes", help="Use the character's strokes as the code")
     parser.add_argument("-d", "--dict", help="Path to dictionary file", default="dict.txt")
     parser.add_argument("--ignore-variants", action="store_true", help="Ignore traditional/simplified variants when listing duplicates")
+    parser.add_argument("-i", "--interactive", action="store_true", help="Enable interactive mode for encoding clashes")
 
     args = parser.parse_args()
 
@@ -152,6 +301,9 @@ def main():
         gen_dict()
     elif args.command == "list-dupes":
         list_dupes(args.dict, args.ignore_variants)
+    elif args.command == "gen-tokens":
+        result_df = gen_tokens(args.interactive)
+        return result_df
     elif args.command == "update-encoding":
         result_df = update_encoding(args.t, args.use_strokes)
         print(result_df[["character", "composition", "retokenized"]].head(20))
