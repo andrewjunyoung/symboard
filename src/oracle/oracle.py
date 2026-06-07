@@ -282,9 +282,56 @@ def gen_dict():
             for character in characters:
                 f.write(f"{encoding}\t{character}\t名詞\n")
                 total_entries += 1
+                # if 'X' in encoding:
+                #     stripped = encoding.replace('X', '')
+                #     f.write(f"{stripped}\t{character}\t名詞\n")
+                #     total_entries += 1
 
     print(f"Generated dict.txt with {total_entries} entries")
 
+
+def gen_prefix_dict():
+    entries = []
+    with open('dict.txt', 'r', encoding='utf-8') as f:
+        for line in f:
+            parts = line.strip().split('\t')
+            if len(parts) >= 2:
+                entries.append(parts)
+
+    prefix_map = {}  # prefix -> entry
+
+    for entry in entries:
+        key = entry[0]
+        tag = entry[2] if len(entry) > 2 else '名詞'
+
+        length = 1
+        while True:
+            prefix = key[:length]
+            if prefix not in prefix_map:
+                prefix_map[prefix] = entry
+                break
+            existing = prefix_map[prefix]
+            if existing[0] == key:
+                # Same full key, no resolution possible — keep both
+                prefix_map[prefix + f'__dup_{id(entry)}'] = entry
+                break
+            # Clash — bump existing entry to longer prefix, try again for both
+            del prefix_map[prefix]
+            existing_new_len = len(prefix) + 1
+            existing_prefix = existing[0][:existing_new_len]
+            prefix_map[existing_prefix] = existing
+            length += 1
+
+    with open('dict_prefix.txt', 'w', encoding='utf-8') as f:
+        total = 0
+        for prefix, entry in prefix_map.items():
+            if '__dup_' in prefix:
+                prefix = entry[0]
+            tag = entry[2] if len(entry) > 2 else '名詞'
+            f.write(f"{prefix}\t{entry[1]}\t{tag}\n")
+            total += 1
+
+    print(f"Generated dict_prefix.txt with {total} entries")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -299,6 +346,7 @@ def main():
 
     if args.command == "gen-dict":
         gen_dict()
+        gen_prefix_dict()
     elif args.command == "list-dupes":
         list_dupes(args.dict, args.ignore_variants)
     elif args.command == "gen-tokens":
