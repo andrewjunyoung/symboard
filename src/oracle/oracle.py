@@ -110,7 +110,7 @@ def gen_tokens(interactive=False):
     print(f"Loaded {len(encodings)} stroke encodings")
 
     # Load tokens
-    tokens_df = pd.read_csv('data/tokens.csv')
+    tokens_df = pd.read_csv('data/token_db.csv')
 
     # Create new encoding column and track mismatches
     new_encodings = []
@@ -298,7 +298,7 @@ def gen_prefix_dict():
             if len(parts) >= 2:
                 entries.append(parts)
 
-    prefix_map = {}  # prefix -> entry
+    prefix_map = {}
 
     for entry in entries:
         key = entry[0]
